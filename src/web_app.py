@@ -125,3 +125,23 @@ async def api_compare(ids: str = Query("1699,6396,2933,7920")):
 @app.get("/api/methodology")
 async def api_methodology():
     return get_store().get_methodology()
+
+
+@app.get("/api/evaluation-dimensions")
+async def api_evaluation_dimensions():
+    return get_store().get_player_evaluations()
+
+
+@app.get("/api/win-probability")
+async def api_win_probability():
+    return get_store().get_win_probability_insights()
+
+
+@app.get("/api/weight-sensitivity")
+async def api_weight_sensitivity():
+    return get_store().get_weight_sensitivity()
+
+
+@app.get("/api/rr-tactical-fit")
+async def api_rr_tactical_fit():
+    return get_store().get_rr_auction_intelligence()

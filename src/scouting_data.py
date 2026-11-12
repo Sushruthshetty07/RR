@@ -790,6 +790,73 @@ class ScoutingStore:
         }
 
 
+    def get_win_probability_insights(self) -> Dict[str, Any]:
+        wp_path = DATA_PROCESSED / "wp_benchmark_summary.json"
+        if wp_path.exists():
+            return self._load_json(wp_path)
+        return {"status": "WP benchmark data not generated yet."}
+
+    def get_weight_sensitivity(self) -> Dict[str, Any]:
+        ws_path = DATA_PROCESSED / "weight_sensitivity_summary.json"
+        if ws_path.exists():
+            return self._load_json(ws_path)
+        return {"status": "Weight sensitivity data not generated yet."}
+
+    def get_player_evaluations(self) -> Dict[str, Any]:
+        pe_path = DATA_PROCESSED / "player_evaluation_summary.json"
+        if pe_path.exists():
+            return self._load_json(pe_path)
+        return {"status": "Player evaluation summary not generated yet."}
+
+    def get_rr_auction_intelligence(self) -> Dict[str, Any]:
+        dash_b = self.get_dashboard_b()
+        rr_squad = self.get_rr_squad()
+        return {
+            "rr_2026_record": "8-6 League (4th, 16 pts), 9-7 Overall (3rd Place Playoffs)",
+            "venue_splits": {
+                "guwahati": "3 wins / 3 matches (100% win rate; spin & containment favored)",
+                "jaipur": "1 win / 4 matches (25% win rate; pace economy leak 10.13 RPO vs 9.26 avg)",
+            },
+            "identified_roster_gaps": [
+                {
+                    "gap": "Death-Over Pace Specialist",
+                    "priority": "HIGH",
+                    "reason": "RR conceded 11.45 RPO in overs 16-20; 0 RR pacers in Top 35 bowling PRI.",
+                    "target_candidates": [
+                        {"name": "Nathan Ellis", "team": "CSK (Traded to SRH 2027)", "role": "Pace Death", "pathway": "Trade Target", "pri": 97.73},
+                        {"name": "Josh Hazlewood", "team": "RCB", "role": "Pace PP/Death", "pathway": "Trade Target", "pri": 96.74},
+                        {"name": "Sakib Hussain", "team": "KKR", "role": "Pace Uncapped Sleeper", "pathway": "Auction / Trade", "pri": 85.20},
+                    ]
+                },
+                {
+                    "gap": "Attacking / Containment Spinner",
+                    "priority": "HIGH",
+                    "reason": "Ashwin retired (Aug 2025); reliance on Chahal / domestic depth.",
+                    "target_candidates": [
+                        {"name": "Wanindu Hasaranga", "team": "LSG (Ruled out 2026)", "role": "Leg-Spin AR", "pathway": "Pending Registration", "pri": 95.60},
+                        {"name": "Adil Rashid", "team": "Unsold / Free Agent", "role": "Leg-Spin", "pathway": "Auction Pool", "pri": 95.94},
+                        {"name": "Mitchell Santner", "team": "CSK / MI", "role": "Left-Arm Orthodox", "pathway": "Trade Target", "pri": 94.79},
+                    ]
+                },
+                {
+                    "gap": "Middle-Order RHB Finisher / Closer",
+                    "priority": "MEDIUM",
+                    "reason": "RR death batting strike rate (163.4) lagged league playoff benchmark (169.4).",
+                    "target_candidates": [
+                        {"name": "Tim David", "team": "RCB / MI", "role": "RHB Finisher", "pathway": "Trade Target", "pri": 96.60},
+                        {"name": "Shashank Singh", "team": "PBKS", "role": "RHB Finisher", "pathway": "Trade Target", "pri": 88.40},
+                        {"name": "Rajat Patidar", "team": "RCB", "role": "Spin-Hitter #4", "pathway": "Trade Target", "pri": 94.81},
+                    ]
+                }
+            ],
+            "candidate_buckets": {
+                "pending_registration": dash_b["buckets"]["pending_registration"][:8],
+                "trade_watchlist": dash_b["buckets"]["trade_watchlist"][:8],
+            },
+            "rr_retained_core": rr_squad["roster"],
+        }
+
+
 @lru_cache(maxsize=1)
 def get_store() -> ScoutingStore:
     return ScoutingStore()

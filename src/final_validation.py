@@ -428,13 +428,16 @@ def analyze_pressure_intelligence(
     by_rrr = by_rrr_bat.merge(by_rrr_bowl[["rrr_regime", "mean_pi_bowl", "median_pi_bowl", "pct_hp_bowl"]], on="rrr_regime", how="left")
 
     # 6. Check whether Super Overs and Non-Primary DLS have valid separated stats
+    so_mask = df["innings"].astype(int) >= 3
+    bat_so_col = "pressure_so_bat" if "pressure_so_bat" in df.columns and df.loc[so_mask, "pressure_so_bat"].notna().any() else "pressure_bat"
+    bowl_so_col = "pressure_so_bowl" if "pressure_so_bowl" in df.columns and df.loc[so_mask, "pressure_so_bowl"].notna().any() else "pressure_bowl"
     so_stats = {
-        "n_super_over_balls": int((df["innings"].astype(int) >= 3).sum()),
-        "mean_pi_bat_super_over": round(float(df.loc[df["innings"].astype(int) >= 3, "pressure_bat"].mean()), 2)
-        if (df["innings"].astype(int) >= 3).any()
+        "n_super_over_balls": int(so_mask.sum()),
+        "mean_pi_bat_super_over": round(float(df.loc[so_mask, bat_so_col].mean()), 2)
+        if so_mask.any() and df.loc[so_mask, bat_so_col].notna().any()
         else np.nan,
-        "mean_pi_bowl_super_over": round(float(df.loc[df["innings"].astype(int) >= 3, "pressure_bowl"].mean()), 2)
-        if (df["innings"].astype(int) >= 3).any()
+        "mean_pi_bowl_super_over": round(float(df.loc[so_mask, bowl_so_col].mean()), 2)
+        if so_mask.any() and df.loc[so_mask, bowl_so_col].notna().any()
         else np.nan,
     }
 
@@ -1015,7 +1018,7 @@ def evaluate_same_season_pdi_and_archetypes(
     for col, out_col in [("pp_pdi_post", "pp_pdi_z"), ("mid_pdi_post", "mid_pdi_z"), ("death_pdi_post", "death_pdi_z"), ("spin_pdi_post", "spin_pdi_z")]:
         bat_arch[out_col] = _safe_z(bat_arch[col], b_ref)
     bat_arch["pdi_ss_equal_z"] = (bat_arch["pp_pdi_z"] + bat_arch["mid_pdi_z"] + bat_arch["death_pdi_z"]) / 3.0
-    bat_arch["pdi_ss_peak_z"] = np.fmax.reduce([bat_arch["pp_pdi_z"], bat_arch["mid_pdi_z"], bat_arch["death_pdi_z"]])
+    bat_arch["pdi_ss_peak_z"] = pd.concat([bat_arch["pp_pdi_z"], bat_arch["mid_pdi_z"], bat_arch["death_pdi_z"]], axis=1).max(axis=1)
 
     # Classify the 4 Batting Archetypes
     if "is_ipl_retired" not in bat_arch.columns:
@@ -1082,7 +1085,7 @@ def evaluate_same_season_pdi_and_archetypes(
     for col, out_col in [("pp_pdi_post", "pp_pdi_z"), ("mid_pdi_post", "mid_pdi_z"), ("death_pdi_post", "death_pdi_z")]:
         bowl_arch[out_col] = _safe_z(bowl_arch[col], l_ref)
     bowl_arch["pdi_ss_equal_z"] = (bowl_arch["pp_pdi_z"] + bowl_arch["mid_pdi_z"] + bowl_arch["death_pdi_z"]) / 3.0
-    bowl_arch["pdi_ss_peak_z"] = np.fmax.reduce([bowl_arch["pp_pdi_z"], bowl_arch["mid_pdi_z"], bowl_arch["death_pdi_z"]])
+    bowl_arch["pdi_ss_peak_z"] = pd.concat([bowl_arch["pp_pdi_z"], bowl_arch["mid_pdi_z"], bowl_arch["death_pdi_z"]], axis=1).max(axis=1)
 
     ps_series = bowl_arch["dom_pace_spin"].fillna("")
     pp_l_share = bowl_arch["pp_pdi_n"].fillna(0) / np.maximum(bowl_arch["ipl_legal_balls"] + bowl_arch["t20i_legal_balls"], 1)

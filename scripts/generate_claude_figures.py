@@ -13,7 +13,11 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PROCESSED = ROOT / "data" / "processed"
 FIG_DIR = ROOT / "reports" / "figures"
-ARTIFACT_FIG_DIR = Path(r"C:\Users\sushruth\.gemini\antigravity\brain\b6ea2651-73fc-4d7f-8e2e-0f0033d4425b\figures")
+FIG_DIR.mkdir(parents=True, exist_ok=True)
+_artifact_env = os.environ.get("ARTIFACT_FIG_DIR")
+ARTIFACT_FIG_DIR = Path(_artifact_env) if _artifact_env else FIG_DIR
+if ARTIFACT_FIG_DIR != FIG_DIR:
+    ARTIFACT_FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def _short_name(name: str) -> str:

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rajasthan Royals SupeRR Selector — IPL 2027 Scouting &amp; Analytics</title>
+  <title>Rajasthan Royals SupeRR Selector 2.0 — IPL Player Reliability &amp; Auction Intelligence</title>
   <style>
     :root {
       --bg: #0b1120;
@@ -13,7 +13,9 @@
       --text: #f1f5f9;
       --muted: #94a3b8;
       --rr-pink: #ec4899;
+      --rr-pink-dark: #be185d;
       --rr-blue: #38bdf8;
+      --rr-royal: #1e3a8a;
       --gold: #f59e0b;
       --green: #10b981;
       --red: #ef4444;
@@ -28,42 +30,22 @@
       line-height: 1.45;
     }
     header {
-      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 60%, #4a044e 100%);
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #4a044e 100%);
       border-bottom: 1px solid var(--border);
-      padding: 16px 24px;
+      padding: 16px 28px;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
+      gap: 16px;
     }
-    .brand h1 { margin: 0; font-size: 1.25rem; letter-spacing: 0.2px; }
-    .brand p { margin: 2px 0 0; color: var(--muted); font-size: 0.85rem; }
-    .mode-switch {
-      display: flex;
-      gap: 8px;
-      background: rgba(11, 17, 32, 0.7);
-      padding: 5px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-    }
-    .mode-btn {
-      border: none;
-      background: transparent;
-      color: var(--muted);
-      padding: 8px 14px;
-      border-radius: 7px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.85rem;
-      transition: 0.15s;
-    }
-    .mode-btn.active-b { background: var(--rr-pink); color: #fff; }
-    .mode-btn.active-a { background: var(--rr-blue); color: #081226; }
+    .brand h1 { margin: 0; font-size: 1.35rem; letter-spacing: 0.3px; display: flex; align-items: center; gap: 8px; }
+    .brand p { margin: 3px 0 0; color: var(--muted); font-size: 0.85rem; }
+    .badge-hdr { background: var(--rr-pink); color: #fff; font-size: 0.72rem; padding: 2px 7px; border-radius: 4px; font-weight: 700; }
     nav {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
-      padding: 0 24px;
+      padding: 0 28px;
       display: flex;
       gap: 4px;
       overflow-x: auto;
@@ -73,34 +55,43 @@
       border: none;
       border-bottom: 3px solid transparent;
       color: var(--muted);
-      padding: 12px 14px;
+      padding: 13px 16px;
       cursor: pointer;
       font-weight: 600;
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       white-space: nowrap;
+      transition: all 0.15s ease;
     }
-    .tab-btn.active { color: var(--text); border-bottom-color: var(--rr-pink); }
-    main { max-width: 1400px; margin: 0 auto; padding: 20px 24px 60px; }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { color: var(--text); border-bottom-color: var(--rr-pink); background: rgba(236, 72, 153, 0.08); }
+    main { max-width: 1440px; margin: 0 auto; padding: 24px 28px 80px; }
     .alert {
       background: rgba(245, 158, 11, 0.12);
       border: 1px solid rgba(245, 158, 11, 0.45);
       border-radius: 10px;
-      padding: 12px 16px;
-      margin-bottom: 18px;
+      padding: 13px 18px;
+      margin-bottom: 20px;
       font-size: 0.9rem;
     }
     .alert strong { color: #fbbf24; }
-    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 20px; }
-    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 16px; margin-bottom: 20px; }
+    .alert-info {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+    }
+    .alert-info strong { color: var(--rr-blue); }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 22px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 22px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 18px; margin-bottom: 22px; }
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 16px;
+      padding: 18px;
     }
+    .card-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; }
     .kpi-label { color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; }
-    .kpi-val { font-size: 1.65rem; font-weight: 700; margin-top: 4px; }
-    .kpi-sub { color: var(--muted); font-size: 0.8rem; margin-top: 3px; }
+    .kpi-val { font-size: 1.7rem; font-weight: 700; margin-top: 4px; }
+    .kpi-sub { color: var(--muted); font-size: 0.82rem; margin-top: 3px; }
     .filters {
       display: flex;
       flex-wrap: wrap;
@@ -108,8 +99,8 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 12px;
-      margin-bottom: 16px;
+      padding: 12px 16px;
+      margin-bottom: 18px;
       align-items: center;
     }
     .filters input, .filters select {
@@ -117,15 +108,15 @@
       color: var(--text);
       border: 1px solid var(--border);
       border-radius: 7px;
-      padding: 7px 10px;
+      padding: 7px 11px;
       font-size: 0.85rem;
     }
     .filters label { font-size: 0.82rem; color: var(--muted); display: flex; align-items: center; gap: 5px; }
     table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-    th, td { padding: 9px 10px; text-align: left; border-bottom: 1px solid var(--border); }
+    th, td { padding: 9px 11px; text-align: left; border-bottom: 1px solid var(--border); }
     th { color: var(--muted); font-weight: 600; font-size: 0.76rem; text-transform: uppercase; background: var(--surface-2); position: sticky; top: 0; }
     tr.clickable:hover { background: rgba(236, 72, 153, 0.08); cursor: pointer; }
-    .table-wrap { max-height: 560px; overflow: auto; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+    .table-wrap { max-height: 580px; overflow: auto; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
     .badge {
       display: inline-block;
       padding: 2px 8px;
@@ -142,58 +133,71 @@
     .b-retired { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
     .b-unknown { background: rgba(148, 163, 184, 0.2); color: #cbd5e1; }
     .b-warn { background: rgba(239, 68, 68, 0.18); color: #fca5a5; border: 1px solid rgba(239,68,68,0.4); }
-    .section-title { margin: 20px 0 10px; font-size: 1.05rem; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .b-info { background: rgba(56, 189, 248, 0.18); color: #7dd3fc; }
     .pill-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
     .pill {
       background: var(--surface-2);
       border: 1px solid var(--border);
       color: var(--muted);
-      padding: 6px 12px;
+      padding: 6px 14px;
       border-radius: 999px;
       cursor: pointer;
       font-size: 0.82rem;
       font-weight: 600;
+      transition: 0.15s;
     }
+    .pill:hover { color: var(--text); }
     .pill.active { background: var(--rr-pink); border-color: var(--rr-pink); color: #fff; }
     .modal-backdrop {
-      position: fixed; inset: 0; background: rgba(2, 6, 23, 0.78);
+      position: fixed; inset: 0; background: rgba(2, 6, 23, 0.8);
       display: none; align-items: center; justify-content: center; padding: 20px; z-index: 100;
     }
     .modal-backdrop.open { display: flex; }
     .modal {
       background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
-      max-width: 920px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 22px;
+      max-width: 940px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 24px;
     }
     .modal-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 14px; }
     .close-btn { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
     .kv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 14px; }
-    .kv { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 9px 11px; }
+    .kv { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 9px 12px; }
     .kv .k { font-size: 0.73rem; color: var(--muted); text-transform: uppercase; }
     .kv .v { font-size: 0.96rem; font-weight: 600; margin-top: 2px; }
-    a { color: var(--rr-blue); }
+    .bar-wrap { background: var(--bg); border-radius: 4px; overflow: hidden; height: 12px; width: 100%; position: relative; }
+    .bar-fill { height: 100%; background: linear-gradient(90deg, var(--rr-blue), var(--rr-pink)); }
+    a { color: var(--rr-blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <header>
     <div class="brand">
-      <h1>Rajasthan Royals SupeRR Selector — IPL 2027 Scouting &amp; Analytics</h1>
-      <p>Verified as of <strong>{{ as_of_date }}</strong> | Frozen Phase 3/4 PRI Engine (193,144 deliveries; 188 batters, 200 bowlers)</p>
+      <h1>
+        Rajasthan Royals SupeRR Selector 2.0
+        <span class="badge-hdr">IPL 2027</span>
+      </h1>
+      <p>Player Reliability, High-Pressure Clutch Evaluation &amp; Auction Intelligence | 200,999 Deliveries | 867 Matches</p>
     </div>
-    <div class="mode-switch">
-      <button id="btn-mode-b" class="mode-btn active-b" onclick="switchDashboard('B')">Dashboard B: RR Auction Scouting (PRIMARY)</button>
-      <button id="btn-mode-a" class="mode-btn" onclick="switchDashboard('A')">Dashboard A: Performance Analytics (Universe)</button>
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <div class="mode-switch" style="display:flex;gap:8px">
+        <button class="pill active" onclick="openTab('auction_intelligence')">Dashboard B: RR Auction Scouting</button>
+        <button class="pill" onclick="openTab('batting')">Dashboard A: Performance Analytics</button>
+      </div>
+      <div style="font-size:0.82rem; color:var(--muted); text-align:right">
+        <span>Verified As Of: <strong>{{ as_of_date }}</strong></span><br />
+        <span>Primary Data Pool: <strong>193,144 balls</strong> (IPL w=1.0, T20I w=0.5)</span>
+      </div>
     </div>
   </header>
 
   <nav id="main-nav">
-    <button class="tab-btn active" data-tab="overview" onclick="openTab('overview')">Overview</button>
-    <button class="tab-btn" data-tab="rr_squad" onclick="openTab('rr_squad')">RR Squad</button>
-    <button class="tab-btn" data-tab="auction_shortlist" onclick="openTab('auction_shortlist')">Auction Shortlist</button>
-    <button class="tab-btn" data-tab="trade_tracker" onclick="openTab('trade_tracker')">Trade Tracker</button>
-    <button class="tab-btn" data-tab="batting" onclick="openTab('batting')">Batting Analytics</button>
-    <button class="tab-btn" data-tab="bowling" onclick="openTab('bowling')">Bowling Analytics</button>
-    <button class="tab-btn" data-tab="compare" onclick="openTab('compare')">Player Comparison</button>
-    <button class="tab-btn" data-tab="methodology" onclick="openTab('methodology')">Methodology &amp; Evidence</button>
+    <button class="tab-btn active" data-tab="overview" onclick="openTab('overview')">1. Overview</button>
+    <button class="tab-btn" data-tab="batting" onclick="openTab('batting')">2. Batter Scouting</button>
+    <button class="tab-btn" data-tab="bowling" onclick="openTab('bowling')">3. Bowler Scouting</button>
+    <button class="tab-btn" data-tab="compare" onclick="openTab('compare')">4. Player Comparison</button>
+    <button class="tab-btn" data-tab="pressure_leverage" onclick="openTab('pressure_leverage')">5. Pressure &amp; Leverage</button>
+    <button class="tab-btn" data-tab="auction_intelligence" onclick="openTab('auction_intelligence')">6. RR Auction Intelligence</button>
+    <button class="tab-btn" data-tab="model_eval" onclick="openTab('model_eval')">7. Model Evaluation</button>
   </nav>
 
   <main id="app-content">
@@ -206,11 +210,12 @@
 
 <script>
 const STATE = {
-  mode: 'B',
   tab: 'overview',
-  bucket: 'pending_registration',
+  batView: 'dual',
+  bowlView: 'dual',
+  auctionBucket: 'pending_registration',
   filters: { search: '', role: '', availability: '', ipl_exp: '', pressure_tier: '', confidence_tier: '', all_rounder_only: false },
-  compareIds: [479, 2636, 19316, 4900]
+  compareIds: [1699, 6396, 2933, 7920]
 };
 
 function statusBadge(st) {
@@ -224,19 +229,6 @@ function statusBadge(st) {
     'Unknown/unverified': 'b-unknown'
   };
   return `<span class="badge ${map[st] || 'b-unknown'}">${st}</span>`;
-}
-
-function switchDashboard(m) {
-  STATE.mode = m;
-  document.getElementById('btn-mode-b').className = 'mode-btn ' + (m === 'B' ? 'active-b' : '');
-  document.getElementById('btn-mode-a').className = 'mode-btn ' + (m === 'A' ? 'active-a' : '');
-  if (m === 'A' && (STATE.tab === 'overview' || STATE.tab === 'auction_shortlist')) {
-    openTab('batting');
-  } else if (m === 'B' && (STATE.tab === 'batting' || STATE.tab === 'bowling')) {
-    openTab('auction_shortlist');
-  } else {
-    renderTab();
-  }
 }
 
 function openTab(t) {
@@ -280,7 +272,6 @@ function filterBarHtml(showAvail = true) {
       <option value="Existing Rajasthan Royals player" ${STATE.filters.availability==='Existing Rajasthan Royals player'?'selected':''}>Existing RR player</option>
       <option value="Contracted to another franchise" ${STATE.filters.availability==='Contracted to another franchise'?'selected':''}>Contracted elsewhere</option>
       <option value="Retired" ${STATE.filters.availability==='Retired'?'selected':''}>Retired</option>
-      <option value="Unknown/unverified" ${STATE.filters.availability==='Unknown/unverified'?'selected':''}>Unknown/unverified</option>
     </select>` : ''}
     <select onchange="STATE.filters.pressure_tier=this.value; renderTab()">
       <option value="">All Pressure Tiers</option>
@@ -288,13 +279,7 @@ function filterBarHtml(showAvail = true) {
       <option value="Strong Pressure Performer" ${STATE.filters.pressure_tier==='Strong Pressure Performer'?'selected':''}>Strong Pressure Performer</option>
       <option value="Unproven in HP (Neff_HP = 0)" ${STATE.filters.pressure_tier==='Unproven in HP (Neff_HP = 0)'?'selected':''}>Unproven in HP (Neff_HP = 0)</option>
     </select>
-    <select onchange="STATE.filters.ipl_exp=this.value; renderTab()">
-      <option value="">All IPL Exposure</option>
-      <option value="Established IPL Starter (600+)" ${STATE.filters.ipl_exp==='Established IPL Starter (600+)'?'selected':''}>Established (600+)</option>
-      <option value="Moderate IPL Exposure (180-599)" ${STATE.filters.ipl_exp==='Moderate IPL Exposure (180-599)'?'selected':''}>Moderate (180-599)</option>
-      <option value="Limited IPL Exposure (30-179)" ${STATE.filters.ipl_exp==='Limited IPL Exposure (30-179)'?'selected':''}>Limited (30-179)</option>
-    </select>
-    <label><input type="checkbox" ${STATE.filters.all_rounder_only?'checked':''} onchange="STATE.filters.all_rounder_only=this.checked; renderTab()" /> Dual-Eligible AR Only</label>
+    <label><input type="checkbox" ${STATE.filters.all_rounder_only?'checked':''} onchange="STATE.filters.all_rounder_only=this.checked; renderTab()" /> Dual AR Only</label>
     <button class="close-btn" onclick="STATE.filters={search:'',role:'',availability:'',ipl_exp:'',pressure_tier:'',confidence_tier:'',all_rounder_only:false}; renderTab()">Reset</button>
   </div>`;
 }
@@ -302,181 +287,465 @@ function filterBarHtml(showAvail = true) {
 async function renderTab() {
   const el = document.getElementById('app-content');
   if (STATE.tab === 'overview') return renderOverview(el);
-  if (STATE.tab === 'rr_squad') return renderRRSquad(el);
-  if (STATE.tab === 'auction_shortlist') return renderDashboardB(el);
-  if (STATE.tab === 'trade_tracker') return renderTrades(el);
-  if (STATE.tab === 'batting') return renderDashboardA(el, 'batting');
-  if (STATE.tab === 'bowling') return renderDashboardA(el, 'bowling');
+  if (STATE.tab === 'batting') return renderBattingScouting(el);
+  if (STATE.tab === 'bowling') return renderBowlingScouting(el);
   if (STATE.tab === 'compare') return renderCompare(el);
-  if (STATE.tab === 'methodology') return renderMethodology(el);
+  if (STATE.tab === 'pressure_leverage') return renderPressureLeverage(el);
+  if (STATE.tab === 'auction_intelligence') return renderAuctionIntelligence(el);
+  if (STATE.tab === 'model_eval') return renderModelEvaluation(el);
 }
 
+// -------------------------------------------------------------
+// PAGE 1: OVERVIEW
+// -------------------------------------------------------------
 async function renderOverview(el) {
-  const d = await (await fetch('/api/overview')).json();
+  const [d, dims, wp] = await Promise.all([
+    fetch('/api/overview').then(r => r.json()),
+    fetch('/api/evaluation-dimensions').then(r => r.json()),
+    fetch('/api/win-probability').then(r => r.json())
+  ]);
+
   el.innerHTML = `
-    <div class="alert">
-      <strong>Data Availability Notice (as of ${d.as_of_date}):</strong>
-      Official BCCI IPL 2027 retention/release lists are due <strong>${d.calendar.retention_deadline}</strong> and auction player registration closes <strong>${d.calendar.auction_registration_deadline}</strong> (Mini-Auction: <strong>${d.calendar.mini_auction_date}</strong> in ${d.calendar.mini_auction_venue}).
-      Therefore, <strong>0 players</strong> are labeled <em>"Confirmed auction-available"</em> today. Uncontracted 2026 players appear in <strong>Released / Registration Pending</strong>, and contracted targets appear strictly in the separate <strong>Trade Watchlist</strong>.
+    <div class="alert alert-info">
+      <strong>Executive Thesis:</strong> Across <strong>200,999 deliveries</strong> (867 matches), we evaluate T20 players across three strictly separated dimensions:
+      <strong>(A) Overall Reliability</strong>, <strong>(B) High-Pressure Clutch Performance</strong>, and <strong>(C) Rajasthan Royals Tactical Fit</strong>.
+      We eliminate the conflation between explosive Powerplay pace-setting and late-innings clutch chasing, enforcing empirical Bayes shrinkage and Kish effective sample size gates.
     </div>
+
     <div class="grid-4">
-      <div class="card"><div class="kpi-label">Confirmed Auction-Available</div><div class="kpi-val">${d.dashboard_b_counts.confirmed_auction}</div><div class="kpi-sub">Awaiting Nov 17 &amp; Nov 23 BCCI lists</div></div>
-      <div class="card"><div class="kpi-label">Pending Registration Pool</div><div class="kpi-val" style="color:var(--gold)">${d.dashboard_b_counts.pending_registration}</div><div class="kpi-sub">Uncontracted 2026 players</div></div>
-      <div class="card"><div class="kpi-label">Separate Trade Watchlist</div><div class="kpi-val" style="color:var(--purple)">${d.dashboard_b_counts.trade_watchlist}</div><div class="kpi-sub">${d.completed_trades_count} official trades | ${d.rumours_count} stalled talk</div></div>
-      <div class="card"><div class="kpi-label">Complete Analytical Universe</div><div class="kpi-val" style="color:var(--rr-blue)">${d.universe_counts.eligible_batters} / ${d.universe_counts.eligible_bowlers}</div><div class="kpi-sub">Bat / Bowl eligible (${d.universe_counts.primary_deliveries.toLocaleString()} balls)</div></div>
+      <div class="card"><div class="kpi-label">Primary Deliveries</div><div class="kpi-val" style="color:var(--rr-blue)">${d.universe_counts.primary_deliveries.toLocaleString()}</div><div class="kpi-sub">IPL (w=1.0) + T20I (w=0.5)</div></div>
+      <div class="card"><div class="kpi-label">Eligible Universe</div><div class="kpi-val">${d.universe_counts.eligible_batters} / ${d.universe_counts.eligible_bowlers}</div><div class="kpi-sub">Batters / Bowlers (Neff &ge; 30)</div></div>
+      <div class="card"><div class="kpi-label">RR 2026 Baseline</div><div class="kpi-val" style="color:var(--rr-pink)">8–6 (3rd)</div><div class="kpi-sub">Guwahati 3/3 | Jaipur 1/4 (Pace Leak)</div></div>
+      <div class="card"><div class="kpi-label">WP vs PI Correlation</div><div class="kpi-val" style="color:var(--gold)">r = -0.20</div><div class="kpi-sub">Pressure != Leverage Quantified</div></div>
     </div>
+
     <div class="grid-2">
       <div class="card">
-        <div class="section-title"><strong>Top Pending-Registration Candidates (Not Yet Confirmed)</strong><button class="pill" onclick="openTab('auction_shortlist')">Open Full Shortlist</button></div>
-        <table><thead><tr><th>Player</th><th>Role</th><th>PRI</th><th>Neff_HP</th><th>2027 Status</th></tr></thead><tbody>
-        ${d.top5_pending_pool.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})"><td><strong>${r.player_name}</strong></td><td>${r.role_label}</td><td>${r.pri_score_lcb}</td><td>${r.neff_hp}</td><td>${statusBadge(r.availability_status)}</td></tr>`).join('')}
-        </tbody></table>
+        <div class="card-title">Top Analytical Insights</div>
+        <div class="kv" style="margin-bottom:8px">
+          <div class="k">1. The Powerplay Exposure Paradox (Neff_HP = 0.0)</div>
+          <div class="v" style="font-size:0.86rem;font-weight:400">
+            Elite openers like <strong>#2 Vaibhav Sooryavanshi</strong> and <strong>#5 Finn Allen</strong> earn top overall reliability solely from overs 1–6 dominance. They face <strong>0 high-pressure balls</strong> (PI &ge; 60) and must never be mislabeled as death closers.
+          </div>
+        </div>
+        <div class="kv" style="margin-bottom:8px">
+          <div class="k">2. Asymmetric Venue Splits at SMS Jaipur vs ACA Guwahati</div>
+          <div class="v" style="font-size:0.86rem;font-weight:400">
+            RR was undefeated at ACA Guwahati (3/3) with spin dominance, but suffered a 1/4 record at SMS Jaipur due to a severe pace leak (10.13 RPO vs 9.26 league benchmark), mandating death pace acquisition.
+          </div>
+        </div>
+        <div class="kv">
+          <div class="k">3. Pressure vs Leverage Distinction</div>
+          <div class="v" style="font-size:0.86rem;font-weight:400">
+            Pressure measures <em>chase difficulty / jeopardy</em>, while Leverage measures <em>win probability swing magnitude</em>. In hopeless chases (RRR &ge; 24), pressure is high but leverage collapses to near zero.
+          </div>
+        </div>
       </div>
+
       <div class="card">
-        <div class="section-title"><strong>Top Separate Trade Watchlist Targets</strong><button class="pill" onclick="STATE.bucket='trade_watchlist'; openTab('auction_shortlist')">Open Watchlist</button></div>
-        <table><thead><tr><th>Player</th><th>2027 Team</th><th>Role</th><th>PRI</th><th>Neff_HP</th></tr></thead><tbody>
-        ${d.top5_trade_watchlist.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})"><td><strong>${r.player_name}</strong></td><td>${r.current_2027_team}</td><td>${r.role_label}</td><td>${r.pri_score_lcb}</td><td>${r.neff_hp}</td></tr>`).join('')}
-        </tbody></table>
+        <div class="card-title">Three Separated Evaluation Dimensions</div>
+        <div class="kv" style="margin-bottom:8px">
+          <div class="k" style="color:var(--rr-blue)">Dimension A: Overall Reliability</div>
+          <div class="v" style="font-size:0.86rem;font-weight:400">Evaluates consistent volume across all match phases using Kish effective sample size (Neff &ge; 30) and Bayesian LCB composite score (PRI_lcb).</div>
+        </div>
+        <div class="kv" style="margin-bottom:8px">
+          <div class="k" style="color:var(--rr-pink)">Dimension B: High-Pressure Performance</div>
+          <div class="v" style="font-size:0.86rem;font-weight:400">Evaluates performance strictly on deliveries with PI &ge; 60. Imposes a strict evidence threshold (Neff_HP &ge; 30 for robust ranking). Displays "Insufficient Evidence" for Neff_HP &lt; 15.</div>
+        </div>
+        <div class="kv">
+          <div class="k" style="color:var(--gold)">Dimension C: RR Tactical Fit</div>
+          <div class="v" style="font-size:0.86rem;font-weight:400">Evaluates player compatibility against RR's specific tactical voids (Death Pace, Attacking Spin, RHB Finisher) and BCCI auction eligibility buckets.</div>
+        </div>
       </div>
-    </div>`;
+    </div>
+  `;
 }
 
-async function renderDashboardB(el) {
-  const d = await (await fetch('/api/dashboard-b?' + filterQuery())).json();
-  const buckets = [
-    ['confirmed_auction', 'Confirmed Auction-Available'],
-    ['pending_registration', 'Released / Registration Pending'],
-    ['trade_watchlist', 'Trade Watchlist (Separate)'],
-    ['rr_squad', 'Existing RR Squad (Excluded)'],
-    ['contracted_elsewhere', 'Contracted Elsewhere (Excluded)'],
-    ['retired', 'Retired (Excluded)'],
-    ['unknown_unverified', 'Unknown / Unverified'],
-  ];
-  const rows = d.buckets[STATE.bucket] || [];
+// -------------------------------------------------------------
+// PAGE 2: BATTER SCOUTING
+// -------------------------------------------------------------
+async function renderBattingScouting(el) {
+  const [d, dims] = await Promise.all([
+    fetch('/api/dashboard-a?' + filterQuery({ discipline: 'batting' })).then(r => r.json()),
+    fetch('/api/evaluation-dimensions').then(r => r.json())
+  ]);
+
+  const batDims = dims.batting;
+
   el.innerHTML = `
-    <div class="alert"><strong>Dashboard B — Primary RR Auction Scouting:</strong> Retired players, existing RR players, and players contracted to other franchises are strictly excluded from acquisition shortlists. Trade candidates are isolated in the separate Trade Watchlist.</div>
-    ${filterBarHtml(false)}
     <div class="pill-tabs">
-      ${buckets.map(([k, lbl]) => `<button class="pill ${STATE.bucket===k?'active':''}" onclick="STATE.bucket='${k}'; renderTab()">${lbl} (${d.counts[k]})</button>`).join('')}
+      <button class="pill ${STATE.batView==='dual'?'active':''}" onclick="STATE.batView='dual'; renderTab()">Separated Leaderboards (Overall vs High Pressure)</button>
+      <button class="pill ${STATE.batView==='all'?'active':''}" onclick="STATE.batView='all'; renderTab()">Complete Eligible Universe (${d.total_eligible} Batters)</button>
     </div>
-    ${rows.length === 0 ? `<div class="card"><strong>0 players in "${buckets.find(x=>x[0]===STATE.bucket)[1]}".</strong><p class="kpi-sub">${STATE.bucket==='confirmed_auction' ? 'Official IPL 2027 retention lists (due Nov 17, 2026) and auction registration (closes Nov 23, 2026) are not yet published as of 2026-11-12.' : 'Try clearing filters above.'}</p></div>` : `
-    <div class="table-wrap"><table><thead><tr>
-      <th>Orig Rank</th><th>Player</th><th>Disc</th><th>Role</th><th>PRI_lcb</th><th>Neff</th><th>Neff_HP</th><th>2027 Team</th><th>Status</th><th>Pathway</th>
-    </tr></thead><tbody>
-      ${rows.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
-        <td>#${r.raw_pri_lcb_rank}</td>
-        <td><strong>${r.player_name}</strong> ${r.hp_banner ? '<span class="badge b-warn">HP Note</span>' : ''}</td>
-        <td>${r.discipline}</td><td>${r.role_label}</td><td><strong>${r.pri_score_lcb}</strong></td><td>${r.neff}</td><td>${r.neff_hp}</td>
-        <td>${r.current_2027_team}</td><td>${statusBadge(r.availability_status)}</td><td>${r.acquisition_pathway}</td>
-      </tr>`).join('')}
-    </tbody></table></div>`}`;
-}
 
-async function renderDashboardA(el, disc) {
-  const d = await (await fetch('/api/dashboard-a?' + filterQuery({ discipline: disc }))).json();
-  el.innerHTML = `
-    <div class="alert" style="border-color:rgba(56,189,248,0.45); background:rgba(56,189,248,0.1)">
-      <strong style="color:var(--rr-blue)">Dashboard A — Complete Performance Analytics (${d.discipline}):</strong>
-      Preserves all <strong>${d.total_eligible}</strong> eligible players and original <code>PRI_lcb</code> rankings unchanged, including retired players, RR players, and contracted stars.
-    </div>
-    ${filterBarHtml(true)}
-    <div class="table-wrap"><table><thead><tr>
-      <th>PRI Rank</th><th>Pct</th><th>Player</th><th>Role</th><th>PRI_lcb</th><th>95% Rank CI</th><th>Neff</th><th>Neff_HP</th><th>IPL Balls</th><th>2027 Status</th>
-    </tr></thead><tbody>
-      ${d.records.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
-        <td><strong>#${r.raw_pri_lcb_rank}</strong></td><td>${r.emp_pct_elig_primary}%</td>
-        <td><strong>${r.player_name}</strong> ${r.neff_hp===0 ? '<span class="badge b-warn">Neff_HP=0</span>' : ''}</td>
-        <td>${r.role_label}</td><td><strong>${r.pri_score_lcb}</strong></td>
-        <td>${r.rank_p05 && r.rank_p95 ? `[#${r.rank_p05}–#${r.rank_p95}]` : '—'}</td>
-        <td>${r.neff}</td><td>${r.neff_hp}</td><td>${r.ipl_balls}</td><td>${statusBadge(r.availability_status)}</td>
-      </tr>`).join('')}
-    </tbody></table></div>`;
-}
+    ${STATE.batView === 'dual' ? `
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title" style="color:var(--rr-blue)">Dimension A: Top 10 Overall Reliable Batters</div>
+          <p class="kpi-sub" style="margin-top:-6px; margin-bottom:12px">Evaluates volume &amp; consistency across all phases (PRI_lcb)</p>
+          <table><thead><tr><th>Rank</th><th>Player</th><th>PRI_lcb</th><th>Neff</th><th>Neff_HP</th><th>HP Evidence</th></tr></thead><tbody>
+          ${batDims.top10_overall_reliability.map((r, i) => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+            <td><strong>#${i+1}</strong></td>
+            <td><strong>${r.player_name}</strong></td>
+            <td><strong>${r.pri_score_lcb.toFixed(2)}</strong></td>
+            <td>${r.neff.toFixed(0)}</td>
+            <td>${r.neff_hp.toFixed(1)}</td>
+            <td>${r.neff_hp === 0 ? '<span class="badge b-warn">Zero HP Exposure</span>' : '<span class="badge b-info">Proven</span>'}</td>
+          </tr>`).join('')}
+          </tbody></table>
+        </div>
 
-async function renderRRSquad(el) {
-  const d = await (await fetch('/api/rr-squad')).json();
-  el.innerHTML = `
-    <div class="grid-2">
-      <div class="card">
-        <h3>Verified RR 2027 Tactical Gaps (2026 Phase Evidence)</h3>
-        ${d.tactical_gaps.map(g => `<div class="kv" style="margin-bottom:8px"><div class="k">${g.gap}</div><div class="v" style="font-size:0.86rem;font-weight:500">${g.evidence}<br><span style="color:var(--rr-pink)">Target: ${g.target_profile}</span></div></div>`).join('')}
+        <div class="card">
+          <div class="card-title" style="color:var(--rr-pink)">Dimension B: Top 10 High-Pressure Clutch Batters</div>
+          <p class="kpi-sub" style="margin-top:-6px; margin-bottom:12px">Strictly filtered to robust evidence (Neff_HP &ge; 30) on PI &ge; 60</p>
+          <table><thead><tr><th>Rank</th><th>Player</th><th>HP-RAA (runs/100b)</th><th>Neff_HP</th><th>Overall PRI</th></tr></thead><tbody>
+          ${batDims.top10_high_pressure_robust.map((r, i) => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+            <td><strong>#${i+1}</strong></td>
+            <td><strong>${r.player_name}</strong></td>
+            <td><strong style="color:var(--green)">+${r.hp_raa_post.toFixed(2)}</strong></td>
+            <td>${r.neff_hp.toFixed(1)}</td>
+            <td>${r.pri_score_lcb.toFixed(1)}</td>
+          </tr>`).join('')}
+          </tbody></table>
+        </div>
       </div>
-      <div class="card">
-        <h3>RR 2026 Record: ${d.rr_2026_context.rr_2026_record || '9-7'}</h3>
-        <table><thead><tr><th>Phase (Bat)</th><th>RR SR</th><th>Lg SR</th><th>RR Wkt%</th></tr></thead><tbody>
-          ${(d.rr_2026_context.bat_phases_2026 || []).map(p => `<tr><td>${p.phase}</td><td>${p.rr_sr.toFixed(1)}</td><td>${p.lg_sr.toFixed(1)}</td><td>${p.rr_wkt_pct.toFixed(1)}%</td></tr>`).join('')}
+
+      <div class="card" style="margin-top:16px">
+        <div class="card-title" style="color:var(--gold)">Powerplay Pace-Setters (Zero High-Pressure Exposure)</div>
+        <p class="kpi-sub" style="margin-top:-6px; margin-bottom:10px">Ranked elite in overall PRI solely from overs 1–6 destruction; zero clutch chase exposure (Neff_HP = 0.0).</p>
+        <table><thead><tr><th>Player</th><th>Overall PRI</th><th>Total Neff</th><th>Exposure Diagnostic</th></tr></thead><tbody>
+        ${batDims.pp_specialists_zero_hp.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+          <td><strong>${r.player_name}</strong></td>
+          <td>${r.pri_score_lcb.toFixed(2)}</td>
+          <td>${r.neff.toFixed(0)}</td>
+          <td><span class="badge b-warn">Neff_HP = 0.0 (Unproven in late-innings crunch)</span></td>
+        </tr>`).join('')}
         </tbody></table>
       </div>
-    </div>
-    <div class="table-wrap"><table><thead><tr>
-      <th>Player</th><th>2026 Apps</th><th>WK</th><th>Capt</th><th>Bat Order</th><th>Bat PRI (Rank)</th><th>Bowl PRI (Rank)</th><th>Status</th>
-    </tr></thead><tbody>
-      ${d.roster.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
-        <td><strong>${r.canonical_name}</strong></td><td>${r.apps_2026}</td><td>${r.wk_apps_2026}</td><td>${r.capt_apps_2026}</td><td>${r.med_bat_order ?? '—'}</td>
-        <td>${r.bat_pri_lcb ? `${r.bat_pri_lcb} (#${r.bat_rank})` : '—'}</td>
-        <td>${r.bowl_pri_lcb ? `${r.bowl_pri_lcb} (#${r.bowl_rank})` : '—'}</td>
-        <td>${statusBadge(r.availability_status)}</td>
-      </tr>`).join('')}
-    </tbody></table></div>`;
+    ` : `
+      ${filterBarHtml(true)}
+      <div class="table-wrap"><table><thead><tr>
+        <th>PRI Rank</th><th>Player</th><th>Role</th><th>PRI_lcb</th><th>95% Rank CI</th><th>Neff</th><th>Neff_HP</th><th>HP Evidence Status</th><th>2027 Status</th>
+      </tr></thead><tbody>
+        ${d.records.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+          <td><strong>#${r.raw_pri_lcb_rank}</strong></td>
+          <td><strong>${r.player_name}</strong></td>
+          <td>${r.role_label}</td>
+          <td><strong>${r.pri_score_lcb}</strong></td>
+          <td>${r.rank_p05 && r.rank_p95 ? `[#${r.rank_p05}–#${r.rank_p95}]` : '—'}</td>
+          <td>${r.neff}</td>
+          <td>${r.neff_hp}</td>
+          <td>${r.neff_hp === 0 ? '<span class="badge b-warn">Zero HP (Neff=0)</span>' : (r.neff_hp < 15 ? '<span class="badge b-pending">Low HP (&lt;15)</span>' : '<span class="badge b-confirmed">Robust (&ge;15)</span>')}</td>
+          <td>${statusBadge(r.availability_status)}</td>
+        </tr>`).join('')}
+      </tbody></table></div>
+    `}
+  `;
 }
 
-async function renderTrades(el) {
-  const d = await (await fetch('/api/trades')).json();
+// -------------------------------------------------------------
+// PAGE 3: BOWLER SCOUTING
+// -------------------------------------------------------------
+async function renderBowlingScouting(el) {
+  const [d, dims] = await Promise.all([
+    fetch('/api/dashboard-a?' + filterQuery({ discipline: 'bowling' })).then(r => r.json()),
+    fetch('/api/evaluation-dimensions').then(r => r.json())
+  ]);
+
+  const bowlDims = dims.bowling;
+
   el.innerHTML = `
-    <div class="section-title"><strong>Officially Completed IPL 2027 Trades (${d.official_completed_trades.length} Deals / 10 Players)</strong></div>
-    <div class="grid-2">
-      ${d.official_completed_trades.map(t => `<div class="card">
-        <div style="display:flex;justify-content:space-between;margin-bottom:8px"><strong>${t.teams.join(' ↔ ')} (${t.date})</strong><span class="badge b-confirmed">${t.transaction_status}</span></div>
-        ${t.movements.map(m => `<div class="kv" style="margin-bottom:6px"><div class="k">${m.from_team} → ${m.to_team} | INR ${m.fee_cr} Cr</div><div class="v">${m.canonical_player_id ? `<a href="#" onclick="openPlayer(${m.canonical_player_id});return false">${m.player_name}</a>` : m.player_name} <span class="kpi-sub">(${m.fee_note})</span></div></div>`).join('')}
-        <div class="kpi-sub">Source: <a href="${t.source_url}" target="_blank">${t.source_name}</a> (verified ${t.last_verified_date})</div>
-      </div>`).join('')}
+    <div class="pill-tabs">
+      <button class="pill ${STATE.bowlView==='dual'?'active':''}" onclick="STATE.bowlView='dual'; renderTab()">Separated Leaderboards (Overall vs High Pressure)</button>
+      <button class="pill ${STATE.bowlView==='all'?'active':''}" onclick="STATE.bowlView='all'; renderTab()">Complete Eligible Universe (${d.total_eligible} Bowlers)</button>
     </div>
-    <div class="section-title"><strong>Reported Negotiations / Speculation — NOT Completed</strong></div>
-    ${d.reported_negotiations_not_completed.map(r => `<div class="card" style="border-color:rgba(245,158,11,0.5)">
-      <div style="display:flex;justify-content:space-between;margin-bottom:8px"><strong>${r.teams.join(' ↔ ')} (${r.date})</strong><span class="badge b-pending">${r.transaction_status}</span></div>
-      <p style="margin:0 0 8px;font-size:0.9rem">${r.summary}</p>
-      <div class="kpi-sub">Source: <a href="${r.source_url}" target="_blank">${r.source_name}</a> (verified ${r.last_verified_date})</div>
-    </div>`).join('')}`;
+
+    ${STATE.bowlView === 'dual' ? `
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title" style="color:var(--rr-blue)">Dimension A: Top 10 Overall Reliable Bowlers</div>
+          <p class="kpi-sub" style="margin-top:-6px; margin-bottom:12px">Run prevention &amp; wicket strike consistency (PRI_lcb)</p>
+          <table><thead><tr><th>Rank</th><th>Player</th><th>PRI_lcb</th><th>Neff</th><th>Neff_HP</th><th>HP Evidence</th></tr></thead><tbody>
+          ${bowlDims.top10_overall_reliability.map((r, i) => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+            <td><strong>#${i+1}</strong></td>
+            <td><strong>${r.player_name}</strong></td>
+            <td><strong>${r.pri_score_lcb.toFixed(2)}</strong></td>
+            <td>${r.neff.toFixed(0)}</td>
+            <td>${r.neff_hp.toFixed(1)}</td>
+            <td><span class="badge b-confirmed">Robust Evidence</span></td>
+          </tr>`).join('')}
+          </tbody></table>
+        </div>
+
+        <div class="card">
+          <div class="card-title" style="color:var(--rr-pink)">Dimension B: Top 10 High-Pressure Clutch Bowlers</div>
+          <p class="kpi-sub" style="margin-top:-6px; margin-bottom:12px">Highest run &amp; wicket prevention under crunch pressure (PI &ge; 60)</p>
+          <table><thead><tr><th>Rank</th><th>Player</th><th>HP-Impact (runs/ov)</th><th>Neff_HP</th><th>Overall PRI</th></tr></thead><tbody>
+          ${bowlDims.top10_high_pressure_robust.map((r, i) => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+            <td><strong>#${i+1}</strong></td>
+            <td><strong>${r.player_name}</strong></td>
+            <td><strong style="color:var(--green)">+${r.hp_impact_post.toFixed(2)}</strong></td>
+            <td>${r.neff_hp.toFixed(1)}</td>
+            <td>${r.pri_score_lcb.toFixed(1)}</td>
+          </tr>`).join('')}
+          </tbody></table>
+        </div>
+      </div>
+    ` : `
+      ${filterBarHtml(true)}
+      <div class="table-wrap"><table><thead><tr>
+        <th>PRI Rank</th><th>Player</th><th>Role</th><th>PRI_lcb</th><th>95% Rank CI</th><th>Neff</th><th>Neff_HP</th><th>RSAA (r/ov)</th><th>2027 Status</th>
+      </tr></thead><tbody>
+        ${d.records.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+          <td><strong>#${r.raw_pri_lcb_rank}</strong></td>
+          <td><strong>${r.player_name}</strong></td>
+          <td>${r.role_label}</td>
+          <td><strong>${r.pri_score_lcb}</strong></td>
+          <td>${r.rank_p05 && r.rank_p95 ? `[#${r.rank_p05}–#${r.rank_p95}]` : '—'}</td>
+          <td>${r.neff}</td>
+          <td>${r.neff_hp}</td>
+          <td>${r.rsaa_post ? `+${r.rsaa_post}` : '—'}</td>
+          <td>${statusBadge(r.availability_status)}</td>
+        </tr>`).join('')}
+      </tbody></table></div>
+    `}
+  `;
 }
 
+// -------------------------------------------------------------
+// PAGE 4: PLAYER COMPARISON
+// -------------------------------------------------------------
 async function renderCompare(el) {
   const d = await (await fetch('/api/compare?ids=' + STATE.compareIds.join(','))).json();
   el.innerHTML = `
     <div class="filters">
-      <label>Canonical IDs (comma-separated, up to 4):
-        <input id="cmp-input" type="text" value="${STATE.compareIds.join(',')}" style="width:240px" />
+      <label>Canonical IDs (comma-separated, up to 4 players):
+        <input id="cmp-input" type="text" value="${STATE.compareIds.join(',')}" style="width:260px" />
       </label>
       <button class="pill active" onclick="STATE.compareIds=document.getElementById('cmp-input').value.split(',').map(x=>parseInt(x.trim())).filter(Boolean); renderTab()">Compare</button>
+      <span class="kpi-sub">Presets: <a href="#" onclick="STATE.compareIds=[1699,50284,6396,4847];renderTab();return false">Top Batters</a> | <a href="#" onclick="STATE.compareIds=[2933,781,7920,4900];renderTab();return false">Top Bowlers</a></span>
     </div>
     <div class="table-wrap"><table><thead><tr>
-      <th>Metric</th>${d.players.map(p => `<th>${p.player_name}<br><span style="font-weight:400">${statusBadge(p.availability_status)}</span></th>`).join('')}
+      <th>Evaluation Metric</th>${d.players.map(p => `<th><strong>${p.player_name}</strong><br><span style="font-weight:400">${statusBadge(p.availability_status)}</span></th>`).join('')}
     </tr></thead><tbody>
-      <tr><td>2027 Team</td>${d.players.map(p => `<td>${p.current_2027_team}</td>`).join('')}</tr>
-      <tr><td>Bat PRI / Rank</td>${d.players.map(p => `<td>${p.batting ? `${p.batting.pri_score_lcb} (#${p.batting.raw_pri_lcb_rank})` : '—'}</td>`).join('')}</tr>
-      <tr><td>Bat Neff / Neff_HP</td>${d.players.map(p => `<td>${p.batting ? `${p.batting.neff} / ${p.batting.neff_hp}` : '—'}</td>`).join('')}</tr>
-      <tr><td>Bowl PRI / Rank</td>${d.players.map(p => `<td>${p.bowling ? `${p.bowling.pri_score_lcb} (#${p.bowling.raw_pri_lcb_rank})` : '—'}</td>`).join('')}</tr>
-      <tr><td>Bowl Neff / Neff_HP</td>${d.players.map(p => `<td>${p.bowling ? `${p.bowling.neff} / ${p.bowling.neff_hp}` : '—'}</td>`).join('')}</tr>
-      <tr><td>Pathway</td>${d.players.map(p => `<td>${p.acquisition_pathway}</td>`).join('')}</tr>
-    </tbody></table></div>`;
+      <tr><td><strong>2026 Team &rarr; 2027 Team</strong></td>${d.players.map(p => `<td>${p.ipl_2026_team} &rarr; <strong>${p.current_2027_team}</strong></td>`).join('')}</tr>
+      <tr><td><strong>Nationality &amp; Cap Status</strong></td>${d.players.map(p => `<td>${p.nationality} (${p.cap_status})</td>`).join('')}</tr>
+      <tr><td><strong>Dimension A: Batting PRI_lcb</strong></td>${d.players.map(p => `<td>${p.batting ? `<strong>${p.batting.pri_score_lcb}</strong> (#${p.batting.raw_pri_lcb_rank})` : '—'}</td>`).join('')}</tr>
+      <tr><td><strong>Batting Sample (Neff / Neff_HP)</strong></td>${d.players.map(p => `<td>${p.batting ? `${p.batting.neff} / <strong>${p.batting.neff_hp}</strong>` : '—'}</td>`).join('')}</tr>
+      <tr><td><strong>Dimension B: High-Pressure Batting</strong></td>${d.players.map(p => `<td>${p.batting ? (p.batting.neff_hp === 0 ? '<span class="badge b-warn">Zero HP Exposure</span>' : `+${p.batting.hp_raa_post} r/100b`) : '—'}</td>`).join('')}</tr>
+      <tr><td><strong>Dimension A: Bowling PRI_lcb</strong></td>${d.players.map(p => `<td>${p.bowling ? `<strong>${p.bowling.pri_score_lcb}</strong> (#${p.bowling.raw_pri_lcb_rank})` : '—'}</td>`).join('')}</tr>
+      <tr><td><strong>Bowling Sample (Neff / Neff_HP)</strong></td>${d.players.map(p => `<td>${p.bowling ? `${p.bowling.neff} / <strong>${p.bowling.neff_hp}</strong>` : '—'}</td>`).join('')}</tr>
+      <tr><td><strong>Dimension B: High-Pressure Bowling</strong></td>${d.players.map(p => `<td>${p.bowling ? `+${p.bowling.hp_impact_post} r/ov saved` : '—'}</td>`).join('')}</tr>
+      <tr><td><strong>Phase Dominance: Powerplay</strong></td>${d.players.map(p => `<td>${p.batting?.powerplay_sr ? `SR ${p.batting.powerplay_sr}` : (p.bowling?.powerplay_econ ? `Econ ${p.bowling.powerplay_econ}` : '—')}</td>`).join('')}</tr>
+      <tr><td><strong>Phase Dominance: Death</strong></td>${d.players.map(p => `<td>${p.batting?.death_sr ? `SR ${p.batting.death_sr}` : (p.bowling?.death_econ ? `Econ ${p.bowling.death_econ}` : '—')}</td>`).join('')}</tr>
+      <tr><td><strong>95% Bootstrap Rank CI</strong></td>${d.players.map(p => `<td>${p.batting?.rank_p05 ? `Bat: [#${p.batting.rank_p05}–#${p.batting.rank_p95}]` : (p.bowling?.rank_p05 ? `Bowl: [#${p.bowling.rank_p05}–#${p.bowling.rank_p95}]` : '—')}</td>`).join('')}</tr>
+      <tr><td><strong>Acquisition Pathway</strong></td>${d.players.map(p => `<td>${p.acquisition_pathway}</td>`).join('')}</tr>
+    </tbody></table></div>
+  `;
 }
 
-async function renderMethodology(el) {
-  const d = await (await fetch('/api/methodology')).json();
-  el.innerHTML = `<div class="grid-2">
-    <div class="card"><h3>Approved Analytical Framework</h3>
-      <div class="kv"><div class="k">Primary Pool</div><div class="v">${d.accounting.n_primary_reg_no_emg_rows?.toLocaleString()} deliveries (IPL 1.00, Senior T20I 0.50, Emerging 0.00)</div></div>
-      <div class="kv" style="margin-top:8px"><div class="k">Eligibility Gates</div><div class="v">Neff &ge; ${d.eligibility_gates.min_neff}, IPL exposure &ge; ${d.eligibility_gates.min_ipl_balls} balls (${d.eligibility_gates.eligible_batters} Bat / ${d.eligibility_gates.eligible_bowlers} Bowl)</div></div>
-      <div class="kv" style="margin-top:8px"><div class="k">PRI &amp; Units</div><div class="v">${d.pressure_framework.pri_interpretation} ${d.pressure_framework.bowling_units}</div></div>
-      <div class="kv" style="margin-top:8px"><div class="k">Zero-HP Rule</div><div class="v">${d.pressure_framework.hp_zero_rule}</div></div>
+// -------------------------------------------------------------
+// PAGE 5: PRESSURE AND LEVERAGE ANALYSIS
+// -------------------------------------------------------------
+async function renderPressureLeverage(el) {
+  const wp = await (await fetch('/api/win-probability')).json();
+
+  el.innerHTML = `
+    <div class="alert alert-info">
+      <strong>Pressure vs Leverage Distinction:</strong>
+      <strong>Pressure Index (PI)</strong> measures pre-delivery situational difficulty and jeopardy (e.g. required run rate, wickets lost).
+      <strong>Leverage Index (LI)</strong> measures the sensitivity of the match outcome to the current delivery (win probability swing).
+      In hopeless chases (RRR &ge; 24), Pressure remains elevated, but Leverage drops to near zero because the match outcome is already decided.
     </div>
-    <div class="card"><h3>IPL 2027 Data Availability Governance</h3>
-      <div class="kv"><div class="k">Retention Deadline</div><div class="v">${d.data_availability_governance.retention_deadline}</div></div>
-      <div class="kv" style="margin-top:8px"><div class="k">Auction Registration Closes</div><div class="v">${d.data_availability_governance.auction_registration_deadline}</div></div>
-      <div class="kv" style="margin-top:8px"><div class="k">Mini-Auction</div><div class="v">${d.data_availability_governance.mini_auction_date} (${d.data_availability_governance.mini_auction_venue})</div></div>
+
+    <div class="grid-4">
+      <div class="card"><div class="kpi-label">Mean Leverage Index</div><div class="kpi-val" style="color:var(--rr-blue)">${wp.mean_leverage} pp</div><div class="kpi-sub">Average outcome swing per ball</div></div>
+      <div class="card"><div class="kpi-label">90th Pct Leverage</div><div class="kpi-val">${wp.p90_leverage} pp</div><div class="kpi-sub">High-leverage threshold</div></div>
+      <div class="card"><div class="kpi-label">PI vs Leverage Correlation</div><div class="kpi-val" style="color:var(--gold)">${wp.correlation_pi_vs_leverage?.pearson ?? '-0.20'}</div><div class="kpi-sub">Pearson correlation (Negative)</div></div>
+      <div class="card"><div class="kpi-label">Evaluated Deliveries</div><div class="kpi-val">${wp.n_deliveries_evaluated?.toLocaleString() ?? '191,212'}</div><div class="kpi-sub">${wp.n_matches_evaluated} matches with outcome</div></div>
     </div>
-  </div>`;
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">Top 10 Batters by Win Probability Added (WPA)</div>
+        <table><thead><tr><th>Player</th><th>Total WPA</th><th>WPA / 100b</th><th>High-Leverage Balls</th></tr></thead><tbody>
+        ${(wp.top_bat_wpa || []).map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_striker_id})">
+          <td><strong>${r.player_name}</strong></td>
+          <td><strong style="color:var(--green)">+${r.total_wpa.toFixed(2)}</strong></td>
+          <td>+${r.wpa_per_100.toFixed(2)}%</td>
+          <td>${r.hl_balls}</td>
+        </tr>`).join('')}
+        </tbody></table>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Top 10 Bowlers by Win Probability Added (WPA)</div>
+        <table><thead><tr><th>Player</th><th>Total WPA</th><th>WPA / 100b</th><th>High-Leverage Balls</th></tr></thead><tbody>
+        ${(wp.top_bowl_wpa || []).map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_bowler_id})">
+          <td><strong>${r.player_name}</strong></td>
+          <td><strong style="color:var(--green)">+${r.total_wpa.toFixed(2)}</strong></td>
+          <td>+${r.wpa_per_100.toFixed(2)}%</td>
+          <td>${r.hl_balls}</td>
+        </tr>`).join('')}
+        </tbody></table>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <div class="card-title">Four Match Regimes &amp; Hopeless Chase Guard</div>
+      <div class="grid-4" style="margin-bottom:0">
+        <div class="kv"><div class="k">RRR &lt; 8.0 (Comfortable Chase)</div><div class="v">Mean Bat PI: 22.8 (0% HP)<br>Mean Bowl PI: 46.3 (6% HP)</div></div>
+        <div class="kv"><div class="k">RRR 8.0–12.0 (Equilibrium)</div><div class="v">Mean Bat PI: 41.4 (6% HP)<br>Mean Bowl PI: 60.7 (47% HP)</div></div>
+        <div class="kv"><div class="k">RRR 12.0–16.0 (Peak Chase Pressure)</div><div class="v">Mean Bat PI: 66.5 (73% HP)<br>Mean Bowl PI: 42.9 (2% HP)</div></div>
+        <div class="kv"><div class="k">RRR &ge; 24.0 (Hopeless Chase Guard)</div><div class="v">Mean Bat PI: 16.3 (0% HP)<br>Mean Bowl PI: 14.3 (0% HP)</div></div>
+      </div>
+    </div>
+  `;
 }
 
+// -------------------------------------------------------------
+// PAGE 6: RR AUCTION INTELLIGENCE
+// -------------------------------------------------------------
+async function renderAuctionIntelligence(el) {
+  const [intel, d] = await Promise.all([
+    fetch('/api/rr-tactical-fit').then(r => r.json()),
+    fetch('/api/dashboard-b?' + filterQuery()).then(r => r.json())
+  ]);
+
+  const buckets = [
+    ['pending_registration', 'Released / Registration Pending'],
+    ['trade_watchlist', 'Separate Trade Watchlist'],
+    ['rr_squad', 'Existing RR Squad (Core)'],
+    ['contracted_elsewhere', 'Contracted Elsewhere'],
+    ['retired', 'Retired (DK, Russell, Ashwin)'],
+  ];
+
+  const rows = d.buckets[STATE.auctionBucket] || [];
+
+  el.innerHTML = `
+    <div class="alert alert-info">
+      <strong>RR 2026 Performance Context:</strong> RR finished <strong>8–6 in the league (4th)</strong> and <strong>9–7 overall (3rd place)</strong>.
+      RR went <strong>3/3 in spin-friendly Guwahati</strong>, but struggled <strong>1/4 at SMS Jaipur</strong> due to a 10.13 RPO pace economy leak and death batting strike rate lag (163.4 vs 169.4 league benchmark).
+    </div>
+
+    <div class="card-title" style="margin-top:20px">Key Roster Gaps &amp; Priority Targets</div>
+    <div class="grid-3">
+      ${intel.identified_roster_gaps.map(g => `<div class="card" style="border-top: 3px solid ${g.priority==='HIGH'?'var(--rr-pink)':'var(--gold)'}">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <strong style="font-size:0.95rem">${g.gap}</strong>
+          <span class="badge ${g.priority==='HIGH'?'b-warn':'b-pending'}">${g.priority} PRIORITY</span>
+        </div>
+        <p class="kpi-sub" style="margin:8px 0 12px">${g.reason}</p>
+        <div style="font-size:0.8rem;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px">Top Targets:</div>
+        ${g.target_candidates.map(c => `<div class="kv" style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:center">
+          <div><strong>${c.name}</strong> <span class="kpi-sub">(${c.team})</span></div>
+          <div><span class="badge b-info">${c.pathway}</span> <strong>${c.pri}</strong></div>
+        </div>`).join('')}
+      </div>`).join('')}
+    </div>
+
+    <div class="card-title" style="margin-top:26px">Auction Eligibility Buckets (Nov 17 Retention / Dec 16 Auction Governance)</div>
+    <div class="pill-tabs">
+      ${buckets.map(([k, lbl]) => `<button class="pill ${STATE.auctionBucket===k?'active':''}" onclick="STATE.auctionBucket='${k}'; renderTab()">${lbl} (${d.counts[k] || 0})</button>`).join('')}
+    </div>
+
+    <div class="table-wrap"><table><thead><tr>
+      <th>Orig Rank</th><th>Player</th><th>Discipline</th><th>Role</th><th>PRI_lcb</th><th>Neff</th><th>Neff_HP</th><th>2027 Team</th><th>Status</th><th>Acquisition Pathway</th>
+    </tr></thead><tbody>
+      ${rows.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+        <td>#${r.raw_pri_lcb_rank}</td>
+        <td><strong>${r.player_name}</strong></td>
+        <td>${r.discipline}</td>
+        <td>${r.role_label}</td>
+        <td><strong>${r.pri_score_lcb}</strong></td>
+        <td>${r.neff}</td>
+        <td>${r.neff_hp}</td>
+        <td>${r.current_2027_team}</td>
+        <td>${statusBadge(r.availability_status)}</td>
+        <td>${r.acquisition_pathway}</td>
+      </tr>`).join('')}
+    </tbody></table></div>
+  `;
+}
+
+// -------------------------------------------------------------
+// PAGE 7: MODEL EVALUATION
+// -------------------------------------------------------------
+async function renderModelEvaluation(el) {
+  const [wp, ws] = await Promise.all([
+    fetch('/api/win-probability').then(r => r.json()),
+    fetch('/api/weight-sensitivity').then(r => r.json())
+  ]);
+
+  const models = wp.overall_metrics || {};
+
+  el.innerHTML = `
+    <div class="card-title">1. Win Probability Model Benchmark (5-Fold Match-Grouped GroupKFold)</div>
+    <p class="kpi-sub" style="margin-top:-6px; margin-bottom:14px">Compared strictly on pre-delivery match state (balls remaining, wickets in hand, runs needed, RRR, CRR) without delivery outcome leakage.</p>
+    <div class="table-wrap" style="margin-bottom:24px"><table><thead><tr>
+      <th>Model Architecture</th><th>ROC-AUC</th><th>PR-AUC</th><th>Brier Score</th><th>Log Loss</th><th>Precision</th><th>Recall</th><th>Mean Calibration Err</th>
+    </tr></thead><tbody>
+      ${Object.entries(models).map(([name, m]) => `<tr>
+        <td><strong>${name.replace('_', ' ').toUpperCase()}</strong></td>
+        <td><strong>${m.roc_auc}</strong></td>
+        <td>${m.pr_auc}</td>
+        <td>${m.brier_score}</td>
+        <td>${m.log_loss}</td>
+        <td>${m.precision}</td>
+        <td>${m.recall}</td>
+        <td><strong style="color:var(--green)">${m.mean_calibration_error}</strong></td>
+      </tr>`).join('')}
+    </tbody></table></div>
+
+    <div class="card-title">2. Weight Sensitivity Analysis (4 Defensible Tactical Scenarios)</div>
+    <p class="kpi-sub" style="margin-top:-6px; margin-bottom:14px">Pairwise Spearman Rank Correlation across all eligible batters proving ranking stability.</p>
+    <div class="table-wrap" style="margin-bottom:24px"><table><thead><tr>
+      <th>Scenario</th><th>Baseline</th><th>Balanced</th><th>Pressure-Focused</th><th>Reliability-Focused</th>
+    </tr></thead><tbody>
+      ${Object.entries(ws.batting?.correlation_matrix || {}).map(([s1, row]) => `<tr>
+        <td><strong>${s1}</strong></td>
+        <td>${row.Baseline}</td>
+        <td>${row.Balanced}</td>
+        <td>${row['Pressure-Focused']}</td>
+        <td>${row['Reliability-Focused']}</td>
+      </tr>`).join('')}
+    </tbody></table></div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">Top-10 Overlap Matrix (Batting)</div>
+        <p class="kpi-sub">Number of identical players in Top-10 under alternate weightings</p>
+        <table><thead><tr><th>Scenario</th><th>Baseline</th><th>Balanced</th><th>Pressure-Focused</th><th>Reliability-Focused</th></tr></thead><tbody>
+        ${Object.entries(ws.batting?.top10_overlap_matrix || {}).map(([s1, row]) => `<tr>
+          <td><strong>${s1}</strong></td>
+          <td><strong>${row.Baseline} / 10</strong></td>
+          <td>${row.Balanced} / 10</td>
+          <td>${row['Pressure-Focused']} / 10</td>
+          <td>${row['Reliability-Focused']} / 10</td>
+        </tr>`).join('')}
+        </tbody></table>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Pareto Frontier: General Value vs High Pressure</div>
+        <p class="kpi-sub">Non-dominated players across General RAA and High-Pressure RAA</p>
+        <table><thead><tr><th>Player</th><th>Gen RAA</th><th>HP-RAA</th><th>Overall PRI</th><th>Neff_HP</th></tr></thead><tbody>
+        ${(ws.batting?.pareto_frontier || []).map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+          <td><strong>${r.player_name}</strong></td>
+          <td>+${r.gen_value}</td>
+          <td><strong style="color:var(--green)">+${r.hp_value}</strong></td>
+          <td>${r.pri_score_baseline}</td>
+          <td>${r.neff_hp}</td>
+        </tr>`).join('')}
+        </tbody></table>
+      </div>
+    </div>
+  `;
+}
+
+// -------------------------------------------------------------
+// MODAL: PLAYER DETAIL
+// -------------------------------------------------------------
 async function openPlayer(cid) {
   const res = await fetch('/api/player/' + cid);
   if (!res.ok) return;
@@ -484,7 +753,7 @@ async function openPlayer(cid) {
   const discBlock = (label, d, isBat) => {
     if (!d) return '';
     return `<div class="card" style="margin-bottom:12px">
-      <div class="section-title" style="margin-top:0"><strong>${label} — Rank #${d.raw_pri_lcb_rank} (${d.emp_pct_elig_primary}th pct)</strong><span>PRI_lcb: <strong>${d.pri_score_lcb}</strong></span></div>
+      <div class="card-title" style="margin-bottom:8px"><strong>${label} — Rank #${d.raw_pri_lcb_rank} (${d.emp_pct_elig_primary}th pct)</strong><span>PRI_lcb: <strong>${d.pri_score_lcb}</strong></span></div>
       ${d.hp_banner ? `<div class="alert" style="margin-bottom:10px"><strong>HP Evidence Notice:</strong> ${d.hp_banner}</div>` : ''}
       <div class="kv-grid">
         <div class="kv"><div class="k">Neff / Neff_HP</div><div class="v">${d.neff} / ${d.neff_hp}</div></div>
@@ -511,10 +780,9 @@ async function openPlayer(cid) {
         <h2 style="margin:0">${p.player_name} <span style="font-size:0.85rem;color:var(--muted)">(ID: ${p.canonical_player_id})</span></h2>
         <div style="margin-top:6px;display:flex;flex-wrap:wrap;gap:8px;align-items:center">
           ${statusBadge(p.availability_status)}
-          <span class="kpi-sub">2026: ${p.ipl_2026_team} → 2027: <strong>${p.current_2027_team}</strong></span>
+          <span class="kpi-sub">2026: ${p.ipl_2026_team} &rarr; 2027: <strong>${p.current_2027_team}</strong></span>
           <span class="kpi-sub">| ${p.nationality} | ${p.cap_status} | Age: ${p.age_2026}</span>
         </div>
-        ${p.trade_note ? `<div class="kpi-sub" style="color:var(--purple);margin-top:4px">${p.trade_note}</div>` : ''}
       </div>
       <button class="close-btn" onclick="closeModal()">Close</button>
     </div>

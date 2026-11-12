@@ -8,7 +8,7 @@
 ## 1. Uploaded Dataset Inventory
 
 ### 1.1 Archive Location & Contents
-- **Authoritative Uploaded Archive:** `C:\Users\sushruth\.gemini\antigravity\brain\b6ea2651-73fc-4d7f-8e2e-0f0033d4425b\.user_uploaded\media_1794423099935_44b59478.zip`
+- **Authoritative Uploaded Archive:** `data_pack.zip` (original competition data archive)
   - **Size:** `4,545,438` bytes (`4.33 MiB`)
   - **SHA-256:** `82da62e94840e614ef136f0bb24168fe72b567c3eff71bf6b58488ac9b2b7f7d`
   - **Duplicate Upload Check:** A second archive in `.user_uploaded\` (`media_1794413084545_ef360f5f.zip`, `4,545,438` bytes) has the **exact same SHA-256** (`82da62e94840e614ef136f0bb24168fe72b567c3eff71bf6b58488ac9b2b7f7d`).
