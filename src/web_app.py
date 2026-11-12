@@ -127,6 +127,12 @@ async def api_methodology():
     return get_store().get_methodology()
 
 
+@app.get("/api/rankings/official-top10")
+async def api_official_top10():
+    """Official Rajasthan Royals SupeRR Selector 2.0 competition ranking deliverable."""
+    return get_store().get_official_rankings()
+
+
 @app.get("/api/evaluation-dimensions")
 async def api_evaluation_dimensions():
     return get_store().get_player_evaluations()

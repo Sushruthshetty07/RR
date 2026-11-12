@@ -808,6 +808,39 @@ class ScoutingStore:
             return self._load_json(pe_path)
         return {"status": "Player evaluation summary not generated yet."}
 
+    def get_official_rankings(self) -> Dict[str, Any]:
+        """
+        Returns the official competition deliverables for the RR SupeRR Selector 2.0 challenge:
+        - Primary Competition Deliverable: Top 10 High-Pressure Batters & Bowlers (PI >= 60, Neff_HP >= 30, sorted by LCB).
+        - Secondary Analysis: Top 10 Overall T20 Reliability Batters & Bowlers (PRI_lcb).
+        """
+        pe = self.get_player_evaluations()
+        if "batting" not in pe or "bowling" not in pe:
+            return {"status": "error", "message": "Evaluation summaries not generated yet."}
+
+        return {
+            "competition": "Rajasthan Royals SupeRR Selector Season 2",
+            "challenge_objective": "Identify the Most Reliable Players Under Pressure",
+            "deliverable_01": {
+                "title": "PRIMARY COMPETITION DELIVERABLE — Top 10 High-Pressure Performers",
+                "description": "Evaluated strictly on high-pressure deliveries (PI >= 60) with robust evidence (Neff_HP >= 30), ordered by Bayesian Lower Credible Bound (LCB z=0.50).",
+                "batters": pe["batting"].get("top10_high_pressure_robust", []),
+                "bowlers": pe["bowling"].get("top10_high_pressure_robust", []),
+            },
+            "deliverable_02": {
+                "title": "SECONDARY SUPPORTING ANALYSIS — Top 10 Overall T20 Reliability",
+                "description": "Evaluated across all match phases using Kish Neff >= 30 and PRI_lcb composite score.",
+                "batters": pe["batting"].get("top10_overall_reliability", []),
+                "bowlers": pe["bowling"].get("top10_overall_reliability", []),
+            },
+            "evidence_classification_policy": {
+                "strong_evidence": "Neff_HP >= 30.0 (Robust sample across multiple independent pressure situations)",
+                "moderate_evidence": "15.0 <= Neff_HP < 30.0 (Reliable sample, moderate certainty)",
+                "limited_evidence": "0.0 < Neff_HP < 15.0 (Evaluated across small number of situations)",
+                "insufficient_evidence": "Neff_HP == 0.0 (Zero pressure exposure; never labeled clutch)",
+            },
+        }
+
     def get_rr_auction_intelligence(self) -> Dict[str, Any]:
         dash_b = self.get_dashboard_b()
         rr_squad = self.get_rr_squad()

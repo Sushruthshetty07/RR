@@ -3,9 +3,15 @@ Unit tests for final independent validation, multiseed cluster bootstrap,
 enriched RoE partitions, same-season PDI & spin-hitting, and temporal holdout.
 """
 
+import sys
 import unittest
+from pathlib import Path
 import numpy as np
 import pandas as pd
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from src.final_validation import (
     analyze_pressure_intelligence,

@@ -1,6 +1,7 @@
 """Generate judge-facing audit figures (Figures 37 and 38) from Claude audit CSVs."""
 
 from pathlib import Path
+import os
 import shutil
 import json
 import matplotlib

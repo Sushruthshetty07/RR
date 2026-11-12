@@ -167,7 +167,7 @@ $$\theta_i^{\text{post}} = B_i \mu + (1 - B_i) y_i, \quad B_i = \frac{\sigma_i^2
 where $\tau^2$ is the prior population variance across qualified players, and $\sigma_i^2 = \frac{s^2}{N_{\text{eff}, i}}$ is the player's sampling error governed by their Kish effective sample size:
 $$N_{\text{eff}} = \frac{\left(\sum w_i\right)^2}{\sum w_i^2}$$
 
-Posterior uncertainty is penalized using a Lower Credible Bound ($\text{LCB}, z = 0.50$):
+Posterior uncertainty is penalized using a custom conservative lower-bound score ($z = 0.50$, representing the 30.85th percentile of the posterior distribution, distinct from a conventional 95% lower credible bound):
 $$\theta_i^{\text{lcb}} = \theta_i^{\text{post}} - 0.50 \cdot \sqrt{\text{Var}(\theta_i^{\text{post}})}$$
 
 ---
@@ -206,34 +206,36 @@ To ensure composite rankings are defensible, we evaluated four distinct tactical
 ## 15. Final Verified Leaderboards
 
 ### Batting Leaderboards
-| Dimension A: Top 10 Overall Reliable Batters (`PRI_lcb`) | Dimension B: Top 10 High-Pressure Clutch Batters ($N_{\text{eff}}^{\text{HP}} \ge 30$) |
+| PRIMARY COMPETITION DELIVERABLE: Top 10 High-Pressure Batters ($N_{\text{eff}}^{\text{HP}} \ge 30$, Sorted by LCB) | SECONDARY ANALYSIS: Top 10 Overall Reliable Batters (`PRI_lcb`) |
 | :--- | :--- |
-| 1. **Suryakumar Yadav** (99.91) | 1. **Suryakumar Yadav** (+29.15 runs/100b) |
-| 2. **Vaibhav Sooryavanshi** (99.80, $N_{\text{eff}}^{\text{HP}}=0$) | 2. **David Miller** (+25.75 runs/100b) |
-| 3. **Andre Russell** (99.43, IPL Retired) | 3. **Dhruv Jurel** (+22.84 runs/100b) |
-| 4. **Dinesh Karthik** (98.89, IPL Retired) | 4. **Sanju Samson** (+21.68 runs/100b) |
-| 5. **Finn Allen** (97.63, $N_{\text{eff}}^{\text{HP}}=0$) | 5. **Ashutosh Sharma** (+21.61 runs/100b) |
-| 6. **Nicholas Pooran** (96.82) | 6. **Tim David** (+21.50 runs/100b) |
-| 7. **Shreyas Iyer** (96.78) | 7. **Mohammad Nabi** (+21.41 runs/100b) |
-| 8. **Heinrich Klaasen** (96.73) | 8. **Tilak Varma** (+19.46 runs/100b) |
-| 9. **Tim David** (96.60) | 9. **Jos Buttler** (+19.04 runs/100b) |
-| 10. **Phil Salt** (96.53) | 10. **Nicholas Pooran** (+18.63 runs/100b) |
+| 1. **Suryakumar Yadav** (LCB: **+24.33**, Post: **+29.15** runs/100b, $N_{\text{eff}}^{\text{HP}}=231.1$) | 1. **Suryakumar Yadav** (99.91) |
+| 2. **David Miller** (LCB: **+21.89**, Post: **+26.36** runs/100b, $N_{\text{eff}}^{\text{HP}}=283.4$) | 2. **Vaibhav Sooryavanshi** (99.80, $N_{\text{eff}}^{\text{HP}}=0$, Insufficient Evidence) |
+| 3. **Dhruv Jurel** (LCB: **+18.77**, Post: **+24.88** runs/100b, $N_{\text{eff}}^{\text{HP}}=109.4$) | 3. **Andre Russell** (99.43, IPL Retired) |
+| 4. **Sanju Samson** (LCB: **+18.71**, Post: **+25.72** runs/100b, $N_{\text{eff}}^{\text{HP}}=61.2$) | 4. **Dinesh Karthik** (98.89, IPL Retired) |
+| 5. **Ashutosh Sharma** (LCB: **+17.67**, Post: **+23.15** runs/100b, $N_{\text{eff}}^{\text{HP}}=158.1$) | 5. **Finn Allen** (97.63, $N_{\text{eff}}^{\text{HP}}=0$, Insufficient Evidence) |
+| 6. **Tim David** (LCB: **+16.96**, Post: **+21.50** runs/100b, $N_{\text{eff}}^{\text{HP}}=270.5$) | 6. **Nicholas Pooran** (96.82) |
+| 7. **Mohammad Nabi** (LCB: **+16.89**, Post: **+23.03** runs/100b, $N_{\text{eff}}^{\text{HP}}=106.6$) | 7. **Shreyas Iyer** (96.78) |
+| 8. **Namboori Tilak Varma** (LCB: **+16.28**, Post: **+20.85** runs/100b, $N_{\text{eff}}^{\text{HP}}=267.0$) | 8. **Heinrich Klaasen** (96.73) |
+| 9. **Jos Buttler** (LCB: **+16.08**, Post: **+23.05** runs/100b, $N_{\text{eff}}^{\text{HP}}=63.0$) | 9. **Tim David** (96.60) |
+| 10. **Daryl Mitchell** (LCB: **+15.94**, Post: **+22.40** runs/100b, $N_{\text{eff}}^{\text{HP}}=87.9$) | 10. **Phil Salt** (96.53) |
 
-*Active Scouting Top 10 (excluding retired Russell & Karthik):* Advances **Pathum Nissanka** (96.16, Active #9) and **Rajat Patidar** (94.81, Active #10).
+*Next Active Contenders under High Pressure:* **Nicholas Pooran** (LCB: +14.99, Post: +18.63, Active #11), **Shashank Singh** (LCB: +13.63, Post: +17.50, Active #12).
 
 ### Bowling Leaderboards
-| Dimension A: Top 10 Overall Reliable Bowlers (`PRI_lcb`) | Dimension B: Top 10 High-Pressure Clutch Bowlers ($N_{\text{eff}}^{\text{HP}} \ge 30$) |
+| PRIMARY COMPETITION DELIVERABLE: Top 10 High-Pressure Bowlers ($N_{\text{eff}}^{\text{HP}} \ge 30$, Sorted by LCB) | SECONDARY ANALYSIS: Top 10 Overall Reliable Bowlers (`PRI_lcb`) |
 | :--- | :--- |
-| 1. **Jasprit Bumrah** (99.96) | 1. **Sunil Narine** (+0.64 runs/ov saved) |
-| 2. **Sunil Narine** (99.96) | 2. **Lungi Ngidi** (+0.63 runs/ov saved) |
-| 3. **Varun Chakravarthy** (99.87) | 3. **Rashid Khan** (+0.55 runs/ov saved) |
-| 4. **Rashid Khan** (99.66) | 4. **Harpreet Brar** (+0.61 runs/ov saved) |
-| 5. **Axar Patel** (98.65) | 5. **Nathan Ellis** (+0.59 runs/ov saved) |
-| 6. **Bhuvneshwar Kumar** (98.18) | 6. **Wanindu Hasaranga** (+0.55 runs/ov saved) |
-| 7. **Nathan Ellis** (97.73) | 7. **Krunal Pandya** (+0.50 runs/ov saved) |
-| 8. **Josh Hazlewood** (96.74) | 8. **Mitchell Santner** (+0.45 runs/ov saved) |
-| 9. **Adil Rashid** (95.94) | 9. **Kuldeep Yadav** (+0.39 runs/ov saved) |
-| 10. **Wanindu Hasaranga** (95.60) | 10. **Arshdeep Singh** (+0.38 runs/ov saved) |
+| 1. **Sunil Narine** (LCB: **+0.325**, Post: **+0.635** r/ov saved, $N_{\text{eff}}^{\text{HP}}=293.4$) | 1. **Jasprit Bumrah** (99.96) |
+| 2. **Lungi Ngidi** (LCB: **+0.321**, Post: **+0.662** r/ov saved, $N_{\text{eff}}^{\text{HP}}=167.1$) | 2. **Sunil Narine** (99.96) |
+| 3. **Rashid Khan** (LCB: **+0.271**, Post: **+0.553** r/ov saved, $N_{\text{eff}}^{\text{HP}}=450.4$) | 3. **Varun Chakravarthy** (99.87) |
+| 4. **Harpreet Brar** (LCB: **+0.257**, Post: **+0.594** r/ov saved, $N_{\text{eff}}^{\text{HP}}=180.2$) | 4. **Rashid Khan** (99.66) |
+| 5. **Nathan Ellis** (LCB: **+0.256**, Post: **+0.588** r/ov saved, $N_{\text{eff}}^{\text{HP}}=203.8$) | 5. **Axar Patel** (98.65) |
+| 6. **Wanindu Hasaranga** (LCB: **+0.247**, Post: **+0.546** r/ov saved, $N_{\text{eff}}^{\text{HP}}=353.3$) | 6. **Bhuvneshwar Kumar** (98.18) |
+| 7. **Krunal Pandya** (LCB: **+0.211**, Post: **+0.521** r/ov saved, $N_{\text{eff}}^{\text{HP}}=293.4$) | 7. **Nathan Ellis** (97.73) |
+| 8. **Patrick Cummins** (LCB: **+0.194**, Post: **+0.524** r/ov saved, $N_{\text{eff}}^{\text{HP}}=210.2$) | 8. **Josh Hazlewood** (96.74) |
+| 9. **Mitchell Santner** (LCB: **+0.170**, Post: **+0.487** r/ov saved, $N_{\text{eff}}^{\text{HP}}=264.3$) | 9. **Adil Rashid** (95.94) |
+| 10. **Eshan Malinga** (LCB: **+0.111**, Post: **+0.452** r/ov saved, $N_{\text{eff}}^{\text{HP}}=168.0$) | 10. **Wanindu Hasaranga** (95.60) |
+
+*Next Active Contenders under High Pressure:* **Kuldeep Yadav** (LCB: +0.097, Post: +0.394, Active #11), **Arshdeep Singh** (LCB: +0.055, Post: +0.330, Active #12).
 
 ---
 

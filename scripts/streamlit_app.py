@@ -109,14 +109,14 @@ def main():
         if view_mode == "Separated Leaderboards (Overall vs High Pressure)":
             c1, c2 = st.columns(2)
             with c1:
-                st.markdown("#### Dimension A: Top 10 Overall Reliable Batters (PRI_lcb)")
-                top_ovr = bat_elig.sort_values("pri_score_lcb", ascending=False).head(10)
-                st.dataframe(top_ovr[["player_name", "pri_score_lcb", "neff", "neff_hp"]].reset_index(drop=True))
+                st.markdown("#### PRIMARY: Top 10 High-Pressure Batters (Neff_HP >= 30, Sorted by LCB)")
+                robust_hp = bat_elig[bat_elig["neff_hp"] >= 30].sort_values("hp_raa_lcb", ascending=False).head(10)
+                st.dataframe(robust_hp[["player_name", "hp_raa_lcb", "hp_raa_post", "neff_hp", "pri_score_lcb"]].reset_index(drop=True))
 
             with c2:
-                st.markdown("#### Dimension B: Top 10 High-Pressure Batters (Neff_HP >= 30)")
-                robust_hp = bat_elig[bat_elig["neff_hp"] >= 30].sort_values("hp_raa_post", ascending=False).head(10)
-                st.dataframe(robust_hp[["player_name", "hp_raa_post", "neff_hp", "pri_score_lcb"]].reset_index(drop=True))
+                st.markdown("#### SECONDARY: Top 10 Overall Reliable Batters (PRI_lcb)")
+                top_ovr = bat_elig.sort_values("pri_score_lcb", ascending=False).head(10)
+                st.dataframe(top_ovr[["player_name", "pri_score_lcb", "neff", "neff_hp"]].reset_index(drop=True))
 
             st.warning(
                 "**Powerplay Pace-Setters (Zero HP Exposure):** Players like Vaibhav Sooryavanshi (#2 Overall) and Finn Allen (#5 Overall) "
@@ -126,22 +126,22 @@ def main():
             search = st.text_input("Search Batter", "")
             if search:
                 bat_elig = bat_elig[bat_elig["player_name"].str.contains(search, case=False, na=False)]
-            st.dataframe(bat_elig[["player_name", "pri_score_lcb", "neff", "neff_hp", "raa_post", "hp_raa_post"]].reset_index(drop=True))
+            st.dataframe(bat_elig[["player_name", "hp_raa_lcb", "hp_raa_post", "neff_hp", "pri_score_lcb", "neff"]].reset_index(drop=True))
 
     elif page == "3. Bowler Scouting":
-        st.subheader("3. Bowler Scouting: Overall Reliability vs High-Pressure Clutch")
+        st.subheader("3. Bowler Scouting: High-Pressure Clutch vs Overall Reliability")
         bowl_elig = bowl_df[bowl_df["elig_primary"]].copy()
 
         c1, c2 = st.columns(2)
         with c1:
-            st.markdown("#### Dimension A: Top 10 Overall Reliable Bowlers (PRI_lcb)")
-            top_ovr_b = bowl_elig.sort_values("pri_score_lcb", ascending=False).head(10)
-            st.dataframe(top_ovr_b[["player_name", "pri_score_lcb", "neff", "neff_hp"]].reset_index(drop=True))
+            st.markdown("#### PRIMARY: Top 10 High-Pressure Bowlers (Neff_HP >= 30, Sorted by LCB)")
+            robust_hp_b = bowl_elig[bowl_elig["neff_hp"] >= 30].sort_values("hp_impact_lcb", ascending=False).head(10)
+            st.dataframe(robust_hp_b[["player_name", "hp_impact_lcb", "hp_impact_post", "neff_hp", "pri_score_lcb"]].reset_index(drop=True))
 
         with c2:
-            st.markdown("#### Dimension B: Top 10 High-Pressure Bowlers (Neff_HP >= 30)")
-            robust_hp_b = bowl_elig[bowl_elig["neff_hp"] >= 30].sort_values("hp_impact_post", ascending=False).head(10)
-            st.dataframe(robust_hp_b[["player_name", "hp_impact_post", "neff_hp", "pri_score_lcb"]].reset_index(drop=True))
+            st.markdown("#### SECONDARY: Top 10 Overall Reliable Bowlers (PRI_lcb)")
+            top_ovr_b = bowl_elig.sort_values("pri_score_lcb", ascending=False).head(10)
+            st.dataframe(top_ovr_b[["player_name", "pri_score_lcb", "neff", "neff_hp"]].reset_index(drop=True))
 
     elif page == "4. Player Comparison":
         st.subheader("4. Side-by-Side Multi-Player Comparison")

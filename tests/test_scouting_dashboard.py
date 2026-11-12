@@ -15,6 +15,10 @@ from pathlib import Path
 
 import pandas as pd
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 from src.scouting_data import EXCLUDED_FROM_ACQUISITION, get_store
 from src.web_app import (
     api_compare,
@@ -167,6 +171,12 @@ class TestScoutingDashboard(unittest.TestCase):
             self.assertEqual(get_json("/api/player/1699")["player_name"], "Suryakumar Yadav")
             self.assertEqual(len(get_json("/api/compare?ids=479,2636")["players"]), 2)
             self.assertIn("accounting", get_json("/api/methodology"))
+
+            off = get_json("/api/rankings/official-top10")
+            self.assertEqual(len(off["deliverable_01"]["batters"]), 10)
+            self.assertEqual(len(off["deliverable_01"]["bowlers"]), 10)
+            self.assertEqual(off["deliverable_01"]["batters"][0]["player_name"], "Suryakumar Yadav")
+            self.assertEqual(off["deliverable_01"]["bowlers"][0]["player_name"], "Sunil Narine")
         finally:
             proc.terminate()
             proc.wait(timeout=5)

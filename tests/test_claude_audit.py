@@ -1,16 +1,20 @@
 """Unit tests for the independent Claude review audit module and generated audit artifacts."""
 
 import json
+import sys
 import unittest
 from pathlib import Path
 import numpy as np
 import pandas as pd
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from src.claude_audit import audit_delivery_and_p11_accounting, audit_feature_leakage
 from src.match_state import reconstruct_match_situations
 from src.pressure import compute_pressure_scores
 
-ROOT = Path(__file__).resolve().parents[1]
 DATA_PROCESSED = ROOT / "data" / "processed"
 
 
