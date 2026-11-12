@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajasthan Royals SupeRR Selector — IPL 2027 Scouting &amp; Analytics</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #131c31;
+      --surface-2: #1b2640;
+      --border: #2a395c;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --rr-pink: #ec4899;
+      --rr-blue: #38bdf8;
+      --gold: #f59e0b;
+      --green: #10b981;
+      --red: #ef4444;
+      --purple: #a78bfa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+    }
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 60%, #4a044e 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .brand h1 { margin: 0; font-size: 1.25rem; letter-spacing: 0.2px; }
+    .brand p { margin: 2px 0 0; color: var(--muted); font-size: 0.85rem; }
+    .mode-switch {
+      display: flex;
+      gap: 8px;
+      background: rgba(11, 17, 32, 0.7);
+      padding: 5px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .mode-btn {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      padding: 8px 14px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: 0.15s;
+    }
+    .mode-btn.active-b { background: var(--rr-pink); color: #fff; }
+    .mode-btn.active-a { background: var(--rr-blue); color: #081226; }
+    nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      color: var(--muted);
+      padding: 12px 14px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.86rem;
+      white-space: nowrap;
+    }
+    .tab-btn.active { color: var(--text); border-bottom-color: var(--rr-pink); }
+    main { max-width: 1400px; margin: 0 auto; padding: 20px 24px 60px; }
+    .alert {
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.45);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      font-size: 0.9rem;
+    }
+    .alert strong { color: #fbbf24; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 20px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 16px; margin-bottom: 20px; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .kpi-label { color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .kpi-val { font-size: 1.65rem; font-weight: 700; margin-top: 4px; }
+    .kpi-sub { color: var(--muted); font-size: 0.8rem; margin-top: 3px; }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 16px;
+      align-items: center;
+    }
+    .filters input, .filters select {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 7px 10px;
+      font-size: 0.85rem;
+    }
+    .filters label { font-size: 0.82rem; color: var(--muted); display: flex; align-items: center; gap: 5px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th, td { padding: 9px 10px; text-align: left; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); font-weight: 600; font-size: 0.76rem; text-transform: uppercase; background: var(--surface-2); position: sticky; top: 0; }
+    tr.clickable:hover { background: rgba(236, 72, 153, 0.08); cursor: pointer; }
+    .table-wrap { max-height: 560px; overflow: auto; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.73rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .b-confirmed { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+    .b-pending { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+    .b-trade { background: rgba(167, 139, 250, 0.22); color: #c4b5fd; }
+    .b-rr { background: rgba(236, 72, 153, 0.22); color: #f472b6; }
+    .b-contracted { background: rgba(56, 189, 248, 0.16); color: #7dd3fc; }
+    .b-retired { background: rgba(239, 68, 68, 0.2); color: #fca5a5; }
+    .b-unknown { background: rgba(148, 163, 184, 0.2); color: #cbd5e1; }
+    .b-warn { background: rgba(239, 68, 68, 0.18); color: #fca5a5; border: 1px solid rgba(239,68,68,0.4); }
+    .section-title { margin: 20px 0 10px; font-size: 1.05rem; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .pill-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .pill {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .pill.active { background: var(--rr-pink); border-color: var(--rr-pink); color: #fff; }
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(2, 6, 23, 0.78);
+      display: none; align-items: center; justify-content: center; padding: 20px; z-index: 100;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+      max-width: 920px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 22px;
+    }
+    .modal-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 14px; }
+    .close-btn { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+    .kv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 14px; }
+    .kv { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 9px 11px; }
+    .kv .k { font-size: 0.73rem; color: var(--muted); text-transform: uppercase; }
+    .kv .v { font-size: 0.96rem; font-weight: 600; margin-top: 2px; }
+    a { color: var(--rr-blue); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>Rajasthan Royals SupeRR Selector — IPL 2027 Scouting &amp; Analytics</h1>
+      <p>Verified as of <strong>{{ as_of_date }}</strong> | Frozen Phase 3/4 PRI Engine (193,144 deliveries; 188 batters, 200 bowlers)</p>
+    </div>
+    <div class="mode-switch">
+      <button id="btn-mode-b" class="mode-btn active-b" onclick="switchDashboard('B')">Dashboard B: RR Auction Scouting (PRIMARY)</button>
+      <button id="btn-mode-a" class="mode-btn" onclick="switchDashboard('A')">Dashboard A: Performance Analytics (Universe)</button>
+    </div>
+  </header>
+
+  <nav id="main-nav">
+    <button class="tab-btn active" data-tab="overview" onclick="openTab('overview')">Overview</button>
+    <button class="tab-btn" data-tab="rr_squad" onclick="openTab('rr_squad')">RR Squad</button>
+    <button class="tab-btn" data-tab="auction_shortlist" onclick="openTab('auction_shortlist')">Auction Shortlist</button>
+    <button class="tab-btn" data-tab="trade_tracker" onclick="openTab('trade_tracker')">Trade Tracker</button>
+    <button class="tab-btn" data-tab="batting" onclick="openTab('batting')">Batting Analytics</button>
+    <button class="tab-btn" data-tab="bowling" onclick="openTab('bowling')">Bowling Analytics</button>
+    <button class="tab-btn" data-tab="compare" onclick="openTab('compare')">Player Comparison</button>
+    <button class="tab-btn" data-tab="methodology" onclick="openTab('methodology')">Methodology &amp; Evidence</button>
+  </nav>
+
+  <main id="app-content">
+    <div class="card">Loading Rajasthan Royals SupeRR Selector...</div>
+  </main>
+
+  <div id="player-modal" class="modal-backdrop" onclick="if(event.target===this) closeModal()">
+    <div class="modal" id="player-modal-body"></div>
+  </div>
+
+<script>
+const STATE = {
+  mode: 'B',
+  tab: 'overview',
+  bucket: 'pending_registration',
+  filters: { search: '', role: '', availability: '', ipl_exp: '', pressure_tier: '', confidence_tier: '', all_rounder_only: false },
+  compareIds: [479, 2636, 19316, 4900]
+};
+
+function statusBadge(st) {
+  const map = {
+    'Confirmed auction-available': 'b-confirmed',
+    'Released, auction registration pending/unverified': 'b-pending',
+    'Potential trade candidate': 'b-trade',
+    'Existing Rajasthan Royals player': 'b-rr',
+    'Contracted to another franchise': 'b-contracted',
+    'Retired': 'b-retired',
+    'Unknown/unverified': 'b-unknown'
+  };
+  return `<span class="badge ${map[st] || 'b-unknown'}">${st}</span>`;
+}
+
+function switchDashboard(m) {
+  STATE.mode = m;
+  document.getElementById('btn-mode-b').className = 'mode-btn ' + (m === 'B' ? 'active-b' : '');
+  document.getElementById('btn-mode-a').className = 'mode-btn ' + (m === 'A' ? 'active-a' : '');
+  if (m === 'A' && (STATE.tab === 'overview' || STATE.tab === 'auction_shortlist')) {
+    openTab('batting');
+  } else if (m === 'B' && (STATE.tab === 'batting' || STATE.tab === 'bowling')) {
+    openTab('auction_shortlist');
+  } else {
+    renderTab();
+  }
+}
+
+function openTab(t) {
+  STATE.tab = t;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === t));
+  renderTab();
+}
+
+function filterQuery(extra = {}) {
+  const p = new URLSearchParams({
+    search: STATE.filters.search,
+    role: STATE.filters.role,
+    availability: STATE.filters.availability,
+    ipl_exp: STATE.filters.ipl_exp,
+    pressure_tier: STATE.filters.pressure_tier,
+    confidence_tier: STATE.filters.confidence_tier,
+    all_rounder_only: STATE.filters.all_rounder_only ? 'true' : 'false',
+    ...extra
+  });
+  return p.toString();
+}
+
+function filterBarHtml(showAvail = true) {
+  return `<div class="filters">
+    <input type="text" placeholder="Search player, team, role..." value="${STATE.filters.search}" onchange="STATE.filters.search=this.value; renderTab()" />
+    <select onchange="STATE.filters.role=this.value; renderTab()">
+      <option value="">All Roles</option>
+      <option value="Opener" ${STATE.filters.role==='Opener'?'selected':''}>Opener</option>
+      <option value="Wicketkeeper" ${STATE.filters.role==='Wicketkeeper'?'selected':''}>Wicketkeeper-Batter</option>
+      <option value="Finisher" ${STATE.filters.role==='Finisher'?'selected':''}>Finisher</option>
+      <option value="All-Rounder" ${STATE.filters.role==='All-Rounder'?'selected':''}>All-Rounder</option>
+      <option value="Pace" ${STATE.filters.role==='Pace'?'selected':''}>Pace</option>
+      <option value="Spin" ${STATE.filters.role==='Spin'?'selected':''}>Spin</option>
+      <option value="Death" ${STATE.filters.role==='Death'?'selected':''}>Death Specialist</option>
+    </select>
+    ${showAvail ? `<select onchange="STATE.filters.availability=this.value; renderTab()">
+      <option value="">All Availability</option>
+      <option value="Confirmed auction-available" ${STATE.filters.availability==='Confirmed auction-available'?'selected':''}>Confirmed auction-available</option>
+      <option value="Released, auction registration pending/unverified" ${STATE.filters.availability==='Released, auction registration pending/unverified'?'selected':''}>Pending Registration</option>
+      <option value="Potential trade candidate" ${STATE.filters.availability==='Potential trade candidate'?'selected':''}>Potential trade candidate</option>
+      <option value="Existing Rajasthan Royals player" ${STATE.filters.availability==='Existing Rajasthan Royals player'?'selected':''}>Existing RR player</option>
+      <option value="Contracted to another franchise" ${STATE.filters.availability==='Contracted to another franchise'?'selected':''}>Contracted elsewhere</option>
+      <option value="Retired" ${STATE.filters.availability==='Retired'?'selected':''}>Retired</option>
+      <option value="Unknown/unverified" ${STATE.filters.availability==='Unknown/unverified'?'selected':''}>Unknown/unverified</option>
+    </select>` : ''}
+    <select onchange="STATE.filters.pressure_tier=this.value; renderTab()">
+      <option value="">All Pressure Tiers</option>
+      <option value="Elite Proven Under Pressure" ${STATE.filters.pressure_tier==='Elite Proven Under Pressure'?'selected':''}>Elite Proven Under Pressure</option>
+      <option value="Strong Pressure Performer" ${STATE.filters.pressure_tier==='Strong Pressure Performer'?'selected':''}>Strong Pressure Performer</option>
+      <option value="Unproven in HP (Neff_HP = 0)" ${STATE.filters.pressure_tier==='Unproven in HP (Neff_HP = 0)'?'selected':''}>Unproven in HP (Neff_HP = 0)</option>
+    </select>
+    <select onchange="STATE.filters.ipl_exp=this.value; renderTab()">
+      <option value="">All IPL Exposure</option>
+      <option value="Established IPL Starter (600+)" ${STATE.filters.ipl_exp==='Established IPL Starter (600+)'?'selected':''}>Established (600+)</option>
+      <option value="Moderate IPL Exposure (180-599)" ${STATE.filters.ipl_exp==='Moderate IPL Exposure (180-599)'?'selected':''}>Moderate (180-599)</option>
+      <option value="Limited IPL Exposure (30-179)" ${STATE.filters.ipl_exp==='Limited IPL Exposure (30-179)'?'selected':''}>Limited (30-179)</option>
+    </select>
+    <label><input type="checkbox" ${STATE.filters.all_rounder_only?'checked':''} onchange="STATE.filters.all_rounder_only=this.checked; renderTab()" /> Dual-Eligible AR Only</label>
+    <button class="close-btn" onclick="STATE.filters={search:'',role:'',availability:'',ipl_exp:'',pressure_tier:'',confidence_tier:'',all_rounder_only:false}; renderTab()">Reset</button>
+  </div>`;
+}
+
+async function renderTab() {
+  const el = document.getElementById('app-content');
+  if (STATE.tab === 'overview') return renderOverview(el);
+  if (STATE.tab === 'rr_squad') return renderRRSquad(el);
+  if (STATE.tab === 'auction_shortlist') return renderDashboardB(el);
+  if (STATE.tab === 'trade_tracker') return renderTrades(el);
+  if (STATE.tab === 'batting') return renderDashboardA(el, 'batting');
+  if (STATE.tab === 'bowling') return renderDashboardA(el, 'bowling');
+  if (STATE.tab === 'compare') return renderCompare(el);
+  if (STATE.tab === 'methodology') return renderMethodology(el);
+}
+
+async function renderOverview(el) {
+  const d = await (await fetch('/api/overview')).json();
+  el.innerHTML = `
+    <div class="alert">
+      <strong>Data Availability Notice (as of ${d.as_of_date}):</strong>
+      Official BCCI IPL 2027 retention/release lists are due <strong>${d.calendar.retention_deadline}</strong> and auction player registration closes <strong>${d.calendar.auction_registration_deadline}</strong> (Mini-Auction: <strong>${d.calendar.mini_auction_date}</strong> in ${d.calendar.mini_auction_venue}).
+      Therefore, <strong>0 players</strong> are labeled <em>"Confirmed auction-available"</em> today. Uncontracted 2026 players appear in <strong>Released / Registration Pending</strong>, and contracted targets appear strictly in the separate <strong>Trade Watchlist</strong>.
+    </div>
+    <div class="grid-4">
+      <div class="card"><div class="kpi-label">Confirmed Auction-Available</div><div class="kpi-val">${d.dashboard_b_counts.confirmed_auction}</div><div class="kpi-sub">Awaiting Nov 17 &amp; Nov 23 BCCI lists</div></div>
+      <div class="card"><div class="kpi-label">Pending Registration Pool</div><div class="kpi-val" style="color:var(--gold)">${d.dashboard_b_counts.pending_registration}</div><div class="kpi-sub">Uncontracted 2026 players</div></div>
+      <div class="card"><div class="kpi-label">Separate Trade Watchlist</div><div class="kpi-val" style="color:var(--purple)">${d.dashboard_b_counts.trade_watchlist}</div><div class="kpi-sub">${d.completed_trades_count} official trades | ${d.rumours_count} stalled talk</div></div>
+      <div class="card"><div class="kpi-label">Complete Analytical Universe</div><div class="kpi-val" style="color:var(--rr-blue)">${d.universe_counts.eligible_batters} / ${d.universe_counts.eligible_bowlers}</div><div class="kpi-sub">Bat / Bowl eligible (${d.universe_counts.primary_deliveries.toLocaleString()} balls)</div></div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="section-title"><strong>Top Pending-Registration Candidates (Not Yet Confirmed)</strong><button class="pill" onclick="openTab('auction_shortlist')">Open Full Shortlist</button></div>
+        <table><thead><tr><th>Player</th><th>Role</th><th>PRI</th><th>Neff_HP</th><th>2027 Status</th></tr></thead><tbody>
+        ${d.top5_pending_pool.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})"><td><strong>${r.player_name}</strong></td><td>${r.role_label}</td><td>${r.pri_score_lcb}</td><td>${r.neff_hp}</td><td>${statusBadge(r.availability_status)}</td></tr>`).join('')}
+        </tbody></table>
+      </div>
+      <div class="card">
+        <div class="section-title"><strong>Top Separate Trade Watchlist Targets</strong><button class="pill" onclick="STATE.bucket='trade_watchlist'; openTab('auction_shortlist')">Open Watchlist</button></div>
+        <table><thead><tr><th>Player</th><th>2027 Team</th><th>Role</th><th>PRI</th><th>Neff_HP</th></tr></thead><tbody>
+        ${d.top5_trade_watchlist.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})"><td><strong>${r.player_name}</strong></td><td>${r.current_2027_team}</td><td>${r.role_label}</td><td>${r.pri_score_lcb}</td><td>${r.neff_hp}</td></tr>`).join('')}
+        </tbody></table>
+      </div>
+    </div>`;
+}
+
+async function renderDashboardB(el) {
+  const d = await (await fetch('/api/dashboard-b?' + filterQuery())).json();
+  const buckets = [
+    ['confirmed_auction', 'Confirmed Auction-Available'],
+    ['pending_registration', 'Released / Registration Pending'],
+    ['trade_watchlist', 'Trade Watchlist (Separate)'],
+    ['rr_squad', 'Existing RR Squad (Excluded)'],
+    ['contracted_elsewhere', 'Contracted Elsewhere (Excluded)'],
+    ['retired', 'Retired (Excluded)'],
+    ['unknown_unverified', 'Unknown / Unverified'],
+  ];
+  const rows = d.buckets[STATE.bucket] || [];
+  el.innerHTML = `
+    <div class="alert"><strong>Dashboard B — Primary RR Auction Scouting:</strong> Retired players, existing RR players, and players contracted to other franchises are strictly excluded from acquisition shortlists. Trade candidates are isolated in the separate Trade Watchlist.</div>
+    ${filterBarHtml(false)}
+    <div class="pill-tabs">
+      ${buckets.map(([k, lbl]) => `<button class="pill ${STATE.bucket===k?'active':''}" onclick="STATE.bucket='${k}'; renderTab()">${lbl} (${d.counts[k]})</button>`).join('')}
+    </div>
+    ${rows.length === 0 ? `<div class="card"><strong>0 players in "${buckets.find(x=>x[0]===STATE.bucket)[1]}".</strong><p class="kpi-sub">${STATE.bucket==='confirmed_auction' ? 'Official IPL 2027 retention lists (due Nov 17, 2026) and auction registration (closes Nov 23, 2026) are not yet published as of 2026-11-12.' : 'Try clearing filters above.'}</p></div>` : `
+    <div class="table-wrap"><table><thead><tr>
+      <th>Orig Rank</th><th>Player</th><th>Disc</th><th>Role</th><th>PRI_lcb</th><th>Neff</th><th>Neff_HP</th><th>2027 Team</th><th>Status</th><th>Pathway</th>
+    </tr></thead><tbody>
+      ${rows.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+        <td>#${r.raw_pri_lcb_rank}</td>
+        <td><strong>${r.player_name}</strong> ${r.hp_banner ? '<span class="badge b-warn">HP Note</span>' : ''}</td>
+        <td>${r.discipline}</td><td>${r.role_label}</td><td><strong>${r.pri_score_lcb}</strong></td><td>${r.neff}</td><td>${r.neff_hp}</td>
+        <td>${r.current_2027_team}</td><td>${statusBadge(r.availability_status)}</td><td>${r.acquisition_pathway}</td>
+      </tr>`).join('')}
+    </tbody></table></div>`}`;
+}
+
+async function renderDashboardA(el, disc) {
+  const d = await (await fetch('/api/dashboard-a?' + filterQuery({ discipline: disc }))).json();
+  el.innerHTML = `
+    <div class="alert" style="border-color:rgba(56,189,248,0.45); background:rgba(56,189,248,0.1)">
+      <strong style="color:var(--rr-blue)">Dashboard A — Complete Performance Analytics (${d.discipline}):</strong>
+      Preserves all <strong>${d.total_eligible}</strong> eligible players and original <code>PRI_lcb</code> rankings unchanged, including retired players, RR players, and contracted stars.
+    </div>
+    ${filterBarHtml(true)}
+    <div class="table-wrap"><table><thead><tr>
+      <th>PRI Rank</th><th>Pct</th><th>Player</th><th>Role</th><th>PRI_lcb</th><th>95% Rank CI</th><th>Neff</th><th>Neff_HP</th><th>IPL Balls</th><th>2027 Status</th>
+    </tr></thead><tbody>
+      ${d.records.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+        <td><strong>#${r.raw_pri_lcb_rank}</strong></td><td>${r.emp_pct_elig_primary}%</td>
+        <td><strong>${r.player_name}</strong> ${r.neff_hp===0 ? '<span class="badge b-warn">Neff_HP=0</span>' : ''}</td>
+        <td>${r.role_label}</td><td><strong>${r.pri_score_lcb}</strong></td>
+        <td>${r.rank_p05 && r.rank_p95 ? `[#${r.rank_p05}–#${r.rank_p95}]` : '—'}</td>
+        <td>${r.neff}</td><td>${r.neff_hp}</td><td>${r.ipl_balls}</td><td>${statusBadge(r.availability_status)}</td>
+      </tr>`).join('')}
+    </tbody></table></div>`;
+}
+
+async function renderRRSquad(el) {
+  const d = await (await fetch('/api/rr-squad')).json();
+  el.innerHTML = `
+    <div class="grid-2">
+      <div class="card">
+        <h3>Verified RR 2027 Tactical Gaps (2026 Phase Evidence)</h3>
+        ${d.tactical_gaps.map(g => `<div class="kv" style="margin-bottom:8px"><div class="k">${g.gap}</div><div class="v" style="font-size:0.86rem;font-weight:500">${g.evidence}<br><span style="color:var(--rr-pink)">Target: ${g.target_profile}</span></div></div>`).join('')}
+      </div>
+      <div class="card">
+        <h3>RR 2026 Record: ${d.rr_2026_context.rr_2026_record || '9-7'}</h3>
+        <table><thead><tr><th>Phase (Bat)</th><th>RR SR</th><th>Lg SR</th><th>RR Wkt%</th></tr></thead><tbody>
+          ${(d.rr_2026_context.bat_phases_2026 || []).map(p => `<tr><td>${p.phase}</td><td>${p.rr_sr.toFixed(1)}</td><td>${p.lg_sr.toFixed(1)}</td><td>${p.rr_wkt_pct.toFixed(1)}%</td></tr>`).join('')}
+        </tbody></table>
+      </div>
+    </div>
+    <div class="table-wrap"><table><thead><tr>
+      <th>Player</th><th>2026 Apps</th><th>WK</th><th>Capt</th><th>Bat Order</th><th>Bat PRI (Rank)</th><th>Bowl PRI (Rank)</th><th>Status</th>
+    </tr></thead><tbody>
+      ${d.roster.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+        <td><strong>${r.canonical_name}</strong></td><td>${r.apps_2026}</td><td>${r.wk_apps_2026}</td><td>${r.capt_apps_2026}</td><td>${r.med_bat_order ?? '—'}</td>
+        <td>${r.bat_pri_lcb ? `${r.bat_pri_lcb} (#${r.bat_rank})` : '—'}</td>
+        <td>${r.bowl_pri_lcb ? `${r.bowl_pri_lcb} (#${r.bowl_rank})` : '—'}</td>
+        <td>${statusBadge(r.availability_status)}</td>
+      </tr>`).join('')}
+    </tbody></table></div>`;
+}
+
+async function renderTrades(el) {
+  const d = await (await fetch('/api/trades')).json();
+  el.innerHTML = `
+    <div class="section-title"><strong>Officially Completed IPL 2027 Trades (${d.official_completed_trades.length} Deals / 10 Players)</strong></div>
+    <div class="grid-2">
+      ${d.official_completed_trades.map(t => `<div class="card">
+        <div style="display:flex;justify-content:space-between;margin-bottom:8px"><strong>${t.teams.join(' ↔ ')} (${t.date})</strong><span class="badge b-confirmed">${t.transaction_status}</span></div>
+        ${t.movements.map(m => `<div class="kv" style="margin-bottom:6px"><div class="k">${m.from_team} → ${m.to_team} | INR ${m.fee_cr} Cr</div><div class="v">${m.canonical_player_id ? `<a href="#" onclick="openPlayer(${m.canonical_player_id});return false">${m.player_name}</a>` : m.player_name} <span class="kpi-sub">(${m.fee_note})</span></div></div>`).join('')}
+        <div class="kpi-sub">Source: <a href="${t.source_url}" target="_blank">${t.source_name}</a> (verified ${t.last_verified_date})</div>
+      </div>`).join('')}
+    </div>
+    <div class="section-title"><strong>Reported Negotiations / Speculation — NOT Completed</strong></div>
+    ${d.reported_negotiations_not_completed.map(r => `<div class="card" style="border-color:rgba(245,158,11,0.5)">
+      <div style="display:flex;justify-content:space-between;margin-bottom:8px"><strong>${r.teams.join(' ↔ ')} (${r.date})</strong><span class="badge b-pending">${r.transaction_status}</span></div>
+      <p style="margin:0 0 8px;font-size:0.9rem">${r.summary}</p>
+      <div class="kpi-sub">Source: <a href="${r.source_url}" target="_blank">${r.source_name}</a> (verified ${r.last_verified_date})</div>
+    </div>`).join('')}`;
+}
+
+async function renderCompare(el) {
+  const d = await (await fetch('/api/compare?ids=' + STATE.compareIds.join(','))).json();
+  el.innerHTML = `
+    <div class="filters">
+      <label>Canonical IDs (comma-separated, up to 4):
+        <input id="cmp-input" type="text" value="${STATE.compareIds.join(',')}" style="width:240px" />
+      </label>
+      <button class="pill active" onclick="STATE.compareIds=document.getElementById('cmp-input').value.split(',').map(x=>parseInt(x.trim())).filter(Boolean); renderTab()">Compare</button>
+    </div>
+    <div class="table-wrap"><table><thead><tr>
+      <th>Metric</th>${d.players.map(p => `<th>${p.player_name}<br><span style="font-weight:400">${statusBadge(p.availability_status)}</span></th>`).join('')}
+    </tr></thead><tbody>
+      <tr><td>2027 Team</td>${d.players.map(p => `<td>${p.current_2027_team}</td>`).join('')}</tr>
+      <tr><td>Bat PRI / Rank</td>${d.players.map(p => `<td>${p.batting ? `${p.batting.pri_score_lcb} (#${p.batting.raw_pri_lcb_rank})` : '—'}</td>`).join('')}</tr>
+      <tr><td>Bat Neff / Neff_HP</td>${d.players.map(p => `<td>${p.batting ? `${p.batting.neff} / ${p.batting.neff_hp}` : '—'}</td>`).join('')}</tr>
+      <tr><td>Bowl PRI / Rank</td>${d.players.map(p => `<td>${p.bowling ? `${p.bowling.pri_score_lcb} (#${p.bowling.raw_pri_lcb_rank})` : '—'}</td>`).join('')}</tr>
+      <tr><td>Bowl Neff / Neff_HP</td>${d.players.map(p => `<td>${p.bowling ? `${p.bowling.neff} / ${p.bowling.neff_hp}` : '—'}</td>`).join('')}</tr>
+      <tr><td>Pathway</td>${d.players.map(p => `<td>${p.acquisition_pathway}</td>`).join('')}</tr>
+    </tbody></table></div>`;
+}
+
+async function renderMethodology(el) {
+  const d = await (await fetch('/api/methodology')).json();
+  el.innerHTML = `<div class="grid-2">
+    <div class="card"><h3>Approved Analytical Framework</h3>
+      <div class="kv"><div class="k">Primary Pool</div><div class="v">${d.accounting.n_primary_reg_no_emg_rows?.toLocaleString()} deliveries (IPL 1.00, Senior T20I 0.50, Emerging 0.00)</div></div>
+      <div class="kv" style="margin-top:8px"><div class="k">Eligibility Gates</div><div class="v">Neff &ge; ${d.eligibility_gates.min_neff}, IPL exposure &ge; ${d.eligibility_gates.min_ipl_balls} balls (${d.eligibility_gates.eligible_batters} Bat / ${d.eligibility_gates.eligible_bowlers} Bowl)</div></div>
+      <div class="kv" style="margin-top:8px"><div class="k">PRI &amp; Units</div><div class="v">${d.pressure_framework.pri_interpretation} ${d.pressure_framework.bowling_units}</div></div>
+      <div class="kv" style="margin-top:8px"><div class="k">Zero-HP Rule</div><div class="v">${d.pressure_framework.hp_zero_rule}</div></div>
+    </div>
+    <div class="card"><h3>IPL 2027 Data Availability Governance</h3>
+      <div class="kv"><div class="k">Retention Deadline</div><div class="v">${d.data_availability_governance.retention_deadline}</div></div>
+      <div class="kv" style="margin-top:8px"><div class="k">Auction Registration Closes</div><div class="v">${d.data_availability_governance.auction_registration_deadline}</div></div>
+      <div class="kv" style="margin-top:8px"><div class="k">Mini-Auction</div><div class="v">${d.data_availability_governance.mini_auction_date} (${d.data_availability_governance.mini_auction_venue})</div></div>
+    </div>
+  </div>`;
+}
+
+async function openPlayer(cid) {
+  const res = await fetch('/api/player/' + cid);
+  if (!res.ok) return;
+  const p = await res.json();
+  const discBlock = (label, d, isBat) => {
+    if (!d) return '';
+    return `<div class="card" style="margin-bottom:12px">
+      <div class="section-title" style="margin-top:0"><strong>${label} — Rank #${d.raw_pri_lcb_rank} (${d.emp_pct_elig_primary}th pct)</strong><span>PRI_lcb: <strong>${d.pri_score_lcb}</strong></span></div>
+      ${d.hp_banner ? `<div class="alert" style="margin-bottom:10px"><strong>HP Evidence Notice:</strong> ${d.hp_banner}</div>` : ''}
+      <div class="kv-grid">
+        <div class="kv"><div class="k">Neff / Neff_HP</div><div class="v">${d.neff} / ${d.neff_hp}</div></div>
+        <div class="kv"><div class="k">95% Bootstrap Rank CI</div><div class="v">${d.rank_p05 && d.rank_p95 ? `#${d.rank_p05}–#${d.rank_p95} (${d.top10_inc_pct}% Top-10)` : '—'}</div></div>
+        <div class="kv"><div class="k">IPL / T20I Balls</div><div class="v">${d.ipl_balls} IPL (${d.ipl_2026_balls} in '26) / ${d.t20i_balls} T20I</div></div>
+        <div class="kv"><div class="k">Role / Style</div><div class="v">${d.role_label} (${isBat ? d.batting_hand : d.bowling_subtype})</div></div>
+        ${isBat ? `
+          <div class="kv"><div class="k">Gen RAA / Surv (post)</div><div class="v">${d.raa_post} / ${d.surv_post}</div></div>
+          <div class="kv"><div class="k">HP-RAA / Cons (post)</div><div class="v">${d.hp_raa_post} / ${d.cons_post}</div></div>
+          <div class="kv"><div class="k">True SR / IPL True SR</div><div class="v">${d.true_sr ?? '—'} / ${d.ipl_true_sr ?? '—'}</div></div>
+          <div class="kv"><div class="k">PP / Mid / Death SR</div><div class="v">${d.powerplay_sr ?? '—'} / ${d.middle_sr ?? '—'} / ${d.death_sr ?? '—'}</div></div>
+        ` : `
+          <div class="kv"><div class="k">Gen RSAA / WAA (r/ov)</div><div class="v">${d.rsaa_post} / ${d.waa_post}</div></div>
+          <div class="kv"><div class="k">HP-Impact / Cons (r/ov)</div><div class="v">${d.hp_impact_post} / ${d.cons_post}</div></div>
+          <div class="kv"><div class="k">True Econ / IPL True Econ</div><div class="v">${d.true_econ ?? '—'} / ${d.ipl_true_econ ?? '—'}</div></div>
+          <div class="kv"><div class="k">PP / Mid / Death Econ</div><div class="v">${d.powerplay_econ ?? '—'} / ${d.middle_econ ?? '—'} / ${d.death_econ ?? '—'}</div></div>
+        `}
+      </div>
+    </div>`;
+  };
+  document.getElementById('player-modal-body').innerHTML = `
+    <div class="modal-head">
+      <div>
+        <h2 style="margin:0">${p.player_name} <span style="font-size:0.85rem;color:var(--muted)">(ID: ${p.canonical_player_id})</span></h2>
+        <div style="margin-top:6px;display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+          ${statusBadge(p.availability_status)}
+          <span class="kpi-sub">2026: ${p.ipl_2026_team} → 2027: <strong>${p.current_2027_team}</strong></span>
+          <span class="kpi-sub">| ${p.nationality} | ${p.cap_status} | Age: ${p.age_2026}</span>
+        </div>
+        ${p.trade_note ? `<div class="kpi-sub" style="color:var(--purple);margin-top:4px">${p.trade_note}</div>` : ''}
+      </div>
+      <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+    <div class="kv" style="margin-bottom:12px"><div class="k">RR Acquisition Pathway</div><div class="v">${p.acquisition_pathway}</div><div class="kpi-sub">Verified ${p.last_verified_date} — <a href="${p.source_url}" target="_blank">${p.source_name}</a></div></div>
+    ${discBlock('Batting Profile', p.batting, true)}
+    ${discBlock('Bowling Profile', p.bowling, false)}
+  `;
+  document.getElementById('player-modal').classList.add('open');
+}
+
+function closeModal() { document.getElementById('player-modal').classList.remove('open'); }
+renderTab();
+</script>
+</body>
+</html>

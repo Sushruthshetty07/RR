@@ -1,0 +1,19 @@
+# Virtual environment
+.venv/
+env/
+venv/
+__pycache__/
+*.pyc
+
+# Data files stay local; obtain them separately as needed.
+data/
+
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
