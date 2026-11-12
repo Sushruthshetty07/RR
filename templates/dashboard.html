@@ -313,6 +313,38 @@
       flex-shrink: 0;
     }
 
+    /* Information Architecture Audience Switcher */
+    .audience-switch {
+      display: flex;
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      padding: 3px;
+      gap: 3px;
+    }
+
+    .audience-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s;
+    }
+
+    .audience-btn:hover { color: var(--text); }
+    .audience-btn.active {
+      background: var(--surface-elevated);
+      color: var(--cyan);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
     .mode-switch-container {
       display: flex;
       background: var(--surface-card);
@@ -481,6 +513,29 @@
     .alert-warn { border-left-color: var(--gold); background: rgba(245, 158, 11, 0.06); }
     .alert-danger { border-left-color: var(--red); background: rgba(239, 68, 68, 0.08); }
 
+    /* Tooltips */
+    .has-tip {
+      border-bottom: 1px dotted var(--text-dim);
+      cursor: help;
+      position: relative;
+    }
+
+    .tip-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--surface-elevated);
+      color: var(--cyan);
+      font-size: 0.68rem;
+      font-weight: 700;
+      margin-left: 4px;
+      vertical-align: middle;
+      cursor: help;
+    }
+
     /* Filter Bar */
     .filter-panel {
       background: var(--surface-card);
@@ -620,6 +675,56 @@
       background: rgba(234, 26, 133, 0.07);
     }
 
+    /* Player Clutch Cards */
+    .clutch-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 12px;
+      transition: all 0.15s;
+      cursor: pointer;
+    }
+
+    .clutch-card:hover {
+      background: var(--surface-elevated);
+      border-color: var(--rr-pink);
+      transform: translateY(-2px);
+    }
+
+    .clutch-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .clutch-rank-badge {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      background: linear-gradient(135deg, var(--rr-pink) 0%, #7928ca 100%);
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .analyst-quote {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      background: var(--surface);
+      border-left: 3px solid var(--cyan);
+      border-radius: 4px;
+      padding: 8px 12px;
+      margin: 8px 0;
+      line-height: 1.45;
+    }
+
     /* Badges */
     .badge {
       display: inline-flex;
@@ -632,16 +737,15 @@
       white-space: nowrap;
     }
 
-    .b-confirmed { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
-    .b-pending { background: rgba(245, 158, 11, 0.18); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
-    .b-trade { background: rgba(167, 139, 250, 0.2); color: #c4b5fd; border: 1px solid rgba(167, 139, 250, 0.35); }
+    .b-confirmed, .b-strong { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); }
+    .b-pending, .b-moderate { background: rgba(245, 158, 11, 0.18); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.35); }
+    .b-trade, .b-limited { background: rgba(167, 139, 250, 0.2); color: #c4b5fd; border: 1px solid rgba(167, 139, 250, 0.35); }
     .b-rr { background: rgba(234, 26, 133, 0.2); color: #f472b6; border: 1px solid rgba(234, 26, 133, 0.35); }
     .b-contracted { background: rgba(56, 189, 248, 0.16); color: #7dd3fc; border: 1px solid rgba(56, 189, 248, 0.28); }
-    .b-retired { background: rgba(239, 68, 68, 0.18); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .b-retired, .b-insufficient { background: rgba(239, 68, 68, 0.18); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.35); }
     .b-unknown { background: rgba(148, 163, 184, 0.18); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3); }
     .b-warn { background: rgba(239, 68, 68, 0.18); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.35); }
     .b-info { background: rgba(56, 189, 248, 0.18); color: #7dd3fc; border: 1px solid rgba(56, 189, 248, 0.35); }
-    .b-success { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); }
 
     /* Team Badges */
     .team-badge {
@@ -831,20 +935,20 @@
     </div>
 
     <div class="sidebar-content">
-      <!-- Section A: Performance Analytics -->
+      <!-- Section: Competition Headline Deliverables -->
       <div class="nav-group">
-        <div class="nav-group-title">Performance Analytics</div>
+        <div class="nav-group-title">Official Deliverables</div>
         <a class="nav-link active" data-tab="overview" onclick="openTab('overview')">
           <svg class="icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-          <span class="nav-link-text">Overview &amp; Executive</span>
+          <span class="nav-link-text">Top 10 Under Pressure</span>
         </a>
         <a class="nav-link" data-tab="batting" onclick="openTab('batting')">
           <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-          <span class="nav-link-text">Batter Scouting (Dual)</span>
+          <span class="nav-link-text">Batter Pressure Scouting</span>
         </a>
         <a class="nav-link" data-tab="bowling" onclick="openTab('bowling')">
           <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-          <span class="nav-link-text">Bowler Scouting (Dual)</span>
+          <span class="nav-link-text">Bowler Pressure Scouting</span>
         </a>
         <a class="nav-link" data-tab="compare" onclick="openTab('compare')">
           <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="18" rx="1"></rect><rect x="14" y="3" width="7" height="18" rx="1"></rect></svg>
@@ -852,15 +956,11 @@
         </a>
         <a class="nav-link" data-tab="pressure_leverage" onclick="openTab('pressure_leverage')">
           <svg class="icon" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
-          <span class="nav-link-text">Pressure &amp; Leverage (WPA)</span>
-        </a>
-        <a class="nav-link" data-tab="model_eval" onclick="openTab('model_eval')">
-          <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-          <span class="nav-link-text">Model Benchmark &amp; Sens.</span>
+          <span class="nav-link-text">Pressure &amp; Win Impact</span>
         </a>
       </div>
 
-      <!-- Section B: RR Auction Intelligence -->
+      <!-- Section: RR Auction Intelligence -->
       <div class="nav-group">
         <div class="nav-group-title">Auction Intelligence</div>
         <a class="nav-link" data-tab="auction_intelligence" onclick="openTab('auction_intelligence')">
@@ -875,16 +975,25 @@
           <svg class="icon" viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
           <span class="nav-link-text">IPL 2027 Trade Tracker</span>
         </a>
+      </div>
+
+      <!-- Section: Technical Methodology -->
+      <div class="nav-group">
+        <div class="nav-group-title">Technical Methodology</div>
+        <a class="nav-link" data-tab="model_eval" onclick="openTab('model_eval')">
+          <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span class="nav-link-text">Model Benchmark &amp; Sens.</span>
+        </a>
         <a class="nav-link" data-tab="methodology" onclick="openTab('methodology')">
           <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          <span class="nav-link-text">Methodology &amp; Audit</span>
+          <span class="nav-link-text">Technical Details &amp; Formulas</span>
         </a>
       </div>
     </div>
 
     <div class="sidebar-footer">
       <div class="sidebar-footer-info" style="font-size:0.7rem; color:var(--text-dim); line-height:1.2">
-        <div><strong>200,999 Balls</strong></div>
+        <div><strong>200,999 Deliveries</strong></div>
         <div>867 Matches Audited</div>
       </div>
       <button class="collapse-btn" onclick="toggleSidebar()" title="Toggle Sidebar">
@@ -904,7 +1013,19 @@
       </div>
 
       <div class="topbar-right">
-        <!-- Dual Mode Buttons preserving exact test assertions -->
+        <!-- Audience Level Switcher (Layer 1 vs Layer 2) -->
+        <div class="audience-switch">
+          <button class="audience-btn active" id="aud-simple" onclick="setAudienceMode('simple')">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+            Analyst &amp; Fan View
+          </button>
+          <button class="audience-btn" id="aud-tech" onclick="setAudienceMode('tech')">
+            <svg class="icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            Data Science View
+          </button>
+        </div>
+
+        <!-- Preserved exact strings for test assertions -->
         <div class="mode-switch-container">
           <button class="mode-btn" id="mode-btn-a" onclick="openTab('batting')">
             <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -940,12 +1061,81 @@
 <script>
 const STATE = {
   tab: 'overview',
-  batView: 'dual',
-  bowlView: 'dual',
+  audienceMode: 'simple', // 'simple' (Analyst & Fan) or 'tech' (Data Science)
+  batView: 'hp_headline',
+  bowlView: 'hp_headline',
   auctionBucket: 'pending_registration',
   filters: { search: '', role: '', availability: '', ipl_exp: '', pressure_tier: '', confidence_tier: '', all_rounder_only: false },
   compareIds: [1699, 6396, 2933, 7920]
 };
+
+// Plain English Metric Glossary
+const METRIC_GLOSSARY = {
+  pi: {
+    simple: "Match Pressure",
+    tech: "Pressure Index (PI, 0–100)",
+    desc: "Measures match tension and difficulty based on required run rate, wickets down, and balls remaining."
+  },
+  neff_hp: {
+    simple: "Reliable Pressure Opportunities",
+    tech: "Effective Sample Size in High Pressure (Neff_HP)",
+    desc: "Independent high-pressure deliveries faced, weighted by tournament importance (IPL=1.0, T20I=0.5)."
+  },
+  shrinkage: {
+    simple: "Experience Adjustment",
+    tech: "Empirical Bayesian Normal-Normal Shrinkage",
+    desc: "Cautiously adjusts small-sample hot streaks toward league baseline to prevent overrating unproven players."
+  },
+  pri_lcb: {
+    simple: "Conservative Reliability Score",
+    tech: "Player Reliability Index — Lower Credible Bound (PRI_lcb)",
+    desc: "A conservative 0–100 rating that gives credit for high skill while penalizing uncertainty when sample size is low."
+  },
+  hp_raa: {
+    simple: "Runs Above Expected Under Pressure",
+    tech: "High-Pressure Runs Above Average (HP-RAA, runs/100b)",
+    desc: "Additional runs scored compared to an average player facing the identical high-pressure match state."
+  },
+  hp_impact: {
+    simple: "Runs Saved Above Expected Under Pressure",
+    tech: "High-Pressure Bowling Impact (HP-Impact, runs/over saved)",
+    desc: "Runs prevented compared to an average bowler delivering under identical crunch conditions."
+  },
+  wpa: {
+    simple: "Impact on Winning Chances",
+    tech: "Win Probability Added (WPA)",
+    desc: "Total percentage shift in the team's chance of winning generated across match-defining deliveries."
+  },
+  leverage: {
+    simple: "Importance of the Match Situation",
+    tech: "Leverage Index (LI)",
+    desc: "How much the match outcome can swing on the current ball. High in close finishes, low in blowouts."
+  },
+  ci: {
+    simple: "Ranking Confidence Range",
+    tech: "95% Match-Cluster Bootstrap Rank Confidence Interval",
+    desc: "The range of ranks the player is likely to hold across 1,000 simulated tournament reruns."
+  }
+};
+
+function lbl(key) {
+  const item = METRIC_GLOSSARY[key];
+  if (!item) return key;
+  return STATE.audienceMode === 'simple' ? item.simple : item.tech;
+}
+
+function tip(key) {
+  const item = METRIC_GLOSSARY[key];
+  if (!item) return '';
+  return `<span class="tip-icon" title="${item.desc}">?</span>`;
+}
+
+function setAudienceMode(mode) {
+  STATE.audienceMode = mode;
+  document.getElementById('aud-simple').classList.toggle('active', mode === 'simple');
+  document.getElementById('aud-tech').classList.toggle('active', mode === 'tech');
+  renderTab();
+}
 
 function toggleSidebar() {
   document.body.classList.toggle('collapsed');
@@ -959,6 +1149,14 @@ function openTab(t) {
   document.getElementById('mode-btn-a').classList.toggle('active', isA);
   document.getElementById('mode-btn-b').classList.toggle('active', isB);
   renderTab();
+}
+
+function evidenceBadge(badgeText) {
+  if (!badgeText) return '';
+  if (badgeText.includes('Strong')) return `<span class="badge b-strong">Strong Evidence</span>`;
+  if (badgeText.includes('Moderate')) return `<span class="badge b-moderate">Moderate Evidence</span>`;
+  if (badgeText.includes('Limited')) return `<span class="badge b-limited">Limited Evidence</span>`;
+  return `<span class="badge b-insufficient">Insufficient Evidence</span>`;
 }
 
 function statusBadge(st) {
@@ -1001,7 +1199,7 @@ function filterQuery(extra = {}) {
 
 function filterBarHtml(showAvail = true) {
   return `<div class="filter-panel">
-    <input type="text" placeholder="Filter player, franchise, style..." value="${STATE.filters.search}" oninput="STATE.filters.search=this.value; renderTab()" style="width:210px" />
+    <input type="text" placeholder="Filter player, franchise, role..." value="${STATE.filters.search}" oninput="STATE.filters.search=this.value; renderTab()" style="width:210px" />
     <select onchange="STATE.filters.role=this.value; renderTab()">
       <option value="">All Tactical Roles</option>
       <option value="Opener" ${STATE.filters.role==='Opener'?'selected':''}>Opener / Top Order</option>
@@ -1022,10 +1220,10 @@ function filterBarHtml(showAvail = true) {
       <option value="Retired" ${STATE.filters.availability==='Retired'?'selected':''}>Retired</option>
     </select>` : ''}
     <select onchange="STATE.filters.pressure_tier=this.value; renderTab()">
-      <option value="">All Pressure Exposure Tiers</option>
-      <option value="Elite Proven Under Pressure" ${STATE.filters.pressure_tier==='Elite Proven Under Pressure'?'selected':''}>Elite Proven (Neff_HP &ge; 30)</option>
-      <option value="Strong Pressure Performer" ${STATE.filters.pressure_tier==='Strong Pressure Performer'?'selected':''}>Moderate (15 &le; Neff_HP &lt; 30)</option>
-      <option value="Unproven in HP (Neff_HP = 0)" ${STATE.filters.pressure_tier==='Unproven in HP (Neff_HP = 0)'?'selected':''}>Zero HP Exposure (Neff_HP = 0)</option>
+      <option value="">All Pressure Evidence Tiers</option>
+      <option value="Elite Proven Under Pressure" ${STATE.filters.pressure_tier==='Elite Proven Under Pressure'?'selected':''}>Strong Evidence (30+ opportunities)</option>
+      <option value="Strong Pressure Performer" ${STATE.filters.pressure_tier==='Strong Pressure Performer'?'selected':''}>Moderate Evidence (15-30 opportunities)</option>
+      <option value="Unproven in HP (Neff_HP = 0)" ${STATE.filters.pressure_tier==='Unproven in HP (Neff_HP = 0)'?'selected':''}>Insufficient Evidence (0 opportunities)</option>
     </select>
     <label><input type="checkbox" ${STATE.filters.all_rounder_only?'checked':''} onchange="STATE.filters.all_rounder_only=this.checked; renderTab()" /> Dual AR</label>
     <button class="btn-reset" onclick="STATE.filters={search:'',role:'',availability:'',ipl_exp:'',pressure_tier:'',confidence_tier:'',all_rounder_only:false}; renderTab()">
@@ -1064,7 +1262,7 @@ async function renderTab() {
 }
 
 // =============================================================
-// PAGE 1: OVERVIEW & EXECUTIVE SUMMARY
+// PAGE 1: OFFICIAL HEADLINE SHOWCASE — TOP 10 UNDER PRESSURE
 // =============================================================
 async function renderOverview(el) {
   const [d, dims, wp, intel] = await Promise.all([
@@ -1074,101 +1272,204 @@ async function renderOverview(el) {
     fetch('/api/rr-tactical-fit').then(r => r.json())
   ]);
 
+  const topBat = dims.batting.top10_high_pressure_robust || [];
+  const topBowl = dims.bowling.top10_high_pressure_robust || [];
+
   el.innerHTML = `
-    <div class="alert alert-info">
-      <div style="display:flex;align-items:flex-start;gap:12px">
-        <svg class="icon" style="color:var(--cyan);width:24px;height:24px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+    <!-- Audience Mode Notification Banner -->
+    <div class="alert alert-info" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <svg class="icon" style="color:var(--cyan);width:22px;height:22px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
         <div>
-          <strong style="color:var(--cyan);font-size:0.96rem">Executive Thesis &amp; Analytical Framework:</strong>
-          Across <strong>200,999 deliveries</strong> (867 matches), we evaluate T20 player value across three strictly separated dimensions:
-          <strong>(A) Overall Reliability</strong>, <strong>(B) High-Pressure Clutch Performance</strong>, and <strong>(C) Rajasthan Royals Tactical Fit</strong>.
-          We resolve the 85/15 weight conflation flaw that mistakenly ranked pure Powerplay openers as death clutch closers, enforcing Empirical Bayesian shrinkage, Kish effective sample size gates, and out-of-fold Win Probability modeling.
+          <strong>Official Competition Objective:</strong> Identifying the <strong>Top 10 Most Reliable Batters Under Pressure</strong> and <strong>Top 10 Most Reliable Bowlers Under Pressure</strong> using causal, zero-leakage ball-by-ball match reconstruction.
         </div>
+      </div>
+      <div>
+        <span class="badge ${STATE.audienceMode==='simple'?'b-info':'b-strong'}">
+          Currently in ${STATE.audienceMode==='simple'?'Analyst & Fan View':'Data Science Technical View'}
+        </span>
       </div>
     </div>
 
-    <!-- 5 Top KPI Cards -->
+    <!-- 5 Top Metric Cards with Plain Language -->
     <div class="grid-5">
       <div class="kpi-card" style="--accent-color:var(--cyan)">
-        <div class="kpi-label">Primary Deliveries <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg></div>
+        <div class="kpi-label">Audited Deliveries ${tip('pi')}</div>
         <div class="kpi-val" style="color:var(--cyan)">${d.universe_counts.primary_deliveries.toLocaleString()}</div>
-        <div class="kpi-sub">IPL (w=1.0) + T20I (w=0.5)</div>
+        <div class="kpi-sub">IPL (full weight) + T20I (half weight)</div>
       </div>
       <div class="kpi-card" style="--accent-color:var(--purple)">
-        <div class="kpi-label">Evaluated Universe <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg></div>
+        <div class="kpi-label">Evaluated Universe ${tip('shrinkage')}</div>
         <div class="kpi-val">${d.universe_counts.eligible_batters} / ${d.universe_counts.eligible_bowlers}</div>
-        <div class="kpi-sub">Batters / Bowlers (Neff &ge; 30)</div>
+        <div class="kpi-sub">Batters / Bowlers (30+ balls faced)</div>
       </div>
       <div class="kpi-card" style="--accent-color:var(--rr-pink)">
-        <div class="kpi-label">RR 2026 Baseline <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
-        <div class="kpi-val" style="color:var(--rr-pink)">8–6 (3rd)</div>
-        <div class="kpi-sub">Guwahati 3/3 | Jaipur 1/4 (Pace Leak)</div>
+        <div class="kpi-label">RR 2026 Record</div>
+        <div class="kpi-val" style="color:var(--rr-pink)">8 – 6 (3rd)</div>
+        <div class="kpi-sub">Guwahati 3/3 | SMS Jaipur 1/4</div>
       </div>
       <div class="kpi-card" style="--accent-color:var(--gold)">
-        <div class="kpi-label">WP vs PI Correlation <svg class="icon" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></div>
+        <div class="kpi-label">Pressure vs Leverage ${tip('leverage')}</div>
         <div class="kpi-val" style="color:var(--gold)">r = -0.20</div>
-        <div class="kpi-sub">Pressure != Leverage Quantified</div>
+        <div class="kpi-sub">Pressure != Leverage (Quantified)</div>
       </div>
       <div class="kpi-card" style="--accent-color:var(--green)">
-        <div class="kpi-label">Acquisition Status <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg></div>
+        <div class="kpi-label">Auction Eligibility</div>
         <div class="kpi-val" style="color:var(--green)">0 Confirmed</div>
         <div class="kpi-sub">Nov 17 Ret. / Dec 16 Goa Auction</div>
       </div>
     </div>
 
-    <!-- 3 Evaluation Dimensions Grid -->
-    <div class="card-title">
-      <span class="icon-title"><svg class="icon" style="color:var(--rr-pink)" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> The Three Strictly Separated Evaluation Frameworks</span>
+    <!-- HEADLINE SECTION: TOP 10 UNDER PRESSURE (THE PRIMARY DELIVERABLE) -->
+    <div class="card-title" style="margin-top:28px">
+      <span class="icon-title">
+        <svg class="icon" style="color:var(--rr-pink);width:22px;height:22px" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <strong style="font-size:1.15rem;letter-spacing:0.3px">PRIMARY COMPETITION DELIVERABLE: TOP 10 PLAYERS UNDER PRESSURE</strong>
+      </span>
+      <span class="kpi-sub">Filtered to verified high-pressure situations with robust sample size</span>
     </div>
-    <div class="grid-3">
-      <div class="card" style="border-top:3px solid var(--cyan)">
-        <div style="font-size:0.76rem;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:6px">Dimension A</div>
-        <h3 style="font-size:1.05rem;margin-bottom:8px">Overall T20 Reliability</h3>
-        <p style="font-size:0.84rem;color:var(--text-muted);margin-bottom:12px">
-          Evaluates consistent baseline production across ordinary match situations using Empirical Bayesian shrinkage and 95% bootstrap lower confidence bounds (<span class="font-mono" style="color:var(--cyan)">PRI_lcb</span>).
-        </p>
-        <div class="kv"><div class="k">Leaderboards:</div><div class="v" style="font-size:0.84rem">Suryakumar (#1 Bat) | Bumrah (#1 Bowl)</div></div>
-      </div>
 
+    <div class="grid-2">
+      <!-- TOP 10 BATTERS UNDER PRESSURE -->
       <div class="card" style="border-top:3px solid var(--rr-pink)">
-        <div style="font-size:0.76rem;text-transform:uppercase;color:var(--rr-pink);font-weight:700;margin-bottom:6px">Dimension B</div>
-        <h3 style="font-size:1.05rem;margin-bottom:8px">High-Pressure Clutch Performance</h3>
-        <p style="font-size:0.84rem;color:var(--text-muted);margin-bottom:12px">
-          Strictly filters for deliveries with <span class="font-mono">PI &ge; 60</span> and enforces a robust evidence gate (<span class="font-mono">Neff_HP &ge; 30</span>). Displays clear "Insufficient Evidence" warnings for <span class="font-mono">Neff_HP &lt; 15</span>.
+        <div class="card-title" style="color:var(--rr-pink)">
+          <span>Top 10 Most Reliable Batters Under Pressure</span>
+          <span style="font-size:0.75rem;color:var(--text-dim);font-weight:400">${lbl('hp_raa')}</span>
+        </div>
+        <p class="kpi-sub" style="margin-top:-8px; margin-bottom:14px">
+          Ranked by scoring impact specifically when the team is in difficult run chases or under high match pressure.
         </p>
-        <div class="kv"><div class="k">Leaderboards:</div><div class="v" style="font-size:0.84rem">Suryakumar (+29.15) | Narine (+0.64 r/ov)</div></div>
+        <div>
+          ${topBat.map((r, i) => `
+            <div class="clutch-card" onclick="openPlayer(${r.canonical_player_id})">
+              <div class="clutch-card-head">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div class="clutch-rank-badge">#${i+1}</div>
+                  <div>
+                    <strong style="font-size:0.95rem">${r.player_name}</strong>
+                    <div style="font-size:0.75rem;color:var(--text-dim);margin-top:2px">
+                      ${lbl('neff_hp')}: <strong>${r.neff_hp.toFixed(0)}</strong> | ${lbl('pri_lcb')}: <strong>${r.pri_score_lcb.toFixed(1)}</strong>
+                    </div>
+                  </div>
+                </div>
+                <div style="text-align:right">
+                  <strong style="font-size:1.05rem;color:var(--green)">+${r.hp_raa_post.toFixed(2)}</strong>
+                  <div style="font-size:0.7rem;color:var(--text-dim)">runs / 100 balls</div>
+                  <div style="margin-top:3px">${evidenceBadge(r.evidence_badge)}</div>
+                </div>
+              </div>
+              <div class="analyst-quote">
+                <strong>Analyst Verdict:</strong> ${r.analyst_blurb}
+              </div>
+            </div>
+          `).join('')}
+        </div>
       </div>
 
-      <div class="card" style="border-top:3px solid var(--gold)">
-        <div style="font-size:0.76rem;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px">Dimension C</div>
-        <h3 style="font-size:1.05rem;margin-bottom:8px">Rajasthan Royals Tactical Fit</h3>
-        <p style="font-size:0.84rem;color:var(--text-muted);margin-bottom:12px">
-          Evaluates targets directly against RR's verified tactical voids: SMS Jaipur Pace Leak (10.13 RPO), Death Strike Rate Lag (163.4), and Spin Containment, honoring BCCI eligibility buckets.
+      <!-- TOP 10 BOWLERS UNDER PRESSURE -->
+      <div class="card" style="border-top:3px solid var(--cyan)">
+        <div class="card-title" style="color:var(--cyan)">
+          <span>Top 10 Most Reliable Bowlers Under Pressure</span>
+          <span style="font-size:0.75rem;color:var(--text-dim);font-weight:400">${lbl('hp_impact')}</span>
+        </div>
+        <p class="kpi-sub" style="margin-top:-8px; margin-bottom:14px">
+          Ranked by run restriction and boundary suppression during crunch overs when matches hang in the balance.
         </p>
-        <div class="kv"><div class="k">Priority Voids:</div><div class="v" style="font-size:0.84rem">Death Pace | Attacking Spin | RHB Finisher</div></div>
+        <div>
+          ${topBowl.map((r, i) => `
+            <div class="clutch-card" onclick="openPlayer(${r.canonical_player_id})">
+              <div class="clutch-card-head">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div class="clutch-rank-badge" style="background:linear-gradient(135deg, var(--cyan) 0%, var(--purple) 100%)">#${i+1}</div>
+                  <div>
+                    <strong style="font-size:0.95rem">${r.player_name}</strong>
+                    <div style="font-size:0.75rem;color:var(--text-dim);margin-top:2px">
+                      ${lbl('neff_hp')}: <strong>${r.neff_hp.toFixed(0)}</strong> | ${lbl('pri_lcb')}: <strong>${r.pri_score_lcb.toFixed(1)}</strong>
+                    </div>
+                  </div>
+                </div>
+                <div style="text-align:right">
+                  <strong style="font-size:1.05rem;color:var(--green)">+${r.hp_impact_post.toFixed(2)}</strong>
+                  <div style="font-size:0.7rem;color:var(--text-dim)">runs saved / over</div>
+                  <div style="margin-top:3px">${evidenceBadge(r.evidence_badge)}</div>
+                </div>
+              </div>
+              <div class="analyst-quote" style="border-left-color:var(--rr-pink)">
+                <strong>Analyst Verdict:</strong> ${r.analyst_blurb}
+              </div>
+            </div>
+          `).join('')}
+        </div>
       </div>
     </div>
 
-    <!-- Powerplay Paradox Alert -->
-    <div class="card" style="margin-bottom:22px;background:linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(24, 17, 50, 0.9) 100%)">
+    <!-- Powerplay Exposure Paradox Alert -->
+    <div class="card" style="margin-top:24px;background:linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(24, 17, 50, 0.9) 100%)">
       <div class="card-title" style="color:var(--gold)">
-        <span class="icon-title"><svg class="icon" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg> The Powerplay Exposure Paradox ($N_{eff}^{HP} = 0.0$)</span>
+        <span class="icon-title">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          The Powerplay Exposure Paradox: Why Explosive Openers Are Not Clutch Closers
+        </span>
       </div>
-      <p style="font-size:0.86rem;color:var(--text);margin-bottom:12px">
-        Elite openers such as <strong>#2 Vaibhav Sooryavanshi</strong> (<span class="font-mono">PRI_lcb: 99.80</span>) and <strong>#5 Finn Allen</strong> (<span class="font-mono">PRI_lcb: 97.63</span>) earned top-5 overall reliability entirely through overs 1–6 Powerplay dominance. However, they faced <strong>0.0 high-pressure deliveries</strong> (<span class="font-mono">PI &ge; 60</span>).
-        Under our upgraded framework, their absence of clutch evidence is explicitly surfaced rather than hallucinating clutch ratings.
+      <p style="font-size:0.86rem;color:var(--text);margin-bottom:12px;line-height:1.55">
+        Elite openers such as <strong>#2 Vaibhav Sooryavanshi</strong> (<span class="font-mono">Conservative Score: 99.80</span>) and <strong>#5 Finn Allen</strong> (<span class="font-mono">Conservative Score: 97.63</span>) earned top-5 overall reliability entirely through overs 1–6 field restrictions.
+        However, they faced <strong>0 high-pressure deliveries</strong> (<span class="font-mono">${lbl('neff_hp')} = 0.0</span>).
+        Under our platform, their absence of clutch evidence is explicitly surfaced rather than mislabeling them as death closers.
       </p>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <span class="badge b-warn">Vaibhav Sooryavanshi: Neff = 66.0 | Neff_HP = 0.0</span>
-        <span class="badge b-warn">Finn Allen: Neff = 512.4 | Neff_HP = 0.0</span>
-        <span class="badge b-warn">Priyansh Arya: Neff = 189.0 | Neff_HP = 0.0</span>
+        <span class="badge b-warn">Vaibhav Sooryavanshi: 66 Total Deliveries | 0 Pressure Deliveries (Insufficient Evidence)</span>
+        <span class="badge b-warn">Finn Allen: 512 Total Deliveries | 0 Pressure Deliveries (Insufficient Evidence)</span>
+        <span class="badge b-warn">Priyansh Arya: 189 Total Deliveries | 0 Pressure Deliveries (Insufficient Evidence)</span>
       </div>
     </div>
 
-    <!-- Priority Targets Highlight Grid -->
-    <div class="card-title">
-      <span class="icon-title"><svg class="icon" style="color:var(--green)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg> High Priority RR Scouting Recommendations</span>
-      <button class="pill active" onclick="openTab('auction_intelligence')">View Full Auction Engine &rarr;</button>
+    <!-- Dimension A: Overall T20 Reliability (Supporting Secondary View) -->
+    <div class="card-title" style="margin-top:28px">
+      <span class="icon-title">
+        <svg class="icon" style="color:var(--cyan)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg>
+        <span>Supporting Analytical Dimension: Overall T20 Reliability (All Match Phases)</span>
+      </span>
+      <span class="kpi-sub">Evaluates consistent volume across ordinary match situations</span>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title" style="font-size:0.92rem;color:var(--cyan)">Top 10 Batters (Overall Consistency Across All Phases)</div>
+        <div class="table-container"><table><thead><tr>
+          <th>Rank</th><th>Player</th><th>${lbl('pri_lcb')}</th><th>Total Exposure</th><th>Pressure Evidence</th>
+        </tr></thead><tbody>
+          ${dims.batting.top10_overall_reliability.map((r, i) => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+            <td><strong>#${i+1}</strong></td>
+            <td><div style="display:flex;align-items:center"><span class="player-avatar">${r.player_name.slice(0,2).toUpperCase()}</span><strong>${r.player_name}</strong></div></td>
+            <td><strong style="color:var(--cyan)">${r.pri_score_lcb.toFixed(2)}</strong></td>
+            <td>${r.neff.toFixed(0)} balls</td>
+            <td>${evidenceBadge(r.evidence_badge)}</td>
+          </tr>`).join('')}
+        </tbody></table></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title" style="font-size:0.92rem;color:var(--cyan)">Top 10 Bowlers (Overall Consistency Across All Phases)</div>
+        <div class="table-container"><table><thead><tr>
+          <th>Rank</th><th>Player</th><th>${lbl('pri_lcb')}</th><th>Total Exposure</th><th>Pressure Evidence</th>
+        </tr></thead><tbody>
+          ${dims.bowling.top10_overall_reliability.map((r, i) => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+            <td><strong>#${i+1}</strong></td>
+            <td><div style="display:flex;align-items:center"><span class="player-avatar">${r.player_name.slice(0,2).toUpperCase()}</span><strong>${r.player_name}</strong></div></td>
+            <td><strong style="color:var(--cyan)">${r.pri_score_lcb.toFixed(2)}</strong></td>
+            <td>${r.neff.toFixed(0)} balls</td>
+            <td>${evidenceBadge(r.evidence_badge)}</td>
+          </tr>`).join('')}
+        </tbody></table></div>
+      </div>
+    </div>
+
+    <!-- Dimension C: Rajasthan Royals Priority Targets -->
+    <div class="card-title" style="margin-top:28px">
+      <span class="icon-title">
+        <svg class="icon" style="color:var(--green)" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+        <span>Rajasthan Royals Tactical Roster Needs (SMS Jaipur Pace Leak vs Guwahati Spin Record)</span>
+      </span>
+      <button class="pill active" onclick="openTab('auction_intelligence')">Open Auction Board &rarr;</button>
     </div>
     <div class="grid-3">
       ${intel.identified_roster_gaps.map(g => `
@@ -1178,7 +1479,7 @@ async function renderOverview(el) {
             <span class="badge ${g.priority==='HIGH'?'b-warn':'b-pending'}">${g.priority} PRIORITY</span>
           </div>
           <p style="font-size:0.78rem;color:var(--text-muted);margin-bottom:12px">${g.reason}</p>
-          <div style="font-size:0.72rem;text-transform:uppercase;color:var(--text-dim);font-weight:700;margin-bottom:6px">Recommended Targets:</div>
+          <div style="font-size:0.72rem;text-transform:uppercase;color:var(--text-dim);font-weight:700;margin-bottom:6px">Target Shortlist:</div>
           ${g.target_candidates.map(c => `
             <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center">
               <div>
@@ -1198,7 +1499,7 @@ async function renderOverview(el) {
 }
 
 // =============================================================
-// PAGE 2: BATTER SCOUTING (DUAL-TRACK)
+// PAGE 2: BATTER PRESSURE SCOUTING
 // =============================================================
 async function renderBattingScouting(el) {
   const [d, dims] = await Promise.all([
@@ -1210,78 +1511,79 @@ async function renderBattingScouting(el) {
 
   el.innerHTML = `
     <div class="pill-tabs">
-      <button class="pill ${STATE.batView==='dual'?'active':''}" onclick="STATE.batView='dual'; renderTab()">
+      <button class="pill ${STATE.batView==='hp_headline'?'active':''}" onclick="STATE.batView='hp_headline'; renderTab()">
         <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-        Dual-Track Leaderboards (Overall vs High-Pressure)
+        Top 10 High-Pressure Clutch Batters (Official Deliverable)
       </button>
       <button class="pill ${STATE.batView==='all'?'active':''}" onclick="STATE.batView='all'; renderTab()">
-        <svg class="icon" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-        Complete Eligible Universe (${d.total_eligible} Batters)
+        <svg class="icon" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line></svg>
+        Complete Evaluated Universe (${d.total_eligible} Batters)
       </button>
     </div>
 
-    ${STATE.batView === 'dual' ? `
-      <div class="grid-2">
-        <div class="card">
-          <div class="card-title" style="color:var(--cyan)">
-            <span class="icon-title"><svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Dimension A: Top 10 Overall Reliable Batters</span>
-          </div>
-          <p class="kpi-sub" style="margin-top:-8px; margin-bottom:14px">Ranks general volume &amp; consistency across all phases (<span class="font-mono">PRI_lcb</span>)</p>
-          <div class="table-container"><table><thead><tr>
-            <th>Rank</th><th>Player</th><th>PRI_lcb</th><th>Neff</th><th>Neff_HP</th><th>HP Evidence</th>
-          </tr></thead><tbody>
-          ${batDims.top10_overall_reliability.map((r, i) => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
-            <td><strong>#${i+1}</strong></td>
-            <td><div style="display:flex;align-items:center"><span class="player-avatar">${r.player_name.slice(0,2).toUpperCase()}</span><strong>${r.player_name}</strong></div></td>
-            <td><strong style="color:var(--cyan)">${r.pri_score_lcb.toFixed(2)}</strong></td>
-            <td>${r.neff.toFixed(0)}</td>
-            <td>${r.neff_hp.toFixed(1)}</td>
-            <td>${r.neff_hp === 0 ? '<span class="badge b-warn">Zero HP Exposure</span>' : '<span class="badge b-confirmed">Robust (&ge;30)</span>'}</td>
-          </tr>`).join('')}
-          </tbody></table></div>
+    ${STATE.batView === 'hp_headline' ? `
+      <!-- PRIMARY HIGH-PRESSURE LEADERBOARD -->
+      <div class="card" style="border-top:3px solid var(--rr-pink);margin-bottom:20px">
+        <div class="card-title" style="color:var(--rr-pink)">
+          <span>Official Top 10 Batters Under Pressure</span>
+          <span style="font-size:0.75rem;color:var(--text-dim);font-weight:400">Strictly filtered to robust sample (30+ pressure balls)</span>
         </div>
-
-        <div class="card">
-          <div class="card-title" style="color:var(--rr-pink)">
-            <span class="icon-title"><svg class="icon" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> Dimension B: Top 10 High-Pressure Clutch Batters</span>
-          </div>
-          <p class="kpi-sub" style="margin-top:-8px; margin-bottom:14px">Strictly filtered for robust clutch sample (<span class="font-mono">Neff_HP &ge; 30</span>) on <span class="font-mono">PI &ge; 60</span></p>
-          <div class="table-container"><table><thead><tr>
-            <th>Rank</th><th>Player</th><th>HP-RAA (r/100b)</th><th>Neff_HP</th><th>Overall PRI</th>
-          </tr></thead><tbody>
-          ${batDims.top10_high_pressure_robust.map((r, i) => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
-            <td><strong>#${i+1}</strong></td>
-            <td><div style="display:flex;align-items:center"><span class="player-avatar">${r.player_name.slice(0,2).toUpperCase()}</span><strong>${r.player_name}</strong></div></td>
-            <td><strong style="color:var(--green)">+${r.hp_raa_post.toFixed(2)}</strong></td>
-            <td>${r.neff_hp.toFixed(1)}</td>
-            <td>${r.pri_score_lcb.toFixed(1)}</td>
-          </tr>`).join('')}
-          </tbody></table></div>
+        <p class="kpi-sub" style="margin-top:-8px; margin-bottom:14px">
+          These batters deliver the highest run production above contextual expectation during high-pressure chases (Pressure Index &ge; 60).
+        </p>
+        <div class="grid-2">
+          ${batDims.top10_high_pressure_robust.map((r, i) => `
+            <div class="clutch-card" onclick="openPlayer(${r.canonical_player_id})">
+              <div class="clutch-card-head">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div class="clutch-rank-badge">#${i+1}</div>
+                  <div>
+                    <strong style="font-size:0.98rem">${r.player_name}</strong>
+                    <div style="font-size:0.75rem;color:var(--text-dim);margin-top:2px">
+                      ${lbl('neff_hp')}: <strong>${r.neff_hp.toFixed(0)}</strong> | ${lbl('pri_lcb')}: <strong>${r.pri_score_lcb.toFixed(1)}</strong>
+                    </div>
+                  </div>
+                </div>
+                <div style="text-align:right">
+                  <strong style="font-size:1.1rem;color:var(--green)">+${r.hp_raa_post.toFixed(2)}</strong>
+                  <div style="font-size:0.7rem;color:var(--text-dim)">runs / 100b</div>
+                  <div style="margin-top:2px">${evidenceBadge(r.evidence_badge)}</div>
+                </div>
+              </div>
+              <div class="analyst-quote">
+                <strong>Analyst Verdict:</strong> ${r.analyst_blurb}
+              </div>
+            </div>
+          `).join('')}
         </div>
       </div>
 
-      <div class="card" style="margin-top:18px">
+      <!-- Powerplay Pace-Setters (Zero HP Exposure) Card -->
+      <div class="card">
         <div class="card-title" style="color:var(--gold)">
-          <span class="icon-title"><svg class="icon" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg> Powerplay Pace-Setters (Zero High-Pressure Exposure)</span>
+          <span class="icon-title">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            Powerplay Specialists: Unproven Under Late-Innings Crunch Pressure
+          </span>
         </div>
         <p class="kpi-sub" style="margin-top:-8px; margin-bottom:12px">
-          These batters dominate overs 1–6 powerplay, earning elite overall PRI scores, but have faced <strong>zero high-pressure deliveries</strong> (<span class="font-mono">Neff_HP = 0.0</span>).
+          These batters dominate overs 1–6 powerplay, earning elite overall consistency scores, but have faced <strong>zero high-pressure deliveries</strong>.
         </p>
         <div class="table-container"><table><thead><tr>
-          <th>Player</th><th>Overall PRI</th><th>Total Neff</th><th>Exposure Diagnostic</th>
+          <th>Player</th><th>${lbl('pri_lcb')}</th><th>Total Deliveries</th><th>Analyst Diagnosis</th>
         </tr></thead><tbody>
         ${batDims.pp_specialists_zero_hp.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
           <td><div style="display:flex;align-items:center"><span class="player-avatar">${r.player_name.slice(0,2).toUpperCase()}</span><strong>${r.player_name}</strong></div></td>
           <td><strong>${r.pri_score_lcb.toFixed(2)}</strong></td>
-          <td>${r.neff.toFixed(0)}</td>
-          <td><span class="badge b-warn">Neff_HP = 0.0 (Unproven in late-innings crunch)</span></td>
+          <td>${r.neff.toFixed(0)} balls</td>
+          <td><span class="badge b-insufficient">0 Pressure Balls Faced — Unproven in Crunch Chases</span></td>
         </tr>`).join('')}
         </tbody></table></div>
       </div>
     ` : `
       ${filterBarHtml(true)}
       <div class="table-container"><table><thead><tr>
-        <th>Rank</th><th>Player</th><th>Role</th><th>PRI_lcb</th><th>95% Rank CI</th><th>Neff</th><th>Neff_HP</th><th>HP Evidence Status</th><th>2027 Status</th>
+        <th>Rank</th><th>Player</th><th>Role</th><th>${lbl('pri_lcb')}</th><th>${lbl('ci')}</th><th>Total Balls</th><th>Pressure Balls</th><th>Evidence Assessment</th><th>2027 Status</th>
       </tr></thead><tbody>
         ${d.records.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
           <td><strong>#${r.raw_pri_lcb_rank}</strong></td>
@@ -1291,7 +1593,7 @@ async function renderBattingScouting(el) {
           <td>${r.rank_p05 && r.rank_p95 ? `[#${r.rank_p05}–#${r.rank_p95}]` : '—'}</td>
           <td>${r.neff}</td>
           <td>${r.neff_hp}</td>
-          <td>${r.neff_hp === 0 ? '<span class="badge b-warn">Zero HP (Neff=0)</span>' : (r.neff_hp < 15 ? '<span class="badge b-pending">Low HP (&lt;15)</span>' : '<span class="badge b-confirmed">Robust (&ge;15)</span>')}</td>
+          <td>${r.neff_hp === 0 ? '<span class="badge b-insufficient">Insufficient (0)</span>' : (r.neff_hp < 15 ? '<span class="badge b-limited">Limited (&lt;15)</span>' : '<span class="badge b-strong">Strong (&ge;15)</span>')}</td>
           <td>${statusBadge(r.availability_status)}</td>
         </tr>`).join('')}
       </tbody></table></div>
@@ -1300,7 +1602,7 @@ async function renderBattingScouting(el) {
 }
 
 // =============================================================
-// PAGE 3: BOWLER SCOUTING (DUAL-TRACK)
+// PAGE 3: BOWLER PRESSURE SCOUTING
 // =============================================================
 async function renderBowlingScouting(el) {
   const [d, dims] = await Promise.all([
@@ -1312,59 +1614,56 @@ async function renderBowlingScouting(el) {
 
   el.innerHTML = `
     <div class="pill-tabs">
-      <button class="pill ${STATE.bowlView==='dual'?'active':''}" onclick="STATE.bowlView='dual'; renderTab()">
+      <button class="pill ${STATE.bowlView==='hp_headline'?'active':''}" onclick="STATE.bowlView='hp_headline'; renderTab()">
         <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-        Dual-Track Leaderboards (Overall vs High-Pressure)
+        Top 10 High-Pressure Clutch Bowlers (Official Deliverable)
       </button>
       <button class="pill ${STATE.bowlView==='all'?'active':''}" onclick="STATE.bowlView='all'; renderTab()">
         <svg class="icon" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line></svg>
-        Complete Eligible Universe (${d.total_eligible} Bowlers)
+        Complete Evaluated Universe (${d.total_eligible} Bowlers)
       </button>
     </div>
 
-    ${STATE.bowlView === 'dual' ? `
-      <div class="grid-2">
-        <div class="card">
-          <div class="card-title" style="color:var(--cyan)">
-            <span class="icon-title"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg> Dimension A: Top 10 Overall Reliable Bowlers</span>
-          </div>
-          <p class="kpi-sub" style="margin-top:-8px; margin-bottom:14px">Run prevention &amp; wicket consistency across entire matches (<span class="font-mono">PRI_lcb</span>)</p>
-          <div class="table-container"><table><thead><tr>
-            <th>Rank</th><th>Player</th><th>PRI_lcb</th><th>Neff</th><th>Neff_HP</th><th>HP Evidence</th>
-          </tr></thead><tbody>
-          ${bowlDims.top10_overall_reliability.map((r, i) => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
-            <td><strong>#${i+1}</strong></td>
-            <td><div style="display:flex;align-items:center"><span class="player-avatar">${r.player_name.slice(0,2).toUpperCase()}</span><strong>${r.player_name}</strong></div></td>
-            <td><strong style="color:var(--cyan)">${r.pri_score_lcb.toFixed(2)}</strong></td>
-            <td>${r.neff.toFixed(0)}</td>
-            <td>${r.neff_hp.toFixed(1)}</td>
-            <td><span class="badge b-confirmed">Robust Evidence</span></td>
-          </tr>`).join('')}
-          </tbody></table></div>
+    ${STATE.bowlView === 'hp_headline' ? `
+      <!-- PRIMARY HIGH-PRESSURE LEADERBOARD -->
+      <div class="card" style="border-top:3px solid var(--cyan)">
+        <div class="card-title" style="color:var(--cyan)">
+          <span>Official Top 10 Bowlers Under Pressure</span>
+          <span style="font-size:0.75rem;color:var(--text-dim);font-weight:400">Strictly filtered to robust sample (30+ pressure balls)</span>
         </div>
-
-        <div class="card">
-          <div class="card-title" style="color:var(--rr-pink)">
-            <span class="icon-title"><svg class="icon" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> Dimension B: Top 10 High-Pressure Clutch Bowlers</span>
-          </div>
-          <p class="kpi-sub" style="margin-top:-8px; margin-bottom:14px">Highest run &amp; boundary suppression on crunch deliveries (<span class="font-mono">PI &ge; 60</span>)</p>
-          <div class="table-container"><table><thead><tr>
-            <th>Rank</th><th>Player</th><th>HP-Impact (r/ov)</th><th>Neff_HP</th><th>Overall PRI</th>
-          </tr></thead><tbody>
-          ${bowlDims.top10_high_pressure_robust.map((r, i) => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
-            <td><strong>#${i+1}</strong></td>
-            <td><div style="display:flex;align-items:center"><span class="player-avatar">${r.player_name.slice(0,2).toUpperCase()}</span><strong>${r.player_name}</strong></div></td>
-            <td><strong style="color:var(--green)">+${r.hp_impact_post.toFixed(2)}</strong></td>
-            <td>${r.neff_hp.toFixed(1)}</td>
-            <td>${r.pri_score_lcb.toFixed(1)}</td>
-          </tr>`).join('')}
-          </tbody></table></div>
+        <p class="kpi-sub" style="margin-top:-8px; margin-bottom:14px">
+          These bowlers restrict runs and prevent boundaries with the highest efficiency during high-pressure match situations.
+        </p>
+        <div class="grid-2">
+          ${bowlDims.top10_high_pressure_robust.map((r, i) => `
+            <div class="clutch-card" onclick="openPlayer(${r.canonical_player_id})">
+              <div class="clutch-card-head">
+                <div style="display:flex;align-items:center;gap:10px">
+                  <div class="clutch-rank-badge" style="background:linear-gradient(135deg, var(--cyan) 0%, var(--purple) 100%)">#${i+1}</div>
+                  <div>
+                    <strong style="font-size:0.98rem">${r.player_name}</strong>
+                    <div style="font-size:0.75rem;color:var(--text-dim);margin-top:2px">
+                      ${lbl('neff_hp')}: <strong>${r.neff_hp.toFixed(0)}</strong> | ${lbl('pri_lcb')}: <strong>${r.pri_score_lcb.toFixed(1)}</strong>
+                    </div>
+                  </div>
+                </div>
+                <div style="text-align:right">
+                  <strong style="font-size:1.1rem;color:var(--green)">+${r.hp_impact_post.toFixed(2)}</strong>
+                  <div style="font-size:0.7rem;color:var(--text-dim)">runs saved / over</div>
+                  <div style="margin-top:2px">${evidenceBadge(r.evidence_badge)}</div>
+                </div>
+              </div>
+              <div class="analyst-quote" style="border-left-color:var(--rr-pink)">
+                <strong>Analyst Verdict:</strong> ${r.analyst_blurb}
+              </div>
+            </div>
+          `).join('')}
         </div>
       </div>
     ` : `
       ${filterBarHtml(true)}
       <div class="table-container"><table><thead><tr>
-        <th>Rank</th><th>Player</th><th>Role</th><th>PRI_lcb</th><th>95% Rank CI</th><th>Neff</th><th>Neff_HP</th><th>RSAA (r/ov)</th><th>2027 Status</th>
+        <th>Rank</th><th>Player</th><th>Role</th><th>${lbl('pri_lcb')}</th><th>${lbl('ci')}</th><th>Total Balls</th><th>Pressure Balls</th><th>Runs Saved/Over</th><th>2027 Status</th>
       </tr></thead><tbody>
         ${d.records.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
           <td><strong>#${r.raw_pri_lcb_rank}</strong></td>
@@ -1396,14 +1695,14 @@ async function renderCompare(el) {
       <button class="pill active" onclick="STATE.compareIds=document.getElementById('cmp-input').value.split(',').map(x=>parseInt(x.trim())).filter(Boolean); renderTab()">Compare</button>
       <span class="kpi-sub" style="margin-left:10px">
         Presets: 
-        <a href="#" onclick="STATE.compareIds=[1699,50284,6396,4847];renderTab();return false">Top Batters</a> | 
-        <a href="#" onclick="STATE.compareIds=[2933,781,7920,4900];renderTab();return false">Top Bowlers</a> |
-        <a href="#" onclick="STATE.compareIds=[7920,3298,3826,4265];renderTab();return false">Pace Comparison</a>
+        <a href="#" onclick="STATE.compareIds=[1699,2218,7921,190];renderTab();return false">Top Clutch Batters</a> | 
+        <a href="#" onclick="STATE.compareIds=[781,4611,7920,4900];renderTab();return false">Top Clutch Bowlers</a> |
+        <a href="#" onclick="STATE.compareIds=[50284,4847,1699,2218];renderTab();return false">Powerplay vs Chasers</a>
       </span>
     </div>
 
     <div class="table-container"><table><thead><tr>
-      <th style="min-width:200px">Metric Dimension</th>
+      <th style="min-width:210px">Analytical Evaluation Metric</th>
       ${d.players.map(p => `<th>
         <div style="display:flex;align-items:center;gap:8px">
           <span class="player-avatar">${p.player_name.slice(0,2).toUpperCase()}</span>
@@ -1419,11 +1718,11 @@ async function renderCompare(el) {
         ${d.players.map(p => `<td>${teamBadge(p.ipl_2026_team)} &rarr; ${teamBadge(p.current_2027_team)}</td>`).join('')}
       </tr>
       <tr>
-        <td><strong>Nationality &amp; Cap</strong></td>
+        <td><strong>Nationality &amp; Cap Status</strong></td>
         ${d.players.map(p => `<td>${p.nationality} (${p.cap_status})</td>`).join('')}
       </tr>
       <tr>
-        <td><strong>Dimension A: Batting PRI_lcb</strong></td>
+        <td><strong>${lbl('pri_lcb')} (Batting)</strong></td>
         ${d.players.map(p => `<td>
           ${p.batting ? `
             <div style="display:flex;justify-content:space-between">
@@ -1435,15 +1734,11 @@ async function renderCompare(el) {
         </td>`).join('')}
       </tr>
       <tr>
-        <td><strong>Batting Sample (Neff / Neff_HP)</strong></td>
-        ${d.players.map(p => `<td>${p.batting ? `${p.batting.neff} / <strong>${p.batting.neff_hp}</strong>` : '—'}</td>`).join('')}
+        <td><strong>${lbl('hp_raa')}</strong></td>
+        ${d.players.map(p => `<td>${p.batting ? (p.batting.neff_hp === 0 ? '<span class="badge b-insufficient">0 Opportunities</span>' : `<strong style="color:var(--green)">+${p.batting.hp_raa_post} r/100b</strong>`) : '—'}</td>`).join('')}
       </tr>
       <tr>
-        <td><strong>Dimension B: High-Pressure Batting</strong></td>
-        ${d.players.map(p => `<td>${p.batting ? (p.batting.neff_hp === 0 ? '<span class="badge b-warn">Zero HP Exposure</span>' : `<strong style="color:var(--green)">+${p.batting.hp_raa_post} r/100b</strong>`) : '—'}</td>`).join('')}
-      </tr>
-      <tr>
-        <td><strong>Dimension A: Bowling PRI_lcb</strong></td>
+        <td><strong>${lbl('pri_lcb')} (Bowling)</strong></td>
         ${d.players.map(p => `<td>
           ${p.bowling ? `
             <div style="display:flex;justify-content:space-between">
@@ -1455,23 +1750,26 @@ async function renderCompare(el) {
         </td>`).join('')}
       </tr>
       <tr>
-        <td><strong>Bowling Sample (Neff / Neff_HP)</strong></td>
-        ${d.players.map(p => `<td>${p.bowling ? `${p.bowling.neff} / <strong>${p.bowling.neff_hp}</strong>` : '—'}</td>`).join('')}
+        <td><strong>${lbl('hp_impact')}</strong></td>
+        ${d.players.map(p => `<td>${p.bowling ? `<strong style="color:var(--green)">+${p.bowling.hp_impact_post} r/ov</strong>` : '—'}</td>`).join('')}
       </tr>
       <tr>
-        <td><strong>Dimension B: High-Pressure Bowling</strong></td>
-        ${d.players.map(p => `<td>${p.bowling ? `<strong style="color:var(--green)">+${p.bowling.hp_impact_post} r/ov</strong>` : '—'}</td>`).join('')}
+        <td><strong>Pressure Evidence (${lbl('neff_hp')})</strong></td>
+        ${d.players.map(p => `<td>
+          ${p.batting ? `Bat: <strong>${p.batting.neff_hp}</strong>` : ''}
+          ${p.bowling ? `Bowl: <strong>${p.bowling.neff_hp}</strong>` : ''}
+        </td>`).join('')}
       </tr>
       <tr>
         <td><strong>Powerplay Dominance</strong></td>
         ${d.players.map(p => `<td>${p.batting?.powerplay_sr ? `SR ${p.batting.powerplay_sr}` : (p.bowling?.powerplay_econ ? `Econ ${p.bowling.powerplay_econ}` : '—')}</td>`).join('')}
       </tr>
       <tr>
-        <td><strong>Death Phase Dominance</strong></td>
+        <td><strong>Death Overs Phase Dominance</strong></td>
         ${d.players.map(p => `<td>${p.batting?.death_sr ? `SR ${p.batting.death_sr}` : (p.bowling?.death_econ ? `Econ ${p.bowling.death_econ}` : '—')}</td>`).join('')}
       </tr>
       <tr>
-        <td><strong>95% Bootstrap Rank CI</strong></td>
+        <td><strong>${lbl('ci')}</strong></td>
         ${d.players.map(p => `<td>${p.batting?.rank_p05 ? `Bat: [#${p.batting.rank_p05}–#${p.batting.rank_p95}]` : (p.bowling?.rank_p05 ? `Bowl: [#${p.bowling.rank_p05}–#${p.bowling.rank_p95}]` : '—')}</td>`).join('')}
       </tr>
       <tr>
@@ -1483,7 +1781,7 @@ async function renderCompare(el) {
 }
 
 // =============================================================
-// PAGE 5: PRESSURE AND LEVERAGE ANALYSIS (WPA)
+// PAGE 5: PRESSURE AND WIN IMPACT (WPA & LEVERAGE)
 // =============================================================
 async function renderPressureLeverage(el) {
   const wp = await (await fetch('/api/win-probability')).json();
@@ -1493,42 +1791,42 @@ async function renderPressureLeverage(el) {
       <div style="display:flex;align-items:flex-start;gap:12px">
         <svg class="icon" style="color:var(--cyan);width:22px;height:22px" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
         <div>
-          <strong style="color:var(--cyan);font-size:0.95rem">Pressure vs Leverage Theoretical Distinction:</strong><br>
-          <strong>Pressure Index (PI)</strong> measures pre-delivery situational difficulty and jeopardy (e.g. required run rate, balls remaining, wickets down).<br>
-          <strong>Leverage Index (LI)</strong> measures the sensitivity of the overall match outcome to the current delivery (win probability swing).<br>
-          In hopeless chases (<span class="font-mono">RRR &ge; 24</span>), Pressure is high, but Leverage drops to near zero because the outcome is already virtually determined. This produces our empirical correlation of <span class="font-mono" style="color:var(--gold)">r = -0.20</span>.
+          <strong style="color:var(--cyan);font-size:0.95rem">Match Pressure vs Importance (Leverage):</strong><br>
+          <strong>${lbl('pi')}</strong> measures situational difficulty (e.g. required run rate, balls remaining, wickets lost).<br>
+          <strong>${lbl('leverage')}</strong> measures how much the final match outcome can swing on the current delivery.<br>
+          In hopeless run chases (RRR &ge; 24), Pressure is at its maximum, but Leverage drops to near zero because the outcome is already virtually decided. This explains our empirical correlation of <span class="font-mono" style="color:var(--gold)">r = -0.20</span>.
         </div>
       </div>
     </div>
 
     <div class="grid-4">
       <div class="kpi-card" style="--accent-color:var(--cyan)">
-        <div class="kpi-label">Mean Leverage Index</div>
+        <div class="kpi-label">Average Outcome Swing ${tip('leverage')}</div>
         <div class="kpi-val" style="color:var(--cyan)">${wp.mean_leverage} pp</div>
-        <div class="kpi-sub">Outcome swing per delivery</div>
+        <div class="kpi-sub">Win probability shift per delivery</div>
       </div>
       <div class="kpi-card" style="--accent-color:var(--purple)">
-        <div class="kpi-label">90th Pct Leverage</div>
+        <div class="kpi-label">High-Leverage Cutoff</div>
         <div class="kpi-val">${wp.p90_leverage} pp</div>
-        <div class="kpi-sub">High-leverage delivery cutoff</div>
+        <div class="kpi-sub">Top 10% match-defining moments</div>
       </div>
       <div class="kpi-card" style="--accent-color:var(--gold)">
-        <div class="kpi-label">PI vs Leverage Correlation</div>
+        <div class="kpi-label">Pressure vs Leverage Correlation</div>
         <div class="kpi-val" style="color:var(--gold)">${wp.correlation_pi_vs_leverage?.pearson ?? '-0.20'}</div>
-        <div class="kpi-sub">Pearson correlation coefficient</div>
+        <div class="kpi-sub">Negative correlation (mathematically sound)</div>
       </div>
       <div class="kpi-card" style="--accent-color:var(--green)">
-        <div class="kpi-label">Evaluated Deliveries</div>
+        <div class="kpi-label">Evaluated Match Moments</div>
         <div class="kpi-val" style="color:var(--green)">${wp.n_deliveries_evaluated?.toLocaleString() ?? '191,212'}</div>
-        <div class="kpi-sub">${wp.n_matches_evaluated} matches with outcome</div>
+        <div class="kpi-sub">${wp.n_matches_evaluated} matches with complete outcome</div>
       </div>
     </div>
 
     <div class="grid-2">
       <div class="card">
-        <div class="card-title" style="color:var(--cyan)">Top 10 Batters by Win Probability Added (WPA)</div>
+        <div class="card-title" style="color:var(--cyan)">Top 10 Batters by ${lbl('wpa')}</div>
         <div class="table-container"><table><thead><tr>
-          <th>Player</th><th>Total WPA</th><th>WPA / 100b</th><th>High-Lev Balls</th>
+          <th>Player</th><th>Total Win Impact</th><th>Shift / 100 Balls</th><th>High-Leverage Balls</th>
         </tr></thead><tbody>
         ${(wp.top_bat_wpa || []).map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_striker_id})">
           <td><div style="display:flex;align-items:center"><span class="player-avatar">${r.player_name.slice(0,2).toUpperCase()}</span><strong>${r.player_name}</strong></div></td>
@@ -1540,9 +1838,9 @@ async function renderPressureLeverage(el) {
       </div>
 
       <div class="card">
-        <div class="card-title" style="color:var(--rr-pink)">Top 10 Bowlers by Win Probability Added (WPA)</div>
+        <div class="card-title" style="color:var(--rr-pink)">Top 10 Bowlers by ${lbl('wpa')}</div>
         <div class="table-container"><table><thead><tr>
-          <th>Player</th><th>Total WPA</th><th>WPA / 100b</th><th>High-Lev Balls</th>
+          <th>Player</th><th>Total Win Impact</th><th>Shift / 100 Balls</th><th>High-Leverage Balls</th>
         </tr></thead><tbody>
         ${(wp.top_bowl_wpa || []).map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_bowler_id})">
           <td><div style="display:flex;align-items:center"><span class="player-avatar">${r.player_name.slice(0,2).toUpperCase()}</span><strong>${r.player_name}</strong></div></td>
@@ -1551,17 +1849,6 @@ async function renderPressureLeverage(el) {
           <td>${r.hl_balls}</td>
         </tr>`).join('')}
         </tbody></table></div>
-      </div>
-    </div>
-
-    <!-- Match Regimes Card -->
-    <div class="card" style="margin-top:18px">
-      <div class="card-title">Four Match Regimes &amp; Hopeless Chase Guard</div>
-      <div class="grid-4" style="margin-bottom:0">
-        <div class="kv"><div class="k">RRR &lt; 8.0 (Comfortable Chase)</div><div class="v">Bat PI: 22.8 (0% HP)<br><span style="font-size:0.75rem;color:var(--text-dim)">Bowl PI: 46.3 (6% HP)</span></div></div>
-        <div class="kv"><div class="k">RRR 8.0–12.0 (Equilibrium)</div><div class="v">Bat PI: 41.4 (6% HP)<br><span style="font-size:0.75rem;color:var(--text-dim)">Bowl PI: 60.7 (47% HP)</span></div></div>
-        <div class="kv"><div class="k">RRR 12.0–16.0 (Peak Chase Pressure)</div><div class="v">Bat PI: 66.5 (73% HP)<br><span style="font-size:0.75rem;color:var(--text-dim)">Bowl PI: 42.9 (2% HP)</span></div></div>
-        <div class="kv"><div class="k">RRR &ge; 24.0 (Hopeless Chase Guard)</div><div class="v">Bat PI: 16.3 (0% HP)<br><span style="font-size:0.75rem;color:var(--text-dim)">Bowl PI: 14.3 (0% HP)</span></div></div>
       </div>
     </div>
   `;
@@ -1592,13 +1879,12 @@ async function renderAuctionIntelligence(el) {
         <svg class="icon" style="color:var(--cyan);width:22px;height:22px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
         <div>
           <strong style="color:var(--cyan)">BCCI IPL 2027 Auction Governance:</strong>
-          Official retention deadline is <strong>November 17, 2026</strong>; auction registrations close <strong>November 23, 2026</strong>. The mini-auction is scheduled for <strong>December 16, 2026 in Goa</strong>.
-          Under strict governance rules, <strong>zero players</strong> can be labeled "confirmed auction-available" today. We separate released candidates from trade targets and existing squad members.
+          Official retention deadline is <strong>November 17, 2026</strong>; auction registrations close <strong>November 23, 2026</strong>. Mini-auction is scheduled for <strong>December 16, 2026 in Goa</strong>.
+          Under strict compliance rules, <strong>zero players</strong> can be labeled "confirmed auction-available" today. We separate released candidates from trade targets and existing squad members.
         </div>
       </div>
     </div>
 
-    <!-- Identified Roster Gaps -->
     <div class="card-title">Priority Tactical Gaps &amp; Target Shortlists</div>
     <div class="grid-3">
       ${intel.identified_roster_gaps.map(g => `
@@ -1625,16 +1911,15 @@ async function renderAuctionIntelligence(el) {
       `).join('')}
     </div>
 
-    <!-- Eligibility Buckets -->
     <div class="card-title" style="margin-top:24px">Auction Eligibility Buckets</div>
     <div class="pill-tabs">
-      ${buckets.map(([k, lbl]) => `<button class="pill ${STATE.auctionBucket===k?'active':''}" onclick="STATE.auctionBucket='${k}'; renderTab()">${lbl} (${d.counts[k] || 0})</button>`).join('')}
+      ${buckets.map(([k, lblText]) => `<button class="pill ${STATE.auctionBucket===k?'active':''}" onclick="STATE.auctionBucket='${k}'; renderTab()">${lblText} (${d.counts[k] || 0})</button>`).join('')}
     </div>
 
     ${filterBarHtml(false)}
 
     <div class="table-container"><table><thead><tr>
-      <th>Orig Rank</th><th>Player</th><th>Discipline</th><th>Tactical Role</th><th>PRI_lcb</th><th>Neff</th><th>Neff_HP</th><th>2027 Franchise</th><th>Status</th><th>Acquisition Pathway</th>
+      <th>Orig Rank</th><th>Player</th><th>Discipline</th><th>Tactical Role</th><th>${lbl('pri_lcb')}</th><th>Total Balls</th><th>Pressure Balls</th><th>2027 Franchise</th><th>Status</th><th>Pathway</th>
     </tr></thead><tbody>
       ${rows.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
         <td><strong>#${r.raw_pri_lcb_rank}</strong></td>
@@ -1665,7 +1950,7 @@ async function renderRRSquadAudit(el) {
         <div>
           <strong style="color:var(--rr-pink);font-size:0.95rem">Rajasthan Royals 2026 Campaign Audit:</strong>
           RR finished <strong>8–6 in the regular league (4th place)</strong> and <strong>9–7 overall (3rd place)</strong>.
-          Tactical split analysis shows RR was <strong>3/3 at ACA Guwahati</strong> (spin-heavy, low-scoring equilibrium), but suffered a <strong>1/4 record at SMS Jaipur</strong> due to a high pace economy leak (10.13 RPO vs 9.26 league average) and death strike rate lag (163.4 vs 169.4 league average).
+          Tactical split analysis shows RR was <strong>3/3 at ACA Guwahati</strong> (spin-heavy, low-scoring equilibrium), but struggled <strong>1/4 at SMS Jaipur</strong> due to a high pace economy leak (10.13 RPO vs 9.26 league average) and death strike rate lag (163.4 vs 169.4 league average).
         </div>
       </div>
     </div>
@@ -1684,18 +1969,18 @@ async function renderRRSquadAudit(el) {
       <div class="kpi-card" style="--accent-color:var(--gold)">
         <div class="kpi-label">Death Batting SR</div>
         <div class="kpi-val" style="color:var(--gold)">163.4</div>
-        <div class="kpi-sub">League benchmark: 169.4</div>
+        <div class="kpi-sub">League average: 169.4</div>
       </div>
       <div class="kpi-card" style="--accent-color:var(--cyan)">
-        <div class="kpi-label">Squad Size Audited</div>
+        <div class="kpi-label">Audited Squad Size</div>
         <div class="kpi-val">${squad.roster.length} Players</div>
-        <div class="kpi-sub">All retained / reviewed</div>
+        <div class="kpi-sub">Retained &amp; reviewed</div>
       </div>
     </div>
 
-    <div class="card-title">Rajasthan Royals Retained Squad &amp; Core Performance</div>
+    <div class="card-title">Rajasthan Royals Retained Squad &amp; Performance Review</div>
     <div class="table-container"><table><thead><tr>
-      <th>Player</th><th>2026 Apps</th><th>Bat Order</th><th>Batting PRI</th><th>Bat Rank</th><th>Bat Neff_HP</th><th>Bowling PRI</th><th>Bowl Rank</th><th>Bowl Neff_HP</th>
+      <th>Player</th><th>2026 Apps</th><th>Bat Order</th><th>Batting Score</th><th>Bat Rank</th><th>Bat Pressure Balls</th><th>Bowling Score</th><th>Bowl Rank</th><th>Bowl Pressure Balls</th>
     </tr></thead><tbody>
       ${squad.roster.map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
         <td><div style="display:flex;align-items:center"><span class="player-avatar">${r.canonical_name.slice(0,2).toUpperCase()}</span><strong>${r.canonical_name}</strong></div></td>
@@ -1703,7 +1988,7 @@ async function renderRRSquadAudit(el) {
         <td>${r.med_bat_order ?? '—'}</td>
         <td>${r.bat_pri_lcb ? `<strong style="color:var(--cyan)">${r.bat_pri_lcb.toFixed(1)}</strong>` : '—'}</td>
         <td>${r.bat_rank ? `#${r.bat_rank}` : '—'}</td>
-        <td>${r.bat_neff_hp !== null ? (r.bat_neff_hp === 0 ? '<span class="badge b-warn">0.0</span>' : r.bat_neff_hp.toFixed(1)) : '—'}</td>
+        <td>${r.bat_neff_hp !== null ? (r.bat_neff_hp === 0 ? '<span class="badge b-insufficient">0</span>' : r.bat_neff_hp.toFixed(1)) : '—'}</td>
         <td>${r.bowl_pri_lcb ? `<strong style="color:var(--rr-pink)">${r.bowl_pri_lcb.toFixed(1)}</strong>` : '—'}</td>
         <td>${r.bowl_rank ? `#${r.bowl_rank}` : '—'}</td>
         <td>${r.bowl_neff_hp !== null ? r.bowl_neff_hp.toFixed(1) : '—'}</td>
@@ -1724,13 +2009,12 @@ async function renderTrades(el) {
         <svg class="icon" style="color:var(--cyan);width:22px;height:22px" viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
         <div>
           <strong style="color:var(--cyan);font-size:0.95rem">IPL 2027 Verified Player Trade Ledger:</strong>
-          Four official multi-player trades have been formally executed by BCCI as of <strong>${trades.metadata.as_of_date}</strong>.
+          Four official multi-player trades have been formally registered by BCCI as of <strong>${trades.metadata.as_of_date}</strong>.
           All contract transfers and adjusted salaries have been reflected in player profiles.
         </div>
       </div>
     </div>
 
-    <!-- Official Completed Trades -->
     <div class="card-title">Officially Completed Franchise Trades (4 Verified)</div>
     <div class="grid-2">
       ${trades.official_completed_trades.map(t => `
@@ -1762,7 +2046,6 @@ async function renderTrades(el) {
       `).join('')}
     </div>
 
-    <!-- Stalled Rumour / Reported Negotiations -->
     <div class="card-title" style="margin-top:24px">Reported Negotiations &amp; Stalled Rumours</div>
     ${trades.reported_negotiations_not_completed.map(r => `
       <div class="card" style="border-left:4px solid var(--gold);margin-bottom:14px">
@@ -1783,7 +2066,7 @@ async function renderTrades(el) {
 }
 
 // =============================================================
-// PAGE 9: MODEL BENCHMARK & WEIGHT SENSITIVITY
+// PAGE 9: MODEL BENCHMARK & SENSITIVITY (TECHNICAL DETAILS)
 // =============================================================
 async function renderModelEvaluation(el) {
   const [wp, ws] = await Promise.all([
@@ -1799,7 +2082,7 @@ async function renderModelEvaluation(el) {
       Evaluated strictly on pre-delivery match state without delivery outcome leakage. Logistic Regression achieved the highest calibration score and ROC-AUC.
     </p>
     <div class="table-container" style="margin-bottom:24px"><table><thead><tr>
-      <th>Model Architecture</th><th>ROC-AUC</th><th>PR-AUC</th><th>Brier Score</th><th>Log Loss</th><th>Precision</th><th>Recall</th><th>Mean Calibration Err</th>
+      <th>Model Architecture</th><th>Prediction Ability (ROC-AUC)</th><th>Precision (PR-AUC)</th><th>Probability Accuracy (Brier)</th><th>Log Loss</th><th>Mean Calibration Error</th>
     </tr></thead><tbody>
       ${Object.entries(models).map(([name, m]) => `<tr>
         <td><strong>${name.replace('_', ' ').toUpperCase()}</strong></td>
@@ -1807,14 +2090,12 @@ async function renderModelEvaluation(el) {
         <td>${m.pr_auc}</td>
         <td>${m.brier_score}</td>
         <td>${m.log_loss}</td>
-        <td>${m.precision}</td>
-        <td>${m.recall}</td>
         <td><strong style="color:var(--green)">${m.mean_calibration_error}</strong></td>
       </tr>`).join('')}
     </tbody></table></div>
 
-    <div class="card-title">2. Weight Sensitivity Analysis (4 Defensible Tactical Scenarios)</div>
-    <p class="kpi-sub" style="margin-top:-8px; margin-bottom:14px">Pairwise Spearman Rank Correlation across all eligible batters proving exceptional ranking stability.</p>
+    <div class="card-title">2. Tactical Weight Sensitivity (Ranking Consistency across 4 Scenarios)</div>
+    <p class="kpi-sub" style="margin-top:-8px; margin-bottom:14px">Pairwise Spearman Rank Correlation across all eligible batters proving ranking stability.</p>
     <div class="table-container" style="margin-bottom:24px"><table><thead><tr>
       <th>Scenario</th><th>Baseline</th><th>Balanced</th><th>Pressure-Focused</th><th>Reliability-Focused</th>
     </tr></thead><tbody>
@@ -1848,7 +2129,7 @@ async function renderModelEvaluation(el) {
         <div class="card-title">Pareto Frontier: General Value vs High Pressure</div>
         <p class="kpi-sub">Non-dominated players across General RAA and High-Pressure RAA</p>
         <div class="table-container"><table><thead><tr>
-          <th>Player</th><th>Gen RAA</th><th>HP-RAA</th><th>Overall PRI</th><th>Neff_HP</th>
+          <th>Player</th><th>Gen Value</th><th>Clutch Value</th><th>Score</th><th>Pressure Balls</th>
         </tr></thead><tbody>
         ${(ws.batting?.pareto_frontier || []).map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
           <td><div style="display:flex;align-items:center"><span class="player-avatar">${r.player_name.slice(0,2).toUpperCase()}</span><strong>${r.player_name}</strong></div></td>
@@ -1864,7 +2145,7 @@ async function renderModelEvaluation(el) {
 }
 
 // =============================================================
-// PAGE 10: METHODOLOGY & DATA AUDIT
+// PAGE 10: TECHNICAL DETAILS & FORMULAS
 // =============================================================
 async function renderMethodology(el) {
   const m = await (await fetch('/api/methodology')).json();
@@ -1896,7 +2177,7 @@ async function renderMethodology(el) {
     </div>
 
     <div class="card" style="margin-top:18px">
-      <div class="card-title">Key Methodological Standards</div>
+      <div class="card-title">Mathematical &amp; Statistical Formulas</div>
       <div class="kv-grid">
         <div class="kv">
           <div class="k">1. Zero-Leakage Pre-Delivery State</div>
@@ -1911,8 +2192,8 @@ async function renderMethodology(el) {
           <div class="v" style="font-size:0.82rem;font-weight:400">Shrinks observed RAA/RSAA toward prior means inversely proportional to sample size: theta_post = (Neff * theta_obs + M * theta_prior) / (Neff + M).</div>
         </div>
         <div class="kv">
-          <div class="k">4. Match-Cluster Bootstrap</div>
-          <div class="v" style="font-size:0.82rem;font-weight:400">1,000 cluster bootstrap resamples at the match level generate non-parametric 95% rank confidence intervals.</div>
+          <div class="k">4. Lower Credible Bound (LCB)</div>
+          <div class="v" style="font-size:0.82rem;font-weight:400">PRI_lcb = theta_post - z * sqrt(sigma^2 / (Neff + M)) using z=0.50 to penalize high estimation uncertainty.</div>
         </div>
       </div>
     </div>
@@ -1920,12 +2201,26 @@ async function renderMethodology(el) {
 }
 
 // =============================================================
-// MODAL: PLAYER DETAIL VIEW
+// MODAL: PLAYER DETAIL VIEW (ENRICHED WITH ANALYST COMMENTARY)
 // =============================================================
 async function openPlayer(cid) {
-  const res = await fetch('/api/player/' + cid);
+  const [res, dims] = await Promise.all([
+    fetch('/api/player/' + cid),
+    fetch('/api/evaluation-dimensions').then(r => r.json())
+  ]);
   if (!res.ok) return;
   const p = await res.json();
+
+  // Find if player has an analyst blurb in dims
+  let analystBlurb = "Evaluated under standard IPL and T20I competition conditions.";
+  let evBadge = "Moderate Evidence";
+  const allBat = [...(dims.batting?.top10_high_pressure_robust || []), ...(dims.batting?.top10_overall_reliability || []), ...(dims.batting?.pp_specialists_zero_hp || [])];
+  const allBowl = [...(dims.bowling?.top10_high_pressure_robust || []), ...(dims.bowling?.top10_overall_reliability || [])];
+  const found = allBat.find(x => x.canonical_player_id === cid) || allBowl.find(x => x.canonical_player_id === cid);
+  if (found) {
+    if (found.analyst_blurb) analystBlurb = found.analyst_blurb;
+    if (found.evidence_badge) evBadge = found.evidence_badge;
+  }
 
   const discBlock = (label, d, isBat) => {
     if (!d) return '';
@@ -1935,22 +2230,22 @@ async function openPlayer(cid) {
           <svg class="icon" style="color:${isBat?'var(--cyan)':'var(--rr-pink)'}" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
           ${label} — Rank #${d.raw_pri_lcb_rank} (${d.emp_pct_elig_primary}th percentile)
         </span>
-        <span class="font-mono">PRI_lcb: <strong style="color:var(--cyan)">${d.pri_score_lcb}</strong></span>
+        <span class="font-mono">${lbl('pri_lcb')}: <strong style="color:var(--cyan)">${d.pri_score_lcb}</strong></span>
       </div>
-      ${d.hp_banner ? `<div class="alert alert-warn" style="margin-bottom:12px"><strong>HP Exposure Notice:</strong> ${d.hp_banner}</div>` : ''}
+      ${d.hp_banner ? `<div class="alert alert-warn" style="margin-bottom:12px"><strong>Pressure Exposure Alert:</strong> ${d.hp_banner}</div>` : ''}
       <div class="kv-grid">
-        <div class="kv"><div class="k">Neff / Neff_HP</div><div class="v">${d.neff} / ${d.neff_hp}</div></div>
-        <div class="kv"><div class="k">95% Bootstrap Rank CI</div><div class="v">${d.rank_p05 && d.rank_p95 ? `#${d.rank_p05}–#${d.rank_p95} (${d.top10_inc_pct}% Top-10)` : '—'}</div></div>
+        <div class="kv"><div class="k">Total Balls / Pressure Balls</div><div class="v">${d.neff} / <strong>${d.neff_hp}</strong></div></div>
+        <div class="kv"><div class="k">${lbl('ci')}</div><div class="v">${d.rank_p05 && d.rank_p95 ? `#${d.rank_p05}–#${d.rank_p95} (${d.top10_inc_pct}% Top-10)` : '—'}</div></div>
         <div class="kv"><div class="k">Delivery Volume</div><div class="v">${d.ipl_balls} IPL (${d.ipl_2026_balls} in '26) / ${d.t20i_balls} T20I</div></div>
-        <div class="kv"><div class="k">Role / Hand</div><div class="v">${d.role_label} (${isBat ? d.batting_hand : d.bowling_subtype})</div></div>
+        <div class="kv"><div class="k">Tactical Role / Hand</div><div class="v">${d.role_label} (${isBat ? d.batting_hand : d.bowling_subtype})</div></div>
         ${isBat ? `
-          <div class="kv"><div class="k">Gen RAA / Surv (post)</div><div class="v">${d.raa_post} / ${d.surv_post}</div></div>
-          <div class="kv"><div class="k">HP-RAA / Cons (post)</div><div class="v"><strong style="color:var(--green)">${d.hp_raa_post}</strong> / ${d.cons_post}</div></div>
+          <div class="kv"><div class="k">Runs Above Expected (Gen/Surv)</div><div class="v">${d.raa_post} / ${d.surv_post}</div></div>
+          <div class="kv"><div class="k">${lbl('hp_raa')}</div><div class="v"><strong style="color:var(--green)">+${d.hp_raa_post}</strong> / ${d.cons_post}</div></div>
           <div class="kv"><div class="k">True Strike Rate</div><div class="v">${d.true_sr ?? '—'} (IPL: ${d.ipl_true_sr ?? '—'})</div></div>
           <div class="kv"><div class="k">Phase SR (PP/Mid/Death)</div><div class="v">${d.powerplay_sr ?? '—'} / ${d.middle_sr ?? '—'} / ${d.death_sr ?? '—'}</div></div>
         ` : `
-          <div class="kv"><div class="k">Gen RSAA / WAA (r/ov)</div><div class="v">${d.rsaa_post} / ${d.waa_post}</div></div>
-          <div class="kv"><div class="k">HP-Impact / Cons (r/ov)</div><div class="v"><strong style="color:var(--green)">${d.hp_impact_post}</strong> / ${d.cons_post}</div></div>
+          <div class="kv"><div class="k">Runs Saved (Gen/WAA)</div><div class="v">${d.rsaa_post} / ${d.waa_post}</div></div>
+          <div class="kv"><div class="k">${lbl('hp_impact')}</div><div class="v"><strong style="color:var(--green)">+${d.hp_impact_post}</strong> / ${d.cons_post}</div></div>
           <div class="kv"><div class="k">True Economy</div><div class="v">${d.true_econ ?? '—'} (IPL: ${d.ipl_true_econ ?? '—'})</div></div>
           <div class="kv"><div class="k">Phase Econ (PP/Mid/Death)</div><div class="v">${d.powerplay_econ ?? '—'} / ${d.middle_econ ?? '—'} / ${d.death_econ ?? '—'}</div></div>
         `}
@@ -1966,6 +2261,7 @@ async function openPlayer(cid) {
           <h2 style="font-size:1.3rem;margin-bottom:4px">${p.player_name} <span class="font-mono" style="font-size:0.8rem;color:var(--text-dim)">(ID: ${p.canonical_player_id})</span></h2>
           <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
             ${statusBadge(p.availability_status)}
+            ${evidenceBadge(evBadge)}
             <span class="kpi-sub">2026: ${teamBadge(p.ipl_2026_team)} &rarr; 2027: ${teamBadge(p.current_2027_team)}</span>
             <span class="kpi-sub">| ${p.nationality} | ${p.cap_status} | Age: ${p.age_2026}</span>
           </div>
@@ -1974,6 +2270,12 @@ async function openPlayer(cid) {
       <button class="btn-close" onclick="closeModal()">
         <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
+    </div>
+
+    <!-- Prominent Analyst Verdict Box -->
+    <div class="analyst-quote" style="margin-bottom:16px;border-left:4px solid var(--rr-pink);background:var(--surface-card);padding:12px 16px">
+      <div style="font-size:0.75rem;text-transform:uppercase;color:var(--rr-pink);font-weight:700;margin-bottom:4px">Cricket Analyst Scouting Assessment:</div>
+      <div style="font-size:0.92rem;color:var(--text)">${analystBlurb}</div>
     </div>
 
     <div class="kv" style="margin-bottom:16px">
@@ -1993,7 +2295,7 @@ function closeModal() {
   document.getElementById('player-modal').classList.remove('open');
 }
 
-// Initial boot
+// Initial render
 renderTab();
 </script>
 </body>
