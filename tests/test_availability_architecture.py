@@ -51,10 +51,22 @@ ALLOWED_REGISTRATION_STATUSES = {
 }
 
 EXPECTED_CSV_HASHES = {
-    "official_top10_high_pressure_batters.csv": "A15F8064BA7235907E91CE1A50F4B7C7",
-    "official_top10_high_pressure_bowlers.csv": "FFC8B156D8F01D77157B397C0371F397",
-    "official_top10_overall_reliability_batters.csv": "22A073F5A42CB21C3530436824F5E96F",
-    "official_top10_overall_reliability_bowlers.csv": "5EAB5D69240D0EA2981463557E9A3440",
+    "official_top10_high_pressure_batters.csv": {
+        "crlf_raw": "A15F8064BA7235907E91CE1A50F4B7C7",
+        "canonical_lf": "576930664161ED9ABC01D8B75B1B3754",
+    },
+    "official_top10_high_pressure_bowlers.csv": {
+        "crlf_raw": "FFC8B156D8F01D77157B397C0371F397",
+        "canonical_lf": "108AD7AF9E0D617F0DB668FB1E76937D",
+    },
+    "official_top10_overall_reliability_batters.csv": {
+        "crlf_raw": "22A073F5A42CB21C3530436824F5E96F",
+        "canonical_lf": "6D61BEF2963AE1D9223AAD7809BA25CF",
+    },
+    "official_top10_overall_reliability_bowlers.csv": {
+        "crlf_raw": "5EAB5D69240D0EA2981463557E9A3440",
+        "canonical_lf": "AFA6579BBD4B6D6AAEFFA432C18863E7",
+    },
 }
 
 
@@ -266,13 +278,24 @@ def test_acquisition_pathway_logic():
 
 def test_official_deliverable_csv_checksums():
     """
-    Ensure the 4 official Top 10 deliverable CSVs have strictly unmodified MD5 checksums,
-    preserving Layer 1 analytical integrity.
+    Ensure the 4 official Top 10 deliverable CSVs have strictly unmodified checksums,
+    preserving Layer 1 analytical integrity across both Windows (CRLF) and Linux (LF).
     """
-    for filename, expected_hash in EXPECTED_CSV_HASHES.items():
+    for filename, exp in EXPECTED_CSV_HASHES.items():
         file_path = PROCESSED_DIR / filename
         assert file_path.exists(), f"Deliverable CSV missing: {file_path}"
-        with open(file_path, "rb") as f:
-            content = f.read()
-            computed_hash = hashlib.md5(content).hexdigest().upper()
-        assert computed_hash == expected_hash, f"Hash mismatch for {filename}: expected {expected_hash}, got {computed_hash}"
+        raw_bytes = file_path.read_bytes()
+
+        # 1. Strict raw byte verification against approved platform representations
+        computed_raw_hash = hashlib.md5(raw_bytes).hexdigest().upper()
+        valid_hashes = {exp["crlf_raw"], exp["canonical_lf"]}
+        assert computed_raw_hash in valid_hashes, (
+            f"Hash mismatch for {filename}: expected one of {valid_hashes}, got {computed_raw_hash}"
+        )
+
+        # 2. Canonical content verification (LF-normalized)
+        norm_bytes = raw_bytes.replace(b"\r\n", b"\n")
+        computed_norm_hash = hashlib.md5(norm_bytes).hexdigest().upper()
+        assert computed_norm_hash == exp["canonical_lf"], (
+            f"Canonical content hash mismatch for {filename}: expected {exp['canonical_lf']}, got {computed_norm_hash}"
+        )

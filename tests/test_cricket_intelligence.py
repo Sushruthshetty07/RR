@@ -91,21 +91,48 @@ class TestCricketIntelligence(unittest.TestCase):
             self.assertNotIn("₹", p["q4_scouting_decision"])
 
     def test_official_csv_immutability(self):
-        """Verifies that the four official CSV deliverables remain unchanged."""
-        expected_hashes = {
-            "official_top10_high_pressure_batters.csv": "a15f8064ba7235907e91ce1a50f4b7c7",
-            "official_top10_high_pressure_bowlers.csv": "ffc8b156d8f01d77157b397c0371f397",
-            "official_top10_overall_reliability_batters.csv": "22a073f5a42cb21c3530436824f5e96f",
-            "official_top10_overall_reliability_bowlers.csv": "5eab5d69240d0ea2981463557e9a3440",
+        """
+        Verifies that the four official CSV deliverables remain strictly unchanged.
+        Supports both canonicalized content validation (LF-normalized) and strict
+        raw-byte validation against approved platform representations (Windows CRLF vs Linux LF).
+        """
+        approved_hashes = {
+            "official_top10_high_pressure_batters.csv": {
+                "crlf_raw": "a15f8064ba7235907e91ce1a50f4b7c7",
+                "canonical_lf": "576930664161ed9abc01d8b75b1b3754",
+            },
+            "official_top10_high_pressure_bowlers.csv": {
+                "crlf_raw": "ffc8b156d8f01d77157b397c0371f397",
+                "canonical_lf": "108ad7af9e0d617f0db668fb1e76937d",
+            },
+            "official_top10_overall_reliability_batters.csv": {
+                "crlf_raw": "22a073f5a42cb21c3530436824f5e96f",
+                "canonical_lf": "6d61bef2963ae1d9223aad7809ba25cf",
+            },
+            "official_top10_overall_reliability_bowlers.csv": {
+                "crlf_raw": "5eab5d69240d0ea2981463557e9a3440",
+                "canonical_lf": "afa6579bbd4b6d6aaeffa432c18863e7",
+            },
         }
-        for fname, exp_md5 in expected_hashes.items():
+        for fname, exp in approved_hashes.items():
             fpath = DATA_PROCESSED / fname
             self.assertTrue(fpath.exists(), f"Missing file: {fname}")
-            with open(fpath, "rb") as f:
-                actual_md5 = hashlib.md5(f.read()).hexdigest()
+            raw_bytes = fpath.read_bytes()
+
+            # 1. Strict raw-byte check: must match approved CRLF (Windows) or LF (Linux/CI)
+            raw_md5 = hashlib.md5(raw_bytes).hexdigest().lower()
+            valid_raw = {exp["crlf_raw"], exp["canonical_lf"]}
+            self.assertIn(
+                raw_md5, valid_raw,
+                f"Official CSV raw byte corruption for {fname}: got {raw_md5}, expected one of {valid_raw}"
+            )
+
+            # 2. Canonical content check: line-ending normalized hash must strictly match canonical LF
+            norm_bytes = raw_bytes.replace(b"\r\n", b"\n")
+            norm_md5 = hashlib.md5(norm_bytes).hexdigest().lower()
             self.assertEqual(
-                actual_md5.lower(), exp_md5.lower(),
-                f"Official CSV modified! Hash mismatch for {fname}"
+                norm_md5, exp["canonical_lf"],
+                f"Official CSV canonical content mismatch for {fname}"
             )
 
 
