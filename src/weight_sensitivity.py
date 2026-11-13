@@ -184,18 +184,19 @@ def run_weight_sensitivity_analysis(
             })
         shift_df = pd.DataFrame(shifts)
 
-        # Sample size threshold sensitivity (Neff >= 30 vs 60 vs 100)
+        # Sample size threshold sensitivity (Neff >= 30 vs 60 vs 100 among primary eligible)
         n_eff_sensitivity = []
         for thresh in [30.0, 60.0, 100.0]:
-            sub_thresh = work[work["neff"] >= thresh]
+            sub_thresh = work[work["elig_primary"] & (work["neff"] >= thresh)]
             rho = spearmanr(
                 sub_thresh["rank_Baseline"],
                 sub_thresh["rank_Pressure-Focused"]
             ).statistic
+            rho_val = round(float(rho), 4) if pd.notna(rho) else None
             n_eff_sensitivity.append({
                 "threshold_neff": thresh,
                 "n_eligible": int(len(sub_thresh)),
-                "spearman_base_vs_pressure": round(float(rho), 4),
+                "spearman_base_vs_pressure": rho_val,
             })
 
         # Pareto Frontier Analysis:

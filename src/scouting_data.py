@@ -186,9 +186,23 @@ class ScoutingStore:
         self.bowl_by_id = {r["canonical_player_id"]: r for r in self.bowl_records}
 
     @staticmethod
-    def _load_json(path: Path) -> Dict[str, Any]:
+    def _sanitize_floats(obj: Any) -> Any:
+        """Recursively convert NaN and Inf floats to None for strict RFC 8259 JSON compliance."""
+        if isinstance(obj, float):
+            if math.isnan(obj) or math.isinf(obj):
+                return None
+            return obj
+        elif isinstance(obj, dict):
+            return {k: ScoutingStore._sanitize_floats(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [ScoutingStore._sanitize_floats(v) for v in obj]
+        return obj
+
+    @classmethod
+    def _load_json(cls, path: Path) -> Dict[str, Any]:
         with open(path, encoding="utf-8") as f:
-            return json.load(f)
+            data = json.load(f)
+        return cls._sanitize_floats(data)
 
     def _extract_raw_player_metadata(self) -> Tuple[Dict[int, Dict[str, Any]], Dict[int, Dict[str, Any]]]:
         """Fast extraction of role, handedness, phase splits, and recency from data/raw/."""

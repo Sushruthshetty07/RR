@@ -1243,6 +1243,29 @@ function handleGlobalSearch(query) {
   }
 }
 
+async function fetchJson(url) {
+  const res = await fetch(url);
+  if (!res.ok) {
+    let detail = `${res.status} ${res.statusText}`;
+    try {
+      const errText = await res.text();
+      if (errText) {
+        detail += ` - ${errText.slice(0, 150)}`;
+      }
+    } catch (_) {}
+    throw new Error(`API error loading ${url}: ${detail}`);
+  }
+  const text = await res.text();
+  if (!text || !text.trim()) {
+    return null;
+  }
+  try {
+    return JSON.parse(text);
+  } catch (err) {
+    throw new Error(`Malformed JSON from ${url}: ${err.message}`);
+  }
+}
+
 async function renderTab() {
   const el = document.getElementById('app-content');
   try {
@@ -1257,7 +1280,14 @@ async function renderTab() {
     if (STATE.tab === 'model_eval') return await renderModelEvaluation(el);
     if (STATE.tab === 'methodology') return await renderMethodology(el);
   } catch (err) {
-    el.innerHTML = `<div class="alert alert-danger"><strong>Error rendering view:</strong> ${err.message}</div>`;
+    el.innerHTML = `
+      <div class="alert alert-danger" style="margin:20px 0;">
+        <strong>Error rendering view:</strong> ${err.message}
+        <div style="margin-top:10px;">
+          <button class="btn btn-primary" onclick="renderTab()">Retry</button>
+        </div>
+      </div>
+    `;
   }
 }
 
@@ -1266,10 +1296,10 @@ async function renderTab() {
 // =============================================================
 async function renderOverview(el) {
   const [d, dims, wp, intel] = await Promise.all([
-    fetch('/api/overview').then(r => r.json()),
-    fetch('/api/evaluation-dimensions').then(r => r.json()),
-    fetch('/api/win-probability').then(r => r.json()),
-    fetch('/api/rr-tactical-fit').then(r => r.json())
+    fetchJson('/api/overview'),
+    fetchJson('/api/evaluation-dimensions'),
+    fetchJson('/api/win-probability'),
+    fetchJson('/api/rr-tactical-fit')
   ]);
 
   const topBat = dims.batting.top10_high_pressure_robust || [];
@@ -1503,8 +1533,8 @@ async function renderOverview(el) {
 // =============================================================
 async function renderBattingScouting(el) {
   const [d, dims] = await Promise.all([
-    fetch('/api/dashboard-a?' + filterQuery({ discipline: 'batting' })).then(r => r.json()),
-    fetch('/api/evaluation-dimensions').then(r => r.json())
+    fetchJson('/api/dashboard-a?' + filterQuery({ discipline: 'batting' })),
+    fetchJson('/api/evaluation-dimensions')
   ]);
 
   const batDims = dims.batting;
@@ -1606,8 +1636,8 @@ async function renderBattingScouting(el) {
 // =============================================================
 async function renderBowlingScouting(el) {
   const [d, dims] = await Promise.all([
-    fetch('/api/dashboard-a?' + filterQuery({ discipline: 'bowling' })).then(r => r.json()),
-    fetch('/api/evaluation-dimensions').then(r => r.json())
+    fetchJson('/api/dashboard-a?' + filterQuery({ discipline: 'bowling' })),
+    fetchJson('/api/evaluation-dimensions')
   ]);
 
   const bowlDims = dims.bowling;
@@ -1685,7 +1715,7 @@ async function renderBowlingScouting(el) {
 // PAGE 4: PLAYER COMPARISON
 // =============================================================
 async function renderCompare(el) {
-  const d = await (await fetch('/api/compare?ids=' + STATE.compareIds.join(','))).json();
+  const d = await fetchJson('/api/compare?ids=' + STATE.compareIds.join(','));
 
   el.innerHTML = `
     <div class="filter-panel">
@@ -1784,7 +1814,7 @@ async function renderCompare(el) {
 // PAGE 5: PRESSURE AND WIN IMPACT (WPA & LEVERAGE)
 // =============================================================
 async function renderPressureLeverage(el) {
-  const wp = await (await fetch('/api/win-probability')).json();
+  const wp = await fetchJson('/api/win-probability');
 
   el.innerHTML = `
     <div class="alert alert-info">
@@ -1859,8 +1889,8 @@ async function renderPressureLeverage(el) {
 // =============================================================
 async function renderAuctionIntelligence(el) {
   const [intel, d] = await Promise.all([
-    fetch('/api/rr-tactical-fit').then(r => r.json()),
-    fetch('/api/dashboard-b?' + filterQuery()).then(r => r.json())
+    fetchJson('/api/rr-tactical-fit'),
+    fetchJson('/api/dashboard-b?' + filterQuery())
   ]);
 
   const buckets = [
@@ -1941,7 +1971,7 @@ async function renderAuctionIntelligence(el) {
 // PAGE 7: RR SQUAD 2026 AUDIT (DEDICATED VIEW)
 // =============================================================
 async function renderRRSquadAudit(el) {
-  const squad = await (await fetch('/api/rr-squad')).json();
+  const squad = await fetchJson('/api/rr-squad');
 
   el.innerHTML = `
     <div class="alert alert-info">
@@ -2001,7 +2031,7 @@ async function renderRRSquadAudit(el) {
 // PAGE 8: IPL 2027 TRADE TRACKER
 // =============================================================
 async function renderTrades(el) {
-  const trades = await (await fetch('/api/trades')).json();
+  const trades = await fetchJson('/api/trades');
 
   el.innerHTML = `
     <div class="alert alert-info">
@@ -2069,12 +2099,27 @@ async function renderTrades(el) {
 // PAGE 9: MODEL BENCHMARK & SENSITIVITY (TECHNICAL DETAILS)
 // =============================================================
 async function renderModelEvaluation(el) {
-  const [wp, ws] = await Promise.all([
-    fetch('/api/win-probability').then(r => r.json()),
-    fetch('/api/weight-sensitivity').then(r => r.json())
-  ]);
+  let wp = {}, ws = {};
+  try {
+    [wp, ws] = await Promise.all([
+      fetchJson('/api/win-probability'),
+      fetchJson('/api/weight-sensitivity')
+    ]);
+  } catch (err) {
+    el.innerHTML = `
+      <div class="alert alert-danger" style="margin:20px 0;">
+        <strong>Error loading Model Benchmark data:</strong> ${err.message}
+        <div style="margin-top:10px;">
+          <button class="btn btn-primary" onclick="renderTab()">Retry</button>
+        </div>
+      </div>
+    `;
+    return;
+  }
 
-  const models = wp.overall_metrics || {};
+  const models = wp?.overall_metrics || {};
+  const batSens = ws?.batting || {};
+  const bowlSens = ws?.bowling || {};
 
   el.innerHTML = `
     <div class="card-title">1. Win Probability Benchmark (5-Fold Match-Grouped GroupKFold)</div>
@@ -2095,27 +2140,51 @@ async function renderModelEvaluation(el) {
     </tbody></table></div>
 
     <div class="card-title">2. Tactical Weight Sensitivity (Ranking Consistency across 4 Scenarios)</div>
-    <p class="kpi-sub" style="margin-top:-8px; margin-bottom:14px">Pairwise Spearman Rank Correlation across all eligible batters proving ranking stability.</p>
-    <div class="table-container" style="margin-bottom:24px"><table><thead><tr>
-      <th>Scenario</th><th>Baseline</th><th>Balanced</th><th>Pressure-Focused</th><th>Reliability-Focused</th>
-    </tr></thead><tbody>
-      ${Object.entries(ws.batting?.correlation_matrix || {}).map(([s1, row]) => `<tr>
-        <td><strong>${s1}</strong></td>
-        <td><strong style="color:var(--cyan)">${row.Baseline}</strong></td>
-        <td>${row.Balanced}</td>
-        <td>${row['Pressure-Focused']}</td>
-        <td>${row['Reliability-Focused']}</td>
-      </tr>`).join('')}
-    </tbody></table></div>
+    <p class="kpi-sub" style="margin-top:-8px; margin-bottom:14px">
+      Pairwise Spearman Rank Correlation proving ranking stability across Baseline, Balanced, Pressure-Focused, and Reliability-Focused weight configurations.
+    </p>
+    <div class="grid-2" style="margin-bottom:24px">
+      <div class="card">
+        <div class="card-title">Batting Correlation Matrix</div>
+        <p class="kpi-sub">Pairwise Spearman rank correlation across 188 eligible batters</p>
+        <div class="table-container"><table><thead><tr>
+          <th>Scenario</th><th>Baseline</th><th>Balanced</th><th>Pressure-Focused</th><th>Reliability-Focused</th>
+        </tr></thead><tbody>
+          ${Object.entries(batSens.correlation_matrix || {}).map(([s1, row]) => `<tr>
+            <td><strong>${s1}</strong></td>
+            <td><strong style="color:var(--cyan)">${row.Baseline}</strong></td>
+            <td>${row.Balanced}</td>
+            <td>${row['Pressure-Focused']}</td>
+            <td>${row['Reliability-Focused']}</td>
+          </tr>`).join('')}
+        </tbody></table></div>
+      </div>
 
-    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">Bowling Correlation Matrix</div>
+        <p class="kpi-sub">Pairwise Spearman rank correlation across 200 eligible bowlers</p>
+        <div class="table-container"><table><thead><tr>
+          <th>Scenario</th><th>Baseline</th><th>Balanced</th><th>Pressure-Focused</th><th>Reliability-Focused</th>
+        </tr></thead><tbody>
+          ${Object.entries(bowlSens.correlation_matrix || {}).map(([s1, row]) => `<tr>
+            <td><strong>${s1}</strong></td>
+            <td><strong style="color:var(--cyan)">${row.Baseline}</strong></td>
+            <td>${row.Balanced}</td>
+            <td>${row['Pressure-Focused']}</td>
+            <td>${row['Reliability-Focused']}</td>
+          </tr>`).join('')}
+        </tbody></table></div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:24px">
       <div class="card">
         <div class="card-title">Top-10 Overlap Matrix (Batting)</div>
         <p class="kpi-sub">Number of identical players in Top-10 under alternate weightings</p>
         <div class="table-container"><table><thead><tr>
           <th>Scenario</th><th>Baseline</th><th>Balanced</th><th>Pressure-Focused</th><th>Reliability-Focused</th>
         </tr></thead><tbody>
-        ${Object.entries(ws.batting?.top10_overlap_matrix || {}).map(([s1, row]) => `<tr>
+        ${Object.entries(batSens.top10_overlap_matrix || {}).map(([s1, row]) => `<tr>
           <td><strong>${s1}</strong></td>
           <td><strong>${row.Baseline} / 10</strong></td>
           <td>${row.Balanced} / 10</td>
@@ -2126,15 +2195,85 @@ async function renderModelEvaluation(el) {
       </div>
 
       <div class="card">
-        <div class="card-title">Pareto Frontier: General Value vs High Pressure</div>
-        <p class="kpi-sub">Non-dominated players across General RAA and High-Pressure RAA</p>
+        <div class="card-title">Top-10 Overlap Matrix (Bowling)</div>
+        <p class="kpi-sub">Number of identical players in Top-10 under alternate weightings</p>
+        <div class="table-container"><table><thead><tr>
+          <th>Scenario</th><th>Baseline</th><th>Balanced</th><th>Pressure-Focused</th><th>Reliability-Focused</th>
+        </tr></thead><tbody>
+        ${Object.entries(bowlSens.top10_overlap_matrix || {}).map(([s1, row]) => `<tr>
+          <td><strong>${s1}</strong></td>
+          <td><strong>${row.Baseline} / 10</strong></td>
+          <td>${row.Balanced} / 10</td>
+          <td>${row['Pressure-Focused']} / 10</td>
+          <td>${row['Reliability-Focused']} / 10</td>
+        </tr>`).join('')}
+        </tbody></table></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:24px">
+      <div class="card-title">3. Sample Size Threshold Sensitivity (Neff &ge; 30 vs 60 vs 100)</div>
+      <p class="kpi-sub">Spearman rank correlation between Baseline and Pressure-Focused rankings as minimum effective sample size increases</p>
+      <div class="grid-2">
+        <div class="table-container">
+          <div style="font-weight:600;margin-bottom:8px;color:var(--text)">Batting Threshold Stability</div>
+          <table><thead><tr>
+            <th>Neff Threshold</th><th>Eligible Cohort Size</th><th>Spearman (Base vs Pressure)</th>
+          </tr></thead><tbody>
+          ${(batSens.neff_sensitivity || []).map(r => `<tr>
+            <td><strong>Neff &ge; ${r.threshold_neff}</strong></td>
+            <td>${r.n_eligible} batters</td>
+            <td><strong style="color:var(--cyan)">${r.spearman_base_vs_pressure != null ? r.spearman_base_vs_pressure : 'N/A'}</strong></td>
+          </tr>`).join('')}
+          </tbody></table>
+        </div>
+
+        <div class="table-container">
+          <div style="font-weight:600;margin-bottom:8px;color:var(--text)">Bowling Threshold Stability</div>
+          <table><thead><tr>
+            <th>Neff Threshold</th><th>Eligible Cohort Size</th><th>Spearman (Base vs Pressure)</th>
+          </tr></thead><tbody>
+          ${(bowlSens.neff_sensitivity || []).map(r => `<tr>
+            <td><strong>Neff &ge; ${r.threshold_neff}</strong></td>
+            <td>${r.n_eligible} bowlers</td>
+            <td><strong style="color:var(--cyan)">${r.spearman_base_vs_pressure != null ? r.spearman_base_vs_pressure : 'N/A'}</strong></td>
+          </tr>`).join('')}
+          </tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-title">4. Pareto Frontier: General Value vs High Pressure Value</div>
+    <p class="kpi-sub" style="margin-top:-8px; margin-bottom:14px">
+      Non-dominated players who represent optimal trade-offs between general baseline production and clutch high-pressure production.
+    </p>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">Batting Pareto Frontier</div>
+        <p class="kpi-sub">Non-dominated across General RAA and High-Pressure RAA</p>
         <div class="table-container"><table><thead><tr>
           <th>Player</th><th>Gen Value</th><th>Clutch Value</th><th>Score</th><th>Pressure Balls</th>
         </tr></thead><tbody>
-        ${(ws.batting?.pareto_frontier || []).map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+        ${(batSens.pareto_frontier || []).map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
           <td><div style="display:flex;align-items:center"><span class="player-avatar">${r.player_name.slice(0,2).toUpperCase()}</span><strong>${r.player_name}</strong></div></td>
-          <td>+${r.gen_value}</td>
-          <td><strong style="color:var(--green)">+${r.hp_value}</strong></td>
+          <td>${r.gen_value > 0 ? '+' : ''}${r.gen_value}</td>
+          <td><strong style="color:var(--green)">${r.hp_value > 0 ? '+' : ''}${r.hp_value}</strong></td>
+          <td>${r.pri_score_baseline}</td>
+          <td>${r.neff_hp}</td>
+        </tr>`).join('')}
+        </tbody></table></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Bowling Pareto Frontier</div>
+        <p class="kpi-sub">Non-dominated across General RSAA and High-Pressure Impact</p>
+        <div class="table-container"><table><thead><tr>
+          <th>Player</th><th>Gen Value</th><th>Clutch Value</th><th>Score</th><th>Pressure Balls</th>
+        </tr></thead><tbody>
+        ${(bowlSens.pareto_frontier || []).map(r => `<tr class="clickable" onclick="openPlayer(${r.canonical_player_id})">
+          <td><div style="display:flex;align-items:center"><span class="player-avatar">${r.player_name.slice(0,2).toUpperCase()}</span><strong>${r.player_name}</strong></div></td>
+          <td>${r.gen_value > 0 ? '+' : ''}${r.gen_value}</td>
+          <td><strong style="color:var(--green)">${r.hp_value > 0 ? '+' : ''}${r.hp_value}</strong></td>
           <td>${r.pri_score_baseline}</td>
           <td>${r.neff_hp}</td>
         </tr>`).join('')}
@@ -2148,7 +2287,7 @@ async function renderModelEvaluation(el) {
 // PAGE 10: TECHNICAL DETAILS & FORMULAS
 // =============================================================
 async function renderMethodology(el) {
-  const m = await (await fetch('/api/methodology')).json();
+  const m = await fetchJson('/api/methodology');
   const acc = m.accounting;
 
   el.innerHTML = `
@@ -2204,12 +2343,17 @@ async function renderMethodology(el) {
 // MODAL: PLAYER DETAIL VIEW (ENRICHED WITH ANALYST COMMENTARY)
 // =============================================================
 async function openPlayer(cid) {
-  const [res, dims] = await Promise.all([
-    fetch('/api/player/' + cid),
-    fetch('/api/evaluation-dimensions').then(r => r.json())
-  ]);
-  if (!res.ok) return;
-  const p = await res.json();
+  let p, dims;
+  try {
+    [p, dims] = await Promise.all([
+      fetchJson('/api/player/' + cid),
+      fetchJson('/api/evaluation-dimensions')
+    ]);
+  } catch (err) {
+    console.error('Failed to load player modal data:', err);
+    return;
+  }
+  if (!p) return;
 
   // Find if player has an analyst blurb in dims
   let analystBlurb = "Evaluated under standard IPL and T20I competition conditions.";
