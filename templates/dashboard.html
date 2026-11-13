@@ -9,39 +9,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #090614;
-      --surface: #120d24;
-      --surface-card: #181132;
-      --surface-elevated: #221845;
-      --surface-hover: #2a1e54;
-      --border: #2e2358;
-      --border-subtle: #20173e;
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-      --text-dim: #64748b;
-      --rr-pink: #ea1a85;
-      --rr-pink-hover: #d01374;
-      --rr-pink-glow: rgba(234, 26, 133, 0.22);
-      --rr-royal: #1e1348;
-      --cyan: #38bdf8;
-      --cyan-glow: rgba(56, 189, 248, 0.18);
-      --gold: #f59e0b;
-      --gold-glow: rgba(245, 158, 11, 0.18);
-      --green: #10b981;
-      --green-glow: rgba(16, 185, 129, 0.18);
-      --red: #ef4444;
-      --red-glow: rgba(239, 68, 68, 0.18);
-      --purple: #a78bfa;
-      --sidebar-width: 270px;
-      --sidebar-collapsed-width: 72px;
-      --topbar-height: 64px;
-      --radius-sm: 6px;
-      --radius-md: 10px;
-      --radius-lg: 14px;
+      --bg: #0B0D12;
+      --surface: #12161F;
+      --surface-card: #12161F;
+      --surface-elevated: #1A202C;
+      --surface-hover: #222938;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-subtle: rgba(255, 255, 255, 0.05);
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+      --rr-pink: #EA1A85;
+      --rr-pink-hover: #D01374;
+      --rr-pink-glow: rgba(234, 26, 133, 0.16);
+      --rr-royal: #254AA5;
+      --rr-royal-glow: rgba(37, 74, 165, 0.2);
+      --cyan: #38BDF8;
+      --cyan-glow: rgba(56, 189, 248, 0.15);
+      --gold: #F59E0B;
+      --gold-glow: rgba(245, 158, 11, 0.15);
+      --green: #10B981;
+      --green-glow: rgba(16, 185, 129, 0.15);
+      --red: #EF4444;
+      --red-glow: rgba(239, 68, 68, 0.15);
+      --purple: #8B5CF6;
+      --sidebar-width: 240px;
+      --sidebar-collapsed-width: 64px;
+      --topbar-height: 56px;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
       --radius-full: 9999px;
       --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-      --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.45);
-      --shadow-elevated: 0 10px 30px -4px rgba(0, 0, 0, 0.6);
+      --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.35), 0 1px 2px -1px rgba(0, 0, 0, 0.35);
+      --shadow-elevated: 0 10px 28px -4px rgba(0, 0, 0, 0.65);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -55,12 +56,19 @@
       min-height: 100vh;
       overflow-x: hidden;
       font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-mono, .tnum, td.tnum, .kpi-val, .metric-val {
+      font-family: var(--font-mono);
+      font-feature-settings: "tnum";
+      font-variant-numeric: tabular-nums;
     }
 
     /* Scrollbars */
-    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: var(--radius-full); }
+    ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.12); border-radius: var(--radius-full); }
     ::-webkit-scrollbar-thumb:hover { background: var(--rr-pink); }
 
     /* SVG Icon utility */
@@ -68,8 +76,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 18px;
-      height: 18px;
+      width: 17px;
+      height: 17px;
       flex-shrink: 0;
       vertical-align: middle;
       stroke-width: 2;
@@ -92,7 +100,7 @@
       bottom: 0;
       left: 0;
       z-index: 50;
-      transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     body.collapsed #sidebar {
@@ -100,27 +108,28 @@
     }
 
     .sidebar-header {
-      padding: 18px 20px;
+      padding: 14px 18px;
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       gap: 12px;
-      background: linear-gradient(180deg, rgba(234, 26, 133, 0.12) 0%, transparent 100%);
+      height: var(--topbar-height);
+      background: linear-gradient(180deg, rgba(234, 26, 133, 0.08) 0%, transparent 100%);
     }
 
     .brand-crest {
-      width: 38px;
-      height: 38px;
-      background: linear-gradient(135deg, var(--rr-pink) 0%, #7928ca 100%);
-      border-radius: var(--radius-md);
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--rr-pink) 0%, #254aa5 100%);
+      border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
       font-weight: 800;
-      font-size: 1.15rem;
+      font-size: 0.95rem;
       letter-spacing: -0.5px;
-      box-shadow: 0 0 16px var(--rr-pink-glow);
+      box-shadow: 0 0 12px var(--rr-pink-glow);
       flex-shrink: 0;
     }
 
@@ -132,8 +141,8 @@
 
     .brand-title {
       font-weight: 800;
-      font-size: 0.96rem;
-      letter-spacing: 0.2px;
+      font-size: 0.88rem;
+      letter-spacing: 0.1px;
       color: #fff;
       display: flex;
       align-items: center;
@@ -141,7 +150,7 @@
     }
 
     .brand-sub {
-      font-size: 0.73rem;
+      font-size: 0.68rem;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.6px;
@@ -158,31 +167,31 @@
     .sidebar-content {
       flex: 1;
       overflow-y: auto;
-      padding: 14px 10px;
+      padding: 12px 8px;
     }
 
     .nav-group {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .nav-group-title {
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       color: var(--text-dim);
-      padding: 6px 12px;
+      padding: 6px 10px;
       font-weight: 700;
     }
 
     .nav-link {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 9px 12px;
+      gap: 10px;
+      padding: 8px 10px;
       border-radius: var(--radius-md);
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 500;
       cursor: pointer;
       border: 1px solid transparent;
@@ -192,12 +201,12 @@
     }
 
     .nav-link:hover {
-      background: var(--surface-card);
+      background: var(--surface-elevated);
       color: var(--text);
     }
 
     .nav-link.active {
-      background: rgba(234, 26, 133, 0.14);
+      background: rgba(234, 26, 133, 0.12);
       color: #fff;
       border-color: rgba(234, 26, 133, 0.35);
       font-weight: 600;
@@ -208,21 +217,21 @@
     }
 
     .sidebar-footer {
-      padding: 12px 14px;
+      padding: 10px 14px;
       border-top: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
-      background: rgba(18, 13, 36, 0.7);
+      gap: 8px;
+      background: var(--surface);
     }
 
     .collapse-btn {
       background: var(--surface-elevated);
       border: 1px solid var(--border);
       color: var(--text-muted);
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
       border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
@@ -244,7 +253,7 @@
       display: flex;
       flex-direction: column;
       min-width: 0;
-      transition: margin-left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: margin-left 0.22s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     body.collapsed #main-container {
@@ -254,10 +263,11 @@
     /* Top Navigation Bar */
     header.topbar {
       height: var(--topbar-height);
-      background: rgba(18, 13, 36, 0.85);
+      background: rgba(18, 22, 31, 0.88);
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      padding: 0 24px;
+      padding: 0 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -270,46 +280,64 @@
     .topbar-left {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       flex: 1;
-      max-width: 480px;
+      max-width: 380px;
     }
 
     .search-box {
       position: relative;
       width: 100%;
+      max-width: 320px;
     }
 
     .search-box .icon {
       position: absolute;
-      left: 12px;
+      left: 11px;
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-dim);
+      width: 15px;
+      height: 15px;
     }
 
     .search-input {
       width: 100%;
       background: var(--surface-card);
       border: 1px solid var(--border);
-      border-radius: var(--radius-full);
-      padding: 8px 14px 8px 38px;
-      font-size: 0.84rem;
+      border-radius: var(--radius-md);
+      padding: 6px 34px 6px 32px;
+      font-size: 0.82rem;
       color: var(--text);
       outline: none;
       transition: all 0.15s;
     }
 
     .search-input:focus {
-      border-color: var(--rr-pink);
+      border-color: rgba(234, 26, 133, 0.6);
       background: var(--surface-elevated);
-      box-shadow: 0 0 12px var(--rr-pink-glow);
+      box-shadow: 0 0 0 2px var(--rr-pink-glow);
+    }
+
+    .search-kbd {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.62rem;
+      font-family: var(--font-mono);
+      padding: 1px 5px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 3px;
+      color: var(--text-dim);
+      pointer-events: none;
     }
 
     .topbar-right {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex-shrink: 0;
     }
 
@@ -443,37 +471,48 @@
     .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 22px; }
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 18px; margin-bottom: 22px; }
 
-    /* KPI Cards */
-    .kpi-card {
+    /* 5-Column Compact KPI Strip */
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
       background: var(--surface-card);
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      padding: 16px 18px;
+      margin-bottom: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    .kpi-cell {
+      padding: 14px 18px;
       display: flex;
       flex-direction: column;
       position: relative;
-      overflow: hidden;
-      transition: transform 0.2s, border-color 0.2s;
+      border-right: 1px solid var(--border);
+      transition: background 0.15s ease;
     }
 
-    .kpi-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(234, 26, 133, 0.4);
+    .kpi-cell:last-child {
+      border-right: none;
     }
 
-    .kpi-card::before {
+    .kpi-cell:hover {
+      background: var(--surface-elevated);
+    }
+
+    .kpi-cell::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent-color, var(--rr-pink)), transparent);
-      opacity: 0.8;
+      background: var(--accent-color, var(--rr-pink));
+      opacity: 0.9;
     }
 
     .kpi-label {
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.7px;
       color: var(--text-dim);
@@ -484,17 +523,236 @@
     }
 
     .kpi-val {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       font-weight: 800;
       letter-spacing: -0.5px;
       margin: 6px 0 2px;
       font-family: var(--font-mono);
+      font-feature-settings: "tnum";
+      font-variant-numeric: tabular-nums;
       color: var(--text);
+      line-height: 1.15;
     }
 
     .kpi-sub {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: var(--text-muted);
+    }
+
+    .kpi-dim {
+      color: var(--text-dim);
+      font-weight: 400;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 1024px) {
+      .kpi-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .kpi-cell:nth-child(2n) {
+        border-right: none;
+      }
+      .kpi-cell {
+        border-bottom: 1px solid var(--border);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .kpi-strip {
+        grid-template-columns: 1fr;
+      }
+      .kpi-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+    }
+
+    /* Scannable Analytical Player Rows */
+    .scannable-row {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.16s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .scannable-row:hover {
+      background: var(--surface-elevated);
+      border-color: rgba(234, 26, 133, 0.4);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .scannable-row-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .scannable-row-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .scannable-rank {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border);
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+    }
+
+    .scannable-rank.rank-top3 {
+      background: linear-gradient(135deg, var(--rr-pink) 0%, #254aa5 100%);
+      border-color: rgba(234, 26, 133, 0.4);
+      box-shadow: 0 0 10px var(--rr-pink-glow);
+    }
+
+    .scannable-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .scannable-name-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .scannable-name {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .scannable-score-bar-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 4px;
+      width: 100%;
+      max-width: 240px;
+    }
+
+    .scannable-score-bar {
+      flex: 1;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+
+    .scannable-score-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--cyan), var(--rr-pink));
+      border-radius: var(--radius-full);
+    }
+
+    .scannable-score-text {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      white-space: nowrap;
+    }
+
+    .scannable-row-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      flex-shrink: 0;
+    }
+
+    .scannable-metric-num {
+      font-size: 1.15rem;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      color: var(--green);
+      line-height: 1.1;
+    }
+
+    .scannable-metric-sub {
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      margin-top: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .scannable-analyst-snippet {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: rgba(0, 0, 0, 0.25);
+      border-left: 2px solid var(--rr-pink);
+      border-radius: var(--radius-sm);
+      padding: 6px 10px;
+      line-height: 1.4;
+    }
+
+    .btn-quick-cmp {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 0.68rem;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .btn-quick-cmp:hover {
+      color: var(--text);
+      background: var(--surface-hover);
+      border-color: var(--cyan);
+    }
+
+    /* Comparison Drawer & Modal */
+    .compare-drawer {
+      position: fixed;
+      bottom: 0;
+      left: var(--sidebar-width);
+      right: 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      box-shadow: var(--shadow-elevated);
+      padding: 12px 24px;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      z-index: 60;
+      transition: left 0.22s ease;
+    }
+
+    body.collapsed .compare-drawer {
+      left: var(--sidebar-collapsed-width);
+    }
+
+    .compare-drawer.active {
+      display: flex;
     }
 
     /* Alerts */
@@ -1009,6 +1267,7 @@
         <div class="search-box">
           <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           <input type="text" class="search-input" id="global-search" placeholder="Search player (e.g. Suryakumar, Bumrah, Ellis)..." oninput="handleGlobalSearch(this.value)" />
+          <kbd class="search-kbd">⌘K</kbd>
         </div>
       </div>
 
@@ -1058,6 +1317,22 @@
     <div class="modal" id="player-modal-body"></div>
   </div>
 
+  <!-- Quick Compare Floating Drawer -->
+  <div id="quick-compare-drawer" class="compare-drawer">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+      <span class="badge b-strong">Comparison Tray</span>
+      <span id="quick-compare-names" style="font-size:0.84rem;color:var(--text);font-weight:600">Select players to compare</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <button class="pill active" onclick="executeQuickCompare()" style="padding:5px 14px;font-size:0.78rem">
+        Launch Head-to-Head Comparison
+      </button>
+      <button class="btn-close" onclick="clearQuickCompare()" title="Clear tray" style="width:28px;height:28px">
+        <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+
 <script>
 const STATE = {
   tab: 'overview',
@@ -1066,8 +1341,58 @@ const STATE = {
   bowlView: 'hp_headline',
   auctionBucket: 'pending_registration',
   filters: { search: '', role: '', availability: '', ipl_exp: '', pressure_tier: '', confidence_tier: '', all_rounder_only: false },
-  compareIds: [1699, 6396, 2933, 7920]
+  compareIds: [1699, 6396, 2933, 7920],
+  quickCompare: []
 };
+
+// Global Keyboard Shortcut: Cmd+K / Ctrl+K to focus search
+document.addEventListener('keydown', (e) => {
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+    e.preventDefault();
+    const searchInput = document.getElementById('global-search');
+    if (searchInput) {
+      searchInput.focus();
+      searchInput.select();
+    }
+  }
+});
+
+function toggleQuickCompare(cid, name) {
+  if (!STATE.quickCompare) STATE.quickCompare = [];
+  const idx = STATE.quickCompare.findIndex(x => x.id === cid);
+  if (idx >= 0) {
+    STATE.quickCompare.splice(idx, 1);
+  } else {
+    if (STATE.quickCompare.length >= 4) {
+      STATE.quickCompare.shift();
+    }
+    STATE.quickCompare.push({ id: cid, name: name });
+  }
+  updateQuickCompareDrawer();
+}
+
+function updateQuickCompareDrawer() {
+  const drawer = document.getElementById('quick-compare-drawer');
+  const label = document.getElementById('quick-compare-names');
+  if (!drawer || !label) return;
+  if (!STATE.quickCompare || STATE.quickCompare.length === 0) {
+    drawer.classList.remove('active');
+  } else {
+    drawer.classList.add('active');
+    label.innerHTML = STATE.quickCompare.map(x => `<span class="badge b-contracted" style="margin-right:4px">${x.name}</span>`).join(' <span style="color:var(--text-dim)">&bull;</span> ');
+  }
+}
+
+function clearQuickCompare() {
+  STATE.quickCompare = [];
+  updateQuickCompareDrawer();
+}
+
+function executeQuickCompare() {
+  if (!STATE.quickCompare || STATE.quickCompare.length === 0) return;
+  STATE.compareIds = STATE.quickCompare.map(x => x.id);
+  openTab('compare');
+}
 
 // Plain English Metric Glossary
 const METRIC_GLOSSARY = {
@@ -1321,74 +1646,83 @@ async function renderOverview(el) {
       </div>
     </div>
 
-    <!-- 5 Top Metric Cards with Plain Language -->
-    <div class="grid-5">
-      <div class="kpi-card" style="--accent-color:var(--cyan)">
+    <!-- 5 Top Metric Strip with Unified Hairline Dividers -->
+    <div class="kpi-strip">
+      <div class="kpi-cell" style="--accent-color:var(--cyan)">
         <div class="kpi-label">Audited Deliveries ${tip('pi')}</div>
         <div class="kpi-val" style="color:var(--cyan)">${d.universe_counts.primary_deliveries.toLocaleString()}</div>
-        <div class="kpi-sub">IPL (full weight) + T20I (half weight)</div>
+        <div class="kpi-sub">IPL (full 1.0) + T20I (calibrated 0.5)</div>
       </div>
-      <div class="kpi-card" style="--accent-color:var(--purple)">
+      <div class="kpi-cell" style="--accent-color:var(--purple)">
         <div class="kpi-label">Evaluated Universe ${tip('shrinkage')}</div>
-        <div class="kpi-val">${d.universe_counts.eligible_batters} / ${d.universe_counts.eligible_bowlers}</div>
-        <div class="kpi-sub">Batters / Bowlers (30+ balls faced)</div>
+        <div class="kpi-val">${d.universe_counts.eligible_batters} <span class="kpi-dim">/</span> ${d.universe_counts.eligible_bowlers}</div>
+        <div class="kpi-sub">Batters / Bowlers (&ge; 30 balls faced)</div>
       </div>
-      <div class="kpi-card" style="--accent-color:var(--rr-pink)">
+      <div class="kpi-cell" style="--accent-color:var(--rr-pink)">
         <div class="kpi-label">RR 2026 Record</div>
-        <div class="kpi-val" style="color:var(--rr-pink)">8 – 6 (3rd)</div>
+        <div class="kpi-val" style="color:var(--rr-pink)">8 – 6 <span class="kpi-dim">(3rd)</span></div>
         <div class="kpi-sub">Guwahati 3/3 | SMS Jaipur 1/4</div>
       </div>
-      <div class="kpi-card" style="--accent-color:var(--gold)">
+      <div class="kpi-cell" style="--accent-color:var(--gold)">
         <div class="kpi-label">Pressure vs Leverage ${tip('leverage')}</div>
         <div class="kpi-val" style="color:var(--gold)">r = -0.20</div>
-        <div class="kpi-sub">Pressure != Leverage (Quantified)</div>
+        <div class="kpi-sub">Low Correlation (Orthogonal Signal)</div>
       </div>
-      <div class="kpi-card" style="--accent-color:var(--green)">
+      <div class="kpi-cell" style="--accent-color:var(--green)">
         <div class="kpi-label">Auction Eligibility</div>
         <div class="kpi-val" style="color:var(--green)">0 Confirmed</div>
-        <div class="kpi-sub">Nov 17 Ret. / Dec 16 Goa Auction</div>
+        <div class="kpi-sub">Pre-retention pending BCCI Nov 17</div>
       </div>
     </div>
 
     <!-- HEADLINE SECTION: TOP 10 UNDER PRESSURE (THE PRIMARY DELIVERABLE) -->
-    <div class="card-title" style="margin-top:28px">
+    <div class="card-title" style="margin-top:24px">
       <span class="icon-title">
-        <svg class="icon" style="color:var(--rr-pink);width:22px;height:22px" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-        <strong style="font-size:1.15rem;letter-spacing:0.3px">PRIMARY COMPETITION DELIVERABLE: TOP 10 PLAYERS UNDER PRESSURE</strong>
+        <svg class="icon" style="color:var(--rr-pink);width:20px;height:20px" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <strong style="font-size:1.05rem;letter-spacing:0.3px">PRIMARY COMPETITION DELIVERABLE: TOP 10 PLAYERS UNDER PRESSURE</strong>
       </span>
-      <span class="kpi-sub">Filtered to verified high-pressure situations with robust sample size</span>
+      <span class="kpi-sub">Filtered to verified high-pressure situations with robust sample size (Neff_HP &ge; 30)</span>
     </div>
 
     <div class="grid-2">
       <!-- TOP 10 BATTERS UNDER PRESSURE -->
       <div class="card" style="border-top:3px solid var(--rr-pink)">
-        <div class="card-title" style="color:var(--rr-pink)">
+        <div class="card-title" style="color:var(--rr-pink);margin-bottom:6px">
           <span>Top 10 Most Reliable Batters Under Pressure</span>
           <span style="font-size:0.75rem;color:var(--text-dim);font-weight:400">${lbl('hp_raa')}</span>
         </div>
-        <p class="kpi-sub" style="margin-top:-8px; margin-bottom:14px">
+        <p class="kpi-sub" style="margin-bottom:14px">
           Ranked by scoring impact specifically when the team is in difficult run chases or under high match pressure.
         </p>
         <div>
           ${topBat.map((r, i) => `
-            <div class="clutch-card" onclick="openPlayer(${r.canonical_player_id})">
-              <div class="clutch-card-head">
-                <div style="display:flex;align-items:center;gap:10px">
-                  <div class="clutch-rank-badge">#${i+1}</div>
-                  <div>
-                    <strong style="font-size:0.95rem">${r.player_name}</strong>
-                    <div style="font-size:0.75rem;color:var(--text-dim);margin-top:2px">
-                      ${lbl('neff_hp')}: <strong>${r.neff_hp.toFixed(0)}</strong> | ${lbl('pri_lcb')}: <strong>${r.pri_score_lcb.toFixed(1)}</strong>
+            <div class="scannable-row" onclick="openPlayer(${r.canonical_player_id})">
+              <div class="scannable-row-main">
+                <div class="scannable-row-left">
+                  <div class="scannable-rank ${i < 3 ? 'rank-top3' : ''}">#${i+1}</div>
+                  <div class="scannable-info">
+                    <div class="scannable-name-row">
+                      <span class="scannable-name">${r.player_name}</span>
+                      ${evidenceBadge(r.evidence_badge)}
+                      <button class="btn-quick-cmp" onclick="event.stopPropagation(); toggleQuickCompare(${r.canonical_player_id}, '${r.player_name.replace(/'/g, "\\'")}')" title="Add to comparison">
+                        <svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24"><path d="M16 3h5v5"></path><path d="M4 20L21 3"></path><path d="M21 16v5h-5"></path><path d="M15 15l6 6"></path><path d="M4 4l5 5"></path></svg>
+                        Compare
+                      </button>
+                    </div>
+                    <div class="scannable-score-bar-wrap">
+                      <div class="scannable-score-bar">
+                        <div class="scannable-score-bar-fill" style="width:${Math.min(100, Math.max(5, r.pri_score_lcb))}%"></div>
+                      </div>
+                      <span class="scannable-score-text">LCB <strong>${r.pri_score_lcb.toFixed(1)}</strong> &bull; ${r.neff_hp.toFixed(0)} balls</span>
                     </div>
                   </div>
                 </div>
-                <div style="text-align:right">
-                  <strong style="font-size:1.05rem;color:var(--green)">+${r.hp_raa_post.toFixed(2)}</strong>
-                  <div style="font-size:0.7rem;color:var(--text-dim)">runs / 100 balls</div>
-                  <div style="margin-top:3px">${evidenceBadge(r.evidence_badge)}</div>
+                <div class="scannable-row-right">
+                  <div class="scannable-metric-num">+${r.hp_raa_post.toFixed(2)}</div>
+                  <div class="scannable-metric-sub">runs / 100b</div>
                 </div>
               </div>
-              <div class="analyst-quote">
+              <div class="scannable-analyst-snippet">
                 <strong>Analyst Verdict:</strong> ${r.analyst_blurb}
               </div>
             </div>
@@ -1398,39 +1732,49 @@ async function renderOverview(el) {
 
       <!-- TOP 10 BOWLERS UNDER PRESSURE -->
       <div class="card" style="border-top:3px solid var(--cyan)">
-        <div class="card-title" style="color:var(--cyan)">
+        <div class="card-title" style="color:var(--cyan);margin-bottom:6px">
           <span>Top 10 Most Reliable Bowlers Under Pressure</span>
           <span style="font-size:0.75rem;color:var(--text-dim);font-weight:400">${lbl('hp_impact')}</span>
         </div>
-        <p class="kpi-sub" style="margin-top:-8px; margin-bottom:14px">
+        <p class="kpi-sub" style="margin-bottom:14px">
           Ranked by run restriction and boundary suppression during crunch overs when matches hang in the balance.
         </p>
         <div>
           ${topBowl.map((r, i) => `
-            <div class="clutch-card" onclick="openPlayer(${r.canonical_player_id})">
-              <div class="clutch-card-head">
-                <div style="display:flex;align-items:center;gap:10px">
-                  <div class="clutch-rank-badge" style="background:linear-gradient(135deg, var(--cyan) 0%, var(--purple) 100%)">#${i+1}</div>
-                  <div>
-                    <strong style="font-size:0.95rem">${r.player_name}</strong>
-                    <div style="font-size:0.75rem;color:var(--text-dim);margin-top:2px">
-                      ${lbl('neff_hp')}: <strong>${r.neff_hp.toFixed(0)}</strong> | ${lbl('pri_lcb')}: <strong>${r.pri_score_lcb.toFixed(1)}</strong>
+            <div class="scannable-row" onclick="openPlayer(${r.canonical_player_id})">
+              <div class="scannable-row-main">
+                <div class="scannable-row-left">
+                  <div class="scannable-rank ${i < 3 ? 'rank-top3' : ''}" style="${i < 3 ? 'background:linear-gradient(135deg, var(--cyan) 0%, #254aa5 100%);border-color:rgba(56,189,248,0.4);box-shadow:0 0 10px var(--cyan-glow)' : ''}">#${i+1}</div>
+                  <div class="scannable-info">
+                    <div class="scannable-name-row">
+                      <span class="scannable-name">${r.player_name}</span>
+                      ${evidenceBadge(r.evidence_badge)}
+                      <button class="btn-quick-cmp" onclick="event.stopPropagation(); toggleQuickCompare(${r.canonical_player_id}, '${r.player_name.replace(/'/g, "\\'")}')" title="Add to comparison">
+                        <svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24"><path d="M16 3h5v5"></path><path d="M4 20L21 3"></path><path d="M21 16v5h-5"></path><path d="M15 15l6 6"></path><path d="M4 4l5 5"></path></svg>
+                        Compare
+                      </button>
+                    </div>
+                    <div class="scannable-score-bar-wrap">
+                      <div class="scannable-score-bar">
+                        <div class="scannable-score-bar-fill" style="width:${Math.min(100, Math.max(5, r.pri_score_lcb))}%;background:linear-gradient(90deg, var(--cyan), #8b5cf6)"></div>
+                      </div>
+                      <span class="scannable-score-text">LCB <strong>${r.pri_score_lcb.toFixed(1)}</strong> &bull; ${r.neff_hp.toFixed(0)} balls</span>
                     </div>
                   </div>
                 </div>
-                <div style="text-align:right">
-                  <strong style="font-size:1.05rem;color:var(--green)">+${r.hp_impact_post.toFixed(2)}</strong>
-                  <div style="font-size:0.7rem;color:var(--text-dim)">runs saved / over</div>
-                  <div style="margin-top:3px">${evidenceBadge(r.evidence_badge)}</div>
+                <div class="scannable-row-right">
+                  <div class="scannable-metric-num" style="color:var(--cyan)">+${r.hp_impact_post.toFixed(2)}</div>
+                  <div class="scannable-metric-sub">runs saved / ov</div>
                 </div>
               </div>
-              <div class="analyst-quote" style="border-left-color:var(--rr-pink)">
+              <div class="scannable-analyst-snippet" style="border-left-color:var(--cyan)">
                 <strong>Analyst Verdict:</strong> ${r.analyst_blurb}
               </div>
             </div>
           `).join('')}
         </div>
       </div>
+    </div>
     </div>
 
     <!-- Powerplay Exposure Paradox Alert -->
@@ -2396,28 +2740,36 @@ async function openPlayer(cid) {
       </div>
       ${isBat && (d.hp_pace_sr || d.hp_spin_sr || d.tactical_archetype) ? `
         <div class="card" style="margin-top:12px;background:rgba(0,195,255,0.03);border:1px solid rgba(0,195,255,0.18);padding:10px 14px">
-          <div style="font-size:0.75rem;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:6px">Tactical Matchup &amp; Composure Intelligence (PI &ge; 60)</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <span style="font-size:0.75rem;text-transform:uppercase;color:var(--cyan);font-weight:700">Tactical Matchup &amp; Composure Intelligence (PI &ge; 60)</span>
+            <span style="font-size:0.7rem;color:var(--text-dim)">Behavioral proxy from BBB sequence</span>
+          </div>
           <div style="display:flex;flex-wrap:wrap;gap:14px;font-size:0.83rem">
-            <div><strong>vs Pace:</strong> ${d.hp_pace_sr ? d.hp_pace_sr + ' SR (' + d.hp_pace_bound_pct + '% 4s/6s across ' + d.hp_pace_balls + 'b)' : 'Limited Sample'}</div>
-            <div><strong>vs Spin:</strong> ${d.hp_spin_sr ? d.hp_spin_sr + ' SR (' + d.hp_spin_bound_pct + '% 4s/6s across ' + d.hp_spin_balls + 'b)' : 'Limited Sample'}</div>
+            <div><strong>vs Pace:</strong> ${d.hp_pace_sr ? d.hp_pace_sr + ' SR (' + d.hp_pace_bound_pct + '% 4s/6s across ' + d.hp_pace_balls + 'b in ' + (d.hp_pace_matches || '—') + 'm)' : 'Limited Sample (< 10b)'}</div>
+            <div><strong>vs Spin:</strong> ${d.hp_spin_sr ? d.hp_spin_sr + ' SR (' + d.hp_spin_bound_pct + '% 4s/6s across ' + d.hp_spin_balls + 'b in ' + (d.hp_spin_matches || '—') + 'm)' : 'Limited Sample (< 10b)'}</div>
           </div>
           <div style="margin-top:6px;font-size:0.8rem;color:var(--text-dim)">
             <strong>Tactical Archetype:</strong> <span style="color:var(--text)">${d.tactical_archetype || 'Situational Contributor'}</span> |
-            <strong>Post-Dot Recovery:</strong> <span style="color:var(--green)">${d.post_dot_sr ? d.post_dot_sr + ' SR (' + d.post_dot_wkt_pct + '% out)' : '—'}</span> (${d.composure_tier || 'Standard'})
+            <strong>Post-Dot Recovery (${d.post_dot_opps || 0} opps in ${d.post_dot_matches || 0}m):</strong>
+            <span style="color:var(--green)">${d.post_dot_sr ? d.post_dot_sr + ' SR (' + d.post_dot_wkt_pct + '% out' + (d.post_dot_wkt_ci ? ', 95% CI [' + d.post_dot_wkt_ci[0] + '%, ' + d.post_dot_wkt_ci[1] + '%]' : '') + ')' : '—'}</span>
+            &mdash; <span style="color:var(--text-muted)">${d.composure_tier || 'Standard'}</span>
           </div>
         </div>
       ` : ''}
       ${!isBat && (d.post_b_econ || d.rhb_econ || d.tactical_role) ? `
         <div class="card" style="margin-top:12px;background:rgba(255,0,127,0.03);border:1px solid rgba(255,0,127,0.18);padding:10px 14px">
-          <div style="font-size:0.75rem;text-transform:uppercase;color:var(--rr-pink);font-weight:700;margin-bottom:6px">Tactical Matchup &amp; Bounce-Back Composure</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <span style="font-size:0.75rem;text-transform:uppercase;color:var(--rr-pink);font-weight:700">Tactical Matchup &amp; Bounce-Back Composure (${d.post_b_opps || 0} opps in ${d.post_b_matches || 0}m)</span>
+            <span style="font-size:0.7rem;color:var(--text-dim)">Immediate same-over reset proxy</span>
+          </div>
           <div style="display:flex;flex-wrap:wrap;gap:14px;font-size:0.83rem">
             <div><strong>Post-Boundary Econ:</strong> <span style="color:var(--green)">${d.post_b_econ ? d.post_b_econ + ' RPO' : '—'}</span> (League: 9.51)</div>
-            <div><strong>Repeat Boundary:</strong> ${d.post_b_repeat_b_pct ? d.post_b_repeat_b_pct + '%' : '—'} (League: 22.8%)</div>
-            <div><strong>Dot Rebound:</strong> ${d.post_b_dot_pct ? d.post_b_dot_pct + '%' : '—'} (League: 34.6%)</div>
+            <div><strong>Repeat Boundary:</strong> ${d.post_b_repeat_b_pct ? d.post_b_repeat_b_pct + '%' + (d.post_b_repeat_b_ci ? ' [' + d.post_b_repeat_b_ci[0] + '%, ' + d.post_b_repeat_b_ci[1] + '%]' : '') : '—'} (League: 22.8%)</div>
+            <div><strong>Dot Rebound:</strong> ${d.post_b_dot_pct ? d.post_b_dot_pct + '%' + (d.post_b_dot_ci ? ' [' + d.post_b_dot_ci[0] + '%, ' + d.post_b_dot_ci[1] + '%]' : '') : '—'} (League: 34.6%)</div>
           </div>
           <div style="margin-top:6px;font-size:0.8rem;color:var(--text-dim)">
-            <strong>Tactical Role:</strong> <span style="color:var(--text)">${d.tactical_role || 'Situational Container'}</span> |
-            <strong>Matchups:</strong> vs RHB ${d.rhb_econ ? d.rhb_econ + ' RPO' : '—'} / vs LHB ${d.lhb_econ ? d.lhb_econ + ' RPO' : '—'}
+            <strong>Tactical Role:</strong> <span style="color:var(--text)">${d.tactical_role || 'Situational Container'}</span> (${d.bounceback_tier || 'Standard'}) |
+            <strong>Matchups:</strong> vs RHB ${d.rhb_econ ? d.rhb_econ + ' RPO (' + d.rhb_balls + 'b)' : '—'} / vs LHB ${d.lhb_econ ? d.lhb_econ + ' RPO (' + d.lhb_balls + 'b)' : '—'}
           </div>
         </div>
       ` : ''}
@@ -2440,9 +2792,15 @@ async function openPlayer(cid) {
           </div>
         </div>
       </div>
-      <button class="btn-close" onclick="closeModal()">
-        <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      </button>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button class="pill" id="modal-compare-btn" onclick="toggleQuickCompare(${p.canonical_player_id}, '${p.player_name.replace(/'/g, "\\'")}'); closeModal();" style="padding:4px 10px;font-size:0.75rem">
+          <svg class="icon" style="width:12px;height:12px" viewBox="0 0 24 24"><path d="M16 3h5v5"></path><path d="M4 20L21 3"></path><path d="M21 16v5h-5"></path><path d="M15 15l6 6"></path><path d="M4 4l5 5"></path></svg>
+          ${(STATE.quickCompare && STATE.quickCompare.some(x => x.id === p.canonical_player_id)) ? 'In Compare Tray' : 'Compare'}
+        </button>
+        <button class="btn-close" onclick="closeModal()">
+          <svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
 
     <!-- Prominent Analyst Verdict Box -->

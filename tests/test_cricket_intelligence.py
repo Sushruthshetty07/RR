@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from src.cricket_intelligence import generate_cricket_intelligence_summary
+from src.cricket_intelligence import generate_cricket_intelligence_summary, wilson_confidence_interval
 
 DATA_PROCESSED = ROOT / "data" / "processed"
 
@@ -50,11 +50,34 @@ class TestCricketIntelligence(unittest.TestCase):
         self.assertGreaterEqual(pb_base["repeat_boundary_pct"], 15.0)
         self.assertLessEqual(pb_base["repeat_boundary_pct"], 35.0)
 
+    def test_wilson_interval_logic(self):
+        """Tests the Wilson confidence interval bounds and edge cases."""
+        # Edge case: n = 0
+        self.assertEqual(wilson_confidence_interval(0, 0), (0.0, 0.0))
+        # 0 observed out of 20
+        low, high = wilson_confidence_interval(0, 20)
+        self.assertEqual(low, 0.0)
+        self.assertGreater(high, 10.0)
+        self.assertLess(high, 20.0)
+        # Symmetrical case: 50 out of 100
+        low, high = wilson_confidence_interval(50, 100)
+        self.assertAlmostEqual(low, 40.4, places=1)
+        self.assertAlmostEqual(high, 59.6, places=1)
+
     def test_eligible_player_coverage(self):
         bat_intel = self.ci["batting_intelligence"]
         bowl_intel = self.ci["bowling_intelligence"]
         self.assertGreaterEqual(len(bat_intel), 180)
         self.assertGreaterEqual(len(bowl_intel), 190)
+
+    def test_small_sample_insufficient_evidence_guard(self):
+        """Verifies that players with N < 15 post-event opportunities are assigned Insufficient Evidence."""
+        bat_intel = self.ci["batting_intelligence"]
+        # Sanju Samson (2258) has 12 post-dot opps in HP (< 15)
+        samson = bat_intel.get("2258")
+        self.assertIsNotNone(samson)
+        self.assertEqual(samson["post_dot_opps"], 12)
+        self.assertIn("Insufficient Evidence", samson["composure_tier"])
 
     def test_strategic_profiles_4_questions(self):
         profiles = self.ci["strategic_profiles"]
@@ -64,6 +87,8 @@ class TestCricketIntelligence(unittest.TestCase):
             self.assertIn("q2_significance", p)
             self.assertIn("q3_rr_implication", p)
             self.assertIn("q4_scouting_decision", p)
+            # Ensure no speculative auction price tags remain
+            self.assertNotIn("₹", p["q4_scouting_decision"])
 
     def test_official_csv_immutability(self):
         """Verifies that the four official CSV deliverables remain unchanged."""
