@@ -1,0 +1,1217 @@
+canonical_player_id,canonical_name,original_player_ids,teams,n_competitions,is_merged_alias
+8,Mahendra Singh Dhoni,[8],['Chennai Super Kings'],5,False
+23,Piyush Chawla,[23],['Mumbai Indians'],2,False
+28,Ishant Sharma,[28],"['Delhi Capitals', 'Gujarat Titans']",4,False
+35,Nathan Bracken,[35],['Chennai Super Kings'],1,False
+47,Virat Kohli,[47],"['India', 'Royal Challengers Bengaluru']",11,False
+88,Faf du Plessis,[88],"['Delhi Capitals', 'Royal Challengers Bengaluru']",4,False
+109,Wriddhiman Saha,[109],['Gujarat Titans'],3,False
+126,Rohit Sharma,[126],"['India', 'Mumbai Indians']",13,False
+142,Shikhar Dhawan,[142],['Punjab Kings'],3,False
+143,Dinesh Karthik,[143],"['India', 'Royal Challengers Bengaluru']",10,False
+147,Pradeep Sangwan,[147],['Gujarat Titans'],2,False
+152,Ravindra Jadeja,[152],"['Chennai Super Kings', 'India', 'Rajasthan Royals']",9,False
+158,Amit Mishra,[158],['Lucknow Super Giants'],2,False
+161,Dwayne Bravo,[161],['Chennai Super Kings'],1,False
+167,Ajinkya Rahane,[167],"['Chennai Super Kings', 'Kolkata Knight Riders']",5,False
+169,Robin Uthappa,[169],['Chennai Super Kings'],1,False
+198,Manish Pandey,[198],"['Delhi Capitals', 'Kolkata Knight Riders', 'Lucknow Super Giants']",5,False
+220,David Warner,[220],"['Australia', 'Delhi Capitals']",9,False
+223,Steven Smith,[223],['Australia'],9,False
+224,Moises Henriques,[224],['Australia'],1,False
+232,Tom Cooper,[232],['Netherlands'],1,False
+250,Aaron Finch,[250],"['Australia', 'Kolkata Knight Riders']",6,False
+274,Martin Guptill,[274],['New Zealand'],4,False
+278,Tim Southee,[278],"['Kolkata Knight Riders', 'New Zealand']",10,False
+286,Kane Richardson,[286],['Australia'],5,False
+295,Wayne Parnell,[295],"['Royal Challengers Bengaluru', 'South Africa']",6,False
+305,Ravichandran Ashwin,[305],"['Chennai Super Kings', 'India', 'Rajasthan Royals']",8,False
+332,Angelo Mathews,[332],['Sri Lanka'],3,False
+344,Sheldon Jackson,[344],['Kolkata Knight Riders'],1,False
+360,Bhuvneshwar Kumar,[360],"['India', 'Royal Challengers Bengaluru', 'Sunrisers Hyderabad']",15,False
+393,Kedar Jadhav,[393],['Royal Challengers Bengaluru'],1,False
+395,Karn Sharma,[395],"['Mumbai Indians', 'Royal Challengers Bengaluru']",4,False
+403,Umesh Yadav,[403],"['Gujarat Titans', 'India', 'Kolkata Knight Riders']",5,False
+418,Richard Berrington,[418],['Scotland'],2,False
+443,Paul Stirling,[443],['Ireland'],16,False
+456,Pieter Seelaar,[456],['Netherlands'],1,False
+470,Mohammad Amir,[470],['Pakistan'],3,False
+478,Eoin Morgan,[478],['England'],1,False
+479,Adil Rashid,[479],"['England', 'Sunrisers Hyderabad']",19,False
+492,Andre Fletcher,[492],['West Indies'],3,False
+494,Kieron Pollard,[494],"['Mumbai Indians', 'West Indies']",3,False
+499,Shakib Al Hasan,[499],"['Bangladesh', 'Kolkata Knight Riders']",10,False
+505,Mushfiqur Rahim,[505],['Bangladesh'],1,False
+507,Mohammad Mahmudullah,[507],['Bangladesh'],6,False
+535,Ambati Rayudu,[535],['Chennai Super Kings'],2,False
+722,Liam Dawson,[722],['England'],9,False
+728,Dawid Malan,[728],['England'],6,False
+741,Garry Park,[741],['England'],1,False
+757,Sybrand Engelbrecht,[757],['Netherlands'],1,False
+768,Reeza Hendricks,[768],['South Africa'],15,False
+772,Rilee Rossouw,[772],"['Delhi Capitals', 'Punjab Kings', 'South Africa']",6,False
+773,Shadley Van Schalkwyk,[773],['United States Of America'],1,False
+778,Darren Bravo,[778],['West Indies'],2,False
+781,Sunil Narine,[781],['Kolkata Knight Riders'],5,False
+786,Chris Jordan,[786],"['Chennai Super Kings', 'England', 'Mumbai Indians']",9,False
+796,Matthew Wade,[796],"['Australia', 'Gujarat Titans']",12,False
+813,Jos Buttler,[813],"['England', 'Gujarat Titans', 'Rajasthan Royals']",23,False
+818,Mitchell Marsh,[818],"['Australia', 'Delhi Capitals', 'Lucknow Super Giants']",19,False
+820,Nathan Coulter Nile,[820],['Rajasthan Royals'],1,False
+829,Mitchell Starc,[829],"['Australia', 'Delhi Capitals', 'Kolkata Knight Riders']",9,False
+830,Josh Hazlewood,[830],"['Australia', 'Royal Challengers Bengaluru']",16,False
+838,Glenn Maxwell,[838],"['Australia', 'Punjab Kings', 'Royal Challengers Bengaluru']",18,False
+914,Krishnappa Gowtham,[914],['Lucknow Super Giants'],3,False
+930,Karun Nair,[930],"['Delhi Capitals', 'Lucknow Super Giants', 'Rajasthan Royals']",4,False
+953,Lokesh Rahul,[953],"['Delhi Capitals', 'India', 'Lucknow Super Giants']",11,False
+985,Brendan Taylor,[985],['Zimbabwe'],5,False
+988,Graeme Cremer,[988],['Zimbabwe'],2,False
+992,Mayank Agarwal,[992],"['Punjab Kings', 'Royal Challengers Bengaluru', 'Sunrisers Hyderabad']",4,False
+1028,Varun Aaron,[1028],['Gujarat Titans'],1,False
+1039,Mandeep Singh,[1039],"['Delhi Capitals', 'Kolkata Knight Riders']",2,False
+1040,Harpreet Bhatia,[1040],"['Punjab Kings', 'United Arab Emirates']",3,False
+1045,David Wiese,[1045],['Kolkata Knight Riders'],1,False
+1071,Jaydev Unadkat,[1071],"['Lucknow Super Giants', 'Mumbai Indians', 'Sunrisers Hyderabad']",5,False
+1077,David Miller,[1077],"['Delhi Capitals', 'Gujarat Titans', 'Lucknow Super Giants', 'South Africa']",17,False
+1100,Dinesh Chandimal,[1100],['Sri Lanka'],7,False
+1101,George Dockrell,[1101],['Ireland'],18,False
+1102,Noor Ali Zadran,[1102],['Afghanistan'],1,False
+1104,Mohammad Shahzad,[1104],['Afghanistan'],1,False
+1107,Mohammad Nabi,[1107],"['Afghanistan', 'Kolkata Knight Riders', 'Mumbai Indians']",18,False
+1109,Samiullah Shinwari,[1109],['Afghanistan'],1,False
+1116,Craig Ervine,[1116],['Zimbabwe'],7,False
+1159,Tendai Chatara,[1159],['Zimbabwe'],4,False
+1171,Chris Woakes,[1171],"['England', 'Punjab Kings']",5,False
+1183,Alex Hales,[1183],"['England', 'Kolkata Knight Riders']",3,False
+1187,Jason Roy,[1187],"['England', 'Gujarat Titans', 'Kolkata Knight Riders']",6,False
+1195,Ben Stokes,[1195],"['Chennai Super Kings', 'England']",2,False
+1205,Jonny Bairstow,[1205],"['England', 'Mumbai Indians', 'Punjab Kings']",7,False
+1210,James Vince,[1210],['England'],1,False
+1219,David Willey,[1219],"['England', 'Lucknow Super Giants', 'Royal Challengers Bengaluru']",7,False
+1233,Gary Ballance,[1233],['Zimbabwe'],1,False
+1318,Andre Russell,[1318],"['Kolkata Knight Riders', 'West Indies']",10,False
+1327,Johnson Charles,[1327],"['Kolkata Knight Riders', 'West Indies']",14,False
+1389,Sean Abbott,[1389],"['Australia', 'Sunrisers Hyderabad']",16,False
+1440,Rahul Tripathi,[1440],"['Chennai Super Kings', 'India', 'Kolkata Knight Riders', 'Sunrisers Hyderabad']",9,False
+1481,Kusal Perera,[1481],['Sri Lanka'],14,False
+1487,Adam Milne,[1487],"['Chennai Super Kings', 'New Zealand', 'Rajasthan Royals']",15,False
+1541,Sean Williams,[1541],['Zimbabwe'],8,False
+1556,David Payne,[1556],"['England', 'Sunrisers Hyderabad']",2,False
+1566,Mohammed Shami,[1566],"['Gujarat Titans', 'India', 'Lucknow Super Giants', 'Sunrisers Hyderabad']",8,False
+1568,Kane Williamson,[1568],"['Gujarat Titans', 'New Zealand', 'Sunrisers Hyderabad']",8,False
+1596,Moeen Ali,[1596],"['Chennai Super Kings', 'England', 'Kolkata Knight Riders']",13,False
+1600,Benny Howell,[1600],['Punjab Kings'],1,False
+1612,Yuzvendra Chahal,[1612],"['India', 'Punjab Kings', 'Rajasthan Royals']",16,False
+1617,Rishi Dhawan,[1617],['Punjab Kings'],3,False
+1649,Regis Chakabva,[1649],['Zimbabwe'],3,False
+1699,Suryakumar Yadav,[1699],"['India', 'Mumbai Indians']",26,False
+1701,Swapnil Singh,[1701],"['Lucknow Super Giants', 'Royal Challengers Bengaluru']",4,False
+1758,Patrick Cummins,[1758],"['Australia', 'Kolkata Knight Riders', 'Sunrisers Hyderabad']",9,False
+1772,Sheldon Cottrell,[1772],['West Indies'],4,False
+1791,Wesley Barresi,[1791],['Netherlands'],2,False
+1801,Nitish Kumar,[1801],['United States Of America'],1,False
+1810,Devon Thomas,[1810],['West Indies'],3,False
+1813,Deepak Chahar,[1813],"['Chennai Super Kings', 'India', 'Mumbai Indians']",11,False
+1829,Shahbaz Nadeem,[1829],['Lucknow Super Giants'],1,False
+1924,Sam Billings,[1924],"['England', 'Kolkata Knight Riders']",2,False
+1941,Devon Conway,[1941],"['Chennai Super Kings', 'New Zealand']",18,False
+1944,Keshav Maharaj,[1944],"['Mumbai Indians', 'Rajasthan Royals', 'South Africa']",14,False
+2001,Yashodha Lanka,[2001],['Sri Lanka A'],1,False
+2003,Bhanuka Rajapaksa,[2003],"['Punjab Kings', 'Sri Lanka']",10,False
+2054,Jason Behrendorff,[2054],"['Australia', 'Mumbai Indians', 'Royal Challengers Bengaluru']",6,False
+2101,Quinton de Kock,[2101],"['Kolkata Knight Riders', 'Lucknow Super Giants', 'Mumbai Indians', 'South Africa']",14,False
+2210,Sabbir Rahman,[2210],['Bangladesh'],3,False
+2213,Soumya Sarkar,[2213],['Bangladesh'],11,False
+2214,Gulbadin Naib,[2214],"['Afghanistan', 'Delhi Capitals']",10,False
+2218,Anamul Haque,[2218],['Bangladesh'],4,False
+2246,Tom Latham,[2246],['New Zealand'],6,False
+2249,Taijul Islam,[2249],['Bangladesh'],1,False
+2258,Sanju Samson,[2258],"['Chennai Super Kings', 'India', 'Rajasthan Royals']",28,False
+2261,Harshal Patel,[2261],"['India', 'Punjab Kings', 'Royal Challengers Bengaluru', 'Sunrisers Hyderabad']",14,False
+2293,Junaid Siddiqui,[2293],['Canada'],1,False
+2296,Safyaan Sharif,[2296],['Scotland'],2,False
+2299,Gurkeerat Singh Mann,[2299],['Gujarat Titans'],1,False
+2304,Tymal Mills,[2304],"['England', 'Mumbai Indians']",4,False
+2315,Reece Topley,[2315],"['England', 'Mumbai Indians', 'Royal Challengers Bengaluru']",13,False
+2320,Trent Boult,[2320],"['Mumbai Indians', 'New Zealand', 'Rajasthan Royals']",8,False
+2321,Olly Stone,[2321],['England'],1,False
+2334,Dwaine Pretorius,[2334],"['Chennai Super Kings', 'South Africa']",5,False
+2343,Beuran Hendricks,[2343],['South Africa'],1,False
+2351,Danushka Gunathilaka,[2351],['Sri Lanka'],3,False
+2359,Prenelan Subrayen,[2359],['South Africa'],2,False
+2361,Temba Bavuma,[2361],['South Africa'],4,False
+2364,Ashton Agar,[2364],['Australia'],4,False
+2367,Travis Head,[2367],"['Australia', 'Sunrisers Hyderabad']",15,False
+2373,Ashton Turner,[2373],"['Australia', 'Lucknow Super Giants']",2,False
+2379,Ben Duckett,[2379],"['Delhi Capitals', 'England']",11,False
+2382,Jamie Overton,[2382],"['Chennai Super Kings', 'England']",11,False
+2386,Niroshan Dickwella,[2386],['Sri Lanka'],1,False
+2399,Dushmantha Chameera,[2399],"['Delhi Capitals', 'Kolkata Knight Riders', 'Lucknow Super Giants', 'Sri Lanka']",18,False
+2407,Dhananjaya de Silva,[2407],['Sri Lanka'],8,False
+2410,Akshdeep Nath,[2410],['United Arab Emirates'],1,False
+2411,Sandeep Sharma,[2411],"['Punjab Kings', 'Rajasthan Royals']",5,False
+2412,Smit Patel,[2412],['United States Of America'],1,False
+2416,Kyle Mayers,[2416],"['Lucknow Super Giants', 'West Indies']",15,False
+2417,Akeal Hosein,[2417],"['Chennai Super Kings', 'Sunrisers Hyderabad', 'West Indies']",26,False
+2418,Justin Greaves,[2418],['West Indies'],2,False
+2436,Dasun Shanaka,[2436],"['Gujarat Titans', 'Rajasthan Royals', 'Sri Lanka']",21,False
+2439,Akila Dananjaya,[2439],['Sri Lanka'],3,False
+2442,Lahiru Madushanka,[2442],['Sri Lanka'],1,False
+2463,Ryan Burl,[2463],['Zimbabwe'],15,False
+2467,NP Mayavo,[2467],['Zimbabwe'],1,False
+2483,Lizaad Williams,[2483],"['Delhi Capitals', 'Mumbai Indians', 'South Africa']",8,False
+2485,Babar Azam,[2485],['Pakistan'],13,False
+2490,Mohammad Nawaz,[2490],['Pakistan'],14,False
+2523,Will Young,[2523],['New Zealand'],8,False
+2526,Ish Sodhi,[2526],['New Zealand'],21,False
+2531,Joe Root,[2531],['Rajasthan Royals'],1,False
+2533,Najibullah Zadran,[2533],['Afghanistan'],8,False
+2534,Rahmat Shah,[2534],['Afghanistan'],3,False
+2573,Evin Lewis,[2573],"['Lucknow Super Giants', 'West Indies']",10,False
+2633,Jason Holder,[2633],"['Gujarat Titans', 'Lucknow Super Giants', 'Rajasthan Royals', 'West Indies']",22,False
+2636,Adam Zampa,[2636],"['Australia', 'Rajasthan Royals', 'Sunrisers Hyderabad']",20,False
+2639,Marcus Stoinis,[2639],"['Australia', 'Lucknow Super Giants', 'Punjab Kings']",18,False
+2650,Raymon Reifer,[2650],['West Indies'],2,False
+2661,Shamarh Brooks,[2661],['West Indies'],4,False
+2671,Liton Das,[2671],"['Bangladesh', 'Kolkata Knight Riders']",23,False
+2680,Nurul Hasan,[2680],['Bangladesh'],14,False
+2681,Taskin Ahmed,[2681],['Bangladesh'],20,False
+2687,Roston Chase,[2687],['West Indies'],20,False
+2750,Alex Carey,[2750],['Australia'],3,False
+2756,Shashank Singh,[2756],"['Punjab Kings', 'Sunrisers Hyderabad']",4,False
+2781,Ravikumar Samarth,[2781],['Sunrisers Hyderabad'],1,False
+2790,Praveen Dubey,[2790],"['Delhi Capitals', 'Punjab Kings']",5,False
+2847,Shardul Thakur,[2847],"['Chennai Super Kings', 'Delhi Capitals', 'India', 'Kolkata Knight Riders', 'Lucknow Super Giants', 'Mumbai Indians']",6,False
+2852,Jagadeesha Suchith,[2852],['Sunrisers Hyderabad'],1,False
+2860,KS Bharat,[2860],"['Delhi Capitals', 'Gujarat Titans', 'Kolkata Knight Riders']",3,False
+2862,Sachin Baby,[2862],['Sunrisers Hyderabad'],1,False
+2863,Sandeep Warrier,[2863],"['Gujarat Titans', 'Mumbai Indians']",2,False
+2869,Ankit Rajpoot,[2869],['Lucknow Super Giants'],1,False
+2872,Siddarth Kaul,[2872],['Royal Challengers Bengaluru'],2,False
+2876,Axar Patel,[2876],"['Delhi Capitals', 'India']",30,False
+2877,Vijay Shankar,[2877],"['Chennai Super Kings', 'Gujarat Titans']",4,False
+2878,Mohit Sharma,[2878],"['Delhi Capitals', 'Gujarat Titans']",3,False
+2884,Manan Vohra,[2884],['Lucknow Super Giants'],2,False
+2887,Harmeet Singh,[2887],['United States Of America'],1,False
+2892,Asif Ali,[2892],['Pakistan'],3,False
+2921,Fakhar Zaman,[2921],['Pakistan'],17,False
+2930,Rassie van der Dussen,[2930],"['Rajasthan Royals', 'South Africa']",9,False
+2933,Jasprit Bumrah,[2933],"['India', 'Mumbai Indians']",15,False
+2972,Yasim Murtaza,[2972],['Hong Kong'],5,False
+2983,Richmond Mutumbami,[2983],['Zimbabwe'],2,False
+2984,Sikandar Raza,[2984],"['Punjab Kings', 'Zimbabwe']",18,False
+2985,Mark Wood,[2985],"['England', 'Lucknow Super Giants']",8,False
+2996,Stephanus Myburgh,[2996],['Netherlands'],1,False
+2997,Paul van Meekeren,[2997],['Netherlands'],4,False
+3024,Mohammad Rizwan,[3024],['Pakistan'],10,False
+3033,Usman Qadir,[3033],['Pakistan'],3,False
+3038,Hussain Talat,[3038],['Pakistan'],5,False
+3040,Kashif Daud,[3040],['United Arab Emirates'],2,False
+3056,Iftikhar Ahmed,[3056],['Pakistan'],9,False
+3077,Usama Mir,[3077],['Pakistan'],3,False
+3083,Mohammad Ali,[3083],['Pakistan'],1,False
+3091,Sahibzada Farhan,[3091],['Pakistan'],15,False
+3097,Shan Masood,[3097],['Pakistan'],4,False
+3125,Nicholas Pooran,[3125],"['Lucknow Super Giants', 'Sunrisers Hyderabad', 'West Indies']",18,False
+3135,Yannic Cariah,[3135],['West Indies'],2,False
+3144,Thomas Curran,[3144],['Royal Challengers Bengaluru'],1,False
+3174,Matt Henry,[3174],"['Chennai Super Kings', 'Lucknow Super Giants', 'New Zealand']",15,False
+3238,Milind Kumar,[3238],['United States Of America'],1,False
+3253,Rohan Mustafa,[3253],['United Arab Emirates'],2,False
+3255,Ahmed Raza 1,[3255],['United Arab Emirates'],2,False
+3260,Hashmatullah Shahidi,[3260],['Afghanistan'],3,False
+3272,Fabian Allen,[3272],"['Mumbai Indians', 'West Indies']",8,False
+3275,Alzarri Joseph,[3275],"['Gujarat Titans', 'Royal Challengers Bengaluru', 'West Indies']",18,False
+3276,Gudakesh Motie,[3276],['West Indies'],16,False
+3280,Nazmul Hossain Shanto,[3280],['Bangladesh'],13,False
+3281,Mosaddek Hossain,[3281],['Bangladesh'],6,False
+3282,Mehidy Hasan Miraz,[3282],['Bangladesh'],14,False
+3285,Abu Haider,[3285],['Bangladesh A'],2,False
+3297,Shimron Hetmyer,[3297],"['Rajasthan Royals', 'West Indies']",20,False
+3298,Jofra Archer,[3298],"['England', 'Mumbai Indians', 'Rajasthan Royals']",13,False
+3299,Andrew Tye,[3299],['Lucknow Super Giants'],1,False
+3304,Munim Shahriar,[3304],['Bangladesh'],2,False
+3306,Afsar Zazai,[3306],['Afghanistan'],4,False
+3320,Jayant Yadav,[3320],['Gujarat Titans'],5,False
+3323,Jimmy Neesham,[3323],"['New Zealand', 'Rajasthan Royals']",18,False
+3330,Hardik Pandya,[3330],"['Gujarat Titans', 'India', 'Mumbai Indians']",22,False
+3337,Jeremy Gordon,[3337],['Canada'],1,False
+3361,Michael Leask,[3361],['Scotland'],2,False
+3371,Jamie Atkinson,[3371],['Hong Kong'],1,False
+3373,Aizaz Khan,[3373],['Hong Kong'],5,False
+3374,Mark Chapman,[3374],['New Zealand'],21,False
+3377,Babar Hayat,[3377],['Hong Kong'],5,False
+3382,Nizakat Khan,[3382],['Hong Kong'],5,False
+3383,Kinchit Shah,[3383],['Hong Kong'],4,False
+3415,Matthew Cross,[3415],['Scotland'],2,False
+3445,Khalid Kail,[3445],['Oman'],1,False
+3451,Baba Indrajith,[3451],['Kolkata Knight Riders'],1,False
+3462,Writtick Chatterjee,[3462],['Punjab Kings'],1,False
+3469,Shreyas Gopal,[3469],"['Chennai Super Kings', 'Mumbai Indians', 'Sunrisers Hyderabad']",4,False
+3479,Chama Milind,[3479],['Royal Challengers Bengaluru'],1,False
+3489,Salman Agha,[3489],['Pakistan'],16,False
+3539,Ben McDermott,[3539],['Australia'],3,False
+3543,Shahidullah Kamal,[3543],"['Afghanistan', 'Afghanistan A']",6,False
+3544,Usman Ghani,[3544],['Afghanistan'],4,False
+3545,Ihsanullah Janat,[3545],['Afghanistan'],1,False
+3546,Nasir Jamal,[3546],['Afghanistan'],1,False
+3550,Sharafuddin Ashraf,[3550],"['Afghanistan', 'Afghanistan A']",13,False
+3562,Zia-ur-Rehman Akbar,[3562],['Afghanistan'],1,False
+3563,Zahir Khan,[3563],['Afghanistan'],1,False
+3578,Imad Wasim,[3578],['Pakistan'],5,False
+3595,Andy McBrine,[3595],['Ireland'],6,False
+3605,Aiden Markram,[3605],"['Lucknow Super Giants', 'South Africa', 'Sunrisers Hyderabad']",19,False
+3613,Shakeel Ahmed,[3613],['Oman'],2,False
+3622,Hayden Walsh,[3622],['West Indies'],7,False
+3623,Hasan Ali,[3623],['Pakistan'],6,False
+3627,Andile Phehlukwayo,[3627],['South Africa'],5,False
+3628,Kagiso Rabada,[3628],"['Gujarat Titans', 'Punjab Kings', 'South Africa']",13,False
+3629,Corbin Bosch,[3629],"['Mumbai Indians', 'Rajasthan Royals', 'South Africa']",8,False
+3635,Jason Smith,[3635],['South Africa'],4,False
+3637,Dayyaan Galiem,[3637],['South Africa'],1,False
+3639,Brandon King,[3639],['West Indies'],22,False
+3641,Ben Dwarshuis,[3641],"['Australia', 'Punjab Kings']",7,False
+3644,Kuldeep Yadav,[3644],"['Delhi Capitals', 'India']",20,False
+3645,Sarfaraz Khan,[3645],"['Chennai Super Kings', 'Delhi Capitals']",3,False
+3647,Shreyas Iyer,[3647],"['India', 'Kolkata Knight Riders', 'Punjab Kings']",22,False
+3648,Deepak Hooda,[3648],"['Chennai Super Kings', 'India', 'Lucknow Super Giants']",15,False
+3651,Ricky Bhui,[3651],['Delhi Capitals'],1,False
+3653,Avesh Khan,[3653],"['India', 'Lucknow Super Giants', 'Rajasthan Royals']",17,False
+3660,Luke Wood,[3660],"['England', 'Gujarat Titans', 'Mumbai Indians']",10,False
+3664,Binura Fernando,[3664],['Sri Lanka'],15,False
+3669,Sadeera Samarawickrama,[3669],['Sri Lanka'],5,False
+3672,Kusal Mendis,[3672],"['Gujarat Titans', 'Sri Lanka']",22,False
+3673,Ramesh Mendis,[3673],"['Sri Lanka', 'Sri Lanka A']",5,False
+3683,Gavin Main,[3683],['Scotland'],1,False
+3686,CB Sole,[3686],['Scotland'],2,False
+3689,Mark Watt,[3689],['Scotland'],2,False
+3697,Kyle Jamieson,[3697],"['Chennai Super Kings', 'Delhi Capitals', 'New Zealand', 'Punjab Kings']",13,False
+3700,Tim Seifert,[3700],"['Delhi Capitals', 'Kolkata Knight Riders', 'New Zealand', 'Royal Challengers Bengaluru']",16,False
+3720,Craig Young,[3720],['Ireland'],16,False
+3727,Matthew Short,[3727],"['Australia', 'Chennai Super Kings', 'Punjab Kings']",13,False
+3771,Vivian Kingma,[3771],['Netherlands'],3,False
+3772,Logan van Beek,[3772],['Netherlands'],2,False
+3775,Sompal Kami,[3775],['Nepal'],1,False
+3782,M Shahrukh Khan,[3782],"['Gujarat Titans', 'Punjab Kings']",5,False
+3802,Anshuman Rath,[3802],['Hong Kong'],3,False
+3831,Arjun Mutreja,[3831],['Singapore'],1,False
+3832,Rezza Gaznavi,[3832],['Singapore'],1,False
+3835,Anish Param,[3835],['Singapore'],1,False
+3839,Amjad Mahboob,[3839],['Singapore'],1,False
+3849,Ali Zaheer,[3849],['Kuwait'],1,False
+3856,Zeeshan Maqsood,[3856],['Oman'],1,False
+3858,Jatinder Singh,[3858],['Oman'],2,False
+3871,Aamir Kaleem,[3871],['Oman'],2,False
+3876,Sufyan Mehmood,[3876],['Oman'],3,False
+3882,Steven Taylor,[3882],['United States Of America'],1,False
+3916,Jitesh Sharma,[3916],"['India', 'India A', 'Punjab Kings', 'Royal Challengers Bengaluru']",18,False
+3926,Rahul Tewatia,[3926],['Gujarat Titans'],5,False
+3954,Andrew Balbirnie,[3954],['Ireland'],12,False
+3955,Tom Helm,[3955],['England'],1,False
+3967,Tom Kohler,[3967],['Rajasthan Royals'],1,False
+3986,Matthew Renshaw,[3986],['Australia'],2,False
+3995,Donald Tiripano,[3995],['Zimbabwe'],2,False
+4007,Ryan Rickelton,[4007],"['Mumbai Indians', 'South Africa']",10,False
+4077,KL Shrijith,[4077],['Mumbai Indians'],1,False
+4080,KC Cariappa,[4080],['Rajasthan Royals'],2,False
+4101,Mitchell Santner,[4101],"['Chennai Super Kings', 'Mumbai Indians', 'New Zealand']",23,False
+4102,George Munsey,[4102],['Scotland'],2,False
+4106,Daryl Mitchell,[4106],"['Chennai Super Kings', 'New Zealand', 'Rajasthan Royals']",21,False
+4111,Khushdil Shah,[4111],['Pakistan'],9,False
+4117,Ishan Kishan,[4117],"['India', 'Mumbai Indians', 'Sunrisers Hyderabad']",24,False
+4201,Fareed Malik,[4201],['Afghanistan'],16,False
+4211,Vishnu Vinod,[4211],"['Mumbai Indians', 'Punjab Kings', 'Sunrisers Hyderabad']",5,False
+4219,Krunal Pandya,[4219],"['Lucknow Super Giants', 'Royal Challengers Bengaluru']",5,False
+4221,Chris Green,[4221],['Australia'],1,False
+4227,Marnus Labuschagne,[4227],['Australia'],1,False
+4229,George Linde,[4229],"['Lucknow Super Giants', 'South Africa']",7,False
+4235,Sisanda Magala,[4235],"['Chennai Super Kings', 'South Africa']",3,False
+4237,Tabraiz Shamsi,[4237],['South Africa'],10,False
+4246,Nitish Rana,[4246],"['Delhi Capitals', 'Kolkata Knight Riders', 'Rajasthan Royals']",5,False
+4248,Pargat Singh,[4248],['Canada'],1,False
+4250,Baltej Singh,[4250],['Punjab Kings'],2,False
+4251,Peter Moor,[4251],['Ireland'],1,False
+4260,Heinrich Klaasen,[4260],"['South Africa', 'Sunrisers Hyderabad']",12,False
+4265,T Natarajan,[4265],"['Delhi Capitals', 'Sunrisers Hyderabad']",5,False
+4276,Basil Thampi,[4276],['Mumbai Indians'],1,False
+4288,Navdeep Saini,[4288],"['Kolkata Knight Riders', 'Rajasthan Royals']",4,False
+4325,Ashwin Hebbar,[4325],['Delhi Capitals'],1,False
+4369,Shai Hope,[4369],"['Delhi Capitals', 'West Indies']",18,False
+4372,Rony Talukder,[4372],['Bangladesh'],4,False
+4373,Mustafizur Rahman,[4373],"['Bangladesh', 'Chennai Super Kings', 'Delhi Capitals', 'Kolkata Knight Riders']",28,False
+4391,Liam Livingstone,[4391],"['England', 'Punjab Kings', 'Royal Challengers Bengaluru', 'Sunrisers Hyderabad']",15,False
+4409,Sam Curran,[4409],"['Chennai Super Kings', 'England', 'Punjab Kings', 'Rajasthan Royals']",19,False
+4412,Max ODowd,[4412],['Netherlands'],4,False
+4417,Karan KC,[4417],['Nepal'],1,False
+4438,Jasdeep Singh,[4438],['United States Of America'],1,False
+4450,Mehran Khan,[4450],['Oman'],1,False
+4458,AHT Donald,[4458],['England'],1,False
+4460,Jeffrey Vandersay,[4460],['Sri Lanka'],8,False
+4486,BR Sharath,[4486],['Gujarat Titans'],1,False
+4487,Vyshak Kumar,[4487],"['India', 'India A', 'Punjab Kings', 'Royal Challengers Bengaluru']",6,False
+4489,Prasidh Krishna,[4489],"['Gujarat Titans', 'India', 'Rajasthan Royals']",10,False
+4494,Abhinav Manohar,[4494],"['Gujarat Titans', 'Sunrisers Hyderabad']",4,False
+4499,Saqib Mahmood,[4499],['England'],9,False
+4505,Jhye Richardson,[4505],"['Australia', 'Delhi Capitals', 'Mumbai Indians']",4,False
+4588,Navneet Dhaliwal,[4588],['Canada'],1,False
+4604,Mitchell Swepson,[4604],['Australia'],2,False
+4636,Bjorn Fortuin,[4636],['South Africa'],7,False
+4639,Wellington Masakadza,[4639],['Zimbabwe'],16,False
+4641,Lungi Ngidi,[4641],"['Delhi Capitals', 'Royal Challengers Bengaluru', 'South Africa']",19,False
+4658,Nasum Ahmed,[4658],['Bangladesh'],20,False
+4662,Cole McConchie,[4662],['New Zealand'],5,False
+4663,Henry Nicholls,[4663],['New Zealand'],2,False
+4665,Tom Blundell,[4665],['New Zealand'],2,False
+4684,Dane Cleaver,[4684],['New Zealand'],8,False
+4686,Joshua Clarkson,[4686],['New Zealand'],8,False
+4692,Lockie Ferguson,[4692],"['Gujarat Titans', 'Kolkata Knight Riders', 'New Zealand', 'Punjab Kings', 'Royal Challengers Bengaluru']",19,False
+4695,Nick Kelly,[4695],['New Zealand'],2,False
+4703,Rishabh Pant,[4703],"['Delhi Capitals', 'India', 'Lucknow Super Giants']",15,False
+4708,Rinku Singh,[4708],"['India', 'Kolkata Knight Riders']",18,False
+4716,Mayank Dagar,[4716],"['Royal Challengers Bengaluru', 'Sunrisers Hyderabad']",2,False
+4722,Rashid Khan,[4722],"['Afghanistan', 'Gujarat Titans']",21,False
+4730,Ali Khan,[4730],['United States Of America'],1,False
+4736,Josh Inglis,[4736],"['Australia', 'Lucknow Super Giants', 'Punjab Kings']",20,False
+4755,Shivam Dube,[4755],"['Chennai Super Kings', 'India']",23,False
+4773,Jaker Ali Anik,[4773],['Bangladesh'],14,False
+4779,Pieter Willem Mulder,[4779],"['South Africa', 'Sunrisers Hyderabad']",6,False
+4780,Mohammad Saif Hassan,[4780],"['Bangladesh', 'Bangladesh A']",9,False
+4784,Tony de Zorzi,[4784],['South Africa'],4,False
+4790,Lutho Sipamla,[4790],['South Africa'],3,False
+4793,Dean Foxcroft,[4793],['New Zealand'],5,False
+4802,Stephen Doheny,[4802],['Ireland'],7,False
+4807,Joshua Little,[4807],"['Gujarat Titans', 'Ireland']",13,False
+4812,Harry Tector,[4812],['Ireland'],18,False
+4814,Lorcan Tucker,[4814],['Ireland'],17,False
+4815,Benjamin White,[4815],['Ireland'],12,False
+4816,Khaleel Ahmed,[4816],"['Chennai Super Kings', 'Delhi Capitals', 'India']",7,False
+4817,Anmolpreet Singh,[4817],"['Mumbai Indians', 'Sunrisers Hyderabad']",3,False
+4821,Mahipal Lomror,[4821],"['Gujarat Titans', 'Mumbai Indians', 'Royal Challengers Bengaluru']",5,False
+4823,Washington Sundar,[4823],"['Gujarat Titans', 'India', 'Sunrisers Hyderabad']",26,False
+4824,Zeeshan Ansari,[4824],['Sunrisers Hyderabad'],2,False
+4826,George Garton,[4826],['England'],1,False
+4830,Keacy Carty,[4830],['West Indies'],7,False
+4833,Jyd Goolie,[4833],['West Indies'],1,False
+4837,Obed McCoy,[4837],"['Rajasthan Royals', 'West Indies']",13,False
+4838,Keemo Paul,[4838],['West Indies'],4,False
+4840,Odean Smith,[4840],"['Gujarat Titans', 'Punjab Kings', 'West Indies']",10,False
+4842,Shamar Springer,[4842],['West Indies'],7,False
+4847,Finn Allen,[4847],"['Kolkata Knight Riders', 'New Zealand', 'Royal Challengers Bengaluru']",18,False
+4853,Glenn Phillips,[4853],"['Gujarat Titans', 'New Zealand', 'Sunrisers Hyderabad']",20,False
+4854,Rachin Ravindra,[4854],"['Chennai Super Kings', 'Kolkata Knight Riders', 'New Zealand']",15,False
+4856,Benjamin Sears,[4856],['New Zealand'],10,False
+4857,Nathan Smith,[4857],['New Zealand'],6,False
+4867,Wesley Madhevere,[4867],['Zimbabwe'],10,False
+4870,Kundai Matigimu,[4870],['Zimbabwe'],1,False
+4871,Brandon Mavuta,[4871],['Zimbabwe'],6,False
+4874,Richard Ngarava,[4874],['Zimbabwe'],15,False
+4876,Milton Shumba,[4876],['Zimbabwe'],7,False
+4880,Aarif Sheikh,[4880],['Nepal'],2,False
+4881,Dipendra Airee,[4881],['Nepal'],2,False
+4882,Kushal Bhurtel,[4882],['Nepal'],2,False
+4887,Sandeep Lamichhane,[4887],['Nepal'],2,False
+4895,Charith Asalanka,[4895],"['Mumbai Indians', 'Sri Lanka']",20,False
+4900,Wanindu Hasaranga,[4900],"['Lucknow Super Giants', 'Rajasthan Royals', 'Royal Challengers Bengaluru', 'Sri Lanka', 'Sunrisers Hyderabad']",24,False
+4901,Asitha Fernando,[4901],['Sri Lanka'],6,False
+4902,Avishka Fernando,[4902],['Sri Lanka'],8,False
+4903,Lahiru Kumara,[4903],['Sri Lanka'],3,False
+4904,Kamindu Mendis,[4904],"['Sri Lanka', 'Sunrisers Hyderabad']",18,False
+4926,Shadab Khan,[4926],['Pakistan'],13,False
+4947,Kasun Rajitha,[4947],['Sri Lanka'],4,False
+4970,Adil Mehmood,[4970],['Hong Kong'],1,False
+4974,Mohammad Nadeem,[4974],['Oman'],2,False
+4983,Sikander Zulfiqar,[4983],['Netherlands'],1,False
+4986,Rovman Powell,[4986],"['Delhi Capitals', 'Kolkata Knight Riders', 'Rajasthan Royals', 'West Indies']",28,False
+5029,Prerak Mankad,[5029],"['Lucknow Super Giants', 'Punjab Kings']",3,False
+5034,Murugan Ashwin,[5034],"['Mumbai Indians', 'Rajasthan Royals']",2,False
+5039,Rajat Patidar,[5039],['Royal Challengers Bengaluru'],5,False
+5041,Mukesh Kumar,[5041],"['Delhi Capitals', 'India']",12,False
+5071,Akash Vasisht,[5071],['Rajasthan Royals'],1,False
+5189,Faheem Ashraf,[5189],['Pakistan'],11,False
+5231,Oshane Thomas,[5231],['West Indies'],3,False
+5379,Mark Adair,[5379],['Ireland'],16,False
+5441,Barry McCarthy,[5441],['Ireland'],16,False
+5547,Nosthush Kenjige,[5547],['United States Of America'],1,False
+5553,Phil Salt,[5553],"['Delhi Capitals', 'England', 'Kolkata Knight Riders', 'Royal Challengers Bengaluru']",21,False
+5561,Brad Wheal,[5561],['Scotland'],1,False
+5562,Richard Gleeson,[5562],"['Chennai Super Kings', 'England', 'Mumbai Indians', 'Royal Challengers Bengaluru']",6,False
+5566,Tom Abell,[5566],['England'],1,False
+5577,Sai Kishore,[5577],"['Gujarat Titans', 'India A']",6,False
+5608,Narayan Jagadeesan,[5608],"['Chennai Super Kings', 'Kolkata Knight Riders']",2,False
+5665,Sanjay Yadav,[5665],['Mumbai Indians'],1,False
+5668,Hari Nishaanth,[5668],['Chennai Super Kings'],1,False
+5680,R Sonu Yadav,[5680],['Royal Challengers Bengaluru'],1,False
+5738,Xavier Bartlett,[5738],"['Australia', 'Punjab Kings']",11,False
+5749,Shahid Wasif,[5749],['Hong Kong'],2,False
+5750,Ehsan Khan,[5750],['Hong Kong'],5,False
+5808,Karim Janat,[5808],"['Afghanistan', 'Afghanistan A', 'Gujarat Titans']",14,False
+5809,Naveen ul Haq,[5809],"['Afghanistan', 'Lucknow Super Giants']",14,False
+5827,Wes Agar,[5827],['Australia'],1,False
+5835,Carl Mumba,[5835],['Zimbabwe'],2,False
+5837,Mahedi Hasan,[5837],['Bangladesh'],20,False
+5838,Shohidul Islam,[5838],['Bangladesh'],2,False
+5839,Yasir Ali Chowdhury,[5839],"['Bangladesh', 'Bangladesh A']",6,False
+5844,Ebadot Hossain,[5844],['Bangladesh'],4,False
+5866,Patrick Kruger,[5866],['South Africa'],5,False
+5872,Habibur Rahman,[5872],['Bangladesh A'],1,False
+5877,Andries Gous,[5877],['United States Of America'],1,False
+5882,Afif Hossain,[5882],['Bangladesh'],10,False
+5892,Blair Tickner,[5892],['New Zealand'],10,False
+5928,Prithvi Shaw,[5928],"['Delhi Capitals', 'India']",5,False
+5939,Cameron Green,[5939],"['Australia', 'Kolkata Knight Riders', 'Mumbai Indians', 'Royal Challengers Bengaluru']",12,False
+5940,Riley Meredith,[5940],"['Australia', 'Mumbai Indians']",5,False
+5944,Mohammed Siraj,[5944],"['Gujarat Titans', 'India', 'Royal Challengers Bengaluru']",12,False
+5953,Lakshan Sandakan,[5953],['Sri Lanka'],1,False
+5977,Khary Pierre,[5977],['West Indies'],3,False
+5979,Abrar Ahmed,[5979],['Pakistan'],17,False
+6025,Henry Shipley,[6025],['New Zealand'],3,False
+6034,Shane Snater,[6034],['Netherlands'],1,False
+6035,Chirag Suri,[6035],['United Arab Emirates'],2,False
+6036,Tejas Baroka,[6036],['Rajasthan Royals'],1,False
+6038,Pratham Sing,[6038],['Kolkata Knight Riders'],1,False
+6048,Ishan Porel,[6048],['Punjab Kings'],1,False
+6059,Ruturaj Gaikwad,[6059],"['Chennai Super Kings', 'India']",15,False
+6085,Dan Pascoe,[6085],['Hong Kong'],1,False
+6097,Brydon Carse,[6097],"['England', 'Sunrisers Hyderabad']",9,False
+6101,Devang Bulsara,[6101],['Hong Kong'],2,False
+6160,Chamika Karunaratne,[6160],"['Kolkata Knight Riders', 'Sri Lanka']",10,False
+6161,Rahul Chahar,[6161],"['Chennai Super Kings', 'India A', 'Punjab Kings', 'Sunrisers Hyderabad']",6,False
+6162,Kulwant Khejroliya,[6162],"['Gujarat Titans', 'Kolkata Knight Riders']",3,False
+6166,Jack Edwards,[6166],"['Australia', 'Sunrisers Hyderabad']",2,False
+6172,Lasith Croospulle,[6172],"['Sri Lanka', 'Sri Lanka A']",4,False
+6176,Ashen Bandara,[6176],['Sri Lanka'],2,False
+6179,Nipun Ransika,[6179],['Sri Lanka A'],1,False
+6180,Praveen Jayawickrama,[6180],['Sri Lanka'],3,False
+6188,Simi Singh,[6188],['Ireland'],2,False
+6196,Josh Tongue,[6196],['England'],4,False
+6199,Navin Param,[6199],['Singapore'],1,False
+6202,Anantha Krishna,[6202],['Singapore'],1,False
+6203,Surendran Chandramohan,[6203],['Singapore'],1,False
+6226,Fred Klaassen,[6226],['Netherlands'],3,False
+6237,Manimaran Siddharth,[6237],['Lucknow Super Giants'],3,False
+6256,Varun Chakravarthy,[6256],"['India', 'Kolkata Knight Riders']",17,False
+6263,Aaditya AVaradarajan,[6263],['Canada'],1,False
+6272,William Jacks,[6272],"['England', 'Mumbai Indians', 'Royal Challengers Bengaluru']",17,False
+6273,Tom Banton,[6273],"['England', 'Gujarat Titans']",9,False
+6280,Harry Brook,[6280],"['Delhi Capitals', 'England', 'Sunrisers Hyderabad']",18,False
+6281,Abhishek Sharma,[6281],"['India', 'India A', 'Sunrisers Hyderabad']",21,False
+6284,Anukul Roy,[6284],['Kolkata Knight Riders'],5,False
+6285,Kamlesh Nagarkoti,[6285],"['Chennai Super Kings', 'Delhi Capitals']",3,False
+6286,Shivam Mavi,[6286],"['Gujarat Titans', 'India', 'Kolkata Knight Riders', 'Lucknow Super Giants', 'Sunrisers Hyderabad']",6,False
+6287,Yash Thakur,[6287],"['India', 'India A', 'Lucknow Super Giants', 'Punjab Kings']",8,False
+6288,Shubman Gill,[6288],"['Gujarat Titans', 'India']",16,False
+6297,Matthew Parkinson,[6297],['England'],1,False
+6314,Devdutt Padikkal,[6314],"['Lucknow Super Giants', 'Rajasthan Royals', 'Royal Challengers Bengaluru']",5,False
+6342,Matthew Breetzke,[6342],"['Lucknow Super Giants', 'South Africa']",9,False
+6350,Matthew Kuhnemann,[6350],['Australia'],6,False
+6351,Yarra Prithviraj,[6351],['Gujarat Titans'],1,False
+6354,Spencer Johnson,[6354],"['Australia', 'Chennai Super Kings', 'Gujarat Titans', 'Kolkata Knight Riders']",11,False
+6355,Shaheen Afridi,[6355],['Pakistan'],16,False
+6356,Khaled Ahmed,[6356],['Bangladesh'],2,False
+6359,Raghu Sharma,[6359],['Mumbai Indians'],2,False
+6389,Tanvir Islam,[6389],['Bangladesh'],6,False
+6395,Josh Philippe,[6395],['Australia'],5,False
+6396,Tim David,[6396],"['Australia', 'Mumbai Indians', 'Royal Challengers Bengaluru']",20,False
+6398,Aaron Hardie,[6398],"['Australia', 'Punjab Kings']",11,False
+6402,Eathan Bosch,[6402],['South Africa'],1,False
+6408,Subhranshu Senapati,[6408],['Chennai Super Kings'],2,False
+6423,Riyan Parag,[6423],"['India', 'Rajasthan Royals']",9,False
+6428,Upendra Yadav,[6428],['Sunrisers Hyderabad'],2,False
+6432,Ikram Khil,[6432],['Afghanistan'],2,False
+6433,Darwish Rasooli,[6433],"['Afghanistan', 'Afghanistan A']",12,False
+6436,Qais Ahmad,[6436],"['Afghanistan', 'Afghanistan A']",8,False
+6440,Omair Yousuf,[6440],"['Pakistan', 'Pakistan A']",5,False
+6441,Abdullah Shafique,[6441],['Pakistan'],1,False
+6443,Rohail Nazir,[6443],['Pakistan A'],1,False
+6448,Ibrahim Zadran,[6448],['Afghanistan'],15,False
+6449,Wafadar Momand,[6449],['Afghanistan'],3,False
+6450,Mujeeb Ur Rahman,[6450],"['Afghanistan', 'Kolkata Knight Riders', 'Mumbai Indians']",17,False
+6457,Urvil Patel,[6457],"['Chennai Super Kings', 'Gujarat Titans']",3,False
+6460,Ayush Badoni,[6460],"['India A', 'Lucknow Super Giants']",6,False
+6461,Mayank Rawat,[6461],['Mumbai Indians'],1,False
+6464,Arshdeep Singh,[6464],"['India', 'Punjab Kings']",33,False
+6466,Atharwa Taide,[6466],"['Punjab Kings', 'Sunrisers Hyderabad']",4,False
+6467,Anuj Rawat,[6467],"['Gujarat Titans', 'India A', 'Royal Challengers Bengaluru']",6,False
+6473,Nuwanidu Fernando,[6473],"['Sri Lanka', 'Sri Lanka A']",7,False
+6483,Nishan Madushka,[6483],['Sri Lanka A'],1,False
+6486,Tanush Kotian,[6486],"['India A', 'Rajasthan Royals']",2,False
+6487,Priyam Garg,[6487],"['Delhi Capitals', 'Sunrisers Hyderabad']",2,False
+6488,Harvik Desai,[6488],['Mumbai Indians'],1,False
+6489,Darshan Nalkande,[6489],"['Delhi Capitals', 'Gujarat Titans']",4,False
+6492,Aryan Juyal,[6492],"['Lucknow Super Giants', 'Mumbai Indians']",2,False
+6494,Manoj Bhandage,[6494],['Royal Challengers Bengaluru'],3,False
+6497,Muhammad Usman,[6497],['United Arab Emirates'],2,False
+6502,Mohammad Boota,[6502],['United Arab Emirates'],2,False
+6503,Zahoor Khan,[6503],['United Arab Emirates'],3,False
+6506,Mohammad Imran Randhawa,[6506],['Pakistan'],1,False
+6512,Michael Bracewell,[6512],"['New Zealand', 'Royal Challengers Bengaluru']",16,False
+6514,Anil Nidamanuru,[6514],['Netherlands'],3,False
+6515,Benjamin Lister,[6515],['New Zealand'],7,False
+6518,Daniel Sams,[6518],"['Australia', 'Lucknow Super Giants', 'Mumbai Indians']",6,False
+6523,Blessing Muzarabani,[6523],"['Kolkata Knight Riders', 'Royal Challengers Bengaluru', 'Zimbabwe']",17,False
+6526,Himmat Singh,[6526],['Lucknow Super Giants'],2,False
+6565,Katene Clarke,[6565],['New Zealand'],2,False
+6566,Matthew John Fisher,[6566],['New Zealand'],2,False
+6574,Alick Athanaze,[6574],['West Indies'],7,False
+6591,KM Asif,[6591],"['Chennai Super Kings', 'Rajasthan Royals']",2,False
+6628,Gerald Coetzee,[6628],"['Gujarat Titans', 'Mumbai Indians', 'South Africa', 'Sunrisers Hyderabad']",11,False
+6643,Hasan Mahmud,[6643],['Bangladesh'],12,False
+6644,Mahidul Ankon,[6644],"['Bangladesh', 'Bangladesh A']",3,False
+6645,Mohammad Sheikh,[6645],"['Bangladesh', 'Bangladesh A']",6,False
+6651,Towhid Hridoy,[6651],"['Bangladesh', 'Bangladesh A']",20,False
+6654,Tanay Thyagarajan,[6654],['Punjab Kings'],1,False
+6664,Dion Myers,[6664],['Zimbabwe'],11,False
+6669,Mohsin Khan,[6669],['Lucknow Super Giants'],5,False
+6671,Lalit Yadav,[6671],['Delhi Capitals'],3,False
+6674,Rahmanullah Gurbaz,[6674],"['Afghanistan', 'Gujarat Titans', 'Kolkata Knight Riders']",21,False
+6675,Bahir Mehboob,[6675],['Afghanistan'],1,False
+6676,Azmatullah Omarzai,[6676],"['Afghanistan', 'Gujarat Titans', 'Punjab Kings']",20,False
+6677,Mohammad Hasnain,[6677],['Pakistan'],5,False
+6683,Mayank Markande,[6683],"['Kolkata Knight Riders', 'Mumbai Indians', 'Sunrisers Hyderabad']",5,False
+6697,Shams Mulani,[6697],['Mumbai Indians'],2,False
+6705,Scott McKechnie,[6705],['Hong Kong'],2,False
+6712,Hamed Khan,[6712],['Hong Kong'],1,False
+6725,Sherfane Rutherford,[6725],"['Gujarat Titans', 'Kolkata Knight Riders', 'Mumbai Indians', 'Royal Challengers Bengaluru', 'West Indies']",18,False
+6726,Romario Shepherd,[6726],"['Lucknow Super Giants', 'Mumbai Indians', 'Royal Challengers Bengaluru', 'Sunrisers Hyderabad', 'West Indies']",28,False
+6727,Zak Crawley,[6727],['England'],1,False
+6739,Amir Jangoo,[6739],['West Indies'],5,False
+6764,Bukkapatnam Siddharth,[6764],['Oman'],1,False
+6772,Chetan Sakariya,[6772],"['Delhi Capitals', 'Kolkata Knight Riders']",4,False
+6774,Samarth Vyas,[6774],['Sunrisers Hyderabad'],1,False
+6783,Azam Khan,[6783],['Pakistan'],5,False
+6784,Hassan Mohammad,[6784],['Hong Kong'],2,False
+6795,Terrance Hinds,[6795],['West Indies'],3,False
+6797,Dominic Drakes,[6797],"['Gujarat Titans', 'West Indies']",6,False
+6806,Tushar Deshpande,[6806],"['Chennai Super Kings', 'India', 'Rajasthan Royals']",6,False
+6819,Yashasvi Jaiswal,[6819],"['India', 'Rajasthan Royals']",13,False
+6881,Scott Edwards,[6881],['Netherlands'],4,False
+6900,Michael Jones,[6900],['Scotland'],2,False
+6919,Tyrone Kane,[6919],['Ireland'],1,False
+6922,Abdul Samad,[6922],"['Pakistan', 'Pakistan A']",6,False
+6926,Matty Potts,[6926],['England'],3,False
+6931,Pathum Nissanka,[6931],"['Delhi Capitals', 'Sri Lanka']",20,False
+6932,Pramod Madushan,[6932],"['Sri Lanka', 'Sri Lanka A']",7,False
+6984,Saqib Zulfiqar,[6984],['Netherlands'],2,False
+6985,Bas de Leede,[6985],['Netherlands'],2,False
+6995,Saad Zafar,[6995],['Canada'],1,False
+7001,Dilon Heyliger,[7001],['Canada'],1,False
+7002,Nicholas Kirton,[7002],['Canada'],1,False
+7003,Rayyan Pathan,[7003],['Canada'],1,False
+7008,Gus Atkinson,[7008],"['England', 'Kolkata Knight Riders']",5,False
+7044,Jamie Smith,[7044],['England'],3,False
+7046,Tinashe Kamunhukamwe,[7046],['Zimbabwe'],4,False
+7049,Kamil Mishara,[7049],['Sri Lanka'],9,False
+7052,Dunith Wellalage,[7052],"['Sri Lanka', 'Sri Lanka A']",15,False
+7059,Nehal Wadhera,[7059],"['India A', 'Mumbai Indians', 'Punjab Kings']",6,False
+7060,Arjun Tendulkar,[7060],"['Lucknow Super Giants', 'Mumbai Indians']",5,False
+7094,Curtis Campher,[7094],['Ireland'],17,False
+7095,Gideon Peters,[7095],['Delhi Capitals'],1,False
+7120,Rohit Paudel,[7120],['Nepal'],1,False
+7134,Luvnith Sisodia,[7134],"['Kolkata Knight Riders', 'Royal Challengers Bengaluru']",3,False
+7140,Senuran Muthusamy,[7140],['South Africa'],2,False
+7152,Hazratullah Zazai,[7152],['Afghanistan'],8,False
+7155,Sahan Arachchige,[7155],"['Sri Lanka', 'Sri Lanka A']",3,False
+7194,Rahul Bhatia,[7194],['United Arab Emirates'],2,False
+7195,Fahad Nawaz,[7195],['United Arab Emirates'],1,False
+7197,Jhatavedh Subramanyan,[7197],['Sunrisers Hyderabad'],1,False
+7200,Aftab Hussain,[7200],['Hong Kong'],2,False
+7201,Haroon Arshad,[7201],['Hong Kong'],3,False
+7216,Prabhsimran Singh,[7216],"['India', 'India A', 'Punjab Kings']",7,False
+7227,Nijat Masood,[7227],['Afghanistan'],4,False
+7240,FazalHaq Farooqi,[7240],"['Afghanistan', 'Rajasthan Royals', 'Sunrisers Hyderabad']",19,False
+7241,Ziaur Rahman,[7241],['Afghanistan'],2,False
+7250,Mukesh Choudhary,[7250],['Chennai Super Kings'],5,False
+7260,Dhruv Jurel,[7260],"['India', 'Rajasthan Royals']",8,False
+7269,Sushant Mishra,[7269],"['Gujarat Titans', 'Rajasthan Royals', 'Sunrisers Hyderabad']",3,False
+7270,Anrich Nortje,[7270],"['Delhi Capitals', 'Kolkata Knight Riders', 'Lucknow Super Giants', 'South Africa']",15,False
+7279,Atharva Ankolekar,[7279],['Mumbai Indians'],1,False
+7304,Sanvir Singh,[7304],['Sunrisers Hyderabad'],2,False
+7312,Nandre Burger,[7312],"['Rajasthan Royals', 'South Africa']",8,False
+7322,Yash Dayal,[7322],"['Gujarat Titans', 'India', 'Royal Challengers Bengaluru']",6,False
+7325,Harpreet Brar,[7325],['Punjab Kings'],5,False
+7327,Rasikh Salam,[7327],"['Delhi Capitals', 'India A', 'Kolkata Knight Riders', 'Royal Challengers Bengaluru']",5,False
+7338,Haider Ali,[7338],"['Pakistan', 'Pakistan A']",4,False
+7341,Jake McGurk,[7341],"['Australia', 'Delhi Capitals']",7,False
+7344,Shoriful Islam,[7344],['Bangladesh'],22,False
+7354,Al Alis,[7354],"['Bangladesh', 'Bangladesh A']",2,False
+7355,Tayyab Tahir,[7355],['Pakistan'],3,False
+7364,Haris Rauf,[7364],['Pakistan'],16,False
+7403,Lalit Rajbanshi,[7403],['Nepal'],1,False
+7406,Rizwan CP,[7406],['United Arab Emirates'],2,False
+7409,Sundeep Jora,[7409],['Nepal'],2,False
+7446,Abdul Samad,[7446],"['Lucknow Super Giants', 'Sunrisers Hyderabad']",5,False
+7456,James McCollum,[7456],['Ireland'],1,False
+7472,Shahbaz Ahmed,[7472],"['India', 'Lucknow Super Giants', 'Royal Challengers Bengaluru', 'Sunrisers Hyderabad']",8,False
+7473,Akash Deep,[7473],"['Kolkata Knight Riders', 'Lucknow Super Giants', 'Royal Challengers Bengaluru']",5,False
+7498,Abhijeet Tomar,[7498],['Kolkata Knight Riders'],1,False
+7503,Ravi Bishnoi,[7503],"['India', 'Lucknow Super Giants', 'Rajasthan Royals']",28,False
+7533,Simarjeet Singh,[7533],"['Chennai Super Kings', 'Sunrisers Hyderabad']",4,False
+7534,Sarthak Ranjan,[7534],['Kolkata Knight Riders'],1,False
+7544,Venkatesh Iyer,[7544],"['India', 'Kolkata Knight Riders', 'Royal Challengers Bengaluru']",9,False
+7545,Kuldeep Sen,[7545],"['Punjab Kings', 'Rajasthan Royals']",5,False
+7548,Shivalik Sharma,[7548],['Mumbai Indians'],1,False
+7553,Ajay Mandal,[7553],"['Chennai Super Kings', 'Delhi Capitals']",4,False
+7566,Ben Curran,[7566],['Zimbabwe'],3,False
+7574,Kumar Kartikeya Singh,[7574],"['Mumbai Indians', 'Rajasthan Royals']",4,False
+7575,Arpit Guleria,[7575],['Lucknow Super Giants'],1,False
+7625,Suryansh Shedge,[7625],"['India', 'India A', 'Lucknow Super Giants', 'Punjab Kings']",7,False
+7634,Aaron Jones,[7634],['United States Of America'],1,False
+7689,Dilshan Madushanka,[7689],"['Mumbai Indians', 'Sri Lanka', 'Sunrisers Hyderabad']",11,False
+7690,Saim Ayub,[7690],['Pakistan'],18,False
+7692,Qasim Akram,[7692],"['Pakistan', 'Pakistan A']",2,False
+7696,Mohammad Wasim,[7696],['Pakistan'],14,False
+7699,Abbas Afridi,[7699],"['Pakistan', 'Pakistan A']",11,False
+7702,Chamindu Wickramasinghe,[7702],['Sri Lanka'],5,False
+7704,Pavan Rathnayake,[7704],"['Sri Lanka', 'Sri Lanka A']",5,False
+7708,Kavindu Nadeeshan,[7708],['Sri Lanka A'],1,False
+7709,Ainsley Ndlovu,[7709],['Zimbabwe'],4,False
+7710,Brandon Glover,[7710],['Netherlands'],2,False
+7741,Gareth Delany,[7741],['Ireland'],18,False
+7744,Jordan Cox,[7744],"['England', 'Royal Challengers Bengaluru']",8,False
+7755,Harsh Thaker,[7755],['Canada'],1,False
+7756,Kaleem Sana,[7756],['Canada'],1,False
+7761,Ravinderpal Singh,[7761],['Canada'],1,False
+7808,Marco Jansen,[7808],"['Punjab Kings', 'South Africa', 'Sunrisers Hyderabad']",15,False
+7894,Tony Munyonga,[7894],['Zimbabwe'],9,False
+7896,Akash Singh,[7896],"['Chennai Super Kings', 'Lucknow Super Giants', 'Sunrisers Hyderabad']",4,False
+7897,Namboori Tilak Varma,[7897],"['India', 'India A', 'Mumbai Indians']",25,False
+7900,Tanzid Hasan,[7900],['Bangladesh'],15,False
+7901,Parvez Emon,[7901],"['Bangladesh', 'Bangladesh A']",18,False
+7903,Shamim Hossain,[7903],"['Bangladesh', 'Bangladesh A']",17,False
+7904,Mohammad Chowdhury,[7904],['Bangladesh A'],1,False
+7905,Tanzim Sakib,[7905],['Bangladesh'],15,False
+7906,Rakibul Hasan,[7906],"['Bangladesh', 'Bangladesh A']",3,False
+7908,Mohammad Akbar Ali,[7908],['Bangladesh A'],2,False
+7909,Philippe Boissevain,[7909],['Netherlands'],1,False
+7910,Antonius Staal,[7910],['Netherlands'],1,False
+7911,Oliver Hairs,[7911],['Scotland'],2,False
+7912,Vikramjit Singh,[7912],['Netherlands'],4,False
+7914,Clayton Floyd,[7914],['Netherlands'],2,False
+7915,Monank Patel,[7915],['United States Of America'],1,False
+7916,Karima Gore,[7916],['West Indies'],1,False
+7920,Nathan Ellis,[7920],"['Australia', 'Chennai Super Kings', 'Punjab Kings']",18,False
+7924,Kushal Malla,[7924],['Nepal'],2,False
+7925,Rohan Rangarajan,[7925],['Singapore'],1,False
+7926,Manpreet Singh,[7926],['Singapore'],1,False
+7927,Janak Prakash,[7927],['Singapore'],1,False
+7928,Vinoth Baskaran,[7928],['Singapore'],1,False
+7929,Aryaman Sunil Uchil,[7929],['Singapore'],1,False
+7931,Aritra Dutta,[7931],['Singapore'],1,False
+7935,Mohammad Ghazanfar,[7935],['Hong Kong'],4,False
+7937,Wasim Ali,[7937],['Oman'],3,False
+7938,Sandeep Goud 1,[7938],['Oman'],1,False
+7940,Aqib Ilyas,[7940],['Oman'],1,False
+7942,Jay Odedara,[7942],['Oman'],2,False
+7945,Nasrulla Rana,[7945],['Hong Kong'],3,False
+7966,Farmanullah Safi,[7966],['Afghanistan A'],1,False
+7967,Noor Ahmad,[7967],"['Afghanistan', 'Chennai Super Kings', 'Gujarat Titans']",22,False
+7978,Johnathan Campbell,[7978],['Zimbabwe'],3,False
+7981,Imran Mir,[7981],['Afghanistan A'],1,False
+8005,Zawar Farid,[8005],['United Arab Emirates'],2,False
+8007,Waheed Ahmed,[8007],['United Arab Emirates'],2,False
+8009,Junaid Siddique,[8009],['United Arab Emirates'],7,False
+8010,Darius D Silva,[8010],['United Arab Emirates'],2,False
+8014,Avi Dixit,[8014],['Singapore'],1,False
+8015,Kaleemullah,[8015],['Oman'],1,False
+8029,Sadiqullah Pacha,[8029],['Afghanistan A'],2,False
+8032,Abdul Malik,[8032],['Afghanistan'],1,False
+8033,Abdul Rahmani,[8033],['Afghanistan A'],1,False
+8040,Ripal Patel,[8040],['Delhi Capitals'],2,False
+8049,Naseem Shah,[8049],['Pakistan'],15,False
+8085,Suyash Prabhudessai,[8085],['Royal Challengers Bengaluru'],3,False
+8093,Nikhil Chaudhary,[8093],['Australia'],1,False
+8101,Ashutosh Sharma,[8101],"['Delhi Capitals', 'India A', 'Punjab Kings']",4,False
+8140,Abid Mangnoo,[8140],['Rajasthan Royals'],1,False
+8141,Auqib Nabi,[8141],['Delhi Capitals'],1,False
+8177,Akash Madhwal,[8177],"['Chennai Super Kings', 'Mumbai Indians', 'Rajasthan Royals']",5,False
+8182,Donovan Ferreira,[8182],"['Delhi Capitals', 'Rajasthan Royals', 'South Africa']",13,False
+8217,Ansh Tandon,[8217],['United Arab Emirates'],2,False
+8221,Nitish Reddy,[8221],"['India', 'Sunrisers Hyderabad']",13,False
+8238,Sameer Rizvi,[8238],"['Chennai Super Kings', 'Delhi Capitals', 'India A']",4,False
+8241,Lokesh Bam,[8241],['Nepal'],2,False
+8244,Pratish GC,[8244],['Nepal'],1,False
+8249,Sher Malla,[8249],['Nepal'],1,False
+8251,Kumar Kushagra,[8251],"['Delhi Capitals', 'Gujarat Titans', 'India', 'India A']",5,False
+8266,Sumit Kumar 1,[8266],['Delhi Capitals'],1,False
+8295,Matthew Forde,[8295],['West Indies'],13,False
+8298,Ramon Simmonds,[8298],['West Indies'],3,False
+8301,Asif Khan,[8301],['United Arab Emirates'],6,False
+8311,Dan Mousley,[8311],['England'],2,False
+8326,Jayden Seales,[8326],['West Indies'],6,False
+8329,Scott Currie,[8329],['England'],1,False
+8380,Mohammad Rishad Hossain,[8380],['Bangladesh'],20,False
+8388,Ahan Wickramasinghe,[8388],['Sri Lanka A'],2,False
+8389,Jayden Lennox,[8389],['New Zealand'],2,False
+8405,Kanwarpal Tathgur,[8405],['Canada'],1,False
+8408,Shreyas Movva,[8408],['Canada'],1,False
+8424,Tanveer Sangha,[8424],['Australia'],3,False
+8530,Kartik Tyagi,[8530],"['Gujarat Titans', 'Kolkata Knight Riders', 'Sunrisers Hyderabad']",4,False
+8580,Yudhvir Singh,[8580],"['India A', 'Lucknow Super Giants', 'Rajasthan Royals']",5,False
+8600,Tadiwanashe Marumani,[8600],['Zimbabwe'],15,False
+8611,Adithya Ashok,[8611],['New Zealand'],3,False
+8614,William ORourke,[8614],"['Lucknow Super Giants', 'New Zealand']",4,False
+8623,Kristian Clarke,[8623],['New Zealand'],2,False
+8632,Aaqib Khan,[8632],['India A'],1,False
+8634,Ashwani Kumar,[8634],['Mumbai Indians'],2,False
+8637,Vriitya Aravind,[8637],['United Arab Emirates'],3,False
+8638,Basil Hameed,"[8638, 39444]",['United Arab Emirates'],5,True
+8639,Kartik Meiyappan,[8639],['United Arab Emirates'],2,False
+8647,Sediqullah Atal,[8647],"['Afghanistan', 'Afghanistan A', 'Delhi Capitals']",15,False
+8652,Mohammad Ishaq,[8652],"['Afghanistan', 'Afghanistan A']",9,False
+8653,Rahmanullah Zadran,[8653],['Afghanistan A'],1,False
+8654,Cooper Connolly,[8654],"['Australia', 'Punjab Kings']",7,False
+8661,Matheesha Pathirana,[8661],"['Chennai Super Kings', 'Kolkata Knight Riders', 'Sri Lanka']",20,False
+8662,Kevin Kasuza,[8662],['Zimbabwe'],1,False
+8664,Victor Nyauchi,[8664],['Zimbabwe'],3,False
+8719,Aryan Lakra,[8719],['United Arab Emirates'],2,False
+8723,Mohammed Faraazuddin,[8723],['United Arab Emirates'],2,False
+8726,Alishan Sharafu,[8726],['United Arab Emirates'],8,False
+8727,Sanchit Sharma,[8727],['United Arab Emirates'],5,False
+8729,Haider Shah,[8729],['United Arab Emirates'],2,False
+8739,Muhammad Irfan,[8739],"['Pakistan', 'Pakistan A']",9,False
+8741,Mohammad Haris,[8741],"['Pakistan', 'Pakistan A']",10,False
+8743,Muhammad Shehzad,[8743],['Pakistan A'],1,False
+8746,Vaibhav Arora,[8746],"['India A', 'Kolkata Knight Riders', 'Punjab Kings']",6,False
+8763,Duan Jansen,[8763],['Mumbai Indians'],1,False
+8771,Rubin Hermann,[8771],['South Africa'],2,False
+8805,Ottneil Baartman,[8805],['South Africa'],10,False
+8852,Mihlal Mpongwana,[8852],['South Africa'],1,False
+15269,Mohammed Aslam,[15269],['Kuwait'],1,False
+15271,Usmangani Ibrahim Patel,[15271],['Kuwait'],1,False
+15274,Ravija Sandaruwan,[15274],['Kuwait'],1,False
+15275,Mohammad Amin,[15275],['Kuwait'],1,False
+15278,Muhammad Kashif,[15278],['Kuwait'],1,False
+15279,Shiraz Khan,[15279],['Kuwait'],1,False
+15280,Sayed Monib,[15280],['Kuwait'],1,False
+15303,Bilal Tahir,[15303],['Kuwait'],1,False
+15551,Ackeem Auguste,[15551],['West Indies'],4,False
+15629,Shayan Jahangir,[15629],['United States Of America'],1,False
+16284,Habibur Rahman Sohan,[16284],['Bangladesh A'],1,False
+16498,Sultan Ahmad,[16498],['United Arab Emirates'],2,False
+16536,Makoto Taniyama,[16536],['Japan'],1,False
+16559,Alexander Patmore,[16559],['Japan'],1,False
+16565,Kohei Kubota,[16565],['Japan'],1,False
+16606,Tsuyoshi Takada,[16606],['Japan'],1,False
+17315,Lovepreet bajwa,[17315],['United Arab Emirates'],1,False
+17413,Neil Rock,[17413],['Ireland'],7,False
+17418,Matthew Foster,[17418],['Ireland'],1,False
+17419,Tim Tector,[17419],['Ireland'],5,False
+17424,Graham Hume,[17424],['Ireland'],11,False
+17430,Conor Olphert,[17430],['Ireland'],3,False
+17432,Ross Adair,[17432],['Ireland'],14,False
+17898,Bilal Sami,[17898],"['Afghanistan', 'Afghanistan A']",3,False
+17909,Riaz Hassan,[17909],['Afghanistan'],1,False
+17910,Mohammad Akram,[17910],['Afghanistan'],1,False
+17911,Nangeyalia Kharote,[17911],"['Afghanistan', 'Afghanistan A']",9,False
+17918,Abdullah Tarakhail,[17918],['Afghanistan'],1,False
+17919,Mohammad Saleem Safi,[17919],"['Afghanistan', 'Afghanistan A']",4,False
+17937,Zubaid Akbari,[17937],"['Afghanistan', 'Afghanistan A']",4,False
+18206,Tom Hartley,[18206],['England'],2,False
+18592,Ijaz Ahmad Mehri,[18592],['Afghanistan A'],1,False
+18824,Faran Afzal,[18824],['England'],1,False
+19012,Zeeshan Ali,[19012],['Hong Kong'],5,False
+19016,Aliyaan Zahir Mohammad,[19016],['Hong Kong'],2,False
+19020,Ateeq Iqbal,[19020],['Hong Kong'],5,False
+19043,Dhananjay Rao,[19043],['Hong Kong'],2,False
+19050,Adit Gorawara,[19050],['Hong Kong'],1,False
+19098,Pyla Avinash,[19098],['Punjab Kings'],2,False
+19124,Anas Khan,[19124],['Hong Kong'],2,False
+19125,Ayush Shukla,[19125],['Hong Kong'],4,False
+19132,Khurram Shehzad,[19132],['Pakistan A'],1,False
+19145,Aamer Jamal,[19145],['Pakistan'],2,False
+19147,Faraz Akram,[19147],['Zimbabwe'],4,False
+19307,Tharindu Rathnayake,[19307],['Sri Lanka'],1,False
+19309,Lahiru Udara,[19309],"['Sri Lanka', 'Sri Lanka A']",3,False
+19312,Nuwan Thushara,[19312],"['Mumbai Indians', 'Royal Challengers Bengaluru', 'Sri Lanka']",21,False
+19315,Vijayakanth Viyaskanth,[19315],"['Sri Lanka', 'Sri Lanka A', 'Sunrisers Hyderabad']",4,False
+19316,Maheesh Theekshana,[19316],"['Chennai Super Kings', 'Rajasthan Royals', 'Sri Lanka']",25,False
+19530,Shahnawaz Dhani,[19530],"['Pakistan', 'Pakistan A']",4,False
+19535,Rejaur Rahman Raja,[19535],"['Bangladesh', 'Bangladesh A']",2,False
+19714,Abishek Porel,[19714],"['Delhi Capitals', 'India A']",5,False
+19754,Raja Khan,[19754],['United Arab Emirates'],4,False
+19781,Mitchell Owen,[19781],"['Australia', 'Punjab Kings']",7,False
+19892,Theo van Woerkom,[19892],['Ireland'],3,False
+19894,Mitchell Hay,[19894],['New Zealand'],4,False
+19902,Tim Pringle,[19902],['Netherlands'],3,False
+19969,Mubasir Khan,[19969],['Pakistan A'],1,False
+19998,Rajvardhan Hangargekar,[19998],"['Chennai Super Kings', 'Lucknow Super Giants']",4,False
+20005,Arshad Khan,[20005],"['Gujarat Titans', 'Lucknow Super Giants', 'Mumbai Indians']",5,False
+20006,Ramandeep Singh,[20006],"['India', 'India A', 'Kolkata Knight Riders', 'Mumbai Indians']",9,False
+20023,Karan Sharma,[20023],['Lucknow Super Giants'],2,False
+20029,Rahul Buddhi,[20029],['Mumbai Indians'],1,False
+20077,Yuvraj Chaudhary,[20077],['Lucknow Super Giants'],1,False
+20114,Ansh Patel,[20114],['Punjab Kings'],1,False
+20163,Aasif Sheikh,[20163],['Nepal'],1,False
+20172,Rashid Khan,[20172],['Nepal'],1,False
+20175,Nandan Yadav,[20175],['Nepal'],2,False
+20187,Narayan Joshi,[20187],['Nepal'],1,False
+20192,Hemanta Dhami,[20192],['Nepal'],1,False
+20229,Mohammad Ali,[20229],['Pakistan'],2,False
+20310,Ahmed Daniyal,[20310],"['Pakistan', 'Pakistan A']",4,False
+20316,Shahab Alam,[20316],['Nepal'],2,False
+20327,Usman Khan,[20327],['Pakistan'],11,False
+20693,Kuldip Yadav,[20693],"['Chennai Super Kings', 'Rajasthan Royals']",3,False
+20694,Bhagath Varma,[20694],['Chennai Super Kings'],2,False
+20702,Tristan Stubbs,[20702],"['Delhi Capitals', 'Mumbai Indians', 'South Africa']",19,False
+20704,Salman Mirza,[20704],"['Pakistan', 'Pakistan A']",9,False
+20802,Abdul Basith,[20802],['Rajasthan Royals'],1,False
+20894,Aman Khan,[20894],"['Chennai Super Kings', 'Delhi Capitals', 'Kolkata Knight Riders']",3,False
+20989,Vivrant Sharma,[20989],['Sunrisers Hyderabad'],1,False
+21182,Utkarsh Srivastava,[21182],['United States Of America'],1,False
+21192,Ahan Trivedi,[21192],['Hong Kong'],2,False
+21194,Bilal Akhtar,[21194],['Hong Kong'],2,False
+21196,Mohammad Waheed,[21196],['Hong Kong'],4,False
+21197,Wajid Shah,[21197],['Hong Kong'],2,False
+21283,Vikas Sharma,[21283],['Hong Kong'],1,False
+21388,Martin Coetzee,[21388],['Hong Kong'],2,False
+21777,Tafadzwa Tsiga,[21777],['Zimbabwe'],2,False
+21780,Ernest Masuku,[21780],['Zimbabwe'],3,False
+21781,Clive Madande,[21781],['Zimbabwe'],13,False
+21784,Brad Evans,[21784],['Zimbabwe'],9,False
+21786,Tanaka Chivanga,[21786],['Zimbabwe'],4,False
+21787,Takudzwanashe Kaitano,[21787],['Zimbabwe'],3,False
+21790,Tashinga Musekiwa,[21790],['Zimbabwe'],7,False
+21791,J Gumbie,[21791],['Zimbabwe'],3,False
+21978,Amir Naqvi,[21978],['Zimbabwe'],1,False
+22134,Luke Jongwe,[22134],['Zimbabwe'],7,False
+22137,Fionn Hand,[22137],['Ireland'],8,False
+22187,Ryan Klein,[22187],['Netherlands'],3,False
+22188,Aryan Dutt,[22188],['Netherlands'],4,False
+22189,Musa Ahmad,[22189],['Netherlands'],2,False
+22471,Matthew Humphreys,[22471],['Ireland'],8,False
+22515,Shiran Fernando,[22515],['Sri Lanka'],1,False
+22565,Muhammad Waseem,[22565],['United Arab Emirates'],8,False
+22870,Abdul Gaffar,[22870],['Bangladesh A'],1,False
+22920,Jacob Duffy,[22920],"['New Zealand', 'Royal Challengers Bengaluru']",15,False
+23195,Gavin Hoey,[23195],['Ireland'],3,False
+23311,Jacob Bethell,[23311],"['England', 'Royal Challengers Bengaluru']",11,False
+23408,Amit Kumar,[23408],['Sunrisers Hyderabad'],1,False
+23450,Sai Sudharsan,[23450],"['Gujarat Titans', 'India']",6,False
+23467,Gurjapneet Singh,[23467],"['Chennai Super Kings', 'India A']",3,False
+24017,Brian Bennett,[24017],['Zimbabwe'],13,False
+24217,Sebastiaan Braat,[24217],['Netherlands'],1,False
+24239,Rafiullah,[24239],['Oman'],1,False
+24243,Ubaid Ullah,[24243],['Oman'],1,False
+24245,Shoaib Khan,[24245],['Oman'],1,False
+24346,Mohamed Shafeeq,[24346],['Kuwait'],1,False
+24366,Kashyap Prajapati,[24366],['Oman'],1,False
+24370,Pruthvikumar Damubhai,[24370],['Oman'],1,False
+24372,Muzahir Raza,[24372],['Oman'],2,False
+24381,Shariz Ahmad,[24381],['Netherlands'],3,False
+24473,Sonny Baker,[24473],['England'],4,False
+24475,Rehan Ahmed,[24475],"['Delhi Capitals', 'England']",12,False
+24479,James Coles,[24479],['England'],2,False
+24489,Abhishek Paradkar,[24489],['United States Of America'],1,False
+24754,Atif Mehmood,[24754],['England'],1,False
+24767,Ripon Mondol,[24767],"['Bangladesh', 'Bangladesh A']",4,False
+24772,Suliman Safi,[24772],['Afghanistan'],1,False
+24773,Bilal Ahmad Tarin,[24773],['Afghanistan'],1,False
+24775,M.Naveed Zadran,[24775],['Afghanistan'],1,False
+24779,Ijaz Ahmadzai,[24779],"['Afghanistan', 'Afghanistan A']",6,False
+24780,Yama Arab,[24780],['Afghanistan A'],1,False
+24803,Gulshan Jha,[24803],['Nepal'],2,False
+24812,Chris Greaves,[24812],['Scotland'],2,False
+24887,Innocent Kaia,[24887],['Zimbabwe'],6,False
+24978,Jack Jarvis,[24978],['Scotland'],2,False
+24982,Charlie Tear,[24982],['Scotland'],2,False
+25011,Liam Mccarthy,[25011],['Ireland'],2,False
+25017,Olivier Elenbaas,[25017],['Netherlands'],1,False
+25030,Zaman Khan,[25030],"['Pakistan', 'Pakistan A']",6,False
+25048,Umran Malik,[25048],"['India', 'Kolkata Knight Riders', 'Sunrisers Hyderabad']",12,False
+25063,Santosh Yadav,[25063],['Nepal'],1,False
+25091,Ayan Khan,[25091],['Oman'],1,False
+25128,Nqabayomzi Peter,[25128],['South Africa'],6,False
+25132,Praful Hinge,[25132],['Sunrisers Hyderabad'],1,False
+25138,Harsh Dubey,[25138],"['India', 'India A', 'Sunrisers Hyderabad']",4,False
+25139,Shubham Dubey,[25139],['Rajasthan Royals'],3,False
+25213,Dewald Brevis,[25213],"['Chennai Super Kings', 'Mumbai Indians', 'South Africa']",11,False
+25216,Andile Simelane,[25216],['South Africa'],6,False
+25231,Samay Shrivastava,[25231],['Oman'],3,False
+25341,Mahfuzur Rabby,[25341],['Bangladesh A'],2,False
+25353,Numan Shah,[25353],['Afghanistan A'],1,False
+25369,Hashim Khalil Gurbaz,[25369],['Afghanistan'],1,False
+25501,Meet Bhavsar,[25501],['Kuwait'],1,False
+25502,Adnan Idrees,[25502],['Kuwait'],1,False
+25503,Nawaf Ahmed,[25503],['Kuwait'],1,False
+25507,Edson Silva,[25507],['Kuwait'],1,False
+25534,Chad Bowes,[25534],['New Zealand'],5,False
+25541,Michael Rippon,[25541],['New Zealand'],3,False
+25554,Darren Walker,[25554],['England'],1,False
+25667,Anunay Singh,[25667],['Rajasthan Royals'],1,False
+25669,Priyansh Arya,[25669],"['India A', 'Punjab Kings']",3,False
+25679,Salil Arora,[25679],['Sunrisers Hyderabad'],1,False
+25787,Khuzaima Tanvir,[25787],['United Arab Emirates'],1,False
+25809,Juanoy Drysdale,[25809],['United States Of America'],1,False
+26197,Avinash Singh,[26197],['Royal Challengers Bengaluru'],1,False
+26514,Nimesh Vimukthi,[26514],['Sri Lanka A'],1,False
+26519,Janith Liyanage,[26519],['Sri Lanka'],6,False
+26530,Treveen Mathew,[26530],"['Sri Lanka', 'Sri Lanka A']",2,False
+26646,Rahul Chopra,[26646],['United Arab Emirates'],5,False
+26663,Kwena Maphaka,[26663],"['Mumbai Indians', 'Rajasthan Royals', 'South Africa']",10,False
+26728,Jordan Hermann,[26728],['South Africa'],1,False
+26795,Joel Davies,[26795],['Australia'],1,False
+26830,Nishant Kumar Sindhu,[26830],"['Chennai Super Kings', 'Gujarat Titans', 'India A']",5,False
+26832,Aneeshwar Gautam Narendra,[26832],['Royal Challengers Bengaluru'],1,False
+26834,Raj Bawa,[26834],"['Mumbai Indians', 'Punjab Kings']",4,False
+26836,Vicky Ostwal,[26836],"['Delhi Capitals', 'Royal Challengers Bengaluru']",4,False
+26839,Haseebullah Khan,[26839],"['Pakistan', 'Pakistan A']",6,False
+26843,Maaz Sadaqat,[26843],"['Pakistan', 'Pakistan A']",2,False
+26845,Mehran Mumtaz,[26845],['Pakistan A'],1,False
+26848,Ghazi Ghouri,[26848],['Pakistan A'],1,False
+26854,SM Meherob Hasan,[26854],['Bangladesh A'],1,False
+26858,Ariful Islam,[26858],['Bangladesh A'],1,False
+26861,Reuben Wilson,[26861],['Ireland'],1,False
+26906,Angkrish Raghuvanshi,[26906],['Kolkata Knight Riders'],3,False
+26909,Yash Dhull,[26909],['Delhi Capitals'],3,False
+26911,Harnoor Pannu,[26911],['Punjab Kings'],2,False
+26913,Shaik Rasheed,[26913],"['Chennai Super Kings', 'India A']",4,False
+26916,Yasir Mohammad,[26916],['United States Of America'],1,False
+26922,Ashish Odedra,[26922],['Oman'],1,False
+26988,Jitenkumar Ramanandi,[26988],['Oman'],1,False
+27004,Hassnain Shah,[27004],['Oman'],2,False
+27057,Pratik Athavale,[27057],['Oman'],1,False
+27059,Karan Sonavale,[27059],['Oman'],3,False
+27071,Vinayak Shukla,[27071],['Oman'],1,False
+27137,Hammad Mirza,[27137],['Oman'],3,False
+27146,Imran Muhammad,[27146],['Oman'],1,False
+27259,Jishan Alam,[27259],['Bangladesh A'],2,False
+27364,Simranjeet Kang,[27364],['United Arab Emirates'],4,False
+27373,Muhammad Farooq,[27373],['United Arab Emirates'],5,False
+27380,Harshit Kaushik,[27380],"['Kolkata Knight Riders', 'United Arab Emirates']",5,False
+27390,Matiullah Khan,[27390],['United Arab Emirates'],2,False
+27391,Vishnu Sukumaran,[27391],['United Arab Emirates'],3,False
+27460,Ali Naseer,[27460],['United Arab Emirates'],1,False
+27462,Adhitya Shetty,[27462],['United Arab Emirates'],1,False
+27464,Aayan Afzal Khan,[27464],['United Arab Emirates'],4,False
+27465,Nilansh Keswani,[27465],['United Arab Emirates'],2,False
+27466,Dhruv Parashar,[27466],['United Arab Emirates'],5,False
+27469,Aryansh Sharma,[27469],['United Arab Emirates'],7,False
+27471,Jash Giyanani,[27471],['United Arab Emirates'],2,False
+27504,Dushan Hemantha,[27504],"['Sri Lanka', 'Sri Lanka A']",3,False
+27516,Ihsanullah Ihsanullah,[27516],['Pakistan'],2,False
+27517,Yasir Khan,[27517],['Pakistan A'],2,False
+27743,DT Doram,[27743],['Netherlands'],3,False
+27956,Prashant Solanki,[27956],"['Chennai Super Kings', 'Kolkata Knight Riders']",4,False
+27959,Hrithik Shokeen,[27959],"['India A', 'Mumbai Indians']",3,False
+27960,Mayank Yadav,[27960],"['India', 'Lucknow Super Giants']",9,False
+27962,Saurav Chauhan,[27962],['Royal Challengers Bengaluru'],1,False
+27964,Anshul Kamboj,[27964],"['Chennai Super Kings', 'India A', 'Mumbai Indians']",4,False
+27970,Gurnoor Brar,[27970],"['Gujarat Titans', 'India A', 'Punjab Kings']",5,False
+27987,Rishiv Joshi,[27987],['Canada'],1,False
+28018,Ashok Sharma,[28018],"['Gujarat Titans', 'India', 'Kolkata Knight Riders', 'Rajasthan Royals']",4,False
+28019,Ramesh Kumar,[28019],['Kolkata Knight Riders'],1,False
+28020,Shubham Garhwal,[28020],['Rajasthan Royals'],1,False
+28021,Saurabh Dubey,[28021],"['Kolkata Knight Riders', 'Sunrisers Hyderabad']",2,False
+28185,Kamil Pooran,[28185],['West Indies'],1,False
+28655,Muhammad Rohid,[28655],['United Arab Emirates'],4,False
+28664,Zahid Ali,[28664],['United Arab Emirates'],1,False
+28756,Haider Ali,[28756],['United Arab Emirates'],5,False
+28788,Tanish Suri,[28788],['United Arab Emirates'],1,False
+28908,Vincent Masekesa,[28908],['Zimbabwe'],1,False
+28911,John Masara,[28911],['Zimbabwe'],1,False
+28915,Trevor Gwandu,[28915],['Zimbabwe'],5,False
+28967,Tim Robinson,[28967],['New Zealand'],10,False
+28970,Connor Esterhuizen,[28970],"['Gujarat Titans', 'South Africa']",2,False
+28978,Muhammad Farooq,[28978],['United Arab Emirates'],1,False
+29066,Zakary Foulkes,[29066],"['Chennai Super Kings', 'New Zealand']",11,False
+29075,Aadil Ansari,[29075],['Nepal'],1,False
+29080,Muhammad Khan,[29080],['United Arab Emirates'],3,False
+29558,Muhammad Arfan,[29558],['United Arab Emirates'],3,False
+29699,Ibrahim Takahashi,[29699],['Japan'],1,False
+29706,Wataru Miyauchi,[29706],['Japan'],1,False
+29709,Reo Sakurano,[29709],['Japan'],1,False
+29833,Bashir Ahmad,[29833],['Afghanistan'],4,False
+29834,Basir Ahamad,[29834],['Nepal'],1,False
+29862,Ali Hassan,[29862],['Hong Kong'],2,False
+29888,Harshit Rana,[29888],"['India', 'Kolkata Knight Riders']",15,False
+30925,Bradley Currie,[30925],['Scotland'],2,False
+30927,Saiteja Mukkamalla,[30927],['United States Of America'],1,False
+31107,Yasin Patel,[31107],['Kuwait'],1,False
+31156,Shahrukh Quddus,[31156],['Kuwait'],1,False
+31205,Ruchit Ahir,[31205],['Mumbai Indians'],1,False
+31227,Vidhwath Kaverappa,[31227],['Punjab Kings'],2,False
+31513,Ethan Dsouza,[31513],['United Arab Emirates'],5,False
+31518,Akshat Raghuwanshi,[31518],['Lucknow Super Giants'],1,False
+31529,Robin Minz,[31529],"['Gujarat Titans', 'Mumbai Indians']",3,False
+31834,Neil Anant Karnik,[31834],['Singapore'],1,False
+31835,Akshay Roopak Puri,[31835],['Singapore'],1,False
+31836,Aman Desai,[31836],['Singapore'],1,False
+32244,Tripurana Vijay,[32244],['Delhi Capitals'],2,False
+32399,Aaron Johnson,[32399],['Canada'],1,False
+32401,Akhil Kumar,[32401],['Canada'],1,False
+32705,Faridoon Dawoodzai,[32705],"['Afghanistan', 'Afghanistan A']",3,False
+32862,Allah Ghazanfar,[32862],"['Afghanistan', 'Afghanistan A', 'Kolkata Knight Riders', 'Mumbai Indians']",10,False
+33009,John Turner,[33009],['England'],4,False
+33067,Ravichandran Smaran,[33067],['Sunrisers Hyderabad'],2,False
+33095,Macneil Noronha,[33095],['Chennai Super Kings'],1,False
+33114,Milan Rathnayake,[33114],"['Sri Lanka', 'Sri Lanka A']",2,False
+33351,Vikas Puri,[33351],['Singapore'],1,False
+33437,Jeevan Santhanam,[33437],['Singapore'],1,False
+33438,Vihaan Maheshwar,[33438],['Singapore'],1,False
+33439,Aryaveer Chaudhry,[33439],['Singapore'],1,False
+33440,Adwitya Bhargava,[33440],['Singapore'],1,False
+33441,Abdul Rahman Bhadelia,[33441],['Singapore'],1,False
+33442,Fahad Choudhary,[33442],['United Arab Emirates'],1,False
+33443,Sabir Ali,[33443],['United Arab Emirates'],2,False
+33523,Arjun Saud,[33523],['Nepal'],1,False
+33675,Mohammad Naeem,[33675],['Pakistan A'],1,False
+33969,Tinotenda Maposa,[33969],['Zimbabwe'],7,False
+34118,Irfan Taufiq,[34118],['Rajasthan Royals'],1,False
+34466,Arafat Minhas,[34466],"['Pakistan', 'Pakistan A']",5,False
+34485,Sufiyan Muqeem,[34485],"['Pakistan', 'Pakistan A']",12,False
+34522,Brandon McMullen,[34522],['Scotland'],2,False
+34527,Jasper John Davidson,[34527],['Scotland'],2,False
+34543,Darsh Vora,[34543],['Hong Kong'],1,False
+34546,Aryan Bisht,[34546],['Oman'],2,False
+34694,Haroon Shahid,[34694],['Kuwait'],1,False
+34880,Saad Masood,[34880],['Pakistan A'],1,False
+34910,Hassan Eisakhil,[34910],['Afghanistan A'],1,False
+34928,Kendel Fleming,[34928],['Japan'],1,False
+34929,Lachlan Lake,[34929],['Japan'],1,False
+34957,Jafer Chohan,[34957],['England'],1,False
+34969,Manav Suthar,[34969],['Gujarat Titans'],3,False
+34991,Rajan Kumar,[34991],['Royal Challengers Bengaluru'],2,False
+35071,Kunal Rathore,[35071],['Rajasthan Royals'],3,False
+35072,Ramakrishna Ghosh,[35072],['Chennai Super Kings'],2,False
+35102,Zikria Islam,[35102],['Oman'],2,False
+35120,Narayan Saishiv,[35120],['Oman'],1,False
+35122,Shah Faisal,[35122],['Oman'],1,False
+35133,Sufyan Yousuf,[35133],['Oman'],2,False
+35318,Sakib Hussain,[35318],"['Kolkata Knight Riders', 'Sunrisers Hyderabad']",2,False
+35506,Quentin Sampson,[35506],['West Indies'],3,False
+36033,Muhammad Shahdad,[36033],['United Arab Emirates'],1,False
+36153,Syed Haider,[36153],['United Arab Emirates'],1,False
+36328,Mangesh Yadav,[36328],['Royal Challengers Bengaluru'],1,False
+36551,Zishan Motara,[36551],['West Indies'],1,False
+36553,Jediah Blades,[36553],['West Indies'],3,False
+36981,Himanshu Sharma,[36981],['Royal Challengers Bengaluru'],2,False
+36982,Suyash Sharma,[36982],"['India A', 'Kolkata Knight Riders', 'Royal Challengers Bengaluru']",5,False
+36983,Mohit Rathee,[36983],"['Punjab Kings', 'Royal Challengers Bengaluru']",2,False
+36984,Raghav Goyal,[36984],['Mumbai Indians'],1,False
+37052,Naman Dhir,[37052],"['India', 'India A', 'Mumbai Indians']",6,False
+37201,Jewel Andrew,[37201],['West Indies'],6,False
+37311,Shiv Mathur,[37311],['Hong Kong'],1,False
+37559,Nadeem Khan,[37559],['Oman'],1,False
+37572,Shafiq Jan,[37572],['Oman'],1,False
+37621,Rajab Hussain,[37621],['Hong Kong'],1,False
+37731,Musheer Khan,[37731],['Punjab Kings'],2,False
+37879,Khawaja Nafay,[37879],['Pakistan'],3,False
+37939,Nahid Rana,[37939],['Bangladesh'],6,False
+38044,Mahli Beardman,[38044],['Australia'],2,False
+38050,Isitha Wijesundera,[38050],['Sri Lanka A'],2,False
+38855,Mohammad Saifuddin,[38855],['Bangladesh'],14,False
+39374,Muhammad Zohaib,[39374],['United Arab Emirates'],4,False
+39455,Maruf Mridha,[39455],['Bangladesh A'],1,False
+39461,Wasi Sddiquee,[39461],['Bangladesh A'],1,False
+39479,Bashir Ahmad,[39479],['Afghanistan A'],1,False
+39630,Dinura Kalupahana,[39630],['Sri Lanka A'],1,False
+39637,Garuka Sanketh,[39637],['Sri Lanka A'],1,False
+39638,Vishen Halambage,[39638],"['Sri Lanka', 'Sri Lanka A']",2,False
+39640,Sineth Jayawardena,[39640],['Sri Lanka'],1,False
+39648,Sohan de Livera,[39648],['Sri Lanka A'],1,False
+39657,Eshan Malinga,[39657],"['Sri Lanka', 'Sri Lanka A', 'Sunrisers Hyderabad']",10,False
+39672,Aarya Desai,[39672],['Kolkata Knight Riders'],1,False
+39991,Parveen Kumar,[39991],['Canada'],1,False
+40391,Mohammad Faraz Jafri,[40391],['United Arab Emirates'],1,False
+41110,Mayank Kumar,[41110],['United Arab Emirates'],3,False
+41503,Yash Punja,[41503],['Rajasthan Royals'],1,False
+41509,Yayin Rai,[41509],['United Arab Emirates'],1,False
+41541,Declan Suzuki,[41541],['Japan'],1,False
+41863,Josh Hull,[41863],['England'],1,False
+42548,Muhammad Jawadullah,[42548],['United Arab Emirates'],8,False
+42810,Noah Croes,[42810],['Netherlands'],2,False
+42811,Michael Levitt,[42811],['Netherlands'],2,False
+42845,Arshin Kulkarni,[42845],['Lucknow Super Giants'],3,False
+43250,Dilpreet Singh Bajwa,[43250],['Canada'],1,False
+43774,Shivam Singh,[43774],['Punjab Kings'],2,False
+43798,Lhuan Pretorius,[43798],"['Rajasthan Royals', 'South Africa']",6,False
+43917,Krish Bhagat,[43917],['Mumbai Indians'],1,False
+43965,Emanjot Singh Chahal,[43965],['Rajasthan Royals'],1,False
+43967,Vishwanath Singh,[43967],['Punjab Kings'],1,False
+43996,Vihaan Malhotra,[43996],['Royal Challengers Bengaluru'],1,False
+44003,Mohammad Ibrahim,[44003],['Afghanistan'],1,False
+44293,Jordan Neill,[44293],['Ireland'],2,False
+44491,L Manvanth Kumar,[44491],['Delhi Capitals'],1,False
+45022,Cedric De Lange,[45022],['Netherlands'],1,False
+45381,PV Satyanarayan Raju,[45381],['Mumbai Indians'],1,False
+45457,Zach Lion Cachet,[45457],['Netherlands'],1,False
+45749,Mukul Choudhary,[45749],['Lucknow Super Giants'],1,False
+45965,Naman Tiwari,[45965],['Lucknow Super Giants'],1,False
+45966,Prashant Veer,[45966],['Chennai Super Kings'],1,False
+45989,Swastik Chikara,[45989],"['Delhi Capitals', 'Royal Challengers Bengaluru']",2,False
+46066,Vipraj Nigam,[46066],"['Delhi Capitals', 'India']",3,False
+46137,Kartik Sharma,[46137],['Chennai Super Kings'],1,False
+46378,Kyle Klein,[46378],['Netherlands'],3,False
+46929,Dian Forrester,[46929],"['Chennai Super Kings', 'South Africa']",2,False
+46982,Shahid Aziz,[46982],['Pakistan A'],1,False
+46996,Mohammad Faiq,[46996],['Pakistan A'],1,False
+47017,Mohammad Jnr,[47017],"['Pakistan', 'Pakistan A']",2,False
+47050,Shamar Joseph,[47050],"['Lucknow Super Giants', 'West Indies']",12,False
+47259,Adeeb Usmani,[47259],['United Arab Emirates'],1,False
+47291,Md Yousuf,[47291],['Oman'],1,False
+47314,Wafiullah Tarakhil,[47314],"['Afghanistan', 'Afghanistan A']",6,False
+47370,Aniket Verma,[47370],['Sunrisers Hyderabad'],2,False
+47371,Zuhaid Zubair,[47371],['United Arab Emirates'],2,False
+47403,Newman Nyamhuri,[47403],['Zimbabwe'],6,False
+47523,Aman Rao Perala,[47523],['Rajasthan Royals'],1,False
+47542,Charles Hinze,[47542],['Japan'],1,False
+47694,Omid Rahman,[47694],['United Arab Emirates'],1,False
+47724,Jahandad Khan,[47724],['Pakistan'],4,False
+48278,Ubaid Shah,[48278],['Pakistan A'],1,False
+48504,Ayush Mhatre,[48504],['Chennai Super Kings'],2,False
+48551,Aravelly Avanish,[48551],['Chennai Super Kings'],1,False
+48555,Andre Siddharth,[48555],['Chennai Super Kings'],1,False
+48557,Vignesh Puthur,[48557],"['Mumbai Indians', 'Rajasthan Royals']",2,False
+48575,Sahil Parakh,[48575],['Delhi Capitals'],1,False
+48616,Abdul Saqlain,[48616],"['Bangladesh', 'Bangladesh A']",4,False
+48953,Danish Malewar,[48953],['Mumbai Indians'],1,False
+49003,Hasan Nawaz,[49003],['Pakistan'],9,False
+49027,Bevon Jacobs,[49027],"['Mumbai Indians', 'New Zealand']",8,False
+49265,Ahmed Tariq,[49265],['United Arab Emirates'],1,False
+49268,Sohaib Khan,[49268],['United Arab Emirates'],3,False
+49665,Prince Choudhary,[49665],['Punjab Kings'],1,False
+49670,Vansh Bedi,[49670],['Chennai Super Kings'],1,False
+50062,Nqobani Mokoena,[50062],['South Africa'],1,False
+50226,Luke Watson,[50226],['New Zealand'],1,False
+50284,Vaibhav Sooryavanshi,[50284],"['India', 'India A', 'Rajasthan Royals']",10,False
+52338,Usman Tariq,[52338],['Pakistan'],4,False
+53426,Tofael Ahmed,[53426],['Bangladesh A'],1,False
+54404,Benjamin Ito,[54404],['Japan'],1,False
+54476,Jake Nairn,[54476],['Japan'],1,False
+54518,Alester Fleming,[54518],['Japan'],1,False
+55747,Benjamin Calitz,[55747],['Ireland'],4,False
+56685,Abdullah Ahmadzai,[56685],"['Afghanistan', 'Afghanistan A']",9,False
+56800,Shivam Shukla,[56800],['Kolkata Knight Riders'],1,False
+56817,Shivang Kumar,[56817],['Sunrisers Hyderabad'],1,False
+56830,Madhav Tiwari,[56830],['Delhi Capitals'],2,False
+57747,Charlie Cassell,[57747],['Scotland'],1,False
+58134,Digvesh Rathi,[58134],['Lucknow Super Giants'],2,False
+58135,Tejasvi Dahiya,[58135],['Kolkata Knight Riders'],1,False
+58246,Prince Yadav,[58246],"['India', 'Lucknow Super Giants']",7,False
+58727,Abhinandan Singh,[58727],['Royal Challengers Bengaluru'],2,False
+58864,Vishal Nishad,[58864],['Punjab Kings'],1,False
+59045,Jai Moondra,[59045],['Ireland'],1,False
+59853,Ben Fletcher,[59853],['Netherlands'],1,False
+60208,Shuaib Balushi,[60208],['Oman'],1,False
+60609,Navin Bidaisee,[60609],['West Indies'],1,False
+60689,Zawad Abrar,[60689],['Bangladesh A'],1,False
+60700,Ravi Singh,[60700],['Rajasthan Royals'],1,False
+62526,Krains Fuletra,[62526],['Sunrisers Hyderabad'],1,False
+63136,Shadhin Islam,[63136],['Bangladesh A'],1,False
+63497,RS Ambrish,[63497],['Sunrisers Hyderabad'],1,False
+63779,Kavindu Dilhara,[63779],['Sri Lanka A'],1,False
+64604,Kalhan Challu,[64604],['Hong Kong'],2,False
+65598,Shoma Slater,[65598],['Japan'],1,False
+66056,Ajay Kumar,[66056],['United Arab Emirates'],1,False
+66103,Noor Rahman,[66103],"['Afghanistan', 'Afghanistan A']",4,False
+66513,Omkar Tarmale,[66513],['Sunrisers Hyderabad'],1,False
+66540,Kanishk Chouhan,[66540],['Royal Challengers Bengaluru'],1,False
+67036,Brijesh Sharma,[67036],['Rajasthan Royals'],1,False
+67864,Matt Hollard,[67864],['Ireland'],1,False
+68280,Satvik Deswal,[68280],['Royal Challengers Bengaluru'],1,False
+68410,Rahmatullah Zadran,[68410],['Afghanistan A'],1,False
+69806,Mohammad Salman,[69806],['Pakistan A'],1,False
+71016,Daksh Kamra,[71016],['Kolkata Knight Riders'],1,False
+71107,Nimnaka Ratnayake,[71107],['Sri Lanka A'],1,False
+71311,Mohd Izhar,[71311],['Mumbai Indians'],1,False
+71727,Razaullah Razaullah,[71727],['Pakistan'],1,False

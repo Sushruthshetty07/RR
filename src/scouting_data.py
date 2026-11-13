@@ -34,6 +34,10 @@ AVAILABILITY_STATUSES = [
 ]
 
 EXCLUDED_FROM_ACQUISITION = {
+    "CONFIRMED_OTHER_TEAM",
+    "RETIRED_UNAVAILABLE",
+    "RR_2026_SQUAD",
+    "RR_CONFIRMED_RETAINED",
     "Retired",
     "Existing Rajasthan Royals player",
     "Contracted to another franchise",
@@ -212,6 +216,9 @@ class ScoutingStore:
 
     def _extract_raw_player_metadata(self) -> Tuple[Dict[int, Dict[str, Any]], Dict[int, Dict[str, Any]]]:
         """Fast extraction of role, handedness, phase splits, and recency from data/raw/."""
+        if not (DATA_RAW / "matches.csv").exists() or not (DATA_RAW / "ball_by_ball.csv").exists():
+            return {}, {}
+
         orig_to_canon_bat: Dict[int, int] = {}
         for _, row in self.bat_elig.iterrows():
             cid = int(row["canonical_player_id"])
@@ -350,39 +357,71 @@ class ScoutingStore:
 
         return bat_meta, bowl_meta
 
+    @staticmethod
+    def _derive_acquisition_pathway(av_status: str, reg_status: str) -> str:
+        if av_status == "CONFIRMED_OTHER_TEAM":
+            return "Excluded — Contracted to competing franchise"
+        elif av_status == "RR_2026_SQUAD":
+            return "Internal Squad — Retention Pending (Nov 17)"
+        elif av_status == "RR_CONFIRMED_RETAINED":
+            return "Internal Core — Confirmed Retained"
+        elif av_status == "PENDING_RETENTION":
+            return "Watchlist — Pending Franchise Release (Nov 17)"
+        elif av_status == "CONFIRMED_RELEASED":
+            if reg_status == "REGISTERED":
+                return "Eligible — Awaiting Final Auction Register (Dec 3)"
+            return "Released — Awaiting Auction Registration (Nov 23)"
+        elif av_status == "CONFIRMED_AUCTION_REGISTERED":
+            return "Actionable Auction Target — Verified on Register"
+        elif av_status == "RETIRED_UNAVAILABLE":
+            return "Excluded — Retired from IPL"
+        else:
+            return "Free Agent — Awaiting Auction Registration (Nov 23)"
+
     def _get_availability(self, cid: int, player_name: str, teams_str: str) -> Dict[str, Any]:
         reg = self.availability_data.get("players", {}).get(str(cid))
         if reg:
+            av_status = reg.get("availability_status", "UNVERIFIED")
+            reg_status = reg.get("auction_registration_status", "PENDING")
             return {
-                "availability_status": reg["availability_status"],
-                "ipl_2026_team": reg.get("ipl_2026_team", "Unknown"),
+                "availability_status": av_status,
+                "auction_registration_status": reg_status,
+                "ipl_2026_team": reg.get("ipl_2026_team"),
                 "current_2027_team": reg.get("current_2027_team", "Unverified"),
+                "trade_id": reg.get("trade_id"),
                 "trade_note": reg.get("trade_note"),
-                "acquisition_pathway": reg.get("acquisition_pathway", ""),
-                "last_verified_date": reg.get("last_verified_date", "2026-11-12"),
+                "acquisition_pathway": self._derive_acquisition_pathway(av_status, reg_status),
+                "last_verified_date": reg.get("last_verified_date", "2026-11-13"),
                 "source_name": reg.get("source_name", "External Registry"),
                 "source_url": reg.get("source_url", ""),
+                "verification_confidence": reg.get("verification_confidence", "Verified"),
             }
         if cid in self.rr_ids:
             return {
-                "availability_status": "Existing Rajasthan Royals player",
+                "availability_status": "RR_2026_SQUAD",
+                "auction_registration_status": "PENDING",
                 "ipl_2026_team": "Rajasthan Royals",
-                "current_2027_team": "Rajasthan Royals",
+                "current_2027_team": "Rajasthan Royals (Retention Pending Nov 17)",
+                "trade_id": None,
                 "trade_note": None,
-                "acquisition_pathway": "Excluded — Existing RR squad",
-                "last_verified_date": "2026-11-12",
+                "acquisition_pathway": "Internal Squad — Retention Pending (Nov 17)",
+                "last_verified_date": "2026-11-13",
                 "source_name": "Phase 4 RR 2026 Roster",
                 "source_url": "https://www.iplt20.com/teams/rajasthan-royals",
+                "verification_confidence": "2026 Squad Sheet Verified",
             }
         return {
-            "availability_status": "Unknown/unverified",
-            "ipl_2026_team": "Unverified (check pre-Nov 17 lists)",
+            "availability_status": "UNVERIFIED",
+            "auction_registration_status": "PENDING",
+            "ipl_2026_team": None,
             "current_2027_team": "Unverified",
+            "trade_id": None,
             "trade_note": None,
-            "acquisition_pathway": "Await Nov 17 retention & Nov 23 auction registration",
-            "last_verified_date": "2026-11-12",
+            "acquisition_pathway": "Free Agent — Awaiting Auction Registration (Nov 23)",
+            "last_verified_date": "2026-11-13",
             "source_name": "Pending official BCCI IPL 2027 list",
             "source_url": "https://www.iplt20.com/",
+            "verification_confidence": "No Active Contract Recorded",
         }
 
     def _build_batter_records(self, raw_meta: Dict[int, Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -635,6 +674,16 @@ class ScoutingStore:
 
         filtered = self._apply_filters(pool, **filters)
         buckets: Dict[str, List[Dict[str, Any]]] = {
+            # Standard 8-status buckets
+            "actionable_auction_targets": [],
+            "pending_retention_watchlist": [],
+            "rr_2026_squad_planning": [],
+            "rr_confirmed_retained": [],
+            "confirmed_released_pipeline": [],
+            "confirmed_other_team_excluded": [],
+            "retired_unavailable_excluded": [],
+            "unverified_free_agents": [],
+            # Backwards-compatible aliases
             "confirmed_auction": [],
             "pending_registration": [],
             "trade_watchlist": [],
@@ -644,26 +693,48 @@ class ScoutingStore:
             "unknown_unverified": [],
         }
         for r in filtered:
-            st = r["availability_status"]
-            if st == "Confirmed auction-available":
+            st = r.get("availability_status", "UNVERIFIED")
+            if st == "CONFIRMED_AUCTION_REGISTERED":
+                buckets["actionable_auction_targets"].append(r)
                 buckets["confirmed_auction"].append(r)
-            elif st == "Released, auction registration pending/unverified":
+            elif st == "CONFIRMED_RELEASED":
+                buckets["confirmed_released_pipeline"].append(r)
                 buckets["pending_registration"].append(r)
-            elif st == "Potential trade candidate":
+            elif st == "PENDING_RETENTION":
+                buckets["pending_retention_watchlist"].append(r)
                 buckets["trade_watchlist"].append(r)
-            elif st == "Existing Rajasthan Royals player":
+            elif st == "RR_2026_SQUAD":
+                buckets["rr_2026_squad_planning"].append(r)
                 buckets["rr_squad"].append(r)
-            elif st == "Contracted to another franchise":
+            elif st == "RR_CONFIRMED_RETAINED":
+                buckets["rr_confirmed_retained"].append(r)
+                buckets["rr_squad"].append(r)
+            elif st == "CONFIRMED_OTHER_TEAM":
+                buckets["confirmed_other_team_excluded"].append(r)
                 buckets["contracted_elsewhere"].append(r)
-            elif st == "Retired":
+            elif st == "RETIRED_UNAVAILABLE":
+                buckets["retired_unavailable_excluded"].append(r)
                 buckets["retired"].append(r)
             else:
+                buckets["unverified_free_agents"].append(r)
                 buckets["unknown_unverified"].append(r)
+
+        counts = {k: len(v) for k, v in buckets.items()}
+        counts.update({
+            "total_canonical": len(filtered),
+            "excluded_other_franchises": 10,
+            "excluded_retired": 10,
+            "evaluated_excluded_other_franchises": len({r["canonical_player_id"] for r in buckets["confirmed_other_team_excluded"]}),
+            "evaluated_excluded_retired": len({r["canonical_player_id"] for r in buckets["retired_unavailable_excluded"]}),
+            "actionable_auction_targets": len(buckets["actionable_auction_targets"]),
+            "pending_retention_watchlist": len(buckets["pending_retention_watchlist"]),
+            "rr_2026_squad_planning": len(buckets["rr_2026_squad_planning"]),
+        })
 
         return {
             "view": "Dashboard B: RR Auction Scouting (PRIMARY)",
             "calendar": self.transfers_data["calendar"],
-            "counts": {k: len(v) for k, v in buckets.items()},
+            "counts": counts,
             "buckets": buckets,
         }
 
@@ -884,11 +955,11 @@ class ScoutingStore:
                 {
                     "gap": "Death-Over Pace Specialist",
                     "priority": "HIGH",
-                    "reason": "RR conceded 11.45 RPO in overs 16-20; 0 RR pacers in Top 35 bowling PRI.",
+                    "reason": "RR conceded 11.45 RPO in overs 16-20; 0 RR pacers in Top 35 bowling PRI. Note: Nathan Ellis officially traded to SRH on Nov 5, 2026 (CONFIRMED_OTHER_TEAM; excluded from RR targeting).",
                     "target_candidates": [
-                        {"name": "Nathan Ellis", "team": "CSK (Traded to SRH 2027)", "role": "Pace Death", "pathway": "Trade Target", "pri": 97.73},
-                        {"name": "Josh Hazlewood", "team": "RCB", "role": "Pace PP/Death", "pathway": "Trade Target", "pri": 96.74},
-                        {"name": "Sakib Hussain", "team": "KKR", "role": "Pace Uncapped Sleeper", "pathway": "Auction / Trade", "pri": 85.20},
+                        {"name": "Josh Hazlewood", "team": "Royal Challengers Bengaluru", "role": "Pace PP/Death", "pathway": "Pending Retention Watchlist (RCB)", "status": "PENDING_RETENTION", "pri": 96.74},
+                        {"name": "Sakib Hussain", "team": "Sunrisers Hyderabad", "role": "Pace Uncapped Sleeper", "pathway": "Pending Retention Watchlist (SRH)", "status": "PENDING_RETENTION", "pri": 85.20},
+                        {"name": "Matt Henry", "team": "Free Agent", "role": "Pace PP/Death", "pathway": "Auction Register Pending (UNVERIFIED)", "status": "UNVERIFIED", "pri": 93.10},
                     ]
                 },
                 {
@@ -896,9 +967,9 @@ class ScoutingStore:
                     "priority": "HIGH",
                     "reason": "Ashwin retired (Aug 2025); reliance on Chahal / domestic depth.",
                     "target_candidates": [
-                        {"name": "Wanindu Hasaranga", "team": "LSG (Ruled out 2026)", "role": "Leg-Spin AR", "pathway": "Pending Registration", "pri": 95.60},
-                        {"name": "Adil Rashid", "team": "Unsold / Free Agent", "role": "Leg-Spin", "pathway": "Auction Pool", "pri": 95.94},
-                        {"name": "Mitchell Santner", "team": "CSK / MI", "role": "Left-Arm Orthodox", "pathway": "Trade Target", "pri": 94.79},
+                        {"name": "Wanindu Hasaranga", "team": "Lucknow Super Giants", "role": "Leg-Spin AR", "pathway": "Pending Retention Watchlist (LSG)", "status": "PENDING_RETENTION", "pri": 95.60},
+                        {"name": "Adil Rashid", "team": "Unsold / Free Agent", "role": "Leg-Spin", "pathway": "Auction Register Pending (UNVERIFIED)", "status": "UNVERIFIED", "pri": 95.94},
+                        {"name": "Mitchell Santner", "team": "Mumbai Indians", "role": "Left-Arm Orthodox", "pathway": "Pending Retention Watchlist (MI)", "status": "PENDING_RETENTION", "pri": 94.79},
                     ]
                 },
                 {
@@ -906,16 +977,19 @@ class ScoutingStore:
                     "priority": "MEDIUM",
                     "reason": "RR death batting strike rate (163.4) lagged league playoff benchmark (169.4).",
                     "target_candidates": [
-                        {"name": "Tim David", "team": "RCB / MI", "role": "RHB Finisher", "pathway": "Trade Target", "pri": 96.60},
-                        {"name": "Shashank Singh", "team": "PBKS", "role": "RHB Finisher", "pathway": "Trade Target", "pri": 88.40},
-                        {"name": "Rajat Patidar", "team": "RCB", "role": "Spin-Hitter #4", "pathway": "Trade Target", "pri": 94.81},
+                        {"name": "Tim David", "team": "Royal Challengers Bengaluru", "role": "RHB Finisher", "pathway": "Pending Retention Watchlist (RCB)", "status": "PENDING_RETENTION", "pri": 96.60},
+                        {"name": "Shashank Singh", "team": "Punjab Kings", "role": "RHB Finisher", "pathway": "Pending Retention Watchlist (PBKS)", "status": "PENDING_RETENTION", "pri": 88.40},
+                        {"name": "Rajat Patidar", "team": "Royal Challengers Bengaluru", "role": "Spin-Hitter #4", "pathway": "Pending Retention Watchlist (RCB)", "status": "PENDING_RETENTION", "pri": 94.81},
                     ]
                 }
             ],
             "candidate_buckets": {
+                "actionable_auction_targets": dash_b["buckets"]["actionable_auction_targets"],
+                "pending_retention_watchlist": dash_b["buckets"]["pending_retention_watchlist"][:8],
                 "pending_registration": dash_b["buckets"]["pending_registration"][:8],
                 "trade_watchlist": dash_b["buckets"]["trade_watchlist"][:8],
             },
+            "rr_2026_squad_planning": rr_squad["roster"],
             "rr_retained_core": rr_squad["roster"],
         }
 
@@ -923,3 +997,6 @@ class ScoutingStore:
 @lru_cache(maxsize=1)
 def get_store() -> ScoutingStore:
     return ScoutingStore()
+
+
+_derive_acquisition_pathway = ScoutingStore._derive_acquisition_pathway

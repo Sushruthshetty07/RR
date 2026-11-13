@@ -1,0 +1,6 @@
+model,n_train,n_test_future,future_rmse,future_mae,future_r2
+Approved Context Baseline,112070,73632,1.773857,1.319223,0.014332
+"Enriched RoE (+style, pace/spin, season*phase, score)",112070,73632,1.769112,1.370528,0.019598
+Hierarchical Venue + Trend Context,112070,73632,1.769817,1.367709,0.018816
+Context + Two-Way Matchups (alpha=100),112070,73632,1.771484,1.319893,0.016967
+Context + Two-Way Matchups (alpha=500),112070,73632,1.771166,1.317632,0.01732

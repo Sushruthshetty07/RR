@@ -1,0 +1,5 @@
+innings,partition,n_legal_balls,exp_rpo,actual_rpo,weighted_d_rsaa_po,weighted_d_waa_4ov,weighted_d_net_po
+1,General (PI<60),84824,8.529,8.437,0.328,0.026,0.377
+1,HP (PI>=60),12812,10.953,11.431,0.093,0.018,0.127
+2,General (PI<60),66251,8.467,8.469,0.466,-0.012,0.444
+2,HP (PI>=60),20997,9.365,9.25,0.522,-0.091,0.351

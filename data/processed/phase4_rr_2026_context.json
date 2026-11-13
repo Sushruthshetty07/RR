@@ -1,0 +1,192 @@
+{
+  "eligible_counts": {
+    "bat_elig_broad": 456,
+    "bat_elig_primary": 188,
+    "bowl_elig_broad": 444,
+    "bowl_elig_primary": 200
+  },
+  "pri_distribution_notes": {
+    "bat_z_lcb_mean_elig": 0.20912232532577144,
+    "bat_z_lcb_sd_elig": 0.8444142375461934,
+    "bat_pri_score_lcb_q50_q75_q90_max": [
+      52.415092880052285,
+      73.47970220121914,
+      92.23275923014104,
+      99.913403491306
+    ],
+    "bowl_z_lcb_mean_elig": 0.07622055116955914,
+    "bowl_z_lcb_sd_elig": 0.9229459289522726,
+    "bowl_pri_score_lcb_q50_q75_q90_max": [
+      50.42900187089096,
+      74.81495737823874,
+      88.0124917123275,
+      99.96146970802296
+    ]
+  },
+  "rr_2026_context": {
+    "rr_team_id": 3,
+    "rr_2026_matches": 16,
+    "rr_2026_record": "9-7 (Guwahati 3/3, Jaipur 1/4)",
+    "bat_phases_2026": [
+      {
+        "phase": "Powerplay",
+        "rr_balls": 576,
+        "rr_sr": 187.32638888888889,
+        "lg_sr": 159.0857574612769,
+        "rr_wkt_pct": 4.166666666666666,
+        "lg_wkt_pct": 4.363430298451076
+      },
+      {
+        "phase": "Middle",
+        "rr_balls": 825,
+        "rr_sr": 152.96969696969697,
+        "lg_sr": 148.30955135621545,
+        "rr_wkt_pct": 4.848484848484849,
+        "lg_wkt_pct": 4.525003213780692
+      },
+      {
+        "phase": "Death",
+        "rr_balls": 374,
+        "rr_sr": 163.36898395721926,
+        "lg_sr": 169.43076081007115,
+        "rr_wkt_pct": 8.823529411764707,
+        "lg_wkt_pct": 7.443897099069513
+      }
+    ],
+    "bowl_phases_2026": [
+      {
+        "phase": "Powerplay",
+        "rr_legal_balls": 576,
+        "rr_econ": 10.145833333333334,
+        "lg_econ": 9.948086396362259,
+        "rr_sr": 20.571428571428573,
+        "lg_sr": 23.048034934497817
+      },
+      {
+        "phase": "Middle",
+        "rr_legal_balls": 840,
+        "rr_econ": 9.428571428571429,
+        "lg_econ": 9.220116054158607,
+        "rr_sr": 19.09090909090909,
+        "lg_sr": 22.15714285714286
+      },
+      {
+        "phase": "Death",
+        "rr_legal_balls": 404,
+        "rr_econ": 10.603960396039604,
+        "lg_econ": 10.668135499862297,
+        "rr_sr": 15.538461538461538,
+        "lg_sr": 14.18359375
+      }
+    ],
+    "bowl_pace_spin_2026": [
+      {
+        "type": "Pace",
+        "rr_legal_balls": 1244,
+        "rr_wkts": 65,
+        "rr_econ": 10.205787781350482,
+        "lg_econ": 9.973154362416107
+      },
+      {
+        "type": "Spin",
+        "rr_legal_balls": 576,
+        "rr_wkts": 33,
+        "rr_econ": 9.291666666666666,
+        "lg_econ": 9.289170963903214
+      }
+    ],
+    "venue_conditions_2023_2026": [
+      {
+        "venue_label": "All IPL (2023-26)",
+        "matches": 293,
+        "inn1_avg_runs": 188.5358361774744,
+        "overall_rpo": 9.514088218905773,
+        "pp_rpo": 9.476291034747552,
+        "mid_rpo": 8.89489235964542,
+        "dth_rpo": 10.858496953283684,
+        "pace_econ": 9.766390354182366,
+        "spin_econ": 8.699862149630311,
+        "spin_share_pct": 36.05108202942638,
+        "boundary_pct": 21.000794519315814,
+        "chase_win_pct": 48.4641638225256
+      },
+      {
+        "venue_label": "Jaipur (SMS, vid=6)",
+        "matches": 21,
+        "inn1_avg_runs": 194.52380952380952,
+        "overall_rpo": 9.776066597294484,
+        "pp_rpo": 9.571428571428571,
+        "mid_rpo": 9.236347358997314,
+        "dth_rpo": 11.206798866855523,
+        "pace_econ": 10.130157665213016,
+        "spin_econ": 8.884868421052632,
+        "spin_share_pct": 37.960457856399586,
+        "boundary_pct": 21.68499688732102,
+        "chase_win_pct": 42.857142857142854
+      },
+      {
+        "venue_label": "Guwahati (ACA, vid=1241)",
+        "matches": 8,
+        "inn1_avg_runs": 168.875,
+        "overall_rpo": 9.064198958935801,
+        "pp_rpo": 9.791666666666666,
+        "mid_rpo": 8.185231539424281,
+        "dth_rpo": 9.864406779661017,
+        "pace_econ": 9.455555555555556,
+        "spin_econ": 8.070878274268106,
+        "spin_share_pct": 37.53614806246385,
+        "boundary_pct": 19.792267743796884,
+        "chase_win_pct": 62.5
+      }
+    ]
+  },
+  "portfolio_balance_summary": {
+    "bat_n": 10,
+    "bat_rhb": 8,
+    "bat_lhb": 2,
+    "bat_openers": 4,
+    "bat_middle_4_5": 5,
+    "bat_finishers_6plus": 1,
+    "bat_wk_options": 3,
+    "bat_neff_hp_lt_15": 2,
+    "bowl_n": 10,
+    "bowl_pace": 4,
+    "bowl_spin": 6,
+    "bowl_left_arm_pace": 0,
+    "bowl_wrist_or_mystery_spin": 4,
+    "bowl_left_arm_orthodox": 1,
+    "bowl_genuine_all_rounders": 3,
+    "bowl_sec_two_way": 3,
+    "bat_role_counts": {
+      "Middle-Over & Death Enforcer": 3,
+      "Powerplay Aggressor (Opener)": 3,
+      "Middle-Order Anchor / Accelerator": 2,
+      "Death-Over Finisher": 1,
+      "Top-Order Accumulator (Opener)": 1
+    },
+    "bowl_role_counts": {
+      "Attacking Wrist-Spinner": 3,
+      "All-Phase Pace Spearhead": 1,
+      "All-Phase Finger/Mystery Spinner": 1,
+      "Middle-Over Mystery Wrist-Spinner": 1,
+      "Left-Arm Orthodox Containment Spinner": 1,
+      "Powerplay Swing & Death Seamer": 1,
+      "Death-Over Pace Specialist": 1,
+      "Powerplay Swing / Hit-the-Deck Pacer": 1
+    }
+  },
+  "retired_excluded_from_active_shortlist": {
+    "143": {
+      "name": "Dinesh Karthik",
+      "reason": "Retired from IPL after IPL 2024 (0 deliveries in 2025-2026; last IPL match 2024-05-22)."
+    },
+    "1318": {
+      "name": "Andre Russell",
+      "reason": "Retired from IPL ahead of IPL 2026 (0 IPL 2026 deliveries; joined KKR coaching staff)."
+    },
+    "305": {
+      "name": "Ravichandran Ashwin",
+      "reason": "Retired from IPL in August 2025 after IPL 2025 (0 deliveries in 2026)."
+    }
+  }
+}

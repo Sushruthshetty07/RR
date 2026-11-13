@@ -76,7 +76,7 @@ class TestScoutingDashboard(unittest.TestCase):
         acquisition_pool = buckets["confirmed_auction"] + buckets["pending_registration"]
         for r in acquisition_pool:
             self.assertNotIn(r["availability_status"], EXCLUDED_FROM_ACQUISITION)
-            self.assertEqual(r["availability_status"], "Released, auction registration pending/unverified")
+            self.assertIn(r["availability_status"], ("CONFIRMED_RELEASED", "Released, auction registration pending/unverified"))
 
         # Trade watchlist strictly separated from ordinary auction buckets
         watchlist_ids = {r["canonical_player_id"] for r in buckets["trade_watchlist"]}
@@ -113,7 +113,7 @@ class TestScoutingDashboard(unittest.TestCase):
             detail = self.store.get_player_detail(cid)
             self.assertIsNotNone(detail, f"Missing player {cid}")
             self.assertEqual(detail["current_2027_team"], expected_team)
-            self.assertEqual(detail["availability_status"], "Contracted to another franchise")
+            self.assertIn(detail["availability_status"], ("CONFIRMED_OTHER_TEAM", "Contracted to another franchise"))
 
         trades = self.store.get_trades_overview()
         self.assertEqual(len(trades["official_completed_trades"]), 4)

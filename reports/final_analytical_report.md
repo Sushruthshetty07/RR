@@ -349,10 +349,10 @@ All contracted targets below depend on franchise retention/release decisions due
 
 | Structural Gap | Top Statistical Fit Targets | Key Metrics | Contract / Medical / Auction Caveat |
 | :--- | :--- | :--- | :--- |
-| **1. Death & PP Pace Spearhead (Critical)** | `Nathan Ellis (#7)` / `Josh Hazlewood (#8)` / Sleeper: `Sakib Hussain (#15)` | Ellis: `HP-Imp +0.59/ov, RSAA +0.90`; Sakib: `RSAA +0.84, Age 21` | **Ellis rostered with CSK in 2026** (missed 2026 due to hamstring injury; unconfirmed media reports of SRH trade remain unverified). Hazlewood (`RCB 12.5 Cr`) & Sakib (`SRH 0.30 Cr`) pending Nov 17 retention/release list. |
-| **2. Wicket-Taking & Control Spin** | `Mitchell Santner (#13)` / `Wanindu Hasaranga (#10)` / `Adil Rashid (#9)` / `Adam Zampa (#11)` | Santner: `RSAA +0.68, HP +0.49 (#7 IPL-only)`; Hasaranga: `HP +0.55, SR 14.95` | **Adil Rashid** (Unsold 2026) & **Zampa** (free-agent auction pool) are directly reachable in auction if registered. **Hasaranga** (`LSG 2.00 Cr`) & **Santner** (`MI 2.00 Cr`) pending Nov 17 + Hasaranga hamstring recovery check. |
-| **3. RHB Death Closer & Spin Hitter** | `Tim David (#9)` / `Rajat Patidar (#12)` / `Shashank Singh (#13)` | David: `HP-RAA +21.50, Death +18.3`; Patidar: `Spin +32.5`; Shashank: `HP +7.44` | Balances LHB-heavy top order (`Jaiswal`, `Sooryavanshi`, `Hetmyer`, `Jadeja`). All 3 currently contracted (`RCB`/`PBKS`) — pending Nov 17 retention or trade. |
-| **Core Asset Preservation** | Retain `Sooryavanshi`, `Jaiswal`, `Jurel`, `Parag` | Top-2 PP (`SR 187.3`) + Jurel (`HP +24.88`) | Contracted RR incumbents awaiting official retention confirmation on Nov 17, 2026. Do **not** spend auction budget on redundant marquee openers (`Phil Salt`, `Finn Allen`). |
+| **1. Death & PP Pace Spearhead (Critical)** | `Josh Hazlewood (#8)` / `Matt Henry (#10)` / Sleeper: `Sakib Hussain (#15)` | Hazlewood: `RSAA +0.87`; Henry: `RSAA +0.81`; Sakib: `RSAA +0.84, Age 21` | Hazlewood (`RCB 12.5 Cr`) & Sakib (`SRH 0.30 Cr`) pending Nov 17 retention/release list (`PENDING_RETENTION`). Matt Henry auction register pending. *Note: Nathan Ellis (#7) is `CONFIRMED_OTHER_TEAM` (traded to SRH) and hard-excluded from RR targets.* |
+| **2. Wicket-Taking & Control Spin** | `Mitchell Santner (#13)` / `Wanindu Hasaranga (#10)` / `Adil Rashid (#9)` / `Adam Zampa (#11)` | Santner: `RSAA +0.68, HP +0.49 (#7 IPL-only)`; Hasaranga: `HP +0.55, SR 14.95` | **Adil Rashid** (Unsold 2026) & **Zampa** (free-agent pool) are actionable in auction if registered. **Hasaranga** (`LSG 2.00 Cr`) & **Santner** (`MI 2.00 Cr`) pending Nov 17 (`PENDING_RETENTION`) + Hasaranga hamstring recovery check. |
+| **3. RHB Death Closer & Spin Hitter** | `Tim David (#9)` / `Rajat Patidar (#12)` / `Shashank Singh (#13)` | David: `HP-RAA +21.50, Death +18.3`; Patidar: `Spin +32.5`; Shashank: `HP +7.44` | Balances LHB-heavy top order (`Jaiswal`, `Sooryavanshi`, `Hetmyer`, `Jadeja`). All 3 currently contracted (`RCB`/`PBKS`) — pending Nov 17 retention or trade (`PENDING_RETENTION`). |
+| **Core Asset Preservation** | `RR 2026 Squad Planning: Sooryavanshi`, `Jaiswal`, `Jurel`, `Parag` | Top-2 PP (`SR 187.3`) + Jurel (`HP +24.88`) | RR 2026 squad members awaiting official BCCI Nov 17 retention declarations (`RR_2026_SQUAD`). Do **not** spend auction budget on redundant marquee openers (`Phil Salt`, `Finn Allen`). |
 
 ### 6.3 Advanced Cricket Intelligence, Tactical Matchups & Behavioral Composure
 
@@ -423,23 +423,23 @@ For franchise decision-makers (Director of Strategy, Head Coach, Auction Desk), 
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
-1. **Strategic Case 1 — Nathan Ellis (Addressing the SMS Jaipur Death Bowling Deficit):**
+1. **Strategic Case 1 — Nathan Ellis (Benchmarking Death Bowling Composure; Excluded Target):**
    - *1. What did we discover?* Ellis maintains a `7.90 RPO` post-boundary economy across 126 opportunities (41 matches), with a `16.7%` repeat boundary rate (`[11.2%, 24.1%]`) and `8.35 RPO` career death economy.
    - *2. Why does it matter?* Unlike express pace bowlers whose errant yorkers turn into boundary clusters, Ellis resets immediately using wide yorkers and off-pace variations.
-   - *3. What does it mean for RR?* In 2026, SMS Jaipur was a severe pace-leak venue where pace bowling conceded `10.13 RPO` overall and `11.21 RPO` at the death. RR leaked boundaries in defensive finishes at Jaipur (`1-4` home record).
-   - *4. Scouting decision:* **Highest-priority overseas fast-bowling acquisition target.** *Note: Last contracted to CSK in 2025 (1 match played); uncontracted in IPL 2026. External overseas auction target for 2027 cycle pending official BCCI Nov 17 declarations. Valuations are hypothetical scenario benchmarks.*
+   - *3. What does it mean for RR?* In 2026, SMS Jaipur was a severe pace-leak venue where pace bowling conceded `10.13 RPO` overall and `11.21 RPO` at the death. RR leaked boundaries in defensive finishes at Jaipur (`1-4` home record). Ellis serves as the quantitative benchmark profile for what RR must acquire.
+   - *4. Scouting decision:* **Layer 1 Benchmark Only — Excluded from RR Targets.** *IPL 2027 Status: CONFIRMED_OTHER_TEAM (Sunrisers Hyderabad - confirmed trade TR-2027-04). Automatically hard-excluded from Rajasthan Royals actionable auction targets under Layer 2 recruitment rules.*
 
 2. **Strategic Case 2 — Ashutosh Sharma (Domestic Death Power & Pressure Composure):**
    - *1. What did we discover?* Ashutosh delivers `+23.15 runs/100b` in high pressure, strikes at `190.6 vs Pace` (117b), and has `0` observed post-dot dismissals across 33 opportunities (`95% CI: [0.0%, 10.4%]`).
    - *2. Why does it matter?* Proven ability to clear the ropes against 145 kph pace at the death without throwing his wicket away under rising required rates.
    - *3. What does it mean for RR?* Secures vital domestic finishing depth behind Hetmyer and Jurel, preventing lower-order collapses and freeing overseas slots for bowling.
-   - *4. Scouting decision:* **High-priority domestic batting acquisition candidate if released into the mega-auction.** *Note: Contracted to DC in 2026; pending BCCI retention declarations.*
+   - *4. Scouting decision:* **High-priority domestic batting acquisition candidate if released into the mega-auction.** *IPL 2027 Status: PENDING_RETENTION (Delhi Capitals - pending BCCI Nov 17 declarations).*
 
-3. **Strategic Case 3 — Dhruv Jurel & Sanju Samson (Internal Core Maximization):**
+3. **Strategic Case 3 — Dhruv Jurel (RR 2026 Squad Core) & Sanju Samson (External CSK Target Context):**
    - *1. What did we discover?* Jurel displays symmetrical scoring mastery (`195.8 vs Pace`, `197.7 vs Spin`, `0/20 post-dot dismissals` with upper bound risk `16.1%`); Samson destroys spin under pressure (`227.3 SR in HP`, `33.3% 4s/6s`).
    - *2. Why does it matter?* Tactical complementarity: Samson dismantles spin squeezes in overs 7–15, while Jurel closes against high pace and yorkers in overs 16–20.
-   - *3. What does it mean for RR?* Confirms that RR already possesses world-class clutch talent in Jurel. Samson (contracted to CSK in 2026; Parag captained RR) remains a premier domestic target if available.
-   - *4. Scouting decision:* **Retain Dhruv Jurel as non-negotiable core finisher/keeper.** Prioritize budget allocation toward death pace and wicket spin rather than redundant top-order chasers.
+   - *3. What does it mean for RR?* Confirms that RR's 2026 squad already possesses world-class clutch talent in Jurel (`RR_2026_SQUAD`, retention announcement pending Nov 17). Samson represents an external contract (`PENDING_RETENTION` at Chennai Super Kings), not an internal RR asset.
+   - *4. Scouting decision:* **Prioritize Jurel within RR's internal squad planning (`RR_2026_SQUAD`); evaluate Samson strictly as an external target conditional on CSK release.** Prioritize auction budget allocation toward death pace and wicket spin rather than redundant top-order chasers.
 
 ---
 

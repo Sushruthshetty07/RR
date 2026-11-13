@@ -188,6 +188,10 @@ class TestPressureEngineSynthetic(unittest.TestCase):
         self.assertEqual(w20['total_balls'], 2)
 
 
+DATA_RAW_EXISTS = (PROJECT_ROOT / "data" / "raw" / "competitions.csv").exists()
+
+
+@unittest.skipUnless(DATA_RAW_EXISTS, "Proprietary raw competition dataset not present (kept local per challenge rules)")
 class TestPressureEngineFullDataset(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

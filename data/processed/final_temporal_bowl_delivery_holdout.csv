@@ -1,0 +1,3 @@
+model,n_train,n_test_future,future_rmse,future_mae,future_r2
+Approved Bowling Context Baseline,111564,73320,1.773871,1.318843,0.014048
+"Enriched Bowling RoE (+style, pace/spin, season*phase)",111564,73320,1.769118,1.368662,0.019324

@@ -1,0 +1,57 @@
+{
+  "status": "success",
+  "total_runtime_seconds": 37.4,
+  "timestamp": "2026-11-13 12:31:37",
+  "raw_deliveries": 200999,
+  "processed_deliveries": 200999,
+  "primary_eligible_batters": 188,
+  "primary_eligible_bowlers": 200,
+  "top10_high_pressure_batters": [
+    "Suryakumar Yadav",
+    "David Miller",
+    "Dhruv Jurel",
+    "Sanju Samson",
+    "Ashutosh Sharma",
+    "Tim David",
+    "Mohammad Nabi",
+    "Namboori Tilak Varma",
+    "Jos Buttler",
+    "Daryl Mitchell"
+  ],
+  "top10_high_pressure_bowlers": [
+    "Sunil Narine",
+    "Lungi Ngidi",
+    "Rashid Khan",
+    "Harpreet Brar",
+    "Nathan Ellis",
+    "Wanindu Hasaranga",
+    "Krunal Pandya",
+    "Patrick Cummins",
+    "Mitchell Santner",
+    "Eshan Malinga"
+  ],
+  "top10_overall_reliability_batters": [
+    "Suryakumar Yadav",
+    "Vaibhav Sooryavanshi",
+    "Andre Russell",
+    "Dinesh Karthik",
+    "Finn Allen",
+    "Nicholas Pooran",
+    "Shreyas Iyer",
+    "Heinrich Klaasen",
+    "Tim David",
+    "Phil Salt"
+  ],
+  "top10_overall_reliability_bowlers": [
+    "Jasprit Bumrah",
+    "Sunil Narine",
+    "Varun Chakravarthy",
+    "Rashid Khan",
+    "Axar Patel",
+    "Bhuvneshwar Kumar",
+    "Nathan Ellis",
+    "Josh Hazlewood",
+    "Adil Rashid",
+    "Wanindu Hasaranga"
+  ]
+}

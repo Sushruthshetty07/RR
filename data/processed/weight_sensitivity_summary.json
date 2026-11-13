@@ -1,0 +1,571 @@
+{
+  "batting": {
+    "correlation_matrix": {
+      "Baseline": {
+        "Baseline": 1.0,
+        "Balanced": 0.9788,
+        "Pressure-Focused": 0.8711,
+        "Reliability-Focused": 0.9845
+      },
+      "Balanced": {
+        "Baseline": 0.9788,
+        "Balanced": 1.0,
+        "Pressure-Focused": 0.8978,
+        "Reliability-Focused": 0.9563
+      },
+      "Pressure-Focused": {
+        "Baseline": 0.8711,
+        "Balanced": 0.8978,
+        "Pressure-Focused": 1.0,
+        "Reliability-Focused": 0.7839
+      },
+      "Reliability-Focused": {
+        "Baseline": 0.9845,
+        "Balanced": 0.9563,
+        "Pressure-Focused": 0.7839,
+        "Reliability-Focused": 1.0
+      }
+    },
+    "top10_overlap_matrix": {
+      "Baseline": {
+        "Baseline": 10,
+        "Balanced": 8,
+        "Pressure-Focused": 7,
+        "Reliability-Focused": 8
+      },
+      "Balanced": {
+        "Baseline": 8,
+        "Balanced": 10,
+        "Pressure-Focused": 7,
+        "Reliability-Focused": 7
+      },
+      "Pressure-Focused": {
+        "Baseline": 7,
+        "Balanced": 7,
+        "Pressure-Focused": 10,
+        "Reliability-Focused": 5
+      },
+      "Reliability-Focused": {
+        "Baseline": 8,
+        "Balanced": 7,
+        "Pressure-Focused": 5,
+        "Reliability-Focused": 10
+      }
+    },
+    "neff_sensitivity": [
+      {
+        "threshold_neff": 30.0,
+        "n_eligible": 188,
+        "spearman_base_vs_pressure": 0.8711
+      },
+      {
+        "threshold_neff": 60.0,
+        "n_eligible": 167,
+        "spearman_base_vs_pressure": 0.865
+      },
+      {
+        "threshold_neff": 100.0,
+        "n_eligible": 146,
+        "spearman_base_vs_pressure": 0.8564
+      }
+    ],
+    "pareto_frontier": [
+      {
+        "canonical_player_id": 1318,
+        "player_name": "Andre Russell",
+        "gen_value": 18.59,
+        "hp_value": 18.18,
+        "pri_score_baseline": 94.46,
+        "rank_baseline": 3,
+        "neff_hp": 219.2
+      },
+      {
+        "canonical_player_id": 1699,
+        "player_name": "Suryakumar Yadav",
+        "gen_value": 14.62,
+        "hp_value": 29.15,
+        "pri_score_baseline": 98.07,
+        "rank_baseline": 1,
+        "neff_hp": 231.1
+      },
+      {
+        "canonical_player_id": 6281,
+        "player_name": "Abhishek Sharma",
+        "gen_value": 20.64,
+        "hp_value": 4.5,
+        "pri_score_baseline": 74.74,
+        "rank_baseline": 18,
+        "neff_hp": 40.6
+      },
+      {
+        "canonical_player_id": 50284,
+        "player_name": "Vaibhav Sooryavanshi",
+        "gen_value": 41.95,
+        "hp_value": -1.54,
+        "pri_score_baseline": 96.99,
+        "rank_baseline": 2,
+        "neff_hp": 0.0
+      }
+    ],
+    "top_risers_pressure": [
+      {
+        "canonical_player_id": 1596,
+        "player_name": "Moeen Ali",
+        "rank_Baseline": 156,
+        "rank_Pressure_Focused": 64,
+        "rank_Reliability_Focused": 171,
+        "shift_press_minus_base": -92,
+        "shift_rel_minus_base": 15,
+        "neff": 427.8,
+        "neff_hp": 129.4
+      },
+      {
+        "canonical_player_id": 1187,
+        "player_name": "Jason Roy",
+        "rank_Baseline": 120,
+        "rank_Pressure_Focused": 46,
+        "rank_Reliability_Focused": 149,
+        "shift_press_minus_base": -74,
+        "shift_rel_minus_base": 29,
+        "neff": 141.2,
+        "neff_hp": 34.7
+      },
+      {
+        "canonical_player_id": 3782,
+        "player_name": "M Shahrukh Khan",
+        "rank_Baseline": 102,
+        "rank_Pressure_Focused": 42,
+        "rank_Reliability_Focused": 125,
+        "shift_press_minus_base": -60,
+        "shift_rel_minus_base": 23,
+        "neff": 279.9,
+        "neff_hp": 86.3
+      },
+      {
+        "canonical_player_id": 7260,
+        "player_name": "Dhruv Jurel",
+        "rank_Baseline": 82,
+        "rank_Pressure_Focused": 22,
+        "rank_Reliability_Focused": 111,
+        "shift_press_minus_base": -60,
+        "shift_rel_minus_base": 29,
+        "neff": 460.0,
+        "neff_hp": 109.4
+      },
+      {
+        "canonical_player_id": 20005,
+        "player_name": "Arshad Khan",
+        "rank_Baseline": 128,
+        "rank_Pressure_Focused": 68,
+        "rank_Reliability_Focused": 148,
+        "shift_press_minus_base": -60,
+        "shift_rel_minus_base": 20,
+        "neff": 77.8,
+        "neff_hp": 58.7
+      },
+      {
+        "canonical_player_id": 1219,
+        "player_name": "David Willey",
+        "rank_Baseline": 145,
+        "rank_Pressure_Focused": 91,
+        "rank_Reliability_Focused": 154,
+        "shift_press_minus_base": -54,
+        "shift_rel_minus_base": 9,
+        "neff": 59.8,
+        "neff_hp": 36.7
+      },
+      {
+        "canonical_player_id": 4821,
+        "player_name": "Mahipal Lomror",
+        "rank_Baseline": 105,
+        "rank_Pressure_Focused": 52,
+        "rank_Reliability_Focused": 135,
+        "shift_press_minus_base": -53,
+        "shift_rel_minus_base": 30,
+        "neff": 141.8,
+        "neff_hp": 25.9
+      },
+      {
+        "canonical_player_id": 6460,
+        "player_name": "Ayush Badoni",
+        "rank_Baseline": 113,
+        "rank_Pressure_Focused": 60,
+        "rank_Reliability_Focused": 127,
+        "shift_press_minus_base": -53,
+        "shift_rel_minus_base": 14,
+        "neff": 597.5,
+        "neff_hp": 158.9
+      }
+    ],
+    "top_fallers_pressure": [
+      {
+        "canonical_player_id": 2101,
+        "player_name": "Quinton de Kock",
+        "rank_Baseline": 56,
+        "rank_Pressure_Focused": 144,
+        "rank_Reliability_Focused": 42,
+        "shift_press_minus_base": 88,
+        "shift_rel_minus_base": -14,
+        "neff": 640.7,
+        "neff_hp": 36.9
+      },
+      {
+        "canonical_player_id": 4117,
+        "player_name": "Ishan Kishan",
+        "rank_Baseline": 60,
+        "rank_Pressure_Focused": 136,
+        "rank_Reliability_Focused": 46,
+        "shift_press_minus_base": 76,
+        "shift_rel_minus_base": -14,
+        "neff": 1113.4,
+        "neff_hp": 18.7
+      },
+      {
+        "canonical_player_id": 5939,
+        "player_name": "Cameron Green",
+        "rank_Baseline": 27,
+        "rank_Pressure_Focused": 97,
+        "rank_Reliability_Focused": 16,
+        "shift_press_minus_base": 70,
+        "shift_rel_minus_base": -11,
+        "neff": 582.4,
+        "neff_hp": 58.0
+      },
+      {
+        "canonical_player_id": 818,
+        "player_name": "Mitchell Marsh",
+        "rank_Baseline": 45,
+        "rank_Pressure_Focused": 110,
+        "rank_Reliability_Focused": 38,
+        "shift_press_minus_base": 65,
+        "shift_rel_minus_base": -7,
+        "neff": 760.0,
+        "neff_hp": 22.4
+      },
+      {
+        "canonical_player_id": 8,
+        "player_name": "Mahendra Singh Dhoni",
+        "rank_Baseline": 71,
+        "rank_Pressure_Focused": 133,
+        "rank_Reliability_Focused": 55,
+        "shift_press_minus_base": 62,
+        "shift_rel_minus_base": -16,
+        "neff": 332.0,
+        "neff_hp": 170.7
+      },
+      {
+        "canonical_player_id": 7446,
+        "player_name": "Abdul Samad",
+        "rank_Baseline": 66,
+        "rank_Pressure_Focused": 124,
+        "rank_Reliability_Focused": 52,
+        "shift_press_minus_base": 58,
+        "shift_rel_minus_base": -14,
+        "neff": 309.4,
+        "neff_hp": 93.4
+      },
+      {
+        "canonical_player_id": 47370,
+        "player_name": "Aniket Verma",
+        "rank_Baseline": 36,
+        "rank_Pressure_Focused": 81,
+        "rank_Reliability_Focused": 33,
+        "shift_press_minus_base": 45,
+        "shift_rel_minus_base": -3,
+        "neff": 140.5,
+        "neff_hp": 36.5
+      },
+      {
+        "canonical_player_id": 953,
+        "player_name": "Lokesh Rahul",
+        "rank_Baseline": 57,
+        "rank_Pressure_Focused": 102,
+        "rank_Reliability_Focused": 47,
+        "shift_press_minus_base": 45,
+        "shift_rel_minus_base": -10,
+        "neff": 1105.8,
+        "neff_hp": 53.0
+      }
+    ]
+  },
+  "bowling": {
+    "correlation_matrix": {
+      "Baseline": {
+        "Baseline": 1.0,
+        "Balanced": 0.9678,
+        "Pressure-Focused": 0.9083,
+        "Reliability-Focused": 0.9902
+      },
+      "Balanced": {
+        "Baseline": 0.9678,
+        "Balanced": 1.0,
+        "Pressure-Focused": 0.9385,
+        "Reliability-Focused": 0.9548
+      },
+      "Pressure-Focused": {
+        "Baseline": 0.9083,
+        "Balanced": 0.9385,
+        "Pressure-Focused": 1.0,
+        "Reliability-Focused": 0.8543
+      },
+      "Reliability-Focused": {
+        "Baseline": 0.9902,
+        "Balanced": 0.9548,
+        "Pressure-Focused": 0.8543,
+        "Reliability-Focused": 1.0
+      }
+    },
+    "top10_overlap_matrix": {
+      "Baseline": {
+        "Baseline": 10,
+        "Balanced": 9,
+        "Pressure-Focused": 7,
+        "Reliability-Focused": 8
+      },
+      "Balanced": {
+        "Baseline": 9,
+        "Balanced": 10,
+        "Pressure-Focused": 7,
+        "Reliability-Focused": 8
+      },
+      "Pressure-Focused": {
+        "Baseline": 7,
+        "Balanced": 7,
+        "Pressure-Focused": 10,
+        "Reliability-Focused": 5
+      },
+      "Reliability-Focused": {
+        "Baseline": 8,
+        "Balanced": 8,
+        "Pressure-Focused": 5,
+        "Reliability-Focused": 10
+      }
+    },
+    "neff_sensitivity": [
+      {
+        "threshold_neff": 30.0,
+        "n_eligible": 200,
+        "spearman_base_vs_pressure": 0.9083
+      },
+      {
+        "threshold_neff": 60.0,
+        "n_eligible": 180,
+        "spearman_base_vs_pressure": 0.9095
+      },
+      {
+        "threshold_neff": 100.0,
+        "n_eligible": 163,
+        "spearman_base_vs_pressure": 0.9087
+      }
+    ],
+    "pareto_frontier": [
+      {
+        "canonical_player_id": 781,
+        "player_name": "Sunil Narine",
+        "gen_value": 1.73,
+        "hp_value": 0.64,
+        "pri_score_baseline": 99.02,
+        "rank_baseline": 2,
+        "neff_hp": 293.4
+      },
+      {
+        "canonical_player_id": 2933,
+        "player_name": "Jasprit Bumrah",
+        "gen_value": 1.92,
+        "hp_value": -0.08,
+        "pri_score_baseline": 99.14,
+        "rank_baseline": 1,
+        "neff_hp": 316.4
+      },
+      {
+        "canonical_player_id": 4641,
+        "player_name": "Lungi Ngidi",
+        "gen_value": 0.5,
+        "hp_value": 0.66,
+        "pri_score_baseline": 72.44,
+        "rank_baseline": 19,
+        "neff_hp": 167.1
+      }
+    ],
+    "top_risers_pressure": [
+      {
+        "canonical_player_id": 41503,
+        "player_name": "Yash Punja",
+        "rank_Baseline": 150,
+        "rank_Pressure_Focused": 78,
+        "rank_Reliability_Focused": 161,
+        "shift_press_minus_base": -72,
+        "shift_rel_minus_base": 11,
+        "neff": 158.8,
+        "neff_hp": 95.3
+      },
+      {
+        "canonical_player_id": 8746,
+        "player_name": "Vaibhav Arora",
+        "rank_Baseline": 119,
+        "rank_Pressure_Focused": 63,
+        "rank_Reliability_Focused": 130,
+        "shift_press_minus_base": -56,
+        "shift_rel_minus_base": 11,
+        "neff": 587.2,
+        "neff_hp": 151.1
+      },
+      {
+        "canonical_player_id": 6286,
+        "player_name": "Shivam Mavi",
+        "rank_Baseline": 129,
+        "rank_Pressure_Focused": 75,
+        "rank_Reliability_Focused": 137,
+        "shift_press_minus_base": -54,
+        "shift_rel_minus_base": 8,
+        "neff": 146.8,
+        "neff_hp": 14.3
+      },
+      {
+        "canonical_player_id": 161,
+        "player_name": "Dwayne Bravo",
+        "rank_Baseline": 100,
+        "rank_Pressure_Focused": 49,
+        "rank_Reliability_Focused": 112,
+        "shift_press_minus_base": -51,
+        "shift_rel_minus_base": 12,
+        "neff": 135.9,
+        "neff_hp": 51.3
+      },
+      {
+        "canonical_player_id": 46066,
+        "player_name": "Vipraj Nigam",
+        "rank_Baseline": 177,
+        "rank_Pressure_Focused": 127,
+        "rank_Reliability_Focused": 182,
+        "shift_press_minus_base": -50,
+        "shift_rel_minus_base": 5,
+        "neff": 230.9,
+        "neff_hp": 65.5
+      },
+      {
+        "canonical_player_id": 829,
+        "player_name": "Mitchell Starc",
+        "rank_Baseline": 86,
+        "rank_Pressure_Focused": 44,
+        "rank_Reliability_Focused": 101,
+        "shift_press_minus_base": -42,
+        "shift_rel_minus_base": 15,
+        "neff": 460.2,
+        "neff_hp": 70.0
+      },
+      {
+        "canonical_player_id": 8177,
+        "player_name": "Akash Madhwal",
+        "rank_Baseline": 130,
+        "rank_Pressure_Focused": 90,
+        "rank_Reliability_Focused": 133,
+        "shift_press_minus_base": -40,
+        "shift_rel_minus_base": 3,
+        "neff": 262.7,
+        "neff_hp": 69.9
+      },
+      {
+        "canonical_player_id": 1758,
+        "player_name": "Patrick Cummins",
+        "rank_Baseline": 68,
+        "rank_Pressure_Focused": 28,
+        "rank_Reliability_Focused": 100,
+        "shift_press_minus_base": -40,
+        "shift_rel_minus_base": 32,
+        "neff": 826.8,
+        "neff_hp": 210.2
+      }
+    ],
+    "top_fallers_pressure": [
+      {
+        "canonical_player_id": 4487,
+        "player_name": "Vyshak Kumar",
+        "rank_Baseline": 57,
+        "rank_Pressure_Focused": 179,
+        "rank_Reliability_Focused": 26,
+        "shift_press_minus_base": 122,
+        "shift_rel_minus_base": -31,
+        "neff": 403.1,
+        "neff_hp": 135.1
+      },
+      {
+        "canonical_player_id": 5944,
+        "player_name": "Mohammed Siraj",
+        "rank_Baseline": 75,
+        "rank_Pressure_Focused": 156,
+        "rank_Reliability_Focused": 57,
+        "shift_press_minus_base": 81,
+        "shift_rel_minus_base": -18,
+        "neff": 1203.9,
+        "neff_hp": 261.6
+      },
+      {
+        "canonical_player_id": 2382,
+        "player_name": "Jamie Overton",
+        "rank_Baseline": 42,
+        "rank_Pressure_Focused": 106,
+        "rank_Reliability_Focused": 22,
+        "shift_press_minus_base": 64,
+        "shift_rel_minus_base": -20,
+        "neff": 300.1,
+        "neff_hp": 39.4
+      },
+      {
+        "canonical_player_id": 6161,
+        "player_name": "Rahul Chahar",
+        "rank_Baseline": 65,
+        "rank_Pressure_Focused": 126,
+        "rank_Reliability_Focused": 63,
+        "shift_press_minus_base": 61,
+        "shift_rel_minus_base": -2,
+        "neff": 638.0,
+        "neff_hp": 229.1
+      },
+      {
+        "canonical_player_id": 36982,
+        "player_name": "Suyash Sharma",
+        "rank_Baseline": 131,
+        "rank_Pressure_Focused": 181,
+        "rank_Reliability_Focused": 119,
+        "shift_press_minus_base": 50,
+        "shift_rel_minus_base": -12,
+        "neff": 579.0,
+        "neff_hp": 175.4
+      },
+      {
+        "canonical_player_id": 1813,
+        "player_name": "Deepak Chahar",
+        "rank_Baseline": 22,
+        "rank_Pressure_Focused": 71,
+        "rank_Reliability_Focused": 13,
+        "shift_press_minus_base": 49,
+        "shift_rel_minus_base": -9,
+        "neff": 611.0,
+        "neff_hp": 121.1
+      },
+      {
+        "canonical_player_id": 7808,
+        "player_name": "Marco Jansen",
+        "rank_Baseline": 139,
+        "rank_Pressure_Focused": 188,
+        "rank_Reliability_Focused": 120,
+        "shift_press_minus_base": 49,
+        "shift_rel_minus_base": -19,
+        "neff": 837.7,
+        "neff_hp": 273.6
+      },
+      {
+        "canonical_player_id": 6272,
+        "player_name": "William Jacks",
+        "rank_Baseline": 64,
+        "rank_Pressure_Focused": 112,
+        "rank_Reliability_Focused": 55,
+        "shift_press_minus_base": 48,
+        "shift_rel_minus_base": -9,
+        "neff": 295.5,
+        "neff_hp": 49.8
+      }
+    ]
+  }
+}

@@ -1,0 +1,934 @@
+{
+  "batting": {
+    "top10_overall_reliability": [
+      {
+        "canonical_player_id": 1699,
+        "player_name": "Suryakumar Yadav",
+        "pri_score_lcb": 99.91339557209254,
+        "neff": 1284.8188025730335,
+        "neff_hp": 231.0814284720401,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=231.1 >= 30)",
+        "hp_raa_lcb": 24.33105149591804,
+        "hp_raa_post": 29.149495214295825,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (231.1 opportunities).",
+        "analyst_blurb": "Elite 360-degree chase accelerator. Maintains extraordinary boundary striking (+29.15 runs above expected per 100 balls) under severe pressure with substantial experience.",
+        "user_metrics": {
+          "match_pressure_opportunities": 231.1,
+          "conservative_reliability_score": 99.91,
+          "impact_value": 29.15,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 50284,
+        "player_name": "Vaibhav Sooryavanshi",
+        "pri_score_lcb": 99.80284145565004,
+        "neff": 280.2725812197171,
+        "neff_hp": 0.0,
+        "hp_evidence_tier": "Zero HP Evidence (Powerplay / Low Leverage Only)",
+        "hp_raa_lcb": -10.587566562045104,
+        "hp_raa_post": -1.542148824783994,
+        "evidence_badge": "Insufficient Evidence",
+        "evidence_note": "Insufficient evidence \u2014 unproven in late-innings crunch situations (0 pressure opportunities faced).",
+        "analyst_blurb": "Young prodigy who demolished bowling in overs 1\u20136 (Powerplay), but has faced 0 high-pressure deliveries. Must not be miscast as a late-innings finisher.",
+        "user_metrics": {
+          "match_pressure_opportunities": 0.0,
+          "conservative_reliability_score": 99.8,
+          "impact_value": -1.54,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 1318,
+        "player_name": "Andre Russell",
+        "pri_score_lcb": 99.42915745791682,
+        "neff": 488.3277583257437,
+        "neff_hp": 219.2121548250329,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=219.2 >= 30)",
+        "hp_raa_lcb": 13.271056296742657,
+        "hp_raa_post": 18.180655376203863,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (219.2 opportunities).",
+        "analyst_blurb": "Proven scoring accelerator who scores +18.18 runs above expected per 100 balls under match pressure across 219 opportunities.",
+        "user_metrics": {
+          "match_pressure_opportunities": 219.2,
+          "conservative_reliability_score": 99.43,
+          "impact_value": 18.18,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 143,
+        "player_name": "Dinesh Karthik",
+        "pri_score_lcb": 98.885009292993,
+        "neff": 411.3360985050349,
+        "neff_hp": 111.62942843143246,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=111.6 >= 30)",
+        "hp_raa_lcb": 5.89247233555426,
+        "hp_raa_post": 11.96430393172869,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (111.6 opportunities).",
+        "analyst_blurb": "Steady contributor under pressure, maintaining scoring parity (+11.96 runs above expected) across 112 opportunities.",
+        "user_metrics": {
+          "match_pressure_opportunities": 111.6,
+          "conservative_reliability_score": 98.89,
+          "impact_value": 11.96,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 4847,
+        "player_name": "Finn Allen",
+        "pri_score_lcb": 97.62626932192958,
+        "neff": 294.8623408796465,
+        "neff_hp": 0.0,
+        "hp_evidence_tier": "Zero HP Evidence (Powerplay / Low Leverage Only)",
+        "hp_raa_lcb": -10.587566562045104,
+        "hp_raa_post": -1.542148824783994,
+        "evidence_badge": "Insufficient Evidence",
+        "evidence_note": "Insufficient evidence \u2014 unproven in late-innings crunch situations (0 pressure opportunities faced).",
+        "analyst_blurb": "Explosive top-order opener who scores rapidly with field restrictions up, but has 0 high-pressure exposure in death/crunch situations.",
+        "user_metrics": {
+          "match_pressure_opportunities": 0.0,
+          "conservative_reliability_score": 97.63,
+          "impact_value": -1.54,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 3125,
+        "player_name": "Nicholas Pooran",
+        "pri_score_lcb": 96.82465259562365,
+        "neff": 1014.4796203046392,
+        "neff_hp": 191.9408467428207,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=191.9 >= 30)",
+        "hp_raa_lcb": 13.487276793496196,
+        "hp_raa_post": 18.627600610765377,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (191.9 opportunities).",
+        "analyst_blurb": "High-impact left-hander with destructive hitting against both pace and spin under steep required rates.",
+        "user_metrics": {
+          "match_pressure_opportunities": 191.9,
+          "conservative_reliability_score": 96.82,
+          "impact_value": 18.63,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 3647,
+        "player_name": "Shreyas Iyer",
+        "pri_score_lcb": 96.77917646677876,
+        "neff": 1017.8677132020924,
+        "neff_hp": 41.083442579758845,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=41.1 >= 30)",
+        "hp_raa_lcb": 1.7792732655719323,
+        "hp_raa_post": 9.294330394235564,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (41.1 opportunities).",
+        "analyst_blurb": "Steady contributor under pressure, maintaining scoring parity (+9.29 runs above expected) across 41 opportunities.",
+        "user_metrics": {
+          "match_pressure_opportunities": 41.1,
+          "conservative_reliability_score": 96.78,
+          "impact_value": 9.29,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 4260,
+        "player_name": "Heinrich Klaasen",
+        "pri_score_lcb": 96.73120772520518,
+        "neff": 805.070325085632,
+        "neff_hp": 208.9632482815544,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=209.0 >= 30)",
+        "hp_raa_lcb": 9.474792858202337,
+        "hp_raa_post": 14.46740980919308,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (209.0 opportunities).",
+        "analyst_blurb": "Steady contributor under pressure, maintaining scoring parity (+14.47 runs above expected) across 209 opportunities.",
+        "user_metrics": {
+          "match_pressure_opportunities": 209.0,
+          "conservative_reliability_score": 96.73,
+          "impact_value": 14.47,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 6396,
+        "player_name": "Tim David",
+        "pri_score_lcb": 96.603561732242,
+        "neff": 636.217875648819,
+        "neff_hp": 270.5190894175177,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=270.5 >= 30)",
+        "hp_raa_lcb": 16.954860917917543,
+        "hp_raa_post": 21.50332219220309,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (270.5 opportunities).",
+        "analyst_blurb": "Power-hitting death overs specialist. Excels at clearing the boundary straight down the ground in high-leverage 12+ RRR finishes.",
+        "user_metrics": {
+          "match_pressure_opportunities": 270.5,
+          "conservative_reliability_score": 96.6,
+          "impact_value": 21.5,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 5553,
+        "player_name": "Phil Salt",
+        "pri_score_lcb": 96.53028575975893,
+        "neff": 569.8088495472074,
+        "neff_hp": 41.192674271297605,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=41.2 >= 30)",
+        "hp_raa_lcb": -0.6057392594052731,
+        "hp_raa_post": 6.906225258356705,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (41.2 opportunities).",
+        "analyst_blurb": "Destructive top-order boundary hitter who bats almost exclusively in the initial phase, with limited track record under steep chase pressure.",
+        "user_metrics": {
+          "match_pressure_opportunities": 41.2,
+          "conservative_reliability_score": 96.53,
+          "impact_value": 6.91,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      }
+    ],
+    "top10_high_pressure_robust": [
+      {
+        "canonical_player_id": 1699,
+        "player_name": "Suryakumar Yadav",
+        "hp_raa_lcb": 24.33105149591804,
+        "hp_raa_post": 29.149495214295825,
+        "neff_hp": 231.0814284720401,
+        "pri_score_lcb": 99.91339557209254,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (231.1 opportunities).",
+        "analyst_blurb": "Elite 360-degree chase accelerator. Maintains extraordinary boundary striking (+29.15 runs above expected per 100 balls) under severe pressure with substantial experience.",
+        "user_metrics": {
+          "match_pressure_opportunities": 231.1,
+          "conservative_reliability_score": 99.91,
+          "impact_value": 29.15,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 1077,
+        "player_name": "David Miller",
+        "hp_raa_lcb": 21.885521173306238,
+        "hp_raa_post": 26.35519059424966,
+        "neff_hp": 283.3968433996479,
+        "pri_score_lcb": 69.79527774020066,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (283.4 opportunities).",
+        "analyst_blurb": "Veteran clutch finisher. Consistently navigates steep run chases with minimal dismissal risk and elite boundary striking in overs 16\u201320.",
+        "user_metrics": {
+          "match_pressure_opportunities": 283.4,
+          "conservative_reliability_score": 69.8,
+          "impact_value": 26.36,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 7260,
+        "player_name": "Dhruv Jurel",
+        "hp_raa_lcb": 18.77178347003609,
+        "hp_raa_post": 24.877762772467705,
+        "neff_hp": 109.36320479540896,
+        "pri_score_lcb": 59.589352673471055,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (109.4 opportunities).",
+        "analyst_blurb": "Rajasthan Royals' home-grown crunch performer. Delivers +24.88 runs above expected under peak chase pressure with ice-cool composure.",
+        "user_metrics": {
+          "match_pressure_opportunities": 109.4,
+          "conservative_reliability_score": 59.59,
+          "impact_value": 24.88,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 2258,
+        "player_name": "Sanju Samson",
+        "hp_raa_lcb": 18.712781662451548,
+        "hp_raa_post": 25.7147661326139,
+        "neff_hp": 61.233311587126295,
+        "pri_score_lcb": 94.08670001378812,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (61.2 opportunities).",
+        "analyst_blurb": "RR franchise captain who anchors and accelerates through mid-innings pressure collapses, combining strike rotation with high boundary percentage.",
+        "user_metrics": {
+          "match_pressure_opportunities": 61.2,
+          "conservative_reliability_score": 94.09,
+          "impact_value": 25.71,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 8101,
+        "player_name": "Ashutosh Sharma",
+        "hp_raa_lcb": 17.67039132070098,
+        "hp_raa_post": 23.148144287902685,
+        "neff_hp": 158.09037618663191,
+        "pri_score_lcb": 72.43110749627017,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (158.1 opportunities).",
+        "analyst_blurb": "Explosive lower-order hitter who proved his mettle in extreme death chases (+23.15 runs/100b), striking at elite rates against high pace.",
+        "user_metrics": {
+          "match_pressure_opportunities": 158.1,
+          "conservative_reliability_score": 72.43,
+          "impact_value": 23.15,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 6396,
+        "player_name": "Tim David",
+        "hp_raa_lcb": 16.954860917917543,
+        "hp_raa_post": 21.50332219220309,
+        "neff_hp": 270.5190894175177,
+        "pri_score_lcb": 96.603561732242,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (270.5 opportunities).",
+        "analyst_blurb": "Power-hitting death overs specialist. Excels at clearing the boundary straight down the ground in high-leverage 12+ RRR finishes.",
+        "user_metrics": {
+          "match_pressure_opportunities": 270.5,
+          "conservative_reliability_score": 96.6,
+          "impact_value": 21.5,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 1107,
+        "player_name": "Mohammad Nabi",
+        "hp_raa_lcb": 16.886006941992278,
+        "hp_raa_post": 23.034928163127585,
+        "neff_hp": 106.56676924016377,
+        "pri_score_lcb": 66.08519233048635,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (106.6 opportunities).",
+        "analyst_blurb": "Experienced international all-rounder who uses composed placement and boundary hitting when team wickets tumble.",
+        "user_metrics": {
+          "match_pressure_opportunities": 106.6,
+          "conservative_reliability_score": 66.09,
+          "impact_value": 23.03,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 7897,
+        "player_name": "Namboori Tilak Varma",
+        "hp_raa_lcb": 16.279153121233023,
+        "hp_raa_post": 20.850065058604866,
+        "neff_hp": 266.97110630662286,
+        "pri_score_lcb": 87.79661759152863,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (267.0 opportunities).",
+        "analyst_blurb": "Calm middle-order accumulator who adapts quickly to match situations, minimizing dot balls under rising required run rates.",
+        "user_metrics": {
+          "match_pressure_opportunities": 267.0,
+          "conservative_reliability_score": 87.8,
+          "impact_value": 20.85,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 813,
+        "player_name": "Jos Buttler",
+        "hp_raa_lcb": 16.084869847626464,
+        "hp_raa_post": 23.047136215313007,
+        "neff_hp": 62.98148564221285,
+        "pri_score_lcb": 92.1149313800408,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (63.0 opportunities).",
+        "analyst_blurb": "Proven world-class match-winner who bats deep into the innings, converting high-pressure moments into match-winning run chases.",
+        "user_metrics": {
+          "match_pressure_opportunities": 63.0,
+          "conservative_reliability_score": 92.11,
+          "impact_value": 23.05,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 4106,
+        "player_name": "Daryl Mitchell",
+        "hp_raa_lcb": 15.943246994924994,
+        "hp_raa_post": 22.40425450151105,
+        "neff_hp": 87.8895997428889,
+        "pri_score_lcb": 62.91426951684584,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (87.9 opportunities).",
+        "analyst_blurb": "Tenacious middle-order chaser who targets spinners and paces run chases with smart strike rotation under pressure.",
+        "user_metrics": {
+          "match_pressure_opportunities": 87.9,
+          "conservative_reliability_score": 62.91,
+          "impact_value": 22.4,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      }
+    ],
+    "pp_specialists_zero_hp": [
+      {
+        "canonical_player_id": 50284,
+        "player_name": "Vaibhav Sooryavanshi",
+        "pri_score_lcb": 99.80284145565004,
+        "neff": 280.2725812197171,
+        "neff_hp": 0.0,
+        "hp_evidence_tier": "Zero HP Evidence (Powerplay / Low Leverage Only)",
+        "hp_raa_lcb": -10.587566562045104,
+        "hp_raa_post": -1.542148824783994,
+        "evidence_badge": "Insufficient Evidence",
+        "evidence_note": "Insufficient evidence \u2014 unproven in late-innings crunch situations (0 pressure opportunities faced).",
+        "analyst_blurb": "Young prodigy who demolished bowling in overs 1\u20136 (Powerplay), but has faced 0 high-pressure deliveries. Must not be miscast as a late-innings finisher.",
+        "user_metrics": {
+          "match_pressure_opportunities": 0.0,
+          "conservative_reliability_score": 99.8,
+          "impact_value": -1.54,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 4847,
+        "player_name": "Finn Allen",
+        "pri_score_lcb": 97.62626932192958,
+        "neff": 294.8623408796465,
+        "neff_hp": 0.0,
+        "hp_evidence_tier": "Zero HP Evidence (Powerplay / Low Leverage Only)",
+        "hp_raa_lcb": -10.587566562045104,
+        "hp_raa_post": -1.542148824783994,
+        "evidence_badge": "Insufficient Evidence",
+        "evidence_note": "Insufficient evidence \u2014 unproven in late-innings crunch situations (0 pressure opportunities faced).",
+        "analyst_blurb": "Explosive top-order opener who scores rapidly with field restrictions up, but has 0 high-pressure exposure in death/crunch situations.",
+        "user_metrics": {
+          "match_pressure_opportunities": 0.0,
+          "conservative_reliability_score": 97.63,
+          "impact_value": -1.54,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 25669,
+        "player_name": "Priyansh Arya",
+        "pri_score_lcb": 94.16076416314866,
+        "neff": 218.6381648172028,
+        "neff_hp": 0.0,
+        "hp_evidence_tier": "Zero HP Evidence (Powerplay / Low Leverage Only)",
+        "hp_raa_lcb": -10.587566562045104,
+        "hp_raa_post": -1.542148824783994,
+        "evidence_badge": "Insufficient Evidence",
+        "evidence_note": "Insufficient evidence \u2014 unproven in late-innings crunch situations (0 pressure opportunities faced).",
+        "analyst_blurb": "Dynamic top-order pace-setter with explosive boundary hitting against new ball, but unproven in late-innings crunch situations.",
+        "user_metrics": {
+          "match_pressure_opportunities": 0.0,
+          "conservative_reliability_score": 94.16,
+          "impact_value": -1.54,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 7341,
+        "player_name": "Jake McGurk",
+        "pri_score_lcb": 86.58921249742808,
+        "neff": 104.9204273000962,
+        "neff_hp": 0.0,
+        "hp_evidence_tier": "Zero HP Evidence (Powerplay / Low Leverage Only)",
+        "hp_raa_lcb": -10.587566562045104,
+        "hp_raa_post": -1.542148824783994,
+        "evidence_badge": "Insufficient Evidence",
+        "evidence_note": "Insufficient evidence \u2014 unproven in late-innings crunch situations (0 pressure opportunities faced).",
+        "analyst_blurb": "Dominated in ordinary / powerplay overs, but has 0 evaluated high-pressure deliveries. Unproven in late-innings crunch situations.",
+        "user_metrics": {
+          "match_pressure_opportunities": 0.0,
+          "conservative_reliability_score": 86.59,
+          "impact_value": -1.54,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      },
+      {
+        "canonical_player_id": 7216,
+        "player_name": "Prabhsimran Singh",
+        "pri_score_lcb": 78.0726143265634,
+        "neff": 643.2590793466729,
+        "neff_hp": 0.0,
+        "hp_evidence_tier": "Zero HP Evidence (Powerplay / Low Leverage Only)",
+        "hp_raa_lcb": -10.587566562045104,
+        "hp_raa_post": -1.542148824783994,
+        "evidence_badge": "Insufficient Evidence",
+        "evidence_note": "Insufficient evidence \u2014 unproven in late-innings crunch situations (0 pressure opportunities faced).",
+        "analyst_blurb": "Dominated in ordinary / powerplay overs, but has 0 evaluated high-pressure deliveries. Unproven in late-innings crunch situations.",
+        "user_metrics": {
+          "match_pressure_opportunities": 0.0,
+          "conservative_reliability_score": 78.07,
+          "impact_value": -1.54,
+          "impact_label": "Runs Above Expected (per 100 balls)"
+        }
+      }
+    ],
+    "n_eligible_total": 188,
+    "n_robust_hp": 124,
+    "n_zero_hp": 18
+  },
+  "bowling": {
+    "top10_overall_reliability": [
+      {
+        "canonical_player_id": 2933,
+        "player_name": "Jasprit Bumrah",
+        "pri_score_lcb": 99.96147331739724,
+        "neff": 1083.2006990693296,
+        "neff_hp": 316.43563041879094,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=316.4 >= 30)",
+        "hp_impact_lcb": -0.387321685217206,
+        "hp_impact_post": -0.0814116619298815,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (316.4 opportunities).",
+        "analyst_blurb": "India's premier pace bowler across all formats, possessing unmatched yorker accuracy and economy under intense match pressure.",
+        "user_metrics": {
+          "match_pressure_opportunities": 316.4,
+          "conservative_reliability_score": 99.96,
+          "impact_value": -0.08,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 781,
+        "player_name": "Sunil Narine",
+        "pri_score_lcb": 99.95589575640864,
+        "neff": 1174.9387595649464,
+        "neff_hp": 293.40278921499896,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=293.4 >= 30)",
+        "hp_impact_lcb": 0.3247768452183009,
+        "hp_impact_post": 0.635451991979948,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (293.4 opportunities).",
+        "analyst_blurb": "World-class spin magician who chokes scoring rates (+0.64 runs/over saved) and induces false shots during crucial mid and death overs.",
+        "user_metrics": {
+          "match_pressure_opportunities": 293.4,
+          "conservative_reliability_score": 99.96,
+          "impact_value": 0.64,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 6256,
+        "player_name": "Varun Chakravarthy",
+        "pri_score_lcb": 99.87074263998343,
+        "neff": 1398.5541576056007,
+        "neff_hp": 363.35805510235525,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=363.4 >= 30)",
+        "hp_impact_lcb": -1.1398585426036414,
+        "hp_impact_post": -0.8430142780594805,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (363.4 opportunities).",
+        "analyst_blurb": "Vulnerable to boundary concessions in high-pressure overs, conceding runs above contextual expectation.",
+        "user_metrics": {
+          "match_pressure_opportunities": 363.4,
+          "conservative_reliability_score": 99.87,
+          "impact_value": -0.84,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 4722,
+        "player_name": "Rashid Khan",
+        "pri_score_lcb": 99.657206203082,
+        "neff": 1838.1765412000232,
+        "neff_hp": 450.35380393458416,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=450.4 >= 30)",
+        "hp_impact_lcb": 0.2713694991247542,
+        "hp_impact_post": 0.553342489269643,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (450.4 opportunities).",
+        "analyst_blurb": "Premier T20 wrist-spinner who consistently breaks partnerships and controls the game when matches hang in the balance.",
+        "user_metrics": {
+          "match_pressure_opportunities": 450.4,
+          "conservative_reliability_score": 99.66,
+          "impact_value": 0.55,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 2876,
+        "player_name": "Axar Patel",
+        "pri_score_lcb": 98.6509106784197,
+        "neff": 1844.880500017884,
+        "neff_hp": 436.8455161108458,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=436.8 >= 30)",
+        "hp_impact_lcb": 0.0008606628964115,
+        "hp_impact_post": 0.2849968068934804,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (436.8 opportunities).",
+        "analyst_blurb": "Reliable defensive option under pressure, preventing +0.28 runs per over above league baseline.",
+        "user_metrics": {
+          "match_pressure_opportunities": 436.8,
+          "conservative_reliability_score": 98.65,
+          "impact_value": 0.28,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 360,
+        "player_name": "Bhuvneshwar Kumar",
+        "pri_score_lcb": 98.18073702469266,
+        "neff": 1359.4643288334987,
+        "neff_hp": 367.0279463954548,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=367.0 >= 30)",
+        "hp_impact_lcb": -0.3669655486197581,
+        "hp_impact_post": -0.07079681310126,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (367.0 opportunities).",
+        "analyst_blurb": "Vulnerable to boundary concessions in high-pressure overs, conceding runs above contextual expectation.",
+        "user_metrics": {
+          "match_pressure_opportunities": 367.0,
+          "conservative_reliability_score": 98.18,
+          "impact_value": -0.07,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 7920,
+        "player_name": "Nathan Ellis",
+        "pri_score_lcb": 97.73118189414922,
+        "neff": 572.7027225845875,
+        "neff_hp": 203.7910532875949,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=203.8 >= 30)",
+        "hp_impact_lcb": 0.2562685407164023,
+        "hp_impact_post": 0.5878548681238843,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (203.8 opportunities).",
+        "analyst_blurb": "Elite death overs technician. Possesses back-of-the-hand slower balls and pinpoint wide yorkers (+0.59 r/ov saved), ideal for SMS Jaipur pace void.",
+        "user_metrics": {
+          "match_pressure_opportunities": 203.8,
+          "conservative_reliability_score": 97.73,
+          "impact_value": 0.59,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 830,
+        "player_name": "Josh Hazlewood",
+        "pri_score_lcb": 96.74219736917928,
+        "neff": 879.0552791444713,
+        "neff_hp": 223.03672122217463,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=223.0 >= 30)",
+        "hp_impact_lcb": -0.004729413688922,
+        "hp_impact_post": 0.3220106285089583,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (223.0 opportunities).",
+        "analyst_blurb": "Reliable defensive option under pressure, preventing +0.32 runs per over above league baseline.",
+        "user_metrics": {
+          "match_pressure_opportunities": 223.0,
+          "conservative_reliability_score": 96.74,
+          "impact_value": 0.32,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 479,
+        "player_name": "Adil Rashid",
+        "pri_score_lcb": 95.93518047799816,
+        "neff": 941.687286217314,
+        "neff_hp": 174.64964115684543,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=174.6 >= 30)",
+        "hp_impact_lcb": -0.5722086925878794,
+        "hp_impact_post": -0.2328555399566113,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (174.6 opportunities).",
+        "analyst_blurb": "Vulnerable to boundary concessions in high-pressure overs, conceding runs above contextual expectation.",
+        "user_metrics": {
+          "match_pressure_opportunities": 174.6,
+          "conservative_reliability_score": 95.94,
+          "impact_value": -0.23,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 4900,
+        "player_name": "Wanindu Hasaranga",
+        "pri_score_lcb": 95.6042640328573,
+        "neff": 1309.9185595612073,
+        "neff_hp": 353.31736650898205,
+        "hp_evidence_tier": "Robust HP Evidence (Neff_HP=353.3 >= 30)",
+        "hp_impact_lcb": 0.2470525597840236,
+        "hp_impact_post": 0.5457689378653274,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (353.3 opportunities).",
+        "analyst_blurb": "Attacking leg-spin wicket-taker who strikes regularly under pressure, arresting opponent momentum in middle and death overs.",
+        "user_metrics": {
+          "match_pressure_opportunities": 353.3,
+          "conservative_reliability_score": 95.6,
+          "impact_value": 0.55,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      }
+    ],
+    "top10_high_pressure_robust": [
+      {
+        "canonical_player_id": 781,
+        "player_name": "Sunil Narine",
+        "hp_impact_lcb": 0.3247768452183009,
+        "hp_impact_post": 0.635451991979948,
+        "neff_hp": 293.40278921499896,
+        "pri_score_lcb": 99.95589575640864,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (293.4 opportunities).",
+        "analyst_blurb": "World-class spin magician who chokes scoring rates (+0.64 runs/over saved) and induces false shots during crucial mid and death overs.",
+        "user_metrics": {
+          "match_pressure_opportunities": 293.4,
+          "conservative_reliability_score": 99.96,
+          "impact_value": 0.64,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 4641,
+        "player_name": "Lungi Ngidi",
+        "hp_impact_lcb": 0.3206350279773518,
+        "hp_impact_post": 0.6620980718356333,
+        "neff_hp": 167.0746963548428,
+        "pri_score_lcb": 89.82240122314063,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (167.1 opportunities).",
+        "analyst_blurb": "Heavy-ball hit-the-deck pace bowler with sharp wicket-taking ability and yorker precision in tight defensive finishes (+0.66 r/ov saved).",
+        "user_metrics": {
+          "match_pressure_opportunities": 167.1,
+          "conservative_reliability_score": 89.82,
+          "impact_value": 0.66,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 4722,
+        "player_name": "Rashid Khan",
+        "hp_impact_lcb": 0.2713694991247542,
+        "hp_impact_post": 0.553342489269643,
+        "neff_hp": 450.35380393458416,
+        "pri_score_lcb": 99.657206203082,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (450.4 opportunities).",
+        "analyst_blurb": "Premier T20 wrist-spinner who consistently breaks partnerships and controls the game when matches hang in the balance.",
+        "user_metrics": {
+          "match_pressure_opportunities": 450.4,
+          "conservative_reliability_score": 99.66,
+          "impact_value": 0.55,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 7325,
+        "player_name": "Harpreet Brar",
+        "hp_impact_lcb": 0.2565958822765108,
+        "hp_impact_post": 0.5944263561813973,
+        "neff_hp": 180.20476859228367,
+        "pri_score_lcb": 89.85032327502209,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (180.2 opportunities).",
+        "analyst_blurb": "Disciplined finger spinner who cramps right-handers for room under pressure, generating high dot-ball percentages (+0.59 r/ov saved).",
+        "user_metrics": {
+          "match_pressure_opportunities": 180.2,
+          "conservative_reliability_score": 89.85,
+          "impact_value": 0.59,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 7920,
+        "player_name": "Nathan Ellis",
+        "hp_impact_lcb": 0.2562685407164023,
+        "hp_impact_post": 0.5878548681238843,
+        "neff_hp": 203.7910532875949,
+        "pri_score_lcb": 97.73118189414922,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (203.8 opportunities).",
+        "analyst_blurb": "Elite death overs technician. Possesses back-of-the-hand slower balls and pinpoint wide yorkers (+0.59 r/ov saved), ideal for SMS Jaipur pace void.",
+        "user_metrics": {
+          "match_pressure_opportunities": 203.8,
+          "conservative_reliability_score": 97.73,
+          "impact_value": 0.59,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 4900,
+        "player_name": "Wanindu Hasaranga",
+        "hp_impact_lcb": 0.2470525597840236,
+        "hp_impact_post": 0.5457689378653274,
+        "neff_hp": 353.31736650898205,
+        "pri_score_lcb": 95.6042640328573,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (353.3 opportunities).",
+        "analyst_blurb": "Attacking leg-spin wicket-taker who strikes regularly under pressure, arresting opponent momentum in middle and death overs.",
+        "user_metrics": {
+          "match_pressure_opportunities": 353.3,
+          "conservative_reliability_score": 95.6,
+          "impact_value": 0.55,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 4219,
+        "player_name": "Krunal Pandya",
+        "hp_impact_lcb": 0.2107731778833736,
+        "hp_impact_post": 0.5214518735389224,
+        "neff_hp": 293.3860291093524,
+        "pri_score_lcb": 86.37771368892662,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (293.4 opportunities).",
+        "analyst_blurb": "Tactically astute defensive spinner who varies pace and trajectory to deny boundaries in crunch situations.",
+        "user_metrics": {
+          "match_pressure_opportunities": 293.4,
+          "conservative_reliability_score": 86.38,
+          "impact_value": 0.52,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 1758,
+        "player_name": "Patrick Cummins",
+        "hp_impact_lcb": 0.1935472570040607,
+        "hp_impact_post": 0.5235064480850381,
+        "neff_hp": 210.1582856847821,
+        "pri_score_lcb": 64.8242945127401,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (210.2 opportunities).",
+        "analyst_blurb": "High-caliber captain and pace spearhead who bowls hard lengths and executes cutters effectively under pressure.",
+        "user_metrics": {
+          "match_pressure_opportunities": 210.2,
+          "conservative_reliability_score": 64.82,
+          "impact_value": 0.52,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 4101,
+        "player_name": "Mitchell Santner",
+        "hp_impact_lcb": 0.1700902477200544,
+        "hp_impact_post": 0.487108803375169,
+        "neff_hp": 264.3378910107753,
+        "pri_score_lcb": 94.78618946785338,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (264.3 opportunities).",
+        "analyst_blurb": "High-economy containment bowler who delivers wicket-to-wicket accuracy with subtle pace variations under pressure.",
+        "user_metrics": {
+          "match_pressure_opportunities": 264.3,
+          "conservative_reliability_score": 94.79,
+          "impact_value": 0.49,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 39657,
+        "player_name": "Eshan Malinga",
+        "hp_impact_lcb": 0.1109250715948283,
+        "hp_impact_post": 0.4521195383037221,
+        "neff_hp": 168.03114416564603,
+        "pri_score_lcb": 75.05524906029383,
+        "evidence_badge": "Strong Evidence",
+        "evidence_note": "Strong evidence \u2014 evaluated across substantial independent high-pressure situations (168.0 opportunities).",
+        "analyst_blurb": "Emerging Sri Lankan slinger with sharp yorker execution and boundary suppression in high-pressure death overs.",
+        "user_metrics": {
+          "match_pressure_opportunities": 168.0,
+          "conservative_reliability_score": 75.06,
+          "impact_value": 0.45,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      }
+    ],
+    "pp_specialists_zero_hp": [
+      {
+        "canonical_player_id": 6460,
+        "player_name": "Ayush Badoni",
+        "pri_score_lcb": 53.987218420386654,
+        "neff": 31.011051031772645,
+        "neff_hp": 0.0,
+        "hp_evidence_tier": "Zero HP Evidence (Powerplay / Low Leverage Only)",
+        "hp_impact_lcb": -0.6370625921573299,
+        "hp_impact_post": -0.236002231082922,
+        "evidence_badge": "Insufficient Evidence",
+        "evidence_note": "Insufficient evidence \u2014 unproven in late-innings crunch situations (0 pressure opportunities faced).",
+        "analyst_blurb": "Bowled primarily in low-pressure or early phases; unproven under late-innings high-pressure conditions.",
+        "user_metrics": {
+          "match_pressure_opportunities": 0.0,
+          "conservative_reliability_score": 53.99,
+          "impact_value": -0.24,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 20693,
+        "player_name": "Kuldip Yadav",
+        "pri_score_lcb": 50.88559583918983,
+        "neff": 33.94458306423068,
+        "neff_hp": 0.0,
+        "hp_evidence_tier": "Zero HP Evidence (Powerplay / Low Leverage Only)",
+        "hp_impact_lcb": -0.6370625921573299,
+        "hp_impact_post": -0.236002231082922,
+        "evidence_badge": "Insufficient Evidence",
+        "evidence_note": "Insufficient evidence \u2014 unproven in late-innings crunch situations (0 pressure opportunities faced).",
+        "analyst_blurb": "Bowled primarily in low-pressure or early phases; unproven under late-innings high-pressure conditions.",
+        "user_metrics": {
+          "match_pressure_opportunities": 0.0,
+          "conservative_reliability_score": 50.89,
+          "impact_value": -0.24,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 6359,
+        "player_name": "Raghu Sharma",
+        "pri_score_lcb": 42.77667339298633,
+        "neff": 82.87845437488674,
+        "neff_hp": 0.0,
+        "hp_evidence_tier": "Zero HP Evidence (Powerplay / Low Leverage Only)",
+        "hp_impact_lcb": -0.6370625921573299,
+        "hp_impact_post": -0.236002231082922,
+        "evidence_badge": "Insufficient Evidence",
+        "evidence_note": "Insufficient evidence \u2014 unproven in late-innings crunch situations (0 pressure opportunities faced).",
+        "analyst_blurb": "Bowled primarily in low-pressure or early phases; unproven under late-innings high-pressure conditions.",
+        "user_metrics": {
+          "match_pressure_opportunities": 0.0,
+          "conservative_reliability_score": 42.78,
+          "impact_value": -0.24,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 2852,
+        "player_name": "Jagadeesha Suchith",
+        "pri_score_lcb": 42.69398242122483,
+        "neff": 64.25517874643204,
+        "neff_hp": 0.0,
+        "hp_evidence_tier": "Zero HP Evidence (Powerplay / Low Leverage Only)",
+        "hp_impact_lcb": -0.6370625921573299,
+        "hp_impact_post": -0.236002231082922,
+        "evidence_badge": "Insufficient Evidence",
+        "evidence_note": "Insufficient evidence \u2014 unproven in late-innings crunch situations (0 pressure opportunities faced).",
+        "analyst_blurb": "Bowled primarily in low-pressure or early phases; unproven under late-innings high-pressure conditions.",
+        "user_metrics": {
+          "match_pressure_opportunities": 0.0,
+          "conservative_reliability_score": 42.69,
+          "impact_value": -0.24,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      },
+      {
+        "canonical_player_id": 43917,
+        "player_name": "Krish Bhagat",
+        "pri_score_lcb": 39.13359399240646,
+        "neff": 33.42625113053199,
+        "neff_hp": 0.0,
+        "hp_evidence_tier": "Zero HP Evidence (Powerplay / Low Leverage Only)",
+        "hp_impact_lcb": -0.6370625921573299,
+        "hp_impact_post": -0.236002231082922,
+        "evidence_badge": "Insufficient Evidence",
+        "evidence_note": "Insufficient evidence \u2014 unproven in late-innings crunch situations (0 pressure opportunities faced).",
+        "analyst_blurb": "Bowled primarily in low-pressure or early phases; unproven under late-innings high-pressure conditions.",
+        "user_metrics": {
+          "match_pressure_opportunities": 0.0,
+          "conservative_reliability_score": 39.13,
+          "impact_value": -0.24,
+          "impact_label": "Runs Saved Above Expected (per over)"
+        }
+      }
+    ],
+    "n_eligible_total": 200,
+    "n_robust_hp": 156,
+    "n_zero_hp": 7
+  }
+}

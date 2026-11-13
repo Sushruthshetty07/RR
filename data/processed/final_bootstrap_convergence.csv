@@ -1,0 +1,4 @@
+n_boot,seed,bat_median_deff_raa,bat_median_deff_hp,bat_rho_vs_approved,bat_top10_overlap,bat_max_rank_shift,bowl_median_deff_rsaa,bowl_median_deff_hp,bowl_rho_vs_approved,bowl_top10_overlap,bowl_max_rank_shift
+400,42,1.083,1.123,0.9954,10,19,1.254,1.018,0.9913,10,34
+1000,42,1.069,1.064,0.9953,10,18,1.259,1.068,0.9913,10,33
+2000,42,1.076,1.084,0.9954,10,18,1.256,1.066,0.9917,10,34

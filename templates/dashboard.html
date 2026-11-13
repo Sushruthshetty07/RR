@@ -1339,7 +1339,7 @@ const STATE = {
   audienceMode: 'simple', // 'simple' (Analyst & Fan) or 'tech' (Data Science)
   batView: 'hp_headline',
   bowlView: 'hp_headline',
-  auctionBucket: 'pending_registration',
+  auctionBucket: 'pending_retention_watchlist',
   filters: { search: '', role: '', availability: '', ipl_exp: '', pressure_tier: '', confidence_tier: '', all_rounder_only: false },
   compareIds: [1699, 6396, 2933, 7920],
   quickCompare: []
@@ -1486,6 +1486,13 @@ function evidenceBadge(badgeText) {
 
 function statusBadge(st) {
   const map = {
+    'CONFIRMED_OTHER_TEAM': 'b-contracted',
+    'RR_2026_SQUAD': 'b-rr',
+    'RR_CONFIRMED_RETAINED': 'b-rr',
+    'PENDING_RETENTION': 'b-trade',
+    'CONFIRMED_RELEASED': 'b-pending',
+    'RETIRED_UNAVAILABLE': 'b-retired',
+    'UNVERIFIED': 'b-unknown',
     'Confirmed auction-available': 'b-confirmed',
     'Released, auction registration pending/unverified': 'b-pending',
     'Potential trade candidate': 'b-trade',
@@ -2238,12 +2245,18 @@ async function renderAuctionIntelligence(el) {
   ]);
 
   const buckets = [
-    ['pending_registration', 'Released / Registration Pending'],
-    ['trade_watchlist', 'Separate Trade Watchlist'],
-    ['rr_squad', 'Existing RR Squad (Core)'],
-    ['contracted_elsewhere', 'Contracted Elsewhere'],
-    ['retired', 'Retired (Russell, DK, Ashwin)'],
+    ['pending_retention_watchlist', 'Pending Retention Watchlist'],
+    ['actionable_auction_targets', 'Actionable Auction Targets'],
+    ['confirmed_released_pipeline', 'Confirmed Released Pipeline'],
+    ['rr_2026_squad_planning', 'RR 2026 Squad Planning'],
+    ['confirmed_other_team_excluded', 'Confirmed Other Team (Excluded)'],
+    ['retired_unavailable_excluded', 'Retired / Unavailable (Excluded)'],
   ];
+
+  const validBuckets = buckets.map(b => b[0]);
+  if (!validBuckets.includes(STATE.auctionBucket)) {
+    STATE.auctionBucket = 'pending_retention_watchlist';
+  }
 
   const rows = d.buckets[STATE.auctionBucket] || [];
 
@@ -2255,6 +2268,22 @@ async function renderAuctionIntelligence(el) {
           <strong style="color:var(--cyan)">BCCI IPL 2027 Auction Governance:</strong>
           Official retention deadline is <strong>November 17, 2026</strong>; auction registrations close <strong>November 23, 2026</strong>. Mini-auction is scheduled for <strong>December 16, 2026 in Goa</strong>.
           Under strict compliance rules, <strong>zero players</strong> can be labeled "confirmed auction-available" today. We separate released candidates from trade targets and existing squad members.
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-warning" style="margin-bottom: 20px; border-left: 4px solid #ef4444; background: rgba(239, 68, 68, 0.08);">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <svg class="icon" style="color:#ef4444;width:24px;height:24px;flex-shrink:0" viewBox="0 0 24 24"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          <div>
+            <strong style="color:#ef4444">Layer 2 Roster Availability Guardrail Active:</strong>
+            <strong>${d.excluded_counts ? d.excluded_counts.excluded_other_franchises : 10} Players Contracted to Other Franchises</strong> (e.g. Nathan Ellis traded to SRH) and <strong>${d.excluded_counts ? d.excluded_counts.excluded_retired : 10} Retired Players</strong> are <strong>automatically hard-excluded</strong> from actionable Rajasthan Royals auction targets.
+          </div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <span class="badge b-strong" style="background:rgba(239,68,68,0.2);color:#ef4444;border:1px solid #ef4444">${d.excluded_counts ? d.excluded_counts.excluded_other_franchises : 10} Traded / Excluded</span>
+          <span class="badge b-strong" style="background:rgba(156,163,175,0.2);color:#9ca3af;border:1px solid #9ca3af">${d.excluded_counts ? d.excluded_counts.excluded_retired : 10} Retired / Unavailable</span>
         </div>
       </div>
     </div>
