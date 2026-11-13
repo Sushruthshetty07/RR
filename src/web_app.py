@@ -148,6 +148,11 @@ async def api_weight_sensitivity():
     return get_store().get_weight_sensitivity()
 
 
+@app.get("/api/cricket-intelligence")
+async def api_cricket_intelligence():
+    return get_store().get_cricket_intelligence()
+
+
 @app.get("/api/rr-tactical-fit")
 async def api_rr_tactical_fit():
     return get_store().get_rr_auction_intelligence()

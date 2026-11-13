@@ -354,6 +354,76 @@ All contracted targets below depend on franchise retention/release decisions due
 | **3. RHB Death Closer & Spin Hitter** | `Tim David (#9)` / `Rajat Patidar (#12)` / `Shashank Singh (#13)` | David: `HP-RAA +21.50, Death +18.3`; Patidar: `Spin +32.5`; Shashank: `HP +7.44` | Balances LHB-heavy top order (`Jaiswal`, `Sooryavanshi`, `Hetmyer`, `Jadeja`). All 3 currently contracted (`RCB`/`PBKS`) — pending Nov 17 retention or trade. |
 | **Core Asset Preservation** | Retain `Sooryavanshi`, `Jaiswal`, `Jurel`, `Parag` | Top-2 PP (`SR 187.3`) + Jurel (`HP +24.88`) | Contracted RR incumbents awaiting official retention confirmation on Nov 17, 2026. Do **not** spend auction budget on redundant marquee openers (`Phil Salt`, `Finn Allen`). |
 
+### 6.3 Advanced Cricket Intelligence, Tactical Matchups & Behavioral Composure
+
+To elevate this evaluation from technical modeling into actionable franchise intelligence, we apply four strategic principles: **Advanced Feature Engineering**, **Tactical Cricket Intelligence**, **Objective Behavioral Composure Proxies**, and **Franchise Storytelling**.
+
+#### A. Tactical Matchup Engine: High-Pressure Pace vs. Spin Splits (`PI >= 60`)
+Aggregating overall strike rates masks critical tactical vulnerabilities. Evaluating batter performance specifically during high-pressure match situations (`PI >= 60`) against **Pace** vs. **Spin** reveals distinct player archetypes:
+
+| Player | High-Pressure Balls Faced | vs. Pace SR (Balls Faced) | vs. Spin SR (Balls Faced) | Tactical Matchup Archetype | Franchise Value Alignment |
+| :--- | :---: | :---: | :---: | :--- | :--- |
+| **Suryakumar Yadav** | 250 | **196.4** (138b, 29.7% 4s/6s) | **175.0** (112b, 23.2% 4s/6s) | **All-Phase 360° Clutch Chaser** | Elite bilateral destruction across all bowling types. |
+| **David Miller** | 320 | **169.3** (202b, 21.8% 4s/6s) | **187.3** (118b, 27.1% 4s/6s) | **Spin-Disruptor Chaser** | Extreme acceleration against middle spin in steep chases. |
+| **Dhruv Jurel (RR Core)** | 114 | **195.8** (71b, 26.8% 4s/6s) | **197.7** (43b, 25.6% 4s/6s) | **Balanced Death Closer** | Symmetrical mastery against high pace and mystery spin. |
+| **Sanju Samson (RR Capt)** | 62 | **172.4** (29b, 24.1% 4s/6s) | **227.3** (33b, 33.3% 4s/6s) | **Elite Spin-Destroyer Chaser** | Breaks middle-overs chase pressure against spin. |
+| **Ashutosh Sharma** | 168 | **190.6** (117b, 27.4% 4s/6s) | **164.7** (51b, 19.6% 4s/6s) | **Pace-Dominant Death Finisher** | Punishes express pace and yorkers in overs 17–20. |
+| **Tim David** | 292 | **190.3** (217b, 27.6% 4s/6s) | **141.3** (75b, 16.0% 4s/6s) | **Pace Finisher (Spin Vulnerable)** | Requires tactical shielding against quality spin. |
+| **Namboori Tilak Varma** | 286 | **178.7** (183b, 23.0% 4s/6s) | **188.3** (103b, 26.2% 4s/6s) | **All-Phase Anchor-Accelerator** | High-composure left-handed chase anchor. |
+| **Jos Buttler** | 75 | **207.5** (40b, 35.0% 4s/6s) | **208.6** (35b, 28.6% 4s/6s) | **World-Class Crunch Demolisher** | Elite devastation when batting deep into chases. |
+
+#### B. Objective Behavioral Composure Proxies (Human & Psychological Dimension)
+Franchises frequently speculate about "temperament" or "mental toughness" using subjective impressions. We replace subjective narrative with **objective, delivery-to-delivery behavioral proxies** computed directly from ball-by-ball event sequences:
+
+1. **Bowler Post-Boundary Bounce-Back Composure:**
+   Measures a bowler's performance on the delivery immediately following a boundary (4 or 6) conceded in the same over. Elite pressure bowlers exhibit an immediate tactical reset rather than tilting into boundary clusters:
+   - **League Baseline ($N = 28,840$ deliveries):** `9.51 RPO economy`, `34.6% dot-ball rebound`, `22.8% repeat boundary rate`, `5.48% wicket rate`.
+   - **Jasprit Bumrah (#1 Benchmark):** **`6.00 RPO economy`**, **`44.2% dot rebound`**, **`10.1% repeat boundary rate`** (less than half league average). Unrivaled tactical reset.
+   - **Nathan Ellis (RR #1 Pace Target):** **`7.90 RPO economy`**, **`34.9% dot rebound`**, **`16.7% repeat boundary rate`**, **`6.35% wicket rate`**. Clamps down with wide yorkers immediately upon being attacked.
+   - **Sunil Narine (#2 Primary Bowler):** **`7.97 RPO economy`**, **`38.7% dot rebound`**, **`16.8% repeat boundary rate`**, **`6.57% wicket rate`**. Restrictive mystery spin chokehold.
+   - **Lungi Ngidi (#3 Primary Bowler):** **`8.19 RPO economy`**, **`43.8% dot rebound`**, **`18.2% repeat boundary rate`**, **`7.30% wicket rate`**. Heavy-ball rebound strike bowler.
+
+2. **Batter Post-Dot High-Pressure Composure (Dot-Ball Recovery):**
+   Measures a batter's response on the delivery immediately following a dot ball under high pressure (`PI >= 60`). Inexperienced batters tilt into panic dismissals or dot accumulation, while elite clutch performers rotate strike or strike calculated counter-punches:
+   - **League Baseline ($N = 5,525$ deliveries):** `126.1 Strike Rate`, `8.11% dismissal rate`, `15.9% boundary response`, `41.6% second-dot stagnation`.
+   - **David Miller (#2 Primary Batter):** **`153.7 SR`**, **`1.85% dismissal rate`** (near zero panic out), `22.2% boundary response`. Extraordinary composure under dot pressure.
+   - **Dhruv Jurel (RR Core Finisher):** **`140.0 SR`**, **`0.0% dismissal rate`** across post-dot crunch opportunities. Ice-cool maturity and strike rotation.
+   - **Ashutosh Sharma (#4 Primary Batter):** **`175.8 SR`**, **`0.0% dismissal rate`**, `24.2% boundary response` across 33 post-dot opportunities. Fearless domestic death execution.
+   - **Namboori Tilak Varma (#5 Primary Batter):** **`245.5 SR`**, **`2.27% dismissal rate`**, **`36.4% boundary response`**. Devastating immediate counter-attack.
+   - **Tim David (#6 Primary Batter):** **`200.0 SR`**, `31.3% boundary response`, but **`8.96% dismissal rate`**. High-variance boundary-or-bust approach.
+
+#### C. The Rajasthan Royals 4-Question Strategic Intelligence Framework
+For franchise leadership (Head Coach Kumar Sangakkara, Director of Strategy Giles Lindsay), every statistical finding must translate directly into scouting action:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│             RAJASTHAN ROYALS 4-QUESTION STRATEGIC FRAMEWORK            │
+├────────────────────────────────────────────────────────────────────────┤
+│ 1. What did we discover?    --> Empirical finding from ball-by-ball    │
+│ 2. Why does it matter?      --> Tactical mechanism on the field        │
+│ 3. What does it mean for RR?--> Specific impact on RR squad balance    │
+│ 4. What scouting decision?  --> Concrete action for Auction/Trade 2027 │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+1. **Strategic Case 1 — Nathan Ellis (Solving the SMS Jaipur Death Leak):**
+   - *1. Discovery:* Ellis concedes only `7.90 RPO` post-boundary with a `16.7%` repeat boundary rate and `8.35 RPO` death economy.
+   - *2. Why it matters:* He stops boundary clusters at the death by executing wide yorkers and back-of-the-hand slower balls under pressure.
+   - *3. What it means for RR:* RR leaked `10.13 RPO` pace at Jaipur (1-4 record) and had zero bowlers in the career Top 35 PRI.
+   - *4. Scouting decision:* **Highest-priority overseas fast-bowling target in mini-auction up to ₹6.5 Cr.**
+
+2. **Strategic Case 2 — Ashutosh Sharma (Domestic Death Power & Composure):**
+   - *1. Discovery:* Generates `+23.15 runs/100b` in high pressure, strikes at `190.6 vs Pace`, and has `0.0%` post-dot dismissals across 33 opportunities.
+   - *2. Why it matters:* Proven ability to clear the ropes against 145 kph pace at the death without throwing his wicket away.
+   - *3. What it means for RR:* Provides essential domestic death batting insurance behind Hetmyer and Jurel, freeing up an overseas slot for bowling.
+   - *4. Scouting decision:* **Aggressive auction bidding target up to ₹4.5 Cr; elite domestic finisher.**
+
+3. **Strategic Case 3 — Dhruv Jurel & Sanju Samson (Internal Core Maximization):**
+   - *1. Discovery:* Jurel is completely balanced (`195.8 vs Pace`, `197.7 vs Spin`, `0.0% post-dot panic`); Samson destroys spin (`227.3 SR in HP`).
+   - *2. Why it matters:* RR already possesses two of the world's elite clutch performers under contract.
+   - *3. What it means for RR:* No need to spend auction purse on redundant middle-order chasers; focus 75% of available auction budget on death pace and wicket spin.
+   - *4. Scouting decision:* **Retain Jurel and Samson as non-negotiable core; deploy Samson against middle spin and Jurel as designated closer.**
+
 ---
 
 ## 7. Technical Validation, Limitations & Data Accounting Appendix

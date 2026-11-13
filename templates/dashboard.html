@@ -2394,8 +2394,37 @@ async function openPlayer(cid) {
           <div class="kv"><div class="k">Phase Econ (PP/Mid/Death)</div><div class="v">${d.powerplay_econ ?? '—'} / ${d.middle_econ ?? '—'} / ${d.death_econ ?? '—'}</div></div>
         `}
       </div>
+      ${isBat && (d.hp_pace_sr || d.hp_spin_sr || d.tactical_archetype) ? `
+        <div class="card" style="margin-top:12px;background:rgba(0,195,255,0.03);border:1px solid rgba(0,195,255,0.18);padding:10px 14px">
+          <div style="font-size:0.75rem;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:6px">Tactical Matchup &amp; Composure Intelligence (PI &ge; 60)</div>
+          <div style="display:flex;flex-wrap:wrap;gap:14px;font-size:0.83rem">
+            <div><strong>vs Pace:</strong> ${d.hp_pace_sr ? d.hp_pace_sr + ' SR (' + d.hp_pace_bound_pct + '% 4s/6s across ' + d.hp_pace_balls + 'b)' : 'Limited Sample'}</div>
+            <div><strong>vs Spin:</strong> ${d.hp_spin_sr ? d.hp_spin_sr + ' SR (' + d.hp_spin_bound_pct + '% 4s/6s across ' + d.hp_spin_balls + 'b)' : 'Limited Sample'}</div>
+          </div>
+          <div style="margin-top:6px;font-size:0.8rem;color:var(--text-dim)">
+            <strong>Tactical Archetype:</strong> <span style="color:var(--text)">${d.tactical_archetype || 'Situational Contributor'}</span> |
+            <strong>Post-Dot Recovery:</strong> <span style="color:var(--green)">${d.post_dot_sr ? d.post_dot_sr + ' SR (' + d.post_dot_wkt_pct + '% out)' : '—'}</span> (${d.composure_tier || 'Standard'})
+          </div>
+        </div>
+      ` : ''}
+      ${!isBat && (d.post_b_econ || d.rhb_econ || d.tactical_role) ? `
+        <div class="card" style="margin-top:12px;background:rgba(255,0,127,0.03);border:1px solid rgba(255,0,127,0.18);padding:10px 14px">
+          <div style="font-size:0.75rem;text-transform:uppercase;color:var(--rr-pink);font-weight:700;margin-bottom:6px">Tactical Matchup &amp; Bounce-Back Composure</div>
+          <div style="display:flex;flex-wrap:wrap;gap:14px;font-size:0.83rem">
+            <div><strong>Post-Boundary Econ:</strong> <span style="color:var(--green)">${d.post_b_econ ? d.post_b_econ + ' RPO' : '—'}</span> (League: 9.51)</div>
+            <div><strong>Repeat Boundary:</strong> ${d.post_b_repeat_b_pct ? d.post_b_repeat_b_pct + '%' : '—'} (League: 22.8%)</div>
+            <div><strong>Dot Rebound:</strong> ${d.post_b_dot_pct ? d.post_b_dot_pct + '%' : '—'} (League: 34.6%)</div>
+          </div>
+          <div style="margin-top:6px;font-size:0.8rem;color:var(--text-dim)">
+            <strong>Tactical Role:</strong> <span style="color:var(--text)">${d.tactical_role || 'Situational Container'}</span> |
+            <strong>Matchups:</strong> vs RHB ${d.rhb_econ ? d.rhb_econ + ' RPO' : '—'} / vs LHB ${d.lhb_econ ? d.lhb_econ + ' RPO' : '—'}
+          </div>
+        </div>
+      ` : ''}
     </div>`;
   };
+
+  const stratProf = p.batting?.strategic_profile || p.bowling?.strategic_profile;
 
   document.getElementById('player-modal-body').innerHTML = `
     <div class="modal-head">
@@ -2421,6 +2450,18 @@ async function openPlayer(cid) {
       <div style="font-size:0.75rem;text-transform:uppercase;color:var(--rr-pink);font-weight:700;margin-bottom:4px">Cricket Analyst Scouting Assessment:</div>
       <div style="font-size:0.92rem;color:var(--text)">${analystBlurb}</div>
     </div>
+
+    ${stratProf ? `
+      <div class="card" style="margin-bottom:16px;border-left:4px solid var(--gold);background:var(--surface-card);padding:12px 16px">
+        <div style="font-size:0.75rem;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px">
+          Rajasthan Royals 4-Question Strategic Intelligence:
+        </div>
+        <div style="font-size:0.83rem;margin-bottom:5px"><strong>1. Discovery:</strong> ${stratProf.q1_discovery}</div>
+        <div style="font-size:0.83rem;margin-bottom:5px"><strong>2. Significance:</strong> ${stratProf.q2_significance}</div>
+        <div style="font-size:0.83rem;margin-bottom:5px"><strong>3. RR Implication:</strong> ${stratProf.q3_rr_implication}</div>
+        <div style="font-size:0.83rem;color:var(--cyan)"><strong>4. Scouting Decision:</strong> ${stratProf.q4_scouting_decision}</div>
+      </div>
+    ` : ''}
 
     <div class="kv" style="margin-bottom:16px">
       <div class="k">RR Acquisition Recommendation</div>

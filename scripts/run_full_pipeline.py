@@ -209,6 +209,19 @@ def step_10_player_evaluation_and_official_deliverables(
     return pe_results
 
 
+def step_11_cricket_intelligence() -> Dict[str, Any]:
+    """Step 11: Strategic cricket intelligence, matchup splits, and behavioral composure proxies."""
+    logger.info("=== STEP 11/11: Strategic Cricket Intelligence & Composure Proxies ===")
+    t0 = time.time()
+    from src.cricket_intelligence import generate_cricket_intelligence_summary
+    ci_results = generate_cricket_intelligence_summary()
+    out_path = DATA_PROCESSED / "cricket_intelligence_summary.json"
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(ci_results, f, indent=2)
+    logger.info(f"Cricket intelligence completed and saved to {out_path} in {time.time() - t0:.1f}s.")
+    return ci_results
+
+
 def run_full_pipeline(force: bool = False) -> Dict[str, Any]:
     """Runs the complete, reproducible end-to-end pipeline from raw data to final deliverables."""
     logger.info("=================================================================")
@@ -236,6 +249,9 @@ def run_full_pipeline(force: bool = False) -> Dict[str, Any]:
     # 10. Separated Dimensions & Official Deliverables Export
     pe_results = step_10_player_evaluation_and_official_deliverables(bat_df, bowl_df)
 
+    # 11. Strategic Cricket Intelligence & Composure Proxies
+    ci_results = step_11_cricket_intelligence()
+
     total_time = time.time() - start_time
     logger.info("=================================================================")
     logger.info(f"PIPELINE COMPLETED SUCCESSFULLY IN {total_time:.1f} SECONDS")
@@ -247,6 +263,7 @@ def run_full_pipeline(force: bool = False) -> Dict[str, Any]:
     logger.info("  - player_evaluation_summary.json")
     logger.info("  - wp_benchmark_summary.json")
     logger.info("  - weight_sensitivity_summary.json")
+    logger.info("  - cricket_intelligence_summary.json")
     logger.info("=================================================================")
 
     # Write pipeline execution summary

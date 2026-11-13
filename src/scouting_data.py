@@ -179,6 +179,12 @@ class ScoutingStore:
         self.bowl_cards = pd.read_csv(DATA_PROCESSED / "phase4_bowl_benchmark15_cards.csv").set_index("canonical_player_id")
         self.archetype_leaders = pd.read_csv(DATA_PROCESSED / "final_7_archetype_leaders.csv")
 
+        ci_path = DATA_PROCESSED / "cricket_intelligence_summary.json"
+        self.cricket_intel = self._load_json(ci_path) if ci_path.exists() else {}
+        self.bat_intel = self.cricket_intel.get("batting_intelligence", {})
+        self.bowl_intel = self.cricket_intel.get("bowling_intelligence", {})
+        self.strategic_profiles = self.cricket_intel.get("strategic_profiles", {})
+
         raw_bat_meta, raw_bowl_meta = self._extract_raw_player_metadata()
         self.bat_records = self._build_batter_records(raw_bat_meta)
         self.bowl_records = self._build_bowler_records(raw_bowl_meta)
@@ -460,6 +466,8 @@ class ScoutingStore:
                 "cap_status": str(card["cap_status"]) if card is not None and pd.notna(card.get("cap_status")) else "Unverified",
                 "age_2026": str(card["age_2026"]) if card is not None and pd.notna(card.get("age_2026")) else "Unverified",
                 **avail,
+                **self.bat_intel.get(str(cid), {}),
+                "strategic_profile": self.strategic_profiles.get(cid) or self.strategic_profiles.get(str(cid)),
             })
         return records
 
@@ -549,6 +557,8 @@ class ScoutingStore:
                 "cap_status": str(card["cap_status"]) if card is not None and pd.notna(card.get("cap_status")) else "Unverified",
                 "age_2026": str(card["age_2026"]) if card is not None and pd.notna(card.get("age_2026")) else "Unverified",
                 **avail,
+                **self.bowl_intel.get(str(cid), {}),
+                "strategic_profile": self.strategic_profiles.get(cid) or self.strategic_profiles.get(str(cid)),
             })
         return records
 
@@ -815,6 +825,12 @@ class ScoutingStore:
         if ws_path.exists():
             return self._load_json(ws_path)
         return {"status": "Weight sensitivity data not generated yet."}
+
+    def get_cricket_intelligence(self) -> Dict[str, Any]:
+        ci_path = DATA_PROCESSED / "cricket_intelligence_summary.json"
+        if ci_path.exists():
+            return self._load_json(ci_path)
+        return {"status": "Cricket intelligence data not generated yet."}
 
     def get_player_evaluations(self) -> Dict[str, Any]:
         pe_path = DATA_PROCESSED / "player_evaluation_summary.json"
