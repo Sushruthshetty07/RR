@@ -12,18 +12,22 @@ from typing import List, Optional
 
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 from src.scouting_data import AVAILABILITY_STATUSES, get_store
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = PROJECT_ROOT / "templates"
+STATIC_DIR = PROJECT_ROOT / "static"
 
 app = FastAPI(
     title="Rajasthan Royals SupeRR Selector — IPL 2027 Scouting & Analytics",
     version="2.0.0",
 )
 templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
+if STATIC_DIR.exists():
+    app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 
 
 @app.get("/", response_class=HTMLResponse)

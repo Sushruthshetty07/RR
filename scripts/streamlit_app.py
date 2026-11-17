@@ -49,8 +49,64 @@ def main():
         initial_sidebar_state="expanded",
     )
 
-    st.title("🏏 Rajasthan Royals SupeRR Selector 2.0")
-    st.caption("IPL Player Reliability, High-Pressure Clutch Evaluation & Auction Intelligence | 200,999 Balls | 867 Matches")
+    st.markdown("""
+    <style>
+      :root { color-scheme: dark; }
+      .stApp { 
+        background: radial-gradient(ellipse at 80% -15%, rgba(234, 26, 133, 0.12), transparent 45%), radial-gradient(ellipse at 20% 110%, rgba(37, 74, 165, 0.15), transparent 50%), #07090E; 
+        color: #F8FAFC; 
+        font-family: 'Inter', -apple-system, sans-serif;
+      }
+      [data-testid="stHeader"] { background: rgba(7, 9, 14, 0.85); backdrop-filter: blur(12px); }
+      [data-testid="stSidebar"] { 
+        background: #0E131F; 
+        border-right: 1px solid rgba(255, 255, 255, 0.08); 
+      }
+      [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p { color: #94A3B8; }
+      h1, h2, h3 { letter-spacing: -0.025em; font-weight: 700; }
+      h1 { 
+        background: linear-gradient(135deg, #FFFFFF 40%, #EA1A85 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: clamp(1.6rem, 3.2vw, 2.3rem) !important; 
+      }
+      h2, h3 { color: #F8FAFC; }
+      [data-testid="stMetric"] { 
+        background: #121826; 
+        border: 1px solid rgba(255, 255, 255, 0.08); 
+        border-top: 3px solid #EA1A85;
+        border-radius: 12px; 
+        padding: 14px 18px; 
+        box-shadow: 0 4px 12px -2px rgba(0,0,0,0.4);
+      }
+      [data-testid="stMetricLabel"] { color: #94A3B8; font-size: 0.78rem; text-transform: uppercase; font-weight: 600; }
+      [data-testid="stMetricValue"] { color: #F8FAFC; font-family: 'JetBrains Mono', monospace; font-weight: 800; }
+      [data-testid="stDataFrame"], [data-testid="stTable"] { 
+        border: 1px solid rgba(255, 255, 255, 0.08); 
+        border-radius: 10px; 
+        background: #121826;
+        overflow: hidden; 
+      }
+      [data-testid="stAlert"] { border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.1); }
+      .stButton > button, [data-testid="stDownloadButton"] button { 
+        border-radius: 8px; 
+        border: 1px solid rgba(255, 255, 255, 0.15); 
+        background: #182235;
+        color: #F8FAFC;
+        font-weight: 600;
+      }
+      .stButton > button:hover { 
+        border-color: #EA1A85; 
+        background: rgba(234, 26, 133, 0.15);
+        color: #FFFFFF; 
+      }
+      [data-testid="stRadio"] label { color: #94A3B8; font-weight: 500; }
+      @media (max-width: 640px) { .block-container { padding: 1.1rem .8rem 2rem; } }
+    </style>
+    """, unsafe_allow_html=True)
+
+    st.title("Rajasthan Royals SupeRR Selector 2.0")
+    st.caption("Performance, pressure and recruitment intelligence · IPL 2027")
 
     # Load core datasets
     bat_df = pd.read_csv(DATA_PROCESSED / "final_bat_enriched_delta.csv") if (DATA_PROCESSED / "final_bat_enriched_delta.csv").exists() else pd.DataFrame()
@@ -58,6 +114,7 @@ def main():
     wp_summary = load_json(DATA_PROCESSED / "wp_benchmark_summary.json")
     ws_summary = load_json(DATA_PROCESSED / "weight_sensitivity_summary.json")
     pe_summary = load_json(DATA_PROCESSED / "player_evaluation_summary.json")
+    cricket_intel = load_json(DATA_PROCESSED / "cricket_intelligence_summary.json")
 
     # Sidebar Navigation
     page = st.sidebar.radio(
@@ -70,6 +127,7 @@ def main():
             "5. Pressure & Leverage",
             "6. RR Auction Intelligence",
             "7. Model Evaluation",
+            "8. Tactical Player Intelligence",
         ],
     )
 
@@ -110,6 +168,7 @@ def main():
             c1, c2 = st.columns(2)
             with c1:
                 st.markdown("#### PRIMARY: Top 10 High-Pressure Batters (Neff_HP >= 30, Sorted by LCB)")
+                st.caption("Conservative lower-bound score (z = 0.5), not a 95% CI or probability. Adjacent ranks are not statistically separable.")
                 robust_hp = bat_elig[bat_elig["neff_hp"] >= 30].sort_values("hp_raa_lcb", ascending=False).head(10)
                 st.dataframe(robust_hp[["player_name", "hp_raa_lcb", "hp_raa_post", "neff_hp", "pri_score_lcb"]].reset_index(drop=True))
 
@@ -135,6 +194,7 @@ def main():
         c1, c2 = st.columns(2)
         with c1:
             st.markdown("#### PRIMARY: Top 10 High-Pressure Bowlers (Neff_HP >= 30, Sorted by LCB)")
+            st.caption("Conservative lower-bound score (z = 0.5), not a 95% CI or probability. Adjacent ranks are not statistically separable.")
             robust_hp_b = bowl_elig[bowl_elig["neff_hp"] >= 30].sort_values("hp_impact_lcb", ascending=False).head(10)
             st.dataframe(robust_hp_b[["player_name", "hp_impact_lcb", "hp_impact_post", "neff_hp", "pri_score_lcb"]].reset_index(drop=True))
 
@@ -189,6 +249,36 @@ def main():
         if ws_summary and "batting" in ws_summary:
             st.markdown("#### Weight Sensitivity: Pairwise Spearman Rank Correlations")
             st.dataframe(pd.DataFrame(ws_summary["batting"]["correlation_matrix"]))
+
+    elif page == "8. Tactical Player Intelligence":
+        st.subheader("Observed tactical profiles")
+        st.caption("These are event-sequence observations. They are not direct measurements of a player's psychological traits.")
+        method = cricket_intel.get("metadata", {}).get("statistical_methods", {})
+        baseline = cricket_intel.get("metadata", {}).get("league_baselines", {})
+        batting, bowling, profiles = st.tabs(["Batting responses", "Bowling responses", "Strategic profiles"])
+        with batting:
+            st.markdown("#### High-pressure batting and post-dot response")
+            rows = list(cricket_intel.get("batting_intelligence", {}).values())
+            if rows:
+                st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+            else:
+                st.info("Batting tactical intelligence data is not available.")
+            st.caption(f"League reference: {baseline.get('post_dot_high_pressure', {}).get('total_deliveries', 0):,} post-dot opportunities · {method.get('confidence_level', 0.95):.0%} confidence intervals")
+        with bowling:
+            st.markdown("#### Bowling response after conceding a boundary")
+            rows = list(cricket_intel.get("bowling_intelligence", {}).values())
+            if rows:
+                st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+            else:
+                st.info("Bowling tactical intelligence data is not available.")
+            st.caption(f"League reference: {baseline.get('post_boundary_bowling', {}).get('total_deliveries', 0):,} post-boundary opportunities · {method.get('confidence_level', 0.95):.0%} confidence intervals")
+        with profiles:
+            st.markdown("#### Four-question scouting profiles")
+            rows = [{**value, "player_name": value.get("player_name", "")} for value in cricket_intel.get("strategic_profiles", {}).values()]
+            if rows:
+                st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+            else:
+                st.info("Strategic player profiles are not available.")
 
 
 if __name__ == "__main__":

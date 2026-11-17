@@ -84,7 +84,7 @@ def generate_analyst_blurb(
         1699: "Elite 360-degree chase accelerator. Maintains extraordinary boundary striking (+29.15 runs above expected per 100 balls) under severe pressure with substantial experience.",
         1077: "Veteran clutch finisher. Consistently navigates steep run chases with minimal dismissal risk and elite boundary striking in overs 16–20.",
         7260: "Rajasthan Royals' home-grown crunch performer. Delivers +24.88 runs above expected under peak chase pressure with ice-cool composure.",
-        2258: "RR franchise captain who anchors and accelerates through mid-innings pressure collapses, combining strike rotation with high boundary percentage.",
+        2258: "Marquee Indian WK-batter and former RR captain (CSK in 2026) who anchors and accelerates through mid-innings pressure collapses, combining strike rotation with high boundary percentage.",
         8101: "Explosive lower-order hitter who proved his mettle in extreme death chases (+23.15 runs/100b), striking at elite rates against high pace.",
         6396: "Power-hitting death overs specialist. Excels at clearing the boundary straight down the ground in high-leverage 12+ RRR finishes.",
         1107: "Experienced international all-rounder who uses composed placement and boundary hitting when team wickets tumble.",
