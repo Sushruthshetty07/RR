@@ -2,6 +2,16 @@
 # Rajasthan Royals SupeRR Selector 2.0
 ### IPL Player Reliability, High-Pressure Clutch Evaluation & Auction Intelligence Platform
 
+## Deploy to Render
+
+This repository includes a Render Blueprint in `render.yaml`. To create and deploy the web service:
+
+1. Sign in to [Render](https://dashboard.render.com/).
+2. Choose **New > Blueprint** and connect the `Sushruthshetty07/RR` GitHub repository.
+3. Confirm the `superr-selector` service and choose **Apply**.
+
+Render installs `requirements.txt`, starts the FastAPI app with Uvicorn, and checks `/api/overview` for service health. The Blueprint uses Render's free instance plan; free services can spin down while idle and take a short time to respond to the next request.
+
 [![CI Pipeline](https://github.com/Sushruthshetty07/RR/actions/workflows/ci.yml/badge.svg)](https://github.com/Sushruthshetty07/RR/actions/workflows/ci.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688.svg)](https://fastapi.tiangolo.com)
