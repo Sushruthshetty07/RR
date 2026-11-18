@@ -15,6 +15,10 @@ from pathlib import Path
 
 import pandas as pd
 
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 from src.scouting_data import EXCLUDED_FROM_ACQUISITION, get_store
 from src.web_app import (
     api_compare,
@@ -72,7 +76,7 @@ class TestScoutingDashboard(unittest.TestCase):
         acquisition_pool = buckets["confirmed_auction"] + buckets["pending_registration"]
         for r in acquisition_pool:
             self.assertNotIn(r["availability_status"], EXCLUDED_FROM_ACQUISITION)
-            self.assertEqual(r["availability_status"], "Released, auction registration pending/unverified")
+            self.assertIn(r["availability_status"], ("CONFIRMED_RELEASED", "Released, auction registration pending/unverified"))
 
         # Trade watchlist strictly separated from ordinary auction buckets
         watchlist_ids = {r["canonical_player_id"] for r in buckets["trade_watchlist"]}
@@ -109,7 +113,7 @@ class TestScoutingDashboard(unittest.TestCase):
             detail = self.store.get_player_detail(cid)
             self.assertIsNotNone(detail, f"Missing player {cid}")
             self.assertEqual(detail["current_2027_team"], expected_team)
-            self.assertEqual(detail["availability_status"], "Contracted to another franchise")
+            self.assertIn(detail["availability_status"], ("CONFIRMED_OTHER_TEAM", "Contracted to another franchise"))
 
         trades = self.store.get_trades_overview()
         self.assertEqual(len(trades["official_completed_trades"]), 4)
@@ -167,6 +171,12 @@ class TestScoutingDashboard(unittest.TestCase):
             self.assertEqual(get_json("/api/player/1699")["player_name"], "Suryakumar Yadav")
             self.assertEqual(len(get_json("/api/compare?ids=479,2636")["players"]), 2)
             self.assertIn("accounting", get_json("/api/methodology"))
+
+            off = get_json("/api/rankings/official-top10")
+            self.assertEqual(len(off["deliverable_01"]["batters"]), 10)
+            self.assertEqual(len(off["deliverable_01"]["bowlers"]), 10)
+            self.assertEqual(off["deliverable_01"]["batters"][0]["player_name"], "Suryakumar Yadav")
+            self.assertEqual(off["deliverable_01"]["bowlers"][0]["player_name"], "Sunil Narine")
         finally:
             proc.terminate()
             proc.wait(timeout=5)

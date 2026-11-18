@@ -1,12 +1,19 @@
-# Virtual environment
+# Virtual environments
 .venv/
+.venv*/
 env/
 venv/
 __pycache__/
 *.pyc
 
-# Data files stay local; obtain them separately as needed.
-data/
+# Proprietary raw competition datasets stay strictly local per challenge rules
+data/raw/
+
+# Full 200,999 raw delivery row-level dataset (contains raw ball records)
+data/processed/deliveries_with_pressure.csv.gz
+
+# Obsolete preliminary archive directory
+data/processed/archive_pre_comp_tier/
 
 # Jupyter
 .ipynb_checkpoints/

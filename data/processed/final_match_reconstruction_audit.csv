@@ -1,0 +1,6 @@
+audit_case,match_id,comp_name,match_date,teams,n_balls_raw,n_balls_processed,innings_present,inn1_total,inn2_total,dls_status,p11_dup_keys,field_mismatches_across_9_cols,exact_match_pass
+IPL Final DLS (revised_target & reduced overs),21586,IPL 2023,2023-05-29,Chennai Super Kings vs Gujarat Titans,216,216,"1,2",214,171,standard,0,0,True
+Super Over tie-breaker (innings >= 3),34429,India in Sri Lanka T20I Series 2024,2024-07-30,Sri Lanka vs India,257,257,"1,2,3,4",137,137,standard,0,0,True
+Full Extras Categories (wide/overstep/other/bye/legbye/penalty),16753,Afghanistan in Ireland T20I Series 2022,2022-08-15,Ireland vs Afghanistan,138,138,"1,2",132,105,standard,0,0,True
+Non-Striker RunOut & Non-Bowler Dismissal,13513,England in West Indies T20I Series 2022,2022-01-26,West Indies vs England,252,252,"1,2",224,204,standard,0,0,True
+Standard Full-40-Over Chase (RR Latest),50944,IPL 2026,2026-05-29,Gujarat Titans vs Rajasthan Royals,241,241,"1,2",214,219,standard,0,0,True

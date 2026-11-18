@@ -1,0 +1,288 @@
+{
+  "overall_metrics": {
+    "logistic_regression": {
+      "roc_auc": 0.8099,
+      "pr_auc": 0.8049,
+      "brier_score": 0.1771,
+      "log_loss": 0.5198,
+      "precision": 0.717,
+      "recall": 0.7223,
+      "f1": 0.7196,
+      "mean_calibration_error": 0.0093
+    },
+    "random_forest": {
+      "roc_auc": 0.8006,
+      "pr_auc": 0.7969,
+      "brier_score": 0.181,
+      "log_loss": 0.5297,
+      "precision": 0.7029,
+      "recall": 0.7237,
+      "f1": 0.7132,
+      "mean_calibration_error": 0.0077
+    },
+    "gradient_boosting": {
+      "roc_auc": 0.7963,
+      "pr_auc": 0.7907,
+      "brier_score": 0.1837,
+      "log_loss": 0.5407,
+      "precision": 0.6989,
+      "recall": 0.7237,
+      "f1": 0.7111,
+      "mean_calibration_error": 0.0266
+    }
+  },
+  "slice_metrics": {
+    "Innings 1 (Setting) - logistic_regression": {
+      "roc_auc": 0.6935,
+      "pr_auc": 0.6803,
+      "brier_score": 0.2215,
+      "log_loss": 0.6328,
+      "precision": 0.6414,
+      "recall": 0.6528,
+      "f1": 0.6471,
+      "mean_calibration_error": 0.0199
+    },
+    "Innings 1 (Setting) - random_forest": {
+      "roc_auc": 0.6835,
+      "pr_auc": 0.6704,
+      "brier_score": 0.2246,
+      "log_loss": 0.6402,
+      "precision": 0.6248,
+      "recall": 0.67,
+      "f1": 0.6466,
+      "mean_calibration_error": 0.0266
+    },
+    "Innings 1 (Setting) - gradient_boosting": {
+      "roc_auc": 0.6775,
+      "pr_auc": 0.6655,
+      "brier_score": 0.2272,
+      "log_loss": 0.6496,
+      "precision": 0.621,
+      "recall": 0.6666,
+      "f1": 0.643,
+      "mean_calibration_error": 0.0498
+    },
+    "Innings 2 (Chase) - logistic_regression": {
+      "roc_auc": 0.8997,
+      "pr_auc": 0.8917,
+      "brier_score": 0.1286,
+      "log_loss": 0.3965,
+      "precision": 0.806,
+      "recall": 0.8022,
+      "f1": 0.8041,
+      "mean_calibration_error": 0.0057
+    },
+    "Innings 2 (Chase) - random_forest": {
+      "roc_auc": 0.8925,
+      "pr_auc": 0.8857,
+      "brier_score": 0.1334,
+      "log_loss": 0.4091,
+      "precision": 0.8012,
+      "recall": 0.7854,
+      "f1": 0.7932,
+      "mean_calibration_error": 0.0112
+    },
+    "Innings 2 (Chase) - gradient_boosting": {
+      "roc_auc": 0.8889,
+      "pr_auc": 0.8795,
+      "brier_score": 0.1362,
+      "log_loss": 0.4217,
+      "precision": 0.7959,
+      "recall": 0.7893,
+      "f1": 0.7926,
+      "mean_calibration_error": 0.0216
+    }
+  },
+  "correlation_pi_vs_leverage": {
+    "pearson": -0.1959,
+    "spearman": -0.1994
+  },
+  "mean_leverage": 7.07,
+  "p90_leverage": 13.17,
+  "n_deliveries_evaluated": 199029,
+  "n_matches_evaluated": 842,
+  "top_bat_wpa": [
+    {
+      "canonical_striker_id": 6281,
+      "player_name": "Abhishek Sharma",
+      "balls_faced": 2380,
+      "total_wpa": 9.168880653544864,
+      "wpa_per_100": 0.38524708628339766,
+      "hl_balls": 882,
+      "hl_wpa": 3.7740273288658654
+    },
+    {
+      "canonical_striker_id": 6819,
+      "player_name": "Yashasvi Jaiswal",
+      "balls_faced": 1936,
+      "total_wpa": 7.326428128881647,
+      "wpa_per_100": 0.3784312050042173,
+      "hl_balls": 800,
+      "hl_wpa": 3.565846823128281
+    },
+    {
+      "canonical_striker_id": 6396,
+      "player_name": "Tim David",
+      "balls_faced": 1293,
+      "total_wpa": 6.686413399793419,
+      "wpa_per_100": 0.5171240061711847,
+      "hl_balls": 221,
+      "hl_wpa": 1.0101313626625774
+    },
+    {
+      "canonical_striker_id": 5553,
+      "player_name": "Phil Salt",
+      "balls_faced": 1696,
+      "total_wpa": 6.46606982126729,
+      "wpa_per_100": 0.38125411682000526,
+      "hl_balls": 668,
+      "hl_wpa": 4.178040531531039
+    },
+    {
+      "canonical_striker_id": 6288,
+      "player_name": "Shubman Gill",
+      "balls_faced": 2768,
+      "total_wpa": 5.311312027332846,
+      "wpa_per_100": 0.19188265994699588,
+      "hl_balls": 987,
+      "hl_wpa": 2.312928368552659
+    },
+    {
+      "canonical_striker_id": 1699,
+      "player_name": "Suryakumar Yadav",
+      "balls_faced": 2812,
+      "total_wpa": 5.169127917023186,
+      "wpa_per_100": 0.18382389463098095,
+      "hl_balls": 591,
+      "hl_wpa": 1.10366714123893
+    },
+    {
+      "canonical_striker_id": 7897,
+      "player_name": "Namboori Tilak Varma",
+      "balls_faced": 2610,
+      "total_wpa": 4.171817463282076,
+      "wpa_per_100": 0.15983974955103739,
+      "hl_balls": 645,
+      "hl_wpa": 2.4798763592976503
+    },
+    {
+      "canonical_striker_id": 50284,
+      "player_name": "Vaibhav Sooryavanshi",
+      "balls_faced": 714,
+      "total_wpa": 3.7947634563903923,
+      "wpa_per_100": 0.5314794756849289,
+      "hl_balls": 283,
+      "hl_wpa": 2.028960825361448
+    },
+    {
+      "canonical_striker_id": 818,
+      "player_name": "Mitchell Marsh",
+      "balls_faced": 1783,
+      "total_wpa": 3.5528894501933537,
+      "wpa_per_100": 0.1992646915419716,
+      "hl_balls": 685,
+      "hl_wpa": 1.4802834758219503
+    },
+    {
+      "canonical_striker_id": 6280,
+      "player_name": "Harry Brook",
+      "balls_faced": 924,
+      "total_wpa": 3.3878436115919204,
+      "wpa_per_100": 0.36664974151427704,
+      "hl_balls": 152,
+      "hl_wpa": 1.8543311982023627
+    }
+  ],
+  "top_bowl_wpa": [
+    {
+      "canonical_bowler_id": 2876,
+      "player_name": "Axar Patel",
+      "balls_bowled": 2695,
+      "total_wpa": 6.925871975822651,
+      "wpa_per_100": 0.25698968370399444,
+      "hl_balls": 515,
+      "hl_wpa": 3.055615548020042
+    },
+    {
+      "canonical_bowler_id": 830,
+      "player_name": "Josh Hazlewood",
+      "balls_bowled": 1478,
+      "total_wpa": 6.34979452314244,
+      "wpa_per_100": 0.42962073904887965,
+      "hl_balls": 435,
+      "hl_wpa": 2.110229297755579
+    },
+    {
+      "canonical_bowler_id": 4722,
+      "player_name": "Rashid Khan",
+      "balls_bowled": 2780,
+      "total_wpa": 5.727384605117173,
+      "wpa_per_100": 0.20602102896104937,
+      "hl_balls": 527,
+      "hl_wpa": 3.0483534595850617
+    },
+    {
+      "canonical_bowler_id": 781,
+      "player_name": "Sunil Narine",
+      "balls_bowled": 1528,
+      "total_wpa": 5.265569320743674,
+      "wpa_per_100": 0.34460532203819855,
+      "hl_balls": 381,
+      "hl_wpa": 2.3354755130572795
+    },
+    {
+      "canonical_bowler_id": 7920,
+      "player_name": "Nathan Ellis",
+      "balls_bowled": 942,
+      "total_wpa": 4.855552322447227,
+      "wpa_per_100": 0.5154514142725295,
+      "hl_balls": 194,
+      "hl_wpa": 0.49193702022798214
+    },
+    {
+      "canonical_bowler_id": 1612,
+      "player_name": "Yuzvendra Chahal",
+      "balls_bowled": 2200,
+      "total_wpa": 4.695427319117519,
+      "wpa_per_100": 0.21342851450534178,
+      "hl_balls": 510,
+      "hl_wpa": 2.60356227484061
+    },
+    {
+      "canonical_bowler_id": 4219,
+      "player_name": "Krunal Pandya",
+      "balls_bowled": 1286,
+      "total_wpa": 4.127321816317915,
+      "wpa_per_100": 0.32094259846951123,
+      "hl_balls": 362,
+      "hl_wpa": 2.973456846609132
+    },
+    {
+      "canonical_bowler_id": 6256,
+      "player_name": "Varun Chakravarthy",
+      "balls_bowled": 2158,
+      "total_wpa": 3.9422016963155007,
+      "wpa_per_100": 0.1826784845373263,
+      "hl_balls": 447,
+      "hl_wpa": 0.10688705787773806
+    },
+    {
+      "canonical_bowler_id": 6464,
+      "player_name": "Arshdeep Singh",
+      "balls_bowled": 3388,
+      "total_wpa": 3.5726577912930995,
+      "wpa_per_100": 0.10545034803108319,
+      "hl_balls": 956,
+      "hl_wpa": -1.5455312477304606
+    },
+    {
+      "canonical_bowler_id": 3644,
+      "player_name": "Kuldeep Yadav",
+      "balls_bowled": 1952,
+      "total_wpa": 3.3120872509652663,
+      "wpa_per_100": 0.16967660097158127,
+      "hl_balls": 371,
+      "hl_wpa": 2.0934595251760344
+    }
+  ]
+}

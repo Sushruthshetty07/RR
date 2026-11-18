@@ -1,0 +1,684 @@
+{
+  "item12_invariant_audit": {
+    "n_deliveries_checked": 200999,
+    "n_matches_checked": 867,
+    "inv_ball_total_runs_exact": true,
+    "inv_bowler_runs_conceded_exact": true,
+    "inv_byes_legbyes_excluded_from_bowler": true,
+    "inv_legal_ball_definition_exact": true,
+    "n_non_bowler_wickets": 609,
+    "inv_non_bowler_wkts_excluded": true,
+    "n_non_striker_runouts_preserved": 0,
+    "max_innings_raw_table": 4,
+    "n_super_over_deliveries_flagged": 38,
+    "inv_super_over_flag_exact": true,
+    "inv_super_overs_excluded_in_modeling_pool": true,
+    "inv_no_match_outcome_columns_in_deliveries": true,
+    "inv_first_ball_pre_state_zero": true,
+    "dls_status_counts": {
+      "standard": 199358,
+      "dls_pre_innings_confirmed": 797,
+      "dls_innings_break_suspected": 487,
+      "dls_post_stoppage_suspected": 214,
+      "dls_pre_stoppage_suspected": 143
+    },
+    "comp_tier_counts": {}
+  },
+  "item1_wp_calibration": [
+    {
+      "slice": "Overall (Inn 1 + 2)",
+      "n_deliveries": 191212,
+      "n_matches": 812,
+      "actual_win_rate": 0.4899,
+      "pred_win_mean": 0.4931,
+      "roc_auc": 0.7785,
+      "log_loss": 0.5838,
+      "brier_score": 0.1958,
+      "mean_li_pp": 5.99,
+      "p90_li_pp": 11.88,
+      "corr_pi_li_pearson": 0.0058,
+      "corr_pi_li_spearman": -0.0185
+    },
+    {
+      "slice": "Innings 1 (Setting)",
+      "n_deliveries": 100210,
+      "n_matches": 812,
+      "actual_win_rate": 0.5035,
+      "pred_win_mean": 0.5093,
+      "roc_auc": 0.6375,
+      "log_loss": 0.749,
+      "brier_score": 0.2545,
+      "mean_li_pp": 4.87,
+      "p90_li_pp": 7.63,
+      "corr_pi_li_pearson": -0.3733,
+      "corr_pi_li_spearman": -0.3449
+    },
+    {
+      "slice": "Innings 2 (Chasing)",
+      "n_deliveries": 91002,
+      "n_matches": 801,
+      "actual_win_rate": 0.475,
+      "pred_win_mean": 0.4752,
+      "roc_auc": 0.8962,
+      "log_loss": 0.4019,
+      "brier_score": 0.1311,
+      "mean_li_pp": 7.22,
+      "p90_li_pp": 13.82,
+      "corr_pi_li_pearson": 0.079,
+      "corr_pi_li_spearman": 0.1174
+    },
+    {
+      "slice": "IPL Overall",
+      "n_deliveries": 87000,
+      "n_matches": 362,
+      "actual_win_rate": 0.4892,
+      "pred_win_mean": 0.492,
+      "roc_auc": 0.7861,
+      "log_loss": 0.5487,
+      "brier_score": 0.1882,
+      "mean_li_pp": 6.43,
+      "p90_li_pp": 11.94,
+      "corr_pi_li_pearson": 0.0279,
+      "corr_pi_li_spearman": -0.0279
+    },
+    {
+      "slice": "IPL Inn 2 Chase",
+      "n_deliveries": 41861,
+      "n_matches": 360,
+      "actual_win_rate": 0.4953,
+      "pred_win_mean": 0.4942,
+      "roc_auc": 0.886,
+      "log_loss": 0.4221,
+      "brier_score": 0.1376,
+      "mean_li_pp": 7.41,
+      "p90_li_pp": 13.86,
+      "corr_pi_li_pearson": 0.1783,
+      "corr_pi_li_spearman": 0.2108
+    },
+    {
+      "slice": "Senior T20I Overall",
+      "n_deliveries": 104212,
+      "n_matches": 450,
+      "actual_win_rate": 0.4906,
+      "pred_win_mean": 0.494,
+      "roc_auc": 0.7739,
+      "log_loss": 0.6131,
+      "brier_score": 0.2021,
+      "mean_li_pp": 5.63,
+      "p90_li_pp": 11.84,
+      "corr_pi_li_pearson": -0.0128,
+      "corr_pi_li_spearman": -0.0152
+    },
+    {
+      "slice": "Senior T20I Inn 2 Chase",
+      "n_deliveries": 49141,
+      "n_matches": 441,
+      "actual_win_rate": 0.4576,
+      "pred_win_mean": 0.4591,
+      "roc_auc": 0.9044,
+      "log_loss": 0.3847,
+      "brier_score": 0.1256,
+      "mean_li_pp": 7.06,
+      "p90_li_pp": 13.8,
+      "corr_pi_li_pearson": 0.0014,
+      "corr_pi_li_spearman": 0.0478
+    }
+  ],
+  "item1_li_sensitivity": [
+    {
+      "li_regime": "LI >= 8% (all WP)",
+      "n_bat_balls": 46519,
+      "pct_pool_balls": 25.31,
+      "elig_bat_neff10": 169,
+      "bat_rho_vs_hp_raa": 0.1924,
+      "bat_top10_vs_hp_raa": 2,
+      "bat_rho_vs_pri": 0.4861,
+      "elig_bowl_neff10": 183,
+      "bowl_rho_vs_hp_impact": 0.3647,
+      "bowl_top10_vs_hp_impact": 4,
+      "bowl_rho_vs_pri": 0.4951
+    },
+    {
+      "li_regime": "LI >= 10% (all WP)",
+      "n_bat_balls": 31074,
+      "pct_pool_balls": 16.9,
+      "elig_bat_neff10": 164,
+      "bat_rho_vs_hp_raa": 0.219,
+      "bat_top10_vs_hp_raa": 1,
+      "bat_rho_vs_pri": 0.4276,
+      "elig_bowl_neff10": 176,
+      "bowl_rho_vs_hp_impact": 0.3469,
+      "bowl_top10_vs_hp_impact": 4,
+      "bowl_rho_vs_pri": 0.4648
+    },
+    {
+      "li_regime": "LI >= 12% (all WP)",
+      "n_bat_balls": 17619,
+      "pct_pool_balls": 9.58,
+      "elig_bat_neff10": 158,
+      "bat_rho_vs_hp_raa": 0.2062,
+      "bat_top10_vs_hp_raa": 2,
+      "bat_rho_vs_pri": 0.3743,
+      "elig_bowl_neff10": 162,
+      "bowl_rho_vs_hp_impact": 0.1918,
+      "bowl_top10_vs_hp_impact": 3,
+      "bowl_rho_vs_pri": 0.3772
+    },
+    {
+      "li_regime": "LI >= 15% (all WP)",
+      "n_bat_balls": 6696,
+      "pct_pool_balls": 3.64,
+      "elig_bat_neff10": 118,
+      "bat_rho_vs_hp_raa": 0.2875,
+      "bat_top10_vs_hp_raa": 3,
+      "bat_rho_vs_pri": 0.3094,
+      "elig_bowl_neff10": 121,
+      "bowl_rho_vs_hp_impact": 0.196,
+      "bowl_top10_vs_hp_impact": 1,
+      "bowl_rho_vs_pri": 0.3213
+    },
+    {
+      "li_regime": "LI >= 10% & WP 25-75%",
+      "n_bat_balls": 26699,
+      "pct_pool_balls": 14.52,
+      "elig_bat_neff10": 148,
+      "bat_rho_vs_hp_raa": 0.1119,
+      "bat_top10_vs_hp_raa": 1,
+      "bat_rho_vs_pri": 0.389,
+      "elig_bowl_neff10": 174,
+      "bowl_rho_vs_hp_impact": 0.3061,
+      "bowl_top10_vs_hp_impact": 4,
+      "bowl_rho_vs_pri": 0.4504
+    },
+    {
+      "li_regime": "LI >= 12% & WP 10-90%",
+      "n_bat_balls": 17451,
+      "pct_pool_balls": 9.49,
+      "elig_bat_neff10": 158,
+      "bat_rho_vs_hp_raa": 0.1991,
+      "bat_top10_vs_hp_raa": 2,
+      "bat_rho_vs_pri": 0.3764,
+      "elig_bowl_neff10": 161,
+      "bowl_rho_vs_hp_impact": 0.1883,
+      "bowl_top10_vs_hp_impact": 3,
+      "bowl_rho_vs_pri": 0.3747
+    },
+    {
+      "li_regime": "Max(Bat,Bowl) LI >= 15%",
+      "n_bat_balls": 14539,
+      "pct_pool_balls": 7.91,
+      "elig_bat_neff10": 155,
+      "bat_rho_vs_hp_raa": 0.2552,
+      "bat_top10_vs_hp_raa": 3,
+      "bat_rho_vs_pri": 0.3446,
+      "elig_bowl_neff10": 156,
+      "bowl_rho_vs_hp_impact": 0.1812,
+      "bowl_top10_vs_hp_impact": 1,
+      "bowl_rho_vs_pri": 0.3988
+    },
+    {
+      "li_regime": "PI >= 60 (Inn2 only)",
+      "n_bat_balls": 15211,
+      "pct_pool_balls": 8.27,
+      "elig_bat_neff10": 151,
+      "bat_rho_vs_hp_raa": 0.9022,
+      "bat_top10_vs_hp_raa": 6,
+      "bat_rho_vs_pri": 0.3904,
+      "elig_bowl_neff10": 155,
+      "bowl_rho_vs_hp_impact": 0.0433,
+      "bowl_top10_vs_hp_impact": 3,
+      "bowl_rho_vs_pri": 0.2897
+    }
+  ],
+  "item2_roe_fit": [
+    {
+      "target": "Batting (batter runs on balls faced)",
+      "model": "Phase 3 Approved Context Baseline",
+      "n": 185702,
+      "rmse": 1.72711,
+      "mae": 1.31154,
+      "r2": 0.02066
+    },
+    {
+      "target": "Batting (batter runs on balls faced)",
+      "model": "Enriched RoE (+style, pace/spin, season x phase, score)",
+      "n": 185702,
+      "rmse": 1.72585,
+      "mae": 1.31,
+      "r2": 0.02208
+    },
+    {
+      "target": "Bowling (bowler_runs_conceded on legal balls)",
+      "model": "Phase 3 Approved Context Baseline",
+      "n": 184884,
+      "rmse": 1.72652,
+      "mae": 1.31101,
+      "r2": 0.02029
+    },
+    {
+      "target": "Bowling (bowler_runs_conceded on legal balls)",
+      "model": "Enriched RoE (+style, pace/spin, season x phase, score)",
+      "n": 184884,
+      "rmse": 1.72541,
+      "mae": 1.30972,
+      "r2": 0.02155
+    }
+  ],
+  "item2_item3_comparisons": {
+    "bat_enr_vs_raa_post": {
+      "n_compared": 188,
+      "spearman_rho": 0.9949,
+      "pearson_r": 0.9962,
+      "top10_overlap": 10,
+      "top20_overlap": 18,
+      "mean_abs_rank_shift": 3.95,
+      "max_abs_rank_shift": 17
+    },
+    "bat_enr_vs_pri_lcb": {
+      "n_compared": 188,
+      "spearman_rho": 0.767,
+      "pearson_r": 0.7563,
+      "top10_overlap": 5,
+      "top20_overlap": 13,
+      "mean_abs_rank_shift": 28.17,
+      "max_abs_rank_shift": 126
+    },
+    "bowl_enr_vs_rsaa_post": {
+      "n_compared": 200,
+      "spearman_rho": 0.9717,
+      "pearson_r": 0.9734,
+      "top10_overlap": 8,
+      "top20_overlap": 14,
+      "mean_abs_rank_shift": 10.2,
+      "max_abs_rank_shift": 44
+    },
+    "bowl_enr_vs_pri_lcb": {
+      "n_compared": 200,
+      "spearman_rho": 0.9099,
+      "pearson_r": 0.8753,
+      "top10_overlap": 8,
+      "top20_overlap": 14,
+      "mean_abs_rank_shift": 17.84,
+      "max_abs_rank_shift": 96
+    },
+    "bowl_extras_attribution_tot_vs_conc": {
+      "n_compared": 200,
+      "spearman_rho": 0.9919,
+      "pearson_r": 0.9942,
+      "top10_overlap": 8,
+      "top20_overlap": 18,
+      "mean_abs_rank_shift": 4.21,
+      "max_abs_rank_shift": 64
+    },
+    "bat_delta_pi_vs_li10_rho": 0.0941,
+    "bowl_delta_pi_vs_li10_rho": 0.1197
+  },
+  "item4_item5_bootstrap_stability": {
+    "bat_median_deff_raa": 1.083,
+    "bat_p90_deff_raa": 1.951,
+    "bat_median_deff_hp": 1.123,
+    "bowl_median_deff_rsaa": 1.2,
+    "bowl_p90_deff_rsaa": 2.096,
+    "bowl_median_deff_hp": 1.005,
+    "bat_cluster_pri_vs_approved": {
+      "n_compared": 188,
+      "spearman_rho": 0.9954,
+      "pearson_r": 0.9964,
+      "top10_overlap": 10,
+      "top20_overlap": 20,
+      "mean_abs_rank_shift": 3.65,
+      "max_abs_rank_shift": 19
+    },
+    "bowl_cluster_pri_vs_approved": {
+      "n_compared": 200,
+      "spearman_rho": 0.992,
+      "pearson_r": 0.9928,
+      "top10_overlap": 10,
+      "top20_overlap": 19,
+      "mean_abs_rank_shift": 4.99,
+      "max_abs_rank_shift": 34
+    },
+    "bat_invsd_pri_vs_approved": {
+      "n_compared": 188,
+      "spearman_rho": 0.9624,
+      "pearson_r": 0.9678,
+      "top10_overlap": 9,
+      "top20_overlap": 19,
+      "mean_abs_rank_shift": 10.6,
+      "max_abs_rank_shift": 53
+    },
+    "bowl_invsd_pri_vs_approved": {
+      "n_compared": 200,
+      "spearman_rho": 0.9626,
+      "pearson_r": 0.9678,
+      "top10_overlap": 8,
+      "top20_overlap": 19,
+      "mean_abs_rank_shift": 10.81,
+      "max_abs_rank_shift": 64
+    },
+    "bat_cons_vs_match_sd_rho": 0.0571,
+    "bowl_cons_vs_match_sd_rho": -0.009,
+    "bat_repeatability": {
+      "odd_even_repeatability": {
+        "n": 314,
+        "pearson_r": 0.1086,
+        "spearman_rho": 0.1462,
+        "spearman_brown": 0.1958
+      },
+      "chrono_split_half_repeatability": {
+        "n": 314,
+        "pearson_r": 0.1255,
+        "spearman_rho": 0.0282,
+        "spearman_brown": 0.2229
+      }
+    },
+    "bowl_repeatability": {
+      "odd_even_repeatability": {
+        "n": 275,
+        "pearson_r": -0.0426,
+        "spearman_rho": -0.023,
+        "spearman_brown": -0.0891
+      },
+      "chrono_split_half_repeatability": {
+        "n": 275,
+        "pearson_r": -0.0091,
+        "spearman_rho": 0.0564,
+        "spearman_brown": -0.0184
+      }
+    }
+  },
+  "item6_item7_pdi_wicket_quality": {
+    "n_non_bowler_wkts_excluded_in_wq": 459,
+    "n_bowler_wkts_in_wq": 7882,
+    "bat_pdi_equal_vs_pri": {
+      "n_compared": 188,
+      "spearman_rho": 0.7747,
+      "pearson_r": 0.7887,
+      "top10_overlap": 6,
+      "top20_overlap": 15,
+      "mean_abs_rank_shift": 27.43,
+      "max_abs_rank_shift": 102
+    },
+    "bat_pdi_peak_vs_pri": {
+      "n_compared": 188,
+      "spearman_rho": 0.7512,
+      "pearson_r": 0.7481,
+      "top10_overlap": 4,
+      "top20_overlap": 13,
+      "mean_abs_rank_shift": 29.97,
+      "max_abs_rank_shift": 112
+    },
+    "bowl_pdi_equal_vs_pri": {
+      "n_compared": 200,
+      "spearman_rho": 0.808,
+      "pearson_r": 0.8236,
+      "top10_overlap": 7,
+      "top20_overlap": 13,
+      "mean_abs_rank_shift": 27.17,
+      "max_abs_rank_shift": 127
+    },
+    "bowl_pdi_peak_vs_pri": {
+      "n_compared": 200,
+      "spearman_rho": 0.681,
+      "pearson_r": 0.7068,
+      "top10_overlap": 5,
+      "top20_overlap": 12,
+      "mean_abs_rank_shift": 35.58,
+      "max_abs_rank_shift": 138
+    },
+    "waa_meta_wqa_k0": 8065.6,
+    "waa_meta_wqb_k0": 4861.6,
+    "waa_meta_wqc_k0": 8951.2,
+    "bowl_wqa_vs_waa": {
+      "n_compared": 200,
+      "spearman_rho": 0.9663,
+      "pearson_r": 0.9734,
+      "top10_overlap": 8,
+      "top20_overlap": 17,
+      "mean_abs_rank_shift": 9.87,
+      "max_abs_rank_shift": 90
+    },
+    "bowl_pri_wqa_vs_approved": {
+      "n_compared": 200,
+      "spearman_rho": 0.9983,
+      "pearson_r": 0.9989,
+      "top10_overlap": 10,
+      "top20_overlap": 19,
+      "mean_abs_rank_shift": 2.06,
+      "max_abs_rank_shift": 21
+    },
+    "bowl_pri_wqb_vs_approved": {
+      "n_compared": 200,
+      "spearman_rho": 0.9989,
+      "pearson_r": 0.9993,
+      "top10_overlap": 10,
+      "top20_overlap": 19,
+      "mean_abs_rank_shift": 1.69,
+      "max_abs_rank_shift": 17
+    },
+    "bowl_pri_wqc_vs_approved": {
+      "n_compared": 200,
+      "spearman_rho": 0.9984,
+      "pearson_r": 0.9989,
+      "top10_overlap": 9,
+      "top20_overlap": 19,
+      "mean_abs_rank_shift": 2.19,
+      "max_abs_rank_shift": 13
+    },
+    "pace_yorker_pct_vs_pri_rho": 0.072,
+    "pace_bouncer_pct_vs_pri_rho": -0.0109,
+    "pace_full_toss_pct_vs_pri_rho": 0.0008
+  },
+  "item8_two_way_matchups": {
+    "n_batters": 824,
+    "n_bowlers": 595,
+    "n_connected_components": 1,
+    "largest_component_pct": 100.0,
+    "n_bridge_batters": 182,
+    "n_bridge_bowlers": 143,
+    "oof_rmse_ctx_only": 1.72711,
+    "oof_rmse_plus_twoway": 1.72334,
+    "oof_mae_ctx_only": 1.31154,
+    "oof_mae_plus_twoway": 1.30723,
+    "bat_tw_vs_raa_post": {
+      "n_compared": 188,
+      "spearman_rho": 0.7887,
+      "pearson_r": 0.8297,
+      "top10_overlap": 7,
+      "top20_overlap": 14,
+      "mean_abs_rank_shift": 26.57,
+      "max_abs_rank_shift": 102
+    },
+    "bat_tw_vs_pri_lcb": {
+      "n_compared": 188,
+      "spearman_rho": 0.7667,
+      "pearson_r": 0.7434,
+      "top10_overlap": 5,
+      "top20_overlap": 11,
+      "mean_abs_rank_shift": 28.35,
+      "max_abs_rank_shift": 108
+    },
+    "bowl_tw_vs_rsaa_post": {
+      "n_compared": 200,
+      "spearman_rho": 0.8102,
+      "pearson_r": 0.8265,
+      "top10_overlap": 5,
+      "top20_overlap": 14,
+      "mean_abs_rank_shift": 27.08,
+      "max_abs_rank_shift": 104
+    },
+    "bowl_tw_vs_pri_lcb": {
+      "n_compared": 200,
+      "spearman_rho": 0.8154,
+      "pearson_r": 0.8027,
+      "top10_overlap": 4,
+      "top20_overlap": 13,
+      "mean_abs_rank_shift": 26.67,
+      "max_abs_rank_shift": 108
+    }
+  },
+  "item9_season_venue": {
+    "n_venues": 96,
+    "venues_lt5_matches": 51,
+    "venues_lt10_matches": 68,
+    "oof_rmse_base": 1.72711,
+    "oof_rmse_hier": 1.72611,
+    "max_abs_season_phase_resid_100_base": 6.32,
+    "max_abs_season_phase_resid_100_hier": 2.38,
+    "bat_hier_vs_raa_post": {
+      "n_compared": 188,
+      "spearman_rho": 0.9932,
+      "pearson_r": 0.9958,
+      "top10_overlap": 10,
+      "top20_overlap": 18,
+      "mean_abs_rank_shift": 4.2,
+      "max_abs_rank_shift": 38
+    }
+  },
+  "item10_comp_calibration": {
+    "bat_bridge_ipl_vs_all_t20i": {
+      "n_bridge": 107,
+      "mean_a": -3.77,
+      "mean_b": 2.73,
+      "diff_a_minus_b": -6.5,
+      "r": 0.4548,
+      "rho": 0.3928
+    },
+    "bat_bridge_ipl_vs_top8_t20i": {
+      "n_bridge": 105,
+      "mean_a": -3.94,
+      "mean_b": 1.28,
+      "diff_a_minus_b": -5.21,
+      "r": 0.4624,
+      "rho": 0.4279
+    },
+    "bat_bridge_ipl_vs_other_t20i": {
+      "n_bridge": 58,
+      "mean_a": -0.75,
+      "mean_b": 13.17,
+      "diff_a_minus_b": -13.92,
+      "r": 0.3976,
+      "rho": 0.2643
+    },
+    "bowl_bridge_ipl_vs_all_t20i": {
+      "n_bridge": 118,
+      "mean_a": -0.01,
+      "mean_b": 0.43,
+      "diff_a_minus_b": -0.44,
+      "r": 0.1316,
+      "rho": 0.2
+    },
+    "bowl_bridge_ipl_vs_top8_t20i": {
+      "n_bridge": 113,
+      "mean_a": 0.02,
+      "mean_b": 0.29,
+      "diff_a_minus_b": -0.27,
+      "r": 0.1119,
+      "rho": 0.1746
+    },
+    "bowl_bridge_ipl_vs_other_t20i": {
+      "n_bridge": 76,
+      "mean_a": 0.07,
+      "mean_b": 1.09,
+      "diff_a_minus_b": -1.03,
+      "r": 0.2069,
+      "rho": 0.2566
+    },
+    "bat_weight_sensitivity": [
+      {
+        "n_compared": 188,
+        "spearman_rho": 1.0,
+        "pearson_r": 1.0,
+        "top10_overlap": 10,
+        "top20_overlap": 20,
+        "mean_abs_rank_shift": 0.0,
+        "max_abs_rank_shift": 0,
+        "scheme": "Approved (IPL=1.0, T20I=0.50)"
+      },
+      {
+        "n_compared": 188,
+        "spearman_rho": 0.9876,
+        "pearson_r": 0.9931,
+        "top10_overlap": 9,
+        "top20_overlap": 18,
+        "mean_abs_rank_shift": 4.83,
+        "max_abs_rank_shift": 49,
+        "scheme": "Light T20I (IPL=1.0, T20I=0.25)"
+      },
+      {
+        "n_compared": 188,
+        "spearman_rho": 0.9939,
+        "pearson_r": 0.9966,
+        "top10_overlap": 10,
+        "top20_overlap": 20,
+        "mean_abs_rank_shift": 3.51,
+        "max_abs_rank_shift": 38,
+        "scheme": "Heavy T20I (IPL=1.0, T20I=0.75)"
+      },
+      {
+        "n_compared": 188,
+        "spearman_rho": 0.9915,
+        "pearson_r": 0.9961,
+        "top10_overlap": 10,
+        "top20_overlap": 20,
+        "mean_abs_rank_shift": 3.69,
+        "max_abs_rank_shift": 50,
+        "scheme": "Opp-Tiered (1.0 / 0.65 / 0.25)"
+      }
+    ],
+    "bowl_weight_sensitivity": [
+      {
+        "n_compared": 200,
+        "spearman_rho": 1.0,
+        "pearson_r": 1.0,
+        "top10_overlap": 10,
+        "top20_overlap": 20,
+        "mean_abs_rank_shift": 0.0,
+        "max_abs_rank_shift": 0,
+        "scheme": "Approved (IPL=1.0, T20I=0.50)"
+      },
+      {
+        "n_compared": 200,
+        "spearman_rho": 0.9858,
+        "pearson_r": 0.9906,
+        "top10_overlap": 9,
+        "top20_overlap": 18,
+        "mean_abs_rank_shift": 5.81,
+        "max_abs_rank_shift": 43,
+        "scheme": "Light T20I (IPL=1.0, T20I=0.25)"
+      },
+      {
+        "n_compared": 200,
+        "spearman_rho": 0.9941,
+        "pearson_r": 0.9955,
+        "top10_overlap": 9,
+        "top20_overlap": 20,
+        "mean_abs_rank_shift": 3.87,
+        "max_abs_rank_shift": 28,
+        "scheme": "Heavy T20I (IPL=1.0, T20I=0.75)"
+      },
+      {
+        "n_compared": 200,
+        "spearman_rho": 0.9946,
+        "pearson_r": 0.9961,
+        "top10_overlap": 9,
+        "top20_overlap": 20,
+        "mean_abs_rank_shift": 3.73,
+        "max_abs_rank_shift": 32,
+        "scheme": "Opp-Tiered (1.0 / 0.65 / 0.25)"
+      }
+    ],
+    "emg_ipl_bat_bridge_n": 10,
+    "emg_ipl_bat_bridge_mean_raa_diff": -0.69,
+    "emg_ipl_bowl_bridge_n": 17,
+    "emg_ipl_bowl_bridge_mean_rsaa_diff": 0.39
+  },
+  "item11_tenure_progression": {
+    "bat_pct_left_censored_elig": 72.9,
+    "bowl_pct_left_censored_elig": 62.0,
+    "bat_median_tenure_months": 47.8,
+    "bowl_median_tenure_months": 37.9,
+    "bio_tenure_vs_true_age_r": 0.3496,
+    "bio_left_censored_pct": 84.8
+  }
+}

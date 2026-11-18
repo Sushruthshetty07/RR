@@ -1,0 +1,195 @@
+{
+  "accounting": {
+    "n_raw_matches": 883,
+    "n_matches_with_bbb": 867,
+    "n_raw_deliveries": 200999,
+    "n_super_over_deliveries": 38,
+    "n_regular_deliveries": 200961,
+    "dls_status_counts_all": {
+      "standard": 199358,
+      "dls_pre_innings_confirmed": 797,
+      "dls_innings_break_suspected": 487,
+      "dls_post_stoppage_suspected": 214,
+      "dls_pre_stoppage_suspected": 143
+    },
+    "n_suspected_dls_excluded": 844,
+    "n_emerging_total": 6985,
+    "n_emerging_regular": 6973,
+    "n_emerging_super_over": 12,
+    "n_primary_reg_no_emg_rows": 193144,
+    "n_primary_bat_balls_faced": 185702,
+    "n_primary_bowl_legal_balls": 184884,
+    "primary_by_tier": {
+      "IPL": {
+        "total_rows": 87456,
+        "bat_balls_faced": 83914,
+        "legal_balls": 83538,
+        "wides": 3542,
+        "noballs": 376
+      },
+      "Senior_T20I": {
+        "total_rows": 105688,
+        "bat_balls_faced": 101788,
+        "legal_balls": 101346,
+        "wides": 3900,
+        "noballs": 442
+      }
+    },
+    "playing_eleven_raw_rows": 28381,
+    "playing_eleven_dup_keys": 35,
+    "playing_eleven_rows_in_dup_groups": 75,
+    "playing_eleven_extra_rows_dropped": 40,
+    "playing_eleven_unique_rows": 28341,
+    "crosstab_rows": [
+      {
+        "comp_tier": "Emerging_Rising_T20",
+        "col": "(False, 'dls_innings_break_suspected')",
+        "count": 0
+      },
+      {
+        "comp_tier": "Emerging_Rising_T20",
+        "col": "(False, 'dls_post_stoppage_suspected')",
+        "count": 0
+      },
+      {
+        "comp_tier": "Emerging_Rising_T20",
+        "col": "(False, 'dls_pre_innings_confirmed')",
+        "count": 0
+      },
+      {
+        "comp_tier": "Emerging_Rising_T20",
+        "col": "(False, 'dls_pre_stoppage_suspected')",
+        "count": 0
+      },
+      {
+        "comp_tier": "Emerging_Rising_T20",
+        "col": "(False, 'standard')",
+        "count": 6973
+      },
+      {
+        "comp_tier": "Emerging_Rising_T20",
+        "col": "(True, 'standard')",
+        "count": 12
+      },
+      {
+        "comp_tier": "IPL",
+        "col": "(False, 'dls_innings_break_suspected')",
+        "count": 123
+      },
+      {
+        "comp_tier": "IPL",
+        "col": "(False, 'dls_post_stoppage_suspected')",
+        "count": 91
+      },
+      {
+        "comp_tier": "IPL",
+        "col": "(False, 'dls_pre_innings_confirmed')",
+        "count": 269
+      },
+      {
+        "comp_tier": "IPL",
+        "col": "(False, 'dls_pre_stoppage_suspected')",
+        "count": 3
+      },
+      {
+        "comp_tier": "IPL",
+        "col": "(False, 'standard')",
+        "count": 87187
+      },
+      {
+        "comp_tier": "IPL",
+        "col": "(True, 'standard')",
+        "count": 14
+      },
+      {
+        "comp_tier": "Senior_T20I",
+        "col": "(False, 'dls_innings_break_suspected')",
+        "count": 364
+      },
+      {
+        "comp_tier": "Senior_T20I",
+        "col": "(False, 'dls_post_stoppage_suspected')",
+        "count": 123
+      },
+      {
+        "comp_tier": "Senior_T20I",
+        "col": "(False, 'dls_pre_innings_confirmed')",
+        "count": 528
+      },
+      {
+        "comp_tier": "Senior_T20I",
+        "col": "(False, 'dls_pre_stoppage_suspected')",
+        "count": 140
+      },
+      {
+        "comp_tier": "Senior_T20I",
+        "col": "(False, 'standard')",
+        "count": 105160
+      },
+      {
+        "comp_tier": "Senior_T20I",
+        "col": "(True, 'standard')",
+        "count": 12
+      }
+    ]
+  },
+  "leakage": {
+    "bat_features": [
+      "ipl_phase",
+      "inn_phase",
+      "overid",
+      "venue_id",
+      "pressure_bat",
+      "wickets_in_hand_before",
+      "season_year"
+    ],
+    "bowl_features": [
+      "ipl_phase",
+      "inn_phase",
+      "overid",
+      "venue_id",
+      "pressure_bowl",
+      "wickets_in_hand_before",
+      "season_year"
+    ],
+    "bat_outcome_overlap": [],
+    "bowl_outcome_overlap": [],
+    "max_gkf_match_overlap": 0,
+    "preprocessing_fit_inside_fold": true,
+    "extras_multiplier_fit_inside_fold": true,
+    "dls_pre_stoppage_leakage_free": true,
+    "loo_inn1_self_excluded": true,
+    "eb_priors_in_sample_note": "Normal-Normal and Beta-Binomial EB priors (mu0, tau2, M0) are estimated empirically across the primary player pool (~188-200 eligible players) using OOF delivery residuals; temporal out-of-sample validation (train <=2024, test 2025-2026) confirms zero leakage in forward predictions."
+  },
+  "pp_alt_summary": {
+    "definition": "Powerplay (overs 1-6) balls with chase RRR>=10.5 or >=2 wickets lost scored at min(PI, 62)+ -> PI>=62",
+    "n_pp_balls_reclassified": 16969,
+    "pct_pp_balls_reclassified": 9.14,
+    "spearman_rho_vs_approved": 0.9642,
+    "top10_overlap_vs_approved": 9
+  },
+  "pressure_delta_summary": {
+    "bat_pct_elig_negative_delta": 46.8,
+    "bat_median_delta_100b": 0.59,
+    "bowl_pct_elig_negative_delta": 55.5,
+    "bowl_median_delta_po": -0.085,
+    "bowl_median_delta_100b": -1.41,
+    "temporal_n_bat": 97,
+    "temporal_r_bat_delta_vs_fut_hp_raw": 0.2987,
+    "temporal_r_bat_hp_post_vs_fut_hp_raw": 0.3566,
+    "temporal_n_bowl": 131,
+    "temporal_r_bowl_delta_vs_fut_hp_raw": -0.2197,
+    "temporal_r_bowl_hp_post_vs_fut_hp_raw": 0.122
+  },
+  "bootstrap_rank_meta": {
+    "n_boot": 2000,
+    "seed": 42,
+    "n_matches": 837,
+    "bat_top10_inc_ge_50_count": 4,
+    "bat_top10_rank_spread_median": 44.5,
+    "bowl_top10_inc_ge_50_count": 6,
+    "bowl_top10_rank_spread_median": 30.0,
+    "bat_pri_median_abs_diff_vs_point": 0.591,
+    "bowl_pri_median_abs_diff_vs_point": 0.466
+  }
+}

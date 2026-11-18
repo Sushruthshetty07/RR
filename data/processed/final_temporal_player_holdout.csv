@@ -1,0 +1,13 @@
+test,n_players,spearman_rho,weighted_r
+Batting: Approved EB RAA (<=2024 -> >=2025),232,0.2315,0.2115
+Batting: Enriched RoE (<=2024 -> >=2025),232,0.2172,0.2059
+Batting: Two-Way Ridge a=100 (<=2024 -> >=2025),232,0.2831,0.335
+Batting: Two-Way Ridge a=500 (<=2024 -> >=2025),232,0.2635,0.2993
+Batting HP Future: Approved HP RAA (<=2024 -> >=2025 HP),116,0.311,0.1477
+Batting HP Future: Approved Gen RAA (<=2024 -> >=2025 HP),123,0.3235,0.1285
+Bowling Econ: Approved EB RSAA (<=2024 -> >=2025),223,0.3032,0.3916
+Bowling Econ: Enriched RSAA (<=2024 -> >=2025),223,0.2794,0.367
+Bowling Econ: Two-Way Ridge a=100 (<=2024 -> >=2025),223,0.2644,0.3398
+Bowling Econ: Two-Way Ridge a=500 (<=2024 -> >=2025),223,0.275,0.3703
+Bowling Wkt: Approved EB WAA (<=2024 -> >=2025 WAA),223,0.0473,0.0821
+Bowling Wkt: Weighted Wicket Quality WQA (<=2024 -> >=2025 WAA),223,0.045,0.0835

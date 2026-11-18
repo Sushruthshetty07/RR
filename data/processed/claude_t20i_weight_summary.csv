@@ -1,0 +1,11 @@
+discipline,w_t20i,n_elig,spearman_rho_vs_050,top10_overlap_vs_050,top15_overlap_vs_050,mean_abs_rank_shift,max_abs_rank_shift
+Batting,0.0,178,0.9154,7,12,15.19,116
+Bowling,0.0,190,0.9106,6,10,15.62,110
+Batting,0.25,187,0.9853,8,14,5.93,46
+Bowling,0.25,199,0.9853,8,14,5.83,46
+Batting,0.5,188,1.0,10,15,0.0,0
+Bowling,0.5,200,1.0,10,15,0.0,0
+Batting,0.75,188,0.9923,9,12,3.83,42
+Bowling,0.75,200,0.9928,9,15,4.2,37
+Batting,1.0,189,0.979,8,12,6.47,62
+Bowling,1.0,200,0.9824,9,15,6.73,53

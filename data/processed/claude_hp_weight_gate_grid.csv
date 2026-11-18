@@ -1,0 +1,13 @@
+w_hp,min_neff_hp_gate,bat_elig_count,bat_top10_overlap_vs_approved,bat_rho_full_pool,sooryavanshi_in_top10,allen_in_top10,bowl_elig_count,bowl_top10_overlap_vs_approved,bowl_rho_full_pool
+0.15,0.0,188,10,1.0,True,True,200,10,1.0
+0.15,15.0,152,8,1.0,False,False,176,10,1.0
+0.15,30.0,124,8,1.0,False,False,156,10,1.0
+0.25,0.0,188,9,0.9857,True,True,200,9,0.9879
+0.25,15.0,152,8,0.9857,False,False,176,9,0.9879
+0.25,30.0,124,8,0.9857,False,False,156,9,0.9879
+0.35,0.0,188,8,0.9448,True,False,200,8,0.9513
+0.35,15.0,152,8,0.9448,False,False,176,8,0.9513
+0.35,30.0,124,8,0.9448,False,False,156,8,0.9513
+0.4,0.0,188,8,0.9179,True,False,200,7,0.9199
+0.4,15.0,152,7,0.9179,False,False,176,7,0.9199
+0.4,30.0,124,7,0.9179,False,False,156,7,0.9199

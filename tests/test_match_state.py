@@ -190,6 +190,10 @@ class TestMatchStateSynthetic(unittest.TestCase):
         self.assertEqual(out['is_batter_ball_faced'].tolist(), expected_faced)
 
 
+DATA_RAW_EXISTS = (PROJECT_ROOT / "data" / "raw" / "competitions.csv").exists()
+
+
+@unittest.skipUnless(DATA_RAW_EXISTS, "Proprietary raw competition dataset not present (kept local per challenge rules)")
 class TestFullDatasetIntegration(unittest.TestCase):
     """Integration tests on the full 200,999-delivery competition dataset."""
 

@@ -7,6 +7,7 @@ and Figures 29-32 in both `reports/figures/` and artifact `figures/`.
 """
 
 import json
+import os
 import shutil
 import sys
 from pathlib import Path

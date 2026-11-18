@@ -371,6 +371,10 @@ class TestPerformanceSynthetic(unittest.TestCase):
         self.assertEqual(int(emg_bowl.iloc[0]["emerging_legal_balls"]), 24)
 
 
+DATA_RAW_EXISTS = (PROJECT_ROOT / "data" / "raw" / "competitions.csv").exists() and (DATA_PROCESSED / "deliveries_with_pressure.csv.gz").exists()
+
+
+@unittest.skipUnless(DATA_RAW_EXISTS, "Proprietary raw competition dataset or full deliveries archive not present (kept local per challenge rules)")
 class TestPerformanceFullDataset(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

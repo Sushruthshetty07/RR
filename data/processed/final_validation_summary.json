@@ -1,0 +1,370 @@
+{
+  "reconstruction_audit": {
+    "all_cases_passed": true,
+    "n_cases": 5,
+    "total_raw_matches": 883,
+    "total_matches_with_bbb": 867,
+    "total_raw_deliveries": 200999,
+    "total_processed_deliveries": 200999,
+    "playing_eleven_duplicate_keys": 40,
+    "outcome_cols_in_processed_deliveries": [],
+    "mismatches_detail": []
+  },
+  "pressure_audit": {
+    "super_over_summary": {
+      "n_super_over_balls": 38,
+      "mean_pi_bat_super_over": NaN,
+      "mean_pi_bowl_super_over": NaN
+    },
+    "rrr_regimes": [
+      {
+        "rrr_regime": "RRR < 8",
+        "n": 25168,
+        "mean_pi": 22.77159877223699,
+        "median_pi": 22.59102962054472,
+        "p90_pi": 32.95471017342842,
+        "pct_hp": 0.0,
+        "mean_pi_bowl": 46.3306400566579,
+        "median_pi_bowl": 47.82811813153986,
+        "pct_hp_bowl": 6.432771773680865
+      },
+      {
+        "rrr_regime": "RRR 8-12",
+        "n": 40390,
+        "mean_pi": 41.37419854552513,
+        "median_pi": 40.59279868469596,
+        "p90_pi": 56.578665189977094,
+        "pct_hp": 6.085664768507057,
+        "mean_pi_bowl": 60.6715120873182,
+        "median_pi_bowl": 59.79774654922527,
+        "pct_hp_bowl": 47.43005694478831
+      },
+      {
+        "rrr_regime": "RRR 12-16",
+        "n": 13601,
+        "mean_pi": 66.54556110345912,
+        "median_pi": 66.94766752951115,
+        "p90_pi": 80.43839441378645,
+        "pct_hp": 72.80347033306374,
+        "mean_pi_bowl": 42.90232927852157,
+        "median_pi_bowl": 43.86302500241157,
+        "pct_hp_bowl": 2.345415778251599
+      },
+      {
+        "rrr_regime": "RRR 16-24",
+        "n": 5170,
+        "mean_pi": 59.34409620659012,
+        "median_pi": 62.27273557162695,
+        "p90_pi": 78.22948573454858,
+        "pct_hp": 55.16441005802708,
+        "mean_pi_bowl": 18.26231783925002,
+        "median_pi_bowl": 18.198560467608814,
+        "pct_hp_bowl": 0.0
+      },
+      {
+        "rrr_regime": "RRR >= 24 (Hopeless/Near-Impossible)",
+        "n": 3294,
+        "mean_pi": 16.33595507897986,
+        "median_pi": 14.697023491117188,
+        "p90_pi": 22.659836376315976,
+        "pct_hp": 0.0,
+        "mean_pi_bowl": 14.274680366855366,
+        "median_pi_bowl": 13.8233228198924,
+        "pct_hp_bowl": 0.0
+      }
+    ]
+  },
+  "bootstrap_2000": {
+    "n_boot_primary": 2000,
+    "seeds": [
+      42,
+      101,
+      2027
+    ],
+    "convergence": [
+      {
+        "n_boot": 400,
+        "seed": 42,
+        "bat_median_deff_raa": 1.083,
+        "bat_median_deff_hp": 1.123,
+        "bat_rho_vs_approved": 0.9954,
+        "bat_top10_overlap": 10,
+        "bat_max_rank_shift": 19,
+        "bowl_median_deff_rsaa": 1.254,
+        "bowl_median_deff_hp": 1.018,
+        "bowl_rho_vs_approved": 0.9913,
+        "bowl_top10_overlap": 10,
+        "bowl_max_rank_shift": 34
+      },
+      {
+        "n_boot": 1000,
+        "seed": 42,
+        "bat_median_deff_raa": 1.069,
+        "bat_median_deff_hp": 1.064,
+        "bat_rho_vs_approved": 0.9953,
+        "bat_top10_overlap": 10,
+        "bat_max_rank_shift": 18,
+        "bowl_median_deff_rsaa": 1.259,
+        "bowl_median_deff_hp": 1.068,
+        "bowl_rho_vs_approved": 0.9913,
+        "bowl_top10_overlap": 10,
+        "bowl_max_rank_shift": 33
+      },
+      {
+        "n_boot": 2000,
+        "seed": 42,
+        "bat_median_deff_raa": 1.076,
+        "bat_median_deff_hp": 1.084,
+        "bat_rho_vs_approved": 0.9954,
+        "bat_top10_overlap": 10,
+        "bat_max_rank_shift": 18,
+        "bowl_median_deff_rsaa": 1.256,
+        "bowl_median_deff_hp": 1.066,
+        "bowl_rho_vs_approved": 0.9917,
+        "bowl_top10_overlap": 10,
+        "bowl_max_rank_shift": 34
+      }
+    ],
+    "bat_seed_stability": {
+      "n_players": 188,
+      "max_rank_diff_across_seeds": 10,
+      "pct_exact_same_rank": 50.53,
+      "top10_identical_across_seeds": true
+    },
+    "bowl_seed_stability": {
+      "n_players": 200,
+      "max_rank_diff_across_seeds": 15,
+      "pct_exact_same_rank": 40.0,
+      "top10_identical_across_seeds": true
+    },
+    "bowling_deff_exact_vs_legal_only": {
+      "median_deff_exact_incl_wides_nb": 1.256,
+      "median_deff_legal_only": 1.198,
+      "median_abs_diff": 0.0601
+    }
+  },
+  "enriched_roe_partitions": {
+    "bat_overall_enr_vs_base": {
+      "n_compared": 188,
+      "spearman_rho": 0.9939,
+      "pearson_r": 0.9956,
+      "top10_overlap": 10,
+      "top20_overlap": 18,
+      "mean_abs_rank_shift": 4.59,
+      "max_abs_rank_shift": 17
+    },
+    "bat_normal_enr_vs_raa": {
+      "n_compared": 188,
+      "spearman_rho": 0.9949,
+      "pearson_r": 0.9962,
+      "top10_overlap": 10,
+      "top20_overlap": 18,
+      "mean_abs_rank_shift": 3.95,
+      "max_abs_rank_shift": 17
+    },
+    "bat_hp_enr_vs_hp_raa": {
+      "n_compared": 170,
+      "spearman_rho": 0.9939,
+      "pearson_r": 0.9957,
+      "top10_overlap": 9,
+      "top20_overlap": 19,
+      "mean_abs_rank_shift": 3.96,
+      "max_abs_rank_shift": 18
+    },
+    "bowl_overall_enr_vs_base": {
+      "n_compared": 200,
+      "spearman_rho": 0.9679,
+      "pearson_r": 0.9757,
+      "top10_overlap": 7,
+      "top20_overlap": 15,
+      "mean_abs_rank_shift": 10.52,
+      "max_abs_rank_shift": 57
+    },
+    "bowl_normal_enr_vs_rsaa": {
+      "n_compared": 200,
+      "spearman_rho": 0.9717,
+      "pearson_r": 0.9734,
+      "top10_overlap": 8,
+      "top20_overlap": 14,
+      "mean_abs_rank_shift": 10.19,
+      "max_abs_rank_shift": 44
+    },
+    "bowl_hp_enr_vs_hp_impact": {
+      "n_compared": 193,
+      "spearman_rho": 0.8236,
+      "pearson_r": 0.8402,
+      "top10_overlap": 7,
+      "top20_overlap": 14,
+      "mean_abs_rank_shift": 24.03,
+      "max_abs_rank_shift": 97
+    }
+  },
+  "same_season_pdi": {
+    "bat_ss_pdi_vs_pri": {
+      "n_compared": 139,
+      "spearman_rho": 0.759,
+      "pearson_r": 0.7425,
+      "top10_overlap": 6,
+      "top20_overlap": 16,
+      "mean_abs_rank_shift": 21.04,
+      "max_abs_rank_shift": 78
+    },
+    "bat_spin_vs_pri": {
+      "n_compared": 135,
+      "spearman_rho": 0.5499,
+      "pearson_r": 0.5488,
+      "top10_overlap": 4,
+      "top20_overlap": 9,
+      "mean_abs_rank_shift": 27.9,
+      "max_abs_rank_shift": 107
+    },
+    "bowl_ss_pdi_vs_pri": {
+      "n_compared": 178,
+      "spearman_rho": 0.8478,
+      "pearson_r": 0.8324,
+      "top10_overlap": 8,
+      "top20_overlap": 14,
+      "mean_abs_rank_shift": 20.99,
+      "max_abs_rank_shift": 112
+    }
+  },
+  "temporal_holdout": {
+    "cutoff_year": 2025,
+    "n_train_matches": 498,
+    "n_test_matches": 339,
+    "bat_delivery_holdout": [
+      {
+        "model": "Approved Context Baseline",
+        "n_train": 112070,
+        "n_test_future": 73632,
+        "future_rmse": 1.773857,
+        "future_mae": 1.319223,
+        "future_r2": 0.014332
+      },
+      {
+        "model": "Enriched RoE (+style, pace/spin, season*phase, score)",
+        "n_train": 112070,
+        "n_test_future": 73632,
+        "future_rmse": 1.769112,
+        "future_mae": 1.370528,
+        "future_r2": 0.019598
+      },
+      {
+        "model": "Hierarchical Venue + Trend Context",
+        "n_train": 112070,
+        "n_test_future": 73632,
+        "future_rmse": 1.769817,
+        "future_mae": 1.367709,
+        "future_r2": 0.018816
+      },
+      {
+        "model": "Context + Two-Way Matchups (alpha=100)",
+        "n_train": 112070,
+        "n_test_future": 73632,
+        "future_rmse": 1.771484,
+        "future_mae": 1.319893,
+        "future_r2": 0.016967
+      },
+      {
+        "model": "Context + Two-Way Matchups (alpha=500)",
+        "n_train": 112070,
+        "n_test_future": 73632,
+        "future_rmse": 1.771166,
+        "future_mae": 1.317632,
+        "future_r2": 0.01732
+      }
+    ],
+    "bowl_delivery_holdout": [
+      {
+        "model": "Approved Bowling Context Baseline",
+        "n_train": 111564,
+        "n_test_future": 73320,
+        "future_rmse": 1.773871,
+        "future_mae": 1.318843,
+        "future_r2": 0.014048
+      },
+      {
+        "model": "Enriched Bowling RoE (+style, pace/spin, season*phase)",
+        "n_train": 111564,
+        "n_test_future": 73320,
+        "future_rmse": 1.769118,
+        "future_mae": 1.368662,
+        "future_r2": 0.019324
+      }
+    ],
+    "player_holdout_generalization": [
+      {
+        "test": "Batting: Approved EB RAA (<=2024 -> >=2025)",
+        "n_players": 232,
+        "spearman_rho": 0.2315,
+        "weighted_r": 0.2115
+      },
+      {
+        "test": "Batting: Enriched RoE (<=2024 -> >=2025)",
+        "n_players": 232,
+        "spearman_rho": 0.2172,
+        "weighted_r": 0.2059
+      },
+      {
+        "test": "Batting: Two-Way Ridge a=100 (<=2024 -> >=2025)",
+        "n_players": 232,
+        "spearman_rho": 0.2831,
+        "weighted_r": 0.335
+      },
+      {
+        "test": "Batting: Two-Way Ridge a=500 (<=2024 -> >=2025)",
+        "n_players": 232,
+        "spearman_rho": 0.2635,
+        "weighted_r": 0.2993
+      },
+      {
+        "test": "Batting HP Future: Approved HP RAA (<=2024 -> >=2025 HP)",
+        "n_players": 116,
+        "spearman_rho": 0.311,
+        "weighted_r": 0.1477
+      },
+      {
+        "test": "Batting HP Future: Approved Gen RAA (<=2024 -> >=2025 HP)",
+        "n_players": 123,
+        "spearman_rho": 0.3235,
+        "weighted_r": 0.1285
+      },
+      {
+        "test": "Bowling Econ: Approved EB RSAA (<=2024 -> >=2025)",
+        "n_players": 223,
+        "spearman_rho": 0.3032,
+        "weighted_r": 0.3916
+      },
+      {
+        "test": "Bowling Econ: Enriched RSAA (<=2024 -> >=2025)",
+        "n_players": 223,
+        "spearman_rho": 0.2794,
+        "weighted_r": 0.367
+      },
+      {
+        "test": "Bowling Econ: Two-Way Ridge a=100 (<=2024 -> >=2025)",
+        "n_players": 223,
+        "spearman_rho": 0.2644,
+        "weighted_r": 0.3398
+      },
+      {
+        "test": "Bowling Econ: Two-Way Ridge a=500 (<=2024 -> >=2025)",
+        "n_players": 223,
+        "spearman_rho": 0.275,
+        "weighted_r": 0.3703
+      },
+      {
+        "test": "Bowling Wkt: Approved EB WAA (<=2024 -> >=2025 WAA)",
+        "n_players": 223,
+        "spearman_rho": 0.0473,
+        "weighted_r": 0.0821
+      },
+      {
+        "test": "Bowling Wkt: Weighted Wicket Quality WQA (<=2024 -> >=2025 WAA)",
+        "n_players": 223,
+        "spearman_rho": 0.045,
+        "weighted_r": 0.0835
+      }
+    ]
+  }
+}

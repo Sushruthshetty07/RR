@@ -141,6 +141,10 @@ class TestPhase4Synthetic(unittest.TestCase):
         np.testing.assert_allclose(exp_a[p1_mask], 1.0, atol=1e-12)
 
 
+DATA_RAW_EXISTS = (PROJECT_ROOT / "data" / "raw" / "competitions.csv").exists() and (DATA_PROCESSED / "deliveries_with_pressure.csv.gz").exists()
+
+
+@unittest.skipUnless(DATA_RAW_EXISTS, "Proprietary raw competition dataset or full deliveries archive not present (kept local per challenge rules)")
 class TestPhase4Integration(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

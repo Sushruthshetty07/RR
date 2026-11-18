@@ -7,11 +7,16 @@ non-bowler wicket exclusion in Wicket Quality, left-censored tenure proxy, and
 preservation of approved Phase 3-4 outputs.
 """
 
+import sys
 import unittest
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.append(str(PROJECT_ROOT))
 
 from src.data_loader import DATA_PROCESSED
 from src.performance import PerformanceConfig

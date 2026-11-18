@@ -1,0 +1,5 @@
+target,model,n,rmse,mae,r2
+Batting (batter runs on balls faced),Phase 3 Approved Context Baseline,185702,1.72711,1.31154,0.02066
+Batting (batter runs on balls faced),"Enriched RoE (+style, pace/spin, season x phase, score)",185702,1.72585,1.31,0.02208
+Bowling (bowler_runs_conceded on legal balls),Phase 3 Approved Context Baseline,184884,1.72652,1.31101,0.02029
+Bowling (bowler_runs_conceded on legal balls),"Enriched RoE (+style, pace/spin, season x phase, score)",184884,1.72541,1.30972,0.02155

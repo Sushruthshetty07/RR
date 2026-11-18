@@ -1,0 +1,159 @@
+{
+  "metadata": {
+    "as_of_date": "2026-11-12",
+    "season": "IPL 2027",
+    "notes": "External IPL 2027 transfer and calendar ledger, strictly separated from frozen Phase 3/4 analytical outputs."
+  },
+  "calendar": {
+    "retention_deadline": "2026-11-17",
+    "retention_deadline_note": "Official BCCI IPL 2027 retention & release lists are due November 17, 2026 (extended from Nov 15). No official retention or release list has been published as of 2026-11-12.",
+    "auction_registration_deadline": "2026-11-23",
+    "auction_registration_note": "Official IPL 2027 player auction registration closes November 23, 2026. The verified auction register does not exist yet as of 2026-11-12.",
+    "mini_auction_date": "2026-12-16",
+    "mini_auction_venue": "Goa, India",
+    "confirmed_auction_available_count_today": 0
+  },
+  "official_completed_trades": [
+    {
+      "trade_id": "TR-2027-01",
+      "date": "2026-06-23",
+      "teams": ["DC", "LSG"],
+      "transaction_status": "Officially Completed",
+      "source_name": "IPLT20.com / Indian Express / LiveMint",
+      "source_url": "https://www.iplt20.com/news/4245/tata-ipl-2027-player-trade-update-rishabh-pant-kuldeep-yadav",
+      "last_verified_date": "2026-11-12",
+      "movements": [
+        {
+          "player_name": "Rishabh Pant",
+          "canonical_player_id": 4703,
+          "from_team": "LSG",
+          "to_team": "DC",
+          "fee_cr": 15.0,
+          "fee_note": "Revised down from INR 27.00 Cr"
+        },
+        {
+          "player_name": "Kuldeep Yadav",
+          "canonical_player_id": 3644,
+          "from_team": "DC",
+          "to_team": "LSG",
+          "fee_cr": 13.5,
+          "fee_note": "Existing/adjusted fee INR 13.50 Cr"
+        }
+      ]
+    },
+    {
+      "trade_id": "TR-2027-02",
+      "date": "2026-10-14",
+      "teams": ["DC", "SRH"],
+      "transaction_status": "Officially Completed",
+      "source_name": "IPLT20.com / Business Standard",
+      "source_url": "https://www.iplt20.com/news/4270/tata-ipl-2027-player-trade-update-t-natarajan-zeeshan-ansari",
+      "last_verified_date": "2026-11-12",
+      "movements": [
+        {
+          "player_name": "T. Natarajan",
+          "canonical_player_id": 4265,
+          "from_team": "DC",
+          "to_team": "SRH",
+          "fee_cr": 5.0,
+          "fee_note": "Revised down from INR 10.75 Cr"
+        },
+        {
+          "player_name": "Zeeshan Ansari",
+          "canonical_player_id": 4824,
+          "from_team": "SRH",
+          "to_team": "DC",
+          "fee_cr": 0.4,
+          "fee_note": "Existing fee INR 40 Lakh"
+        }
+      ]
+    },
+    {
+      "trade_id": "TR-2027-03",
+      "date": "2026-11-05",
+      "teams": ["CSK", "SRH"],
+      "transaction_status": "Officially Completed",
+      "source_name": "IPLT20.com",
+      "source_url": "https://www.iplt20.com/news/4285/tata-ipl-2027-player-trade-update-csk-srh-four-player-swap",
+      "last_verified_date": "2026-11-12",
+      "movements": [
+        {
+          "player_name": "Liam Livingstone",
+          "canonical_player_id": 4391,
+          "from_team": "SRH",
+          "to_team": "CSK",
+          "fee_cr": 6.0,
+          "fee_note": "Revised down from INR 13.00 Cr"
+        },
+        {
+          "player_name": "Jack Edwards",
+          "canonical_player_id": 6166,
+          "from_team": "SRH",
+          "to_team": "CSK",
+          "fee_cr": 3.0,
+          "fee_note": "Existing fee INR 3.00 Cr"
+        },
+        {
+          "player_name": "Khaleel Ahmed",
+          "canonical_player_id": 4816,
+          "from_team": "CSK",
+          "to_team": "SRH",
+          "fee_cr": 4.8,
+          "fee_note": "Existing fee INR 4.80 Cr"
+        },
+        {
+          "player_name": "Nathan Ellis",
+          "canonical_player_id": 7920,
+          "from_team": "CSK",
+          "to_team": "SRH",
+          "fee_cr": 2.0,
+          "fee_note": "Existing fee INR 2.00 Cr"
+        }
+      ]
+    },
+    {
+      "trade_id": "TR-2027-04",
+      "date": "2026-11-11",
+      "teams": ["MI", "PBKS"],
+      "transaction_status": "Officially Completed",
+      "source_name": "IPLT20.com / LiveMint / Hindustan Times",
+      "source_url": "https://www.iplt20.com/news/4291/tata-ipl-2027-player-trade-update-hardik-pandya-arshdeep-singh",
+      "last_verified_date": "2026-11-12",
+      "movements": [
+        {
+          "player_name": "Hardik Pandya",
+          "canonical_player_id": 3330,
+          "from_team": "MI",
+          "to_team": "PBKS",
+          "fee_cr": 18.0,
+          "fee_note": "Revised up from INR 16.35 Cr"
+        },
+        {
+          "player_name": "Arshdeep Singh",
+          "canonical_player_id": 6464,
+          "from_team": "PBKS",
+          "to_team": "MI",
+          "fee_cr": 18.0,
+          "fee_note": "Existing fee INR 18.00 Cr"
+        }
+      ]
+    }
+  ],
+  "reported_negotiations_not_completed": [
+    {
+      "rumour_id": "RUM-2027-01",
+      "date": "2026-11-11",
+      "teams": ["RR", "LSG"],
+      "transaction_status": "Reported / Stalled — NOT Completed",
+      "players_mentioned": [
+        {"player_name": "Yashasvi Jaiswal", "canonical_player_id": 6819, "current_team": "RR", "reported_interest_from": "LSG"},
+        {"player_name": "Mohammed Shami", "canonical_player_id": 1566, "current_team": "LSG", "reported_interest_from": "RR"},
+        {"player_name": "Mohsin Khan", "canonical_player_id": 6669, "current_team": "LSG", "reported_interest_from": "RR"}
+      ],
+      "summary": "Media reports indicated LSG inquired about Yashasvi Jaiswal while RR explored Mohammed Shami and Mohsin Khan, but talks stalled/broke down and LSG closed trade business before Nov 17.",
+      "source_name": "Crex / CricketAddictor / KhelNow",
+      "source_url": "https://crex.com/news/lsg-pull-out-of-yashasvi-jaiswal-trade-talks-with-rr",
+      "last_verified_date": "2026-11-12"
+    }
+  ]
+}
